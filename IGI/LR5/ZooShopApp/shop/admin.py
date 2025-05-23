@@ -9,10 +9,15 @@ class SupplierAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
+class ProductSupplyInline(admin.TabularInline):
+    model = ProductSupply
+    extra = 1
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'article', 'default_price')
-    filter_horizontal = ('categories', 'suppliers',)
+    filter_horizontal = ('categories',)
+    inlines = [ProductSupplyInline]
 
 @admin.register(ProductSupply)
 class ProductSupplyAdmin(admin.ModelAdmin):
