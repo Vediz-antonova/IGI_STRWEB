@@ -92,10 +92,10 @@
                             height="16">
                     </button>
                     <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
-                        <li><a class="dropdown-item text-white" href="goods/catalog.html">Все товары</a></li>
-                        <li><a class="dropdown-item text-white" href="goods/catalog.html">Корм</a></li>
-                        <li><a class="dropdown-item text-white" href="goods/catalog.html">Игрушки</a></li>
-                        <li><a class="dropdown-item text-white" href="goods/catalog.html">Аксессуары</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'catalog' %}">Все товары</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'catalog' %}">Корм</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'catalog' %}">Игрушки</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'catalog' %}">Аксессуары</a></li>
                     </ul>
                 </div>
                 <!-- Значек корзины, вызывает модальное окно -->
