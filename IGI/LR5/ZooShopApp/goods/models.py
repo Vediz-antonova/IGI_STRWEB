@@ -10,7 +10,7 @@ phone_regex = RegexValidator(
 
 class Supplier(models.Model):
     """Модель поставщика товаров."""
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
     address = models.TextField()
     phone = models.CharField(max_length=20, validators=[phone_regex])
 
@@ -19,17 +19,21 @@ class Supplier(models.Model):
 
 class Category(models.Model):
     """Модель категории товара."""
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
 
     def __str__(self):
         return self.name
 
 class Product(models.Model):
     """Модель товара, включающая артикул, цену, категории и поставщиков."""
-    article = models.CharField(max_length=100)
+    article = models.CharField(max_length=100, unique=True)
     name = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    image = models.ImageField(blank=True, null=True, upload_to='images/')
     default_price = models.DecimalField(max_digits=10, decimal_places=2)
-    categories = models.ManyToManyField(Category, related_name='products')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     suppliers = models.ManyToManyField(Supplier, through='ProductSupply', related_name='products')
 
     def __str__(self):
@@ -59,23 +63,3 @@ class Sale(models.Model):
 
     def __str__(self):
         return f'Продажа {self.product.name} от {self.sale_date}'
-
-class Client(models.Model):
-    """Модель клиента с привязкой к учетной записи пользователя."""
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='client_profile')
-    phone = models.CharField(max_length=20, validators=[phone_regex])
-    age = models.PositiveIntegerField(validators=[MinValueValidator(18)])
-    email = models.EmailField()
-
-    def __str__(self):
-        return self.user.username
-
-class Employee(models.Model):
-    """Модель сотрудника с указанием должности и контактной информации."""
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='employee_profile')
-    position = models.CharField(max_length=255)
-    age = models.PositiveIntegerField(validators=[MinValueValidator(18)])
-    phone = models.CharField(max_length=20, validators=[phone_regex])
-
-    def __str__(self):
-        return f'{self.user.username} — {self.position}'
