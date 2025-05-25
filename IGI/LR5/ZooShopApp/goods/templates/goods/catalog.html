@@ -45,17 +45,18 @@
         <!-- Карта товара -->
         <div class="col-lg-4 col-md-6 p-4">
             <div class="card border-primary rounded custom-shadow">
-                <img src="{% static good.image %}" class="card-img-top" alt="...">
+                {% if good.image %}
+                    <img src="{% static good.image %}" class="card-img-top" alt="...">
+                {% else %}
+                    <img src="{% static "images/Not found image.png" %}" class="card-img-top" alt="...">
+                {% endif %}
                 <div class="card-body">
                     <a href="../goods/product.html">
                         <p class="card-title">{{ good.name }}</p>
                     </a>
                     <p class="card-text text-truncate">{{ good.description }}</p>
-                    <p class="product_id">id: 02265</p>
+                    <p class="product_article"> article: {{ good.article }}</p>
                     <div class="d-flex justify-content-between">
-{#                        <p><s>100</s> $</p>#}
-{#                        <p><strong>90.00 $</strong></p>#}
-{#                        <span class="badge bg-warning text-dark">Скидка 10.00 %</span>#}
                         <p><strong>{{ good.price }}</strong></p>
                         <a href="#" class="btn add-to-cart">
                             <img class="mx-1" src="{% static 'icons/cart-plus.svg' %}" alt="Catalog Icon"
