@@ -1,4 +1,4 @@
-from shop.models import Product
+from goods.models import Product
 
 def get_product_by_id(product_id: int) -> Product:
     """

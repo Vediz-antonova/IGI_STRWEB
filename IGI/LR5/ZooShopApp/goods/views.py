@@ -5,28 +5,28 @@ from .forms import ProductForm
 
 class ProductListView(ListView):
     model = Product
-    template_name = "shop/product_list.html"
+    template_name = "goods/product_list.html"
     context_object_name = 'products'
     ordering = ['name']
 
 class ProductDetailView(DetailView):
     model = Product
-    template_name = "shop/product_detail.html"
+    template_name = "goods/product_detail.html"
     context_object_name = 'product'
 
 class ProductCreateView(CreateView):
     model = Product
     form_class = ProductForm
-    template_name = "shop/product_form.html"
+    template_name = "goods/product_form.html"
     success_url = reverse_lazy("product_list")
 
 class ProductUpdateView(UpdateView):
     model = Product
     form_class = ProductForm
-    template_name = "shop/product_form.html"
+    template_name = "goods/product_form.html"
     success_url = reverse_lazy("product_list")
 
 class ProductDeleteView(DeleteView):
     model = Product
-    template_name = "shop/product_confirm_delete.html"
+    template_name = "goods/product_confirm_delete.html"
     success_url = reverse_lazy("product_list")
