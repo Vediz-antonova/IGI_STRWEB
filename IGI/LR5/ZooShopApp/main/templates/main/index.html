@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/my_footer_css.css" %}">
+{% endblock css %}
+
+{% block content %}
+	<h1 class="mt-5 pt-5"><strong>Зоомагазин ZOOSHOP</strong></h1>
+{% endblock content %}
+
+{% block footer %}
+	<footer class="bg-dark">
+        <div class="container">
+            <p>© 2025 ZooShop. Все права защищены</p>
+            <p>Текущая дата: {% now "d/m/Y" %}</p>
+        </div>
+    </footer>
+{% endblock footer %}
