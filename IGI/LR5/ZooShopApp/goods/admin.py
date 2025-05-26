@@ -13,14 +13,14 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'article', 'default_price', 'category')
+    list_display = ('name', 'article', 'category')
     list_filter = ('category', 'suppliers')
     search_fields = ('name', 'article')
     prepopulated_fields = {"slug": ("name",)}
 
 @admin.register(ProductSupply)
 class ProductSupplyAdmin(admin.ModelAdmin):
-    list_display = ('product', 'supplier', 'supply_date', 'quantity', 'unit_price')
+    list_display = ('product', 'supplier', 'supply_date', 'quantity', 'unit_price', 'new_price_date', 'new_price')
     list_filter = ('supplier', 'supply_date')
 
 @admin.register(Sale)

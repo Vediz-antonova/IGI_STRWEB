@@ -32,11 +32,16 @@
                 </div>
             </div>
             <!-- Описание товара -->
-            <div class="card-body">
-                <p class="card-text">Цена: <strong>{{ product.default_price }} $</strong></p>
-                <h5 class="card-title">{{ product.name }}</h5>
-                <p class="card-text">{{ product.description }}</p>
-                <a href="#" class="btn btn-dark add-to-cart">Добавить в корзину</a>
+            <div class="col-md-6">
+                <p><strong>Артикул:</strong> {{ product.article }}</p>
+                <p><strong>Категория:</strong> {{ product.category.name }}</p>
+                <p><strong>Описание:</strong> {{ product.description }}</p>
+                <hr>
+                {% for item in prodSupply %}
+                	<p><strong>Поставщик:</strong> {{ item.supplier }}</p>
+                	<p><strong>Количество:</strong> {{ item.quantity }}</p>
+                    <p><strong>Текущая цена:</strong> {{ item.unit_price }} BYN</p>
+                {% endfor %}
             </div>
         </div>
     </div>

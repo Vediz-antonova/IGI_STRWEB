@@ -1,10 +1,11 @@
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator, MinValueValidator
 from django.utils import timezone
 
 phone_regex = RegexValidator(
-    regex=r'^\\+375\\s*\\(29\\)\\s*\\d{3}-\\d{2}-\\d{2}$',
+    regex=r'^\+375\s*\(29\)\s*\d{3}-\d{2}-\d{2}$',
     message="Номер должен быть в формате: +375 (29) XXX-XX-XX."
 )
 
@@ -32,7 +33,6 @@ class Product(models.Model):
     slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     image = models.ImageField(blank=True, null=True, upload_to='images/')
-    default_price = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     suppliers = models.ManyToManyField(Supplier, through='ProductSupply', related_name='products')
 
@@ -49,6 +49,8 @@ class ProductSupply(models.Model):
     supply_date = models.DateField(default=timezone.now)
     quantity = models.PositiveIntegerField(validators=[MinValueValidator(1)])
     unit_price = models.DecimalField(max_digits=10, decimal_places=2)
+    new_price_date = models.DateField(blank=True, null=True)
+    new_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
 
     def __str__(self):
         return f'{self.product.name} от {self.supplier.name} ({self.supply_date})'
