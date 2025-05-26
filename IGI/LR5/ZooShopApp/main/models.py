@@ -19,3 +19,11 @@ class Promotional(models.Model):
     @property
     def expired(self):
         return self.expiration_date < now()
+
+class FAQ(models.Model):
+    question = models.TextField(max_length=500)
+    answer = models.TextField(max_length=500)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.question

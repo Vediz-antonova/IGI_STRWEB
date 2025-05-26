@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.timezone import now
-from main.models import AboutCompany, Promotional
+from main.models import AboutCompany, Promotional, FAQ
 
 def index(request):
 
@@ -34,3 +34,12 @@ def promotional(request):
         'expired_coupons': expired_coupons,
     }
     return render(request, 'main/promotional.html', context)
+
+def faq(request):
+    faqs = FAQ.objects.order_by('-updated_at')  # Сортировка: сначала свежие вопросы
+
+    context = {
+        'title': 'FAQ - Часто задаваемые вопросы',
+        'faqs': faqs,
+    }
+    return render(request, 'main/faq.html', context)
