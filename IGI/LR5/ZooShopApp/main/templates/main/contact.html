@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-5 pt-5 bg-white custom-shadow rounded">
+        <h2>Наши сотрудники</h2>
+        <div class="row">
+            {% for employee in employees %}
+                <div class="col-md-4 mb-4">
+                    <div class="card border-primary rounded custom-shadow">
+                        {% if employee.image %}
+                            <img src="{{ employee.image.url }}" class="card-img-top" alt="Фото {{ employee.username }}">
+                        {% else %}
+                            <img src="{% static 'images/baseavatar.jpg' %}" class="card-img-top" alt="Фото отсутствует">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ employee.first_name }} {{ employee.last_name }}</h5>
+                            <p class="card-text">👨‍💼 {{ employee.username }}</p>
+                            {% if employee.phone %}
+                                <p>📞 {{ employee.phone }}</p>
+                            {% endif %}
+                            {% if employee.email %}
+                                <p>✉️ <a href="mailto:{{ employee.email }}">{{ employee.email }}</a></p>
+                            {% endif %}
+                            {% if employee.job_description %}
+                                <hr>
+                                <p><strong>Описание работы:</strong></p>
+                                <p>{{ employee.job_description }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

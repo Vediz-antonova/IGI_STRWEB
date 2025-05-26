@@ -31,7 +31,9 @@ class UserRegistrationForm(UserCreationForm):
             "password1",
             "password2",
             "birth_date",
+            "phone",
             "is_employee",
+            "job_description",
         )
 
     birth_date = forms.DateField(
@@ -42,6 +44,20 @@ class UserRegistrationForm(UserCreationForm):
         required=False,
         widget=forms.CheckboxInput(attrs={"class": "form-check-input"}),
         label="Я сотрудник"
+    )
+    phone = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "placeholder": "Введите номер телефона",
+            }
+        )
+    )
+    job_description = forms.CharField(
+        widget=forms.Textarea(
+            attrs={"class": "form-control", "placeholder": "Опишите ваши обязанности", "id": "id_job_description"}),
+        required=False,
+        label="Описание работы"
     )
     first_name = forms.CharField(
         widget=forms.TextInput(
@@ -102,6 +118,16 @@ class UserRegistrationForm(UserCreationForm):
             if age < 18:
                 raise forms.ValidationError("Вам должно быть не менее 18 лет для регистрации.")
         return birth_date
+
+    def clean_job_description(self):
+        """Проверка: если сотрудник, описание работы должно быть заполнено"""
+        is_employee = self.cleaned_data.get("is_employee", False)
+        job_description = self.cleaned_data.get("job_description", "").strip()
+
+        if is_employee and not job_description:
+            raise forms.ValidationError("Сотрудник должен указать описание выполняемых работ.")
+
+        return job_description
 
 class ProfileForm(UserChangeForm):
     class Meta:

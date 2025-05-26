@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.timezone import now
 from main.models import AboutCompany, Promotional, FAQ
+from users.models import User
 import calendar
 import datetime
 
@@ -55,3 +56,11 @@ def faq(request):
         'faqs': faqs,
     }
     return render(request, 'main/faq.html', context)
+
+def contact(request):
+    employees = User.objects.filter(is_employee=True)
+    context = {
+        "title": "Контакты",
+        "employees": employees,
+    }
+    return render(request, "main/contact.html", context)
