@@ -29,16 +29,22 @@ def registration(request):
     if request.method == 'POST':
         form = UserRegistrationForm(data=request.POST)
         if form.is_valid():
-            form.save()
-            user=form.instance
+            user = form.save()
+            user.is_employee = form.cleaned_data["is_employee"]
+            user.save()
+
+            if not user.is_adult():
+                messages.error(request, "Регистрация запрещена: вам должно быть 18 лет.")
+                return redirect(reverse('registration'))
+
             auth.login(request, user)
-            messages.success(request, 'You are successfully registration and logged in')
+            messages.success(request, 'Вы успешно зарегистрировались!')
             return HttpResponseRedirect(reverse('profile'))
     else:
         form = UserRegistrationForm()
 
     context = {
-        'title': 'Registration',
+        'title': 'Регистрация',
         'form': form,
     }
     return render(request, 'users/registration.html', context)

@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
 from users.models import User
+import datetime
 
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(
@@ -29,8 +30,19 @@ class UserRegistrationForm(UserCreationForm):
             "email",
             "password1",
             "password2",
+            "birth_date",
+            "is_employee",
         )
 
+    birth_date = forms.DateField(
+        widget=forms.DateInput(attrs={"type": "date", "class": "form-control"}),
+        label="Дата рождения"
+    )
+    is_employee = forms.BooleanField(
+        required=False,
+        widget=forms.CheckboxInput(attrs={"class": "form-check-input"}),
+        label="Я сотрудник"
+    )
     first_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
@@ -79,6 +91,17 @@ class UserRegistrationForm(UserCreationForm):
             }
         )
     )
+
+    def clean_birth_date(self):
+        birth_date = self.cleaned_data.get("birth_date")
+        if birth_date:
+            today = datetime.date.today()
+            age = today.year - birth_date.year - (
+                    (today.month, today.day) < (birth_date.month, birth_date.day)
+            )
+            if age < 18:
+                raise forms.ValidationError("Вам должно быть не менее 18 лет для регистрации.")
+        return birth_date
 
 class ProfileForm(UserChangeForm):
     class Meta:
