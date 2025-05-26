@@ -39,6 +39,9 @@ class Product(models.Model):
     def __str__(self):
         return f'{self.name} ({self.article})'
 
+    class Meta:
+        ordering = ('name',)
+
 class ProductSupply(models.Model):
     """Модель поставки товара с указанием количества, даты и цены."""
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
