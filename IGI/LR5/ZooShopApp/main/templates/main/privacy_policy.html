@@ -6,10 +6,16 @@
 {% endblock css %}
 
 {% block footer %}
-	<footer class="bg-dark">
-        <div class="container">
-            <p>© 2025 ZooShop. Все права защищены</p>
-            <p>Текущая дата: {% now "d/m/Y" %}</p>
+    <footer class="bg-dark py-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="text-center flex-grow-1">
+                <small>© 2025 ZooShop. Все права защищены</small>
+                <br>
+                <small>Текущая дата: {% now "d/m/Y" %}</small>
+            </div>
+            <div class="calendar text-white ms-3" style="max-width: 200px;">
+                {{ month_calendar|safe }}
+            </div>
         </div>
     </footer>
 {% endblock footer %}
