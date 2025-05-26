@@ -1,8 +1,14 @@
 from django.shortcuts import render
+
 from .models import Product
 
-def catalog(request):
-    products = Product.objects.all()
+def catalog(request, category_slug):
+
+    if category_slug == 'all':
+        products = Product.objects.all()
+    else:
+        products = Product.objects.filter(category__slug=category_slug)
+
     context = {
         'title': 'Catalog',
         'products' : products
