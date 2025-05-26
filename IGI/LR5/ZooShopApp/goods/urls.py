@@ -1,8 +1,8 @@
-from django.urls import path
+from django.urls import re_path
 from goods import views
 
 urlpatterns = [
-    path('search/', views.catalog, name='search'),
-    path('<slug:category_slug>/', views.catalog, name='catalog'),
-    path('product/<slug:product_slug>/', views.product, name='product'),
+    re_path(r'^search/$', views.catalog, name='search'),
+    re_path(r'^(?P<category_slug>[\w-]+)/$', views.catalog, name='catalog'),
+    re_path(r'^product/(?P<product_slug>[\w-]+)/$', views.product, name='product'),
 ]

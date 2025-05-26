@@ -36,10 +36,10 @@
                 <p><strong>Артикул:</strong> {{ product.article }}</p>
                 <p><strong>Категория:</strong> {{ product.category.name }}</p>
                 <p><strong>Описание:</strong> {{ product.description }}</p>
+                <p><strong>Количество на складе:</strong> {{ product.quantity }}</p>
                 <hr>
                 {% for item in prodSupply %}
                 	<p><strong>Поставщик:</strong> {{ item.supplier }}</p>
-                	<p><strong>Количество:</strong> {{ item.quantity }}</p>
                     <p><strong>Текущая цена:</strong> {{ item.unit_price }} BYN</p>
                 {% endfor %}
             </div>
