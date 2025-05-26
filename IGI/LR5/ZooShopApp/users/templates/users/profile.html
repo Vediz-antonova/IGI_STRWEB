@@ -9,36 +9,33 @@
                 <div class="col-md-5">
                     <div class=" bg-white p-4 mb-4 mx-2 rounded custom-shadow">
                         <h3 class="text-center mb-4">Профиль пользователя</h3>
-                        <form>
+                        <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-12 mb-3 text-center">
-                                    <img src="{% static 'images/baseavatar.jpg' %}"
-                                        alt="Аватар пользователя" class="img-fluid rounded-circle"
-                                        style="max-width: 150px;">
-                                    <input type="file" class="form-control mt-3" id="avatar"
-                                        accept="image/*">
+                                    {% if user.image %}
+                                    	<img src="{{ user.image.url }}"
+                                            alt="Аватар пользователя" class="card-img-top"
+                                            style="max-width: 150px;">
+                                    {% else %}
+                                        <img src="{% static 'images/baseavatar.jpg' %}"
+                                            alt="Аватар пользователя" class="img-fluid rounded-circle"
+                                            style="max-width: 150px;">
+                                    {% endif %}
+                                    <input type="file" class="form-control mt-3" id="id_name" name="image"
+                                                    accept="image/*">
                                 </div>
-                                <div class="col-md-12 mb-3">
-                                    <label for="firstName" class="form-label">Имя*</label>
-                                    <input type="text" class="form-control" id="firstName"
-                                        placeholder="Введите ваше имя" value="" required>
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <label for="lastName" class="form-label">Фамилия*</label>
-                                    <input type="text" class="form-control" id="lastName"
-                                        placeholder="Введите вашу фамилию" value="" required>
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <label for="username" class="form-label">Имя пользователя*</label>
-                                    <input type="text" class="form-control" id="username"
-                                        placeholder="Введите ваше имя пользователя" value="" required>
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <label for="email" class="form-label">Email*</label>
-                                    <input type="email" class="form-control" id="email"
-                                        placeholder="Введите ваш email *youremail@example.com" value=""
-                                        required>
-                                </div>
+                                {% for item in form %}
+                                    {% if item.name != "password" and item.name != "image" %}
+                                        <div class="col-md-12 mb-3">
+                                            <label for="{{ item.id_for_label }}" class="form-label">{{ item.label }}</label>
+                                            {{ item }}
+                                        </div>
+                                        {% if item.errors %}
+                                            <div class="alert alert-danger alert-dismissible fade show">{{ item.errors }}</div>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                             <button type="submit" class="btn btn-dark">Сохранить</button>
                         </form>
