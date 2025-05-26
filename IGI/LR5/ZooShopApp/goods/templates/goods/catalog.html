@@ -11,7 +11,7 @@
                 Фильтры
             </button>
 
-            <form action="{% url 'catalog' slug_url %}" method="get" class="dropdown-menu bg-dark" data-bs-theme="dark">
+            <form action="{% if request.GET.q %}{% url 'search' %}{% else %}{% url 'catalog' slug_url %}{% endif %}" method="get" class="dropdown-menu bg-dark" data-bs-theme="dark">
                 <p class="text-white mx-3 mt-3">Сортировать:</p>
                 <div class="form-check text-white mx-3">
                     <input class="form-check-input" type="radio" name="order_by" id="flexRadioDefault1" value="default"
