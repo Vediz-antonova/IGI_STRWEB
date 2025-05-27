@@ -7,7 +7,7 @@
             <div class="row">
                 <!-- Миниатюры -->
                 <div class="col-md-4">
-                    <img src="{% static product.image %}"
+                    <img src="{{ product.image.url }}"
                         class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal1">
                 </div>
                 <div class="col-md-4 ">
@@ -37,11 +37,8 @@
                 <p><strong>Категория:</strong> {{ product.category.name }}</p>
                 <p><strong>Описание:</strong> {{ product.description }}</p>
                 <p><strong>Количество на складе:</strong> {{ product.quantity }}</p>
-                <hr>
-                {% for item in prodSupply %}
-                	<p><strong>Поставщик:</strong> {{ item.supplier }}</p>
-                    <p><strong>Текущая цена:</strong> {{ item.unit_price }} BYN</p>
-                {% endfor %}
+                <p><strong>Текущая цена:</strong> {{ product.default_price }} BYN</p>
+                <a href="{% url 'cart_add' product.slug %}" class="btn btn-dark add-to-cart">Добавить в корзину</a>
             </div>
         </div>
     </div>

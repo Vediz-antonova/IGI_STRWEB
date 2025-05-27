@@ -32,10 +32,11 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    image = models.ImageField(blank=True, null=True, upload_to='images/')
+    image = models.ImageField(blank=True, null=True, upload_to='goods_images/')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     suppliers = models.ManyToManyField(Supplier, through='ProductSupply', related_name='products')
     quantity = models.PositiveIntegerField(validators=[MinValueValidator(0)], default=0)
+    default_price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
         return f'{self.name} ({self.article})'
@@ -54,17 +55,3 @@ class ProductSupply(models.Model):
 
     def __str__(self):
         return f'{self.product.name} от {self.supplier.name} ({self.supply_date})'
-
-class Sale(models.Model):
-    """Модель продажи товара с расчетом общей стоимости."""
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='sales')
-    sale_date = models.DateField(default=timezone.now)
-    quantity = models.PositiveIntegerField(validators=[MinValueValidator(1)])
-    unit_price = models.DecimalField(max_digits=10, decimal_places=2)
-
-    @property
-    def total(self):
-        return self.quantity * self.unit_price
-
-    def __str__(self):
-        return f'Продажа {self.product.name} от {self.sale_date}'

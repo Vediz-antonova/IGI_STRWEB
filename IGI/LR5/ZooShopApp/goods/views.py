@@ -16,8 +16,6 @@ def catalog(request, category_slug=None):
     else:
         products = Product.objects.filter(category__slug=category_slug)
 
-    products = products.annotate(default_price=Min("productsupply__unit_price"))
-
     allowed_sorting_fields = ["default_price", "-default_price", "name", "-name"]
     if order_by in allowed_sorting_fields:
         products = products.order_by(order_by)
@@ -34,9 +32,9 @@ def catalog(request, category_slug=None):
 
 def product(request, product_slug):
     product = Product.objects.get(slug=product_slug)
-    prodSupply = ProductSupply.objects.filter(product=product) or None
+    # prodSupply = ProductSupply.objects.filter(product=product) or None
     context = {
         'product' : product,
-        'prodSupply' : prodSupply,
+        # 'prodSupply' : prodSupply,
     }
     return render(request, 'goods/product.html', context)

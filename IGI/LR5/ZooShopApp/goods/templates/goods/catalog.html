@@ -43,7 +43,7 @@
         <div class="col-lg-4 col-md-6 p-4">
             <div class="card border-primary rounded custom-shadow">
                 {% if good.image %}
-                    <img src="{% static good.image %}" class="card-img-top" alt="...">
+                    <img src="{{ good.image.url }}" class="card-img-top" alt="...">
                 {% else %}
                     <img src="{% static "images/Not found image.png" %}" class="card-img-top" alt="...">
                 {% endif %}
@@ -53,13 +53,15 @@
                     </a>
                     <p class="card-text text-truncate">{{ good.description }}</p>
                     <p class="product_article"> article: {{ good.article }}</p>
-                    {% if good.default_price == 0 or good.default_price == None %}
-                        <p class="card-text text-truncate"> Нет поставок </p>
-                    {% else %}
-                        <p class="card-text text-truncate"> min_price: {{ good.default_price }}</p>
-                    {% endif %}
+                    <p class="card-text"> Количество: {{ good.quantity }}</p>
                     <div class="d-flex justify-content-between">
-                        <a href="#" class="btn add-to-cart">
+                        {% if good.quantity <= 0 %}
+                            <p><strong>Нет поставок</strong></p>
+                        {% else %}
+                            <p><strong>{{ good.default_price }} BYN</strong></p>
+                        {% endif %}
+
+                        <a href="{% url 'cart_add' good.slug %}" class="btn add-to-cart">
                             <img class="mx-1" src="{% static 'icons/cart-plus.svg' %}" alt="Catalog Icon"
                                 width="32" height="32">
                         </a>

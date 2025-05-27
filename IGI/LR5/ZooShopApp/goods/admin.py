@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Supplier, Category, Product, ProductSupply, Sale
+from .models import Supplier, Category, Product, ProductSupply
 
 @admin.register(Supplier)
 class SupplierAdmin(admin.ModelAdmin):
@@ -22,9 +22,3 @@ class ProductAdmin(admin.ModelAdmin):
 class ProductSupplyAdmin(admin.ModelAdmin):
     list_display = ('product', 'supplier', 'supply_date', 'unit_price', 'new_price_date', 'new_price')
     list_filter = ('supplier', 'supply_date')
-
-@admin.register(Sale)
-class SaleAdmin(admin.ModelAdmin):
-    list_display = ('product', 'sale_date', 'quantity', 'unit_price', 'total')
-    list_filter = ('sale_date',)
-    search_fields = ('product__name',)

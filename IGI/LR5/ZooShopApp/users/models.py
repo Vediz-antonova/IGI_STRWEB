@@ -9,7 +9,7 @@ phone_regex = RegexValidator(
 )
 
 class User(AbstractUser):
-    image = models.ImageField(upload_to='images/', null=True, blank=True)
+    image = models.ImageField(upload_to='users/', null=True, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     is_employee = models.BooleanField(default=False)
     phone = models.CharField(max_length=20, validators=[phone_regex], blank=True, null=True)
