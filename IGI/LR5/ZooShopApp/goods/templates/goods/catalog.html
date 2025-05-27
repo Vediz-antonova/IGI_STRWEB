@@ -1,6 +1,10 @@
-{% extends "main/base.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% load goods_tags %}
+
+{% block modal_cart %}
+	{% include "includes/cart_button.html" %}
+{% endblock %}
 
 {% block content %}
 	<div class="row">
