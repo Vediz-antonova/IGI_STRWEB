@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block modal_cart %}
-	{% include "includes/cart_button.html" %}
+    {% if request.user.is_authenticated and not request.user.is_employee %}
+        {% include "includes/cart_button.html" %}
+    {% endif %}
 {% endblock %}
 
 {% block css %}

@@ -3,7 +3,9 @@
 {% load goods_tags %}
 
 {% block modal_cart %}
-	{% include "includes/cart_button.html" %}
+    {% if request.user.is_authenticated and not request.user.is_employee %}
+        {% include "includes/cart_button.html" %}
+    {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -65,12 +67,14 @@
                             <p><strong>{{ good.default_price }} BYN</strong></p>
                         {% endif %}
 
-                        <a href="{% url "cart_add" %}" class="btn add-to-cart"
-                        data-product-id="{{ good.id }}">
-                            {% csrf_token %}
-                            <img class="mx-1" src="{% static "icons/cart-plus.svg" %}" alt="Catalog Icon"
-                                width="32" height="32">
-                        </a>
+                        {% if request.user.is_authenticated and not request.user.is_employee %}
+                            <a href="{% url "cart_add" %}" class="btn add-to-cart"
+                            data-product-id="{{ good.id }}">
+                                {% csrf_token %}
+                                <img class="mx-1" src="{% static "icons/cart-plus.svg" %}" alt="Catalog Icon"
+                                    width="32" height="32">
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

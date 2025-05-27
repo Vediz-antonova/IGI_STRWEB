@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block modal_cart %}
-	{% include "includes/cart_button.html" %}
+    {% if request.user.is_authenticated and not request.user.is_employee %}
+        {% include "includes/cart_button.html" %}
+    {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -42,10 +44,13 @@
                 <p><strong>Описание:</strong> {{ product.description }}</p>
                 <p><strong>Количество на складе:</strong> {{ product.quantity }}</p>
                 <p><strong>Текущая цена:</strong> {{ product.default_price }} BYN</p>
-                <a href="{% url 'cart_add' %}" class="btn btn-dark add-to-cart"
-                   data-product-id="{{ product.id }}">
-                    {% csrf_token %}
-                    Добавить в корзину</a>
+
+                {% if request.user.is_authenticated and not request.user.is_employee %}
+                    <a href="{% url 'cart_add' %}" class="btn btn-dark add-to-cart"
+                       data-product-id="{{ product.id }}">
+                        {% csrf_token %}
+                        Добавить в корзину</a>
+                {% endif %}
             </div>
         </div>
     </div>
