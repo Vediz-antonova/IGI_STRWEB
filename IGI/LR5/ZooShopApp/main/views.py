@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.utils.timezone import now
 from main.models import AboutCompany, Promotional, FAQ, News
 from users.models import User
+from goods.models import Supplier, ProductSupply
+from django.contrib.auth.decorators import login_required
 import random
 import requests
 import calendar
@@ -107,3 +109,18 @@ def news(request):
         "cat_facts": [fact["fact"] for fact in cat_facts],
     }
     return render(request, "main/news.html", context)
+
+@login_required
+def supplier_list(request):
+    if not request.user.is_employee:
+        return render(request, "403.html")
+
+    suppliers = Supplier.objects.all()
+
+    supplier_data = []
+    for supplier in suppliers:
+        products = ProductSupply.objects.filter(supplier=supplier).values_list("product__name", flat=True).distinct()
+        supplier_data.append({"supplier": supplier, "products": ", ".join(products)})  # Объединяем названия в строку
+
+    context = {"supplier_data": supplier_data}
+    return render(request, "main/supplier_list.html", context)
