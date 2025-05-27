@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mt-5 pt-5 bg-white custom-shadow rounded">
+        <h2>Вакансии</h2>
+
+        {% for job in jobs %}
+            <div class="job-item mb-4">
+                <h4 class="text-primary">{{ job.title }}</h4>
+                <p>{{ job.description }}</p>
+                <p><strong>Зарплата:</strong> {{ job.salary|default:"Не указано" }} BYN</p>
+                <p><strong>Локация:</strong> {{ job.location|default:"Любое место" }}</p>
+                <small class="text-muted">Опубликовано: {{ job.posted_at|date:"d/m/Y H:i" }}</small>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock content %}
