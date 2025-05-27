@@ -44,7 +44,7 @@
                             <a class="nav-link  text-white" href="{% url 'job_list' %}">Вакансии</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  text-white" href="#">Отзывы</a>
+                            <a class="nav-link  text-white" href="{% url 'review_list' %}">Отзывы</a>
                         </li>
                         {% if not user.is_authenticated %}
                             <li class="nav-item">
