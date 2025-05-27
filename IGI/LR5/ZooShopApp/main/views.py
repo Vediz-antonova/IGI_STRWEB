@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.timezone import now
-from main.models import AboutCompany, Promotional, FAQ
+from main.models import AboutCompany, Promotional, FAQ, News
 from users.models import User
+import random
+import requests
 import calendar
 import datetime
 
@@ -64,3 +66,44 @@ def contact(request):
         "employees": employees,
     }
     return render(request, "main/contact.html", context)
+
+
+
+
+API_KEY = "9b9791430dae4f92afdb02bbb56defdf"
+TOPICS = ["pets", "pet food", "dogs", "cats", "birds", "exotic pets", "pet toys"]
+
+def news(request):
+    local_news_objects = News.objects.order_by("-id")[:5]
+    local_news = [
+        {"title": news.title, "summary": news.summary, "image_url": news.image_url}
+        for news in local_news_objects
+    ]
+
+    random_topic = random.choice(TOPICS)
+    NEWS_URL = f"https://newsapi.org/v2/everything?q={random_topic}&apiKey={API_KEY}"
+
+    response = requests.get(NEWS_URL)
+    news_data = response.json().get("articles", [])
+
+    random.shuffle(news_data)
+
+    news_list = []
+    for article in news_data[:5]:
+        news_list.append({
+            "title": article["title"],
+            "summary": article["description"],
+            "image_url": article["urlToImage"],
+        })
+
+    news = local_news + news_list
+
+    cat_response = requests.get("https://catfact.ninja/facts")
+    cat_facts = cat_response.json().get("data", [])[:3]
+
+    context = {
+        "title": "Новости",
+        "news_list": news,
+        "cat_facts": [fact["fact"] for fact in cat_facts],
+    }
+    return render(request, "main/news.html", context)
