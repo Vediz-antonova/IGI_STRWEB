@@ -1,8 +1,13 @@
-from django.shortcuts import render, get_list_or_404
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 from django.db.models import Min
-from .models import Product, ProductSupply
+from .models import Product, ProductSupply, Supplier
 from .utils import q_search
+from django.utils import timezone
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 def catalog(request, category_slug=None):
     page=request.GET.get('page', 1)
@@ -37,7 +42,31 @@ def catalog(request, category_slug=None):
 
 def product(request, product_slug):
     product = Product.objects.get(slug=product_slug)
+    suppliers = ProductSupply.objects.filter(product=product)
     context = {
-        'product' : product,
+        'product': product,
+        'suppliers': suppliers,
     }
     return render(request, 'goods/product.html', context)
+
+def select_supplier(request, product_slug):
+    product = Product.objects.get(slug=product_slug)
+    suppliers = ProductSupply.objects.filter(product=product)
+
+    if request.method == "POST":
+        supplier_id = request.POST.get("supplier_id")
+        quantity = int(request.POST.get("quantity"))
+
+        supplier = get_object_or_404(Supplier, id=supplier_id)
+
+        product.quantity += quantity
+        product.save()
+
+        messages.success(request, f"Успешно заказано {quantity} шт. у {supplier.name}!")
+        return HttpResponseRedirect(reverse('product', args=[product_slug]))
+
+    context = {
+        "product": product,
+        "suppliers": suppliers,
+    }
+    return render(request, "goods/select_supplier.html", context)
