@@ -1,7 +1,8 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404
 from django.shortcuts import redirect
 from django.template.loader import render_to_string
+from django.contrib.auth.decorators import login_required
 
 from carts.models import Cart
 from goods.models import Product
@@ -78,3 +79,15 @@ def cart_remove(request):
     }
 
     return JsonResponse(response_data)
+
+@login_required
+def update_price(request, product_id):
+    product = Product.objects.filter(id=product_id).first()
+
+    if request.method == "POST":
+        new_price = request.POST.get("new_price")
+        if new_price:
+            product.default_price = float(new_price)
+            product.save()
+
+    return redirect("product", product.slug)

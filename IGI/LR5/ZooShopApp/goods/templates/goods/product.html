@@ -50,6 +50,12 @@
                        data-product-id="{{ product.id }}">
                         {% csrf_token %}
                         Добавить в корзину</a>
+                {% elif request.user.is_employee %}
+                    <form method="POST" action="{% url 'update_price' product.id %}">
+                        {% csrf_token %}
+                        <input type="number" name="new_price" step="0.01" min="0" placeholder="Введите новую цену" required>
+                        <button type="submit" class="btn btn-warning">Обновить стоимость</button>
+                    </form>
                 {% endif %}
             </div>
         </div>

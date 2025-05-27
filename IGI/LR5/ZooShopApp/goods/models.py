@@ -26,6 +26,9 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class ProductQuerySet(models.QuerySet):
+    ...
+
 class Product(models.Model):
     """Модель товара, включающая артикул, цену, категории и поставщиков."""
     article = models.CharField(max_length=100, unique=True)
@@ -37,6 +40,8 @@ class Product(models.Model):
     suppliers = models.ManyToManyField(Supplier, through='ProductSupply', related_name='products')
     quantity = models.PositiveIntegerField(validators=[MinValueValidator(0)], default=0)
     default_price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    objects = ProductQuerySet.as_manager()
 
     def __str__(self):
         return f'{self.name} ({self.article})'
