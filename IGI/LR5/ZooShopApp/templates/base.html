@@ -77,6 +77,11 @@
                             <a class="nav-link" href="{% url 'supplier_list' %}">📦 Поставщики</a>
                         </li>
                     {% endif %}
+                    {% if request.user.is_authenticated and request.user.is_employee %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'user_list' %}">👥 Пользователи</a>
+                        </li>
+                    {% endif %}
                     </ul>
                     <form class="d-flex" role="search" action="{% url 'search' %}" method="get">
                         <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">

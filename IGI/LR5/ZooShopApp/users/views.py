@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib import auth, messages
 from django.urls import reverse
 from users.forms import UserLoginForm, UserRegistrationForm, ProfileForm
+from users.models import User
 
 def login(request):
     if request.method == 'POST':
@@ -76,3 +77,11 @@ def logout(request):
     auth.logout(request)
     messages.success(request, 'You are logged out')
     return redirect(reverse('index'))
+
+@login_required
+def user_list(request):
+    if not request.user.is_employee:
+        return render(request, "403.html")
+
+    users = User.objects.all()
+    return render(request, "users/user_list.html", {"users": users})
