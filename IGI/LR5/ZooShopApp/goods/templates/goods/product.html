@@ -42,7 +42,10 @@
                 <p><strong>Описание:</strong> {{ product.description }}</p>
                 <p><strong>Количество на складе:</strong> {{ product.quantity }}</p>
                 <p><strong>Текущая цена:</strong> {{ product.default_price }} BYN</p>
-                <a href="{% url 'cart_add' product.slug %}" class="btn btn-dark add-to-cart">Добавить в корзину</a>
+                <a href="{% url 'cart_add' %}" class="btn btn-dark add-to-cart"
+                   data-product-id="{{ product.id }}">
+                    {% csrf_token %}
+                    Добавить в корзину</a>
             </div>
         </div>
     </div>

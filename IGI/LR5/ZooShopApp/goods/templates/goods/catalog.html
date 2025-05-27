@@ -65,8 +65,10 @@
                             <p><strong>{{ good.default_price }} BYN</strong></p>
                         {% endif %}
 
-                        <a href="{% url 'cart_add' good.slug %}" class="btn add-to-cart">
-                            <img class="mx-1" src="{% static 'icons/cart-plus.svg' %}" alt="Catalog Icon"
+                        <a href="{% url "cart_add" %}" class="btn add-to-cart"
+                        data-product-id="{{ good.id }}">
+                            {% csrf_token %}
+                            <img class="mx-1" src="{% static "icons/cart-plus.svg" %}" alt="Catalog Icon"
                                 width="32" height="32">
                         </a>
                     </div>
