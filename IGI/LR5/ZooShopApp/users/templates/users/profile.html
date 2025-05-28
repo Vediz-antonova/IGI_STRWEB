@@ -43,6 +43,13 @@
                         </form>
                     </div>
                 </div>
+                
+                <div class="text-center mt-4">
+                    <a href="{% url 'add_review' %}" class="btn btn-success">
+                        Оставить отзыв
+                    </a>
+                </div>
+
                 <!-- Корзина -->
                 {% if request.user.is_authenticated and not request.user.is_employee %}
                     <div class="col-md-7">
