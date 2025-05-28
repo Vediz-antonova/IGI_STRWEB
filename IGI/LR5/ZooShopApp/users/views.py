@@ -88,7 +88,8 @@ def users_cart(request):
 @login_required
 def logout(request):
     auth.logout(request)
-    cart_items.delete()
+    # cart_items = Cart.objects.filter(user=user)
+    # cart_items.delete()
     messages.success(request, 'You are logged out')
     return redirect(reverse('index'))
 

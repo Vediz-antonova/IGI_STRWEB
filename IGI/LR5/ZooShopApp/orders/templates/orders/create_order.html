@@ -91,6 +91,15 @@
                                         <div class="alert alert-danger alert-dismissible fade show">{{form.payment_on_get.errors}}</div>
                                     {% endif %}
                                 </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="id_promo_code" class="form-label">Промокод:</label>
+                                    <input type="text" class="form-control" id="id_promo_code" name="promo_code"
+                                        value="{% if form.promo_code.value %}{{ form.promo_code.value }}{% endif %}"
+                                        placeholder="Введите промокод (если есть)" maxlength="10">
+                                    {% if form.promo_code.errors %}
+                                        <div class="alert alert-danger alert-dismissible fade show">{{form.promo_code.errors}}</div>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-dark">Оформить заказ</button>
