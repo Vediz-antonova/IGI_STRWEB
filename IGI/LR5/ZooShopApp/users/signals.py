@@ -5,9 +5,8 @@ from users.models import User
 
 @receiver(post_save, sender=User)
 def set_employee_permissions(sender, instance, created, **kwargs):
-    if instance.is_employee:
-        instance.is_staff = True
-        instance.save()
+    if instance.is_employee and not instance.is_staff:
+        User.objects.filter(id=instance.id).update(is_staff=True)
 
         permission = Permission.objects.get(codename="view_user")
         instance.user_permissions.add(permission)

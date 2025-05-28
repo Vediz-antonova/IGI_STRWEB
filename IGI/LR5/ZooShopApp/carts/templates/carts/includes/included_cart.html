@@ -47,3 +47,8 @@
         <h4 class="float-left"><strong>{{ carts.total_price }} BYN</strong></h4>
     </div>
 </div>
+{% if carts and not order %}
+    <a class="btn btn-dark" href="{% url 'create_order' %}">
+        Оформить заказ
+    </a>
+{% endif %}
