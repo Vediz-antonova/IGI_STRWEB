@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 from django.core.validators import RegexValidator, MinValueValidator
 from django.utils import timezone
 
@@ -35,7 +36,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    image = models.ImageField(blank=True, null=True, upload_to='goods_images/')
+    image = models.ImageField(blank=True, null=True, upload_to='goods_images/', default='images/Not found image.png')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(validators=[MinValueValidator(0)], default=0)
     default_price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -47,6 +48,12 @@ class Product(models.Model):
 
     class Meta:
         ordering = ('name',)
+
+    def save(self, *args, **kwargs):
+        """Автоматически создаем `slug` из `name`, если он пустой"""
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
 class ProductSupply(models.Model):
     """Модель поставки товара с указанием количества, даты и цены."""

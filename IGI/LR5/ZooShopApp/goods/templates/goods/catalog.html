@@ -44,6 +44,12 @@
             </form>
         </div>
 
+    {% if request.user.is_authenticated and request.user.is_employee %}
+        <div class="text-center mb-4">
+            <a href="{% url 'add_product' %}" class="btn btn-success">Добавить товар</a>
+        </div>
+    {% endif %}
+
     {% for good in products %}
         <!-- Карта товара -->
         <div class="col-lg-4 col-md-6 p-4">
@@ -67,7 +73,12 @@
                             <p><strong>{{ good.default_price }} BYN</strong></p>
                         {% endif %}
 
-                        {% if request.user.is_authenticated and not request.user.is_employee and not good.quantity <= 0 %}
+                        {% if request.user.is_authenticated and request.user.is_employee %}
+                            <form method="POST" action="{% url 'delete_product' good.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Удалить</button>
+                            </form>
+                        {% elif request.user.is_authenticated and not request.user.is_employee and not good.quantity <= 0 %}
                             <a href="{% url "cart_add" %}" class="btn add-to-cart"
                             data-product-id="{{ good.id }}">
                                 {% csrf_token %}

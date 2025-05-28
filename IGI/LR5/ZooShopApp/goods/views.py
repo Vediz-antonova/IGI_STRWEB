@@ -1,8 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.db.models import Min
-from .models import Product, ProductSupply, Supplier
+from django import forms
+from .models import Product, ProductSupply, Supplier, Category
+from .forms import ProductForm
 from .utils import q_search
 from django.utils import timezone
 from django.contrib import messages
@@ -70,3 +72,37 @@ def select_supplier(request, product_slug):
         "suppliers": suppliers,
     }
     return render(request, "goods/select_supplier.html", context)
+
+@login_required
+def add_product(request):
+    if not request.user.is_employee:
+        messages.error(request, "У вас нет прав на добавление товаров.")
+        return redirect("catalog", category_slug="all")
+
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            try:
+                form.save()
+                messages.success(request, "Товар успешно добавлен!")
+                return redirect("catalog", category_slug="all")
+            except forms.ValidationError as e:
+                messages.warning(request, str(e))
+        else:
+            messages.warning(request, "Ошибка при добавлении товара! Проверьте данные.")
+    else:
+        form = ProductForm()
+
+    categories = Category.objects.all()
+    return render(request, "goods/add_product.html", {"form": form, "categories": categories})
+
+@login_required
+def delete_product(request, product_id):
+    if not request.user.is_employee:
+        messages.error(request, "У вас нет прав на удаление товаров.")
+        return redirect("catalog", category_slug="all")
+
+    product = get_object_or_404(Product, id=product_id)
+    product.delete()
+    messages.success(request, "Товар удален!")
+    return redirect("catalog", category_slug="all")
