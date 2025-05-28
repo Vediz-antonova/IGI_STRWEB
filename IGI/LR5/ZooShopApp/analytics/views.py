@@ -53,11 +53,29 @@ def statistics_view(request):
     return render(request, "analytics/statistics.html", context)
 
 def generate_sales_chart():
-    """Создает и сохраняет графики доходов по категориям."""
     categories = Category.objects.all()
+    all_products = Product.objects.annotate(
+        total_income=Sum(F("orderitem__price") * F("orderitem__quantity"))
+    ).filter(total_income__gt=0)
+
+    product_names = [product.name for product in all_products]
+    total_incomes = [product.total_income for product in all_products]
+
+    if all_products.exists():
+        plt.figure(figsize=(12, 6))
+        plt.barh(product_names, total_incomes, color="green")
+        plt.xlabel("Доход от продаж (BYN)")
+        plt.ylabel("Товары")
+        plt.title("Общий доход по всем проданным товарам")
+
+        plt.xticks(rotation=45, ha="right")
+        plt.gca().invert_yaxis()
+
+        plt.tight_layout()
+        plt.savefig(os.path.join(settings.MEDIA_ROOT, "charts/all.png"))
+        plt.close()
 
     for category in categories:
-        # Получаем товары данной категории
         products = Product.objects.filter(category=category).annotate(
             total_income=Sum(F("orderitem__price") * F("orderitem__quantity"))
         ).filter(total_income__gt=0)
@@ -66,14 +84,15 @@ def generate_sales_chart():
             product_names = [product.name for product in products]
             incomes = [product.total_income for product in products]
 
-            # Создаем график
             plt.figure(figsize=(10, 5))
-            plt.barh(product_names, incomes, color="skyblue")
-            plt.xlabel("Доход от продаж (BYN)")
-            plt.ylabel("Товары")
+            plt.bar(product_names, incomes, color="skyblue")
+            plt.xlabel("Товары")
+            plt.ylabel("Доход от продаж (BYN)")
             plt.title(f"Доход от продаж: {category.name}")
 
-            # Сохраняем изображение
+            plt.xticks(rotation=45, ha="right")
+            plt.tight_layout()
+
             chart_path = os.path.join(settings.MEDIA_ROOT, f"charts/{category.slug}.png")
             os.makedirs(os.path.dirname(chart_path), exist_ok=True)
             plt.savefig(chart_path)
