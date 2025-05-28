@@ -67,7 +67,7 @@
                             <p><strong>{{ good.default_price }} BYN</strong></p>
                         {% endif %}
 
-                        {% if request.user.is_authenticated and not request.user.is_employee %}
+                        {% if request.user.is_authenticated and not request.user.is_employee and not good.quantity <= 0 %}
                             <a href="{% url "cart_add" %}" class="btn add-to-cart"
                             data-product-id="{{ good.id }}">
                                 {% csrf_token %}
