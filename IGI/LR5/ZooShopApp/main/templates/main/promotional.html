@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static "css/my_footer_css.css" %}">
+    <link rel="stylesheet" href="{% static "css/footer.css" %}">
 {% endblock css %}
 
 {% block content %}
@@ -18,16 +18,16 @@
 {% endblock content %}
 
 {% block footer %}
-    <footer class="bg-dark py-2">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="text-center flex-grow-1">
-                <small>© 2025 ZooShop. Все права защищены</small>
-                <br>
-                <small>Текущая дата: {% now "d/m/Y" %}</small>
-            </div>
-            <div class="calendar text-white ms-3" style="max-width: 200px;">
-                {{ month_calendar|safe }}
-            </div>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-center">
+          <small>© 2025 ZooShop. Все права защищены</small>
+          <br>
+          <small>Текущая дата: {% now "d/m/Y" %}</small>
         </div>
+        <aside class="footer-calendar">
+          {{ month_calendar|safe }}
+        </aside>
+      </div>
     </footer>
 {% endblock footer %}
