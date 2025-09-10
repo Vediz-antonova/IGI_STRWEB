@@ -761,3 +761,207 @@ INFO 2025-09-11 00:04:31,796 autoreload Watching for file changes with StatReloa
 INFO 2025-09-11 00:04:32,858 basehttp "GET /user/profile/ HTTP/1.1" 200 27853
 INFO 2025-09-11 00:04:32,870 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
 INFO 2025-09-11 00:04:35,514 basehttp "GET /catalog/aksessuary/ HTTP/1.1" 200 22457
+INFO 2025-09-11 00:13:47,186 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:13:48,315 basehttp "GET /catalog/aksessuary/ HTTP/1.1" 200 22457
+INFO 2025-09-11 00:13:48,325 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+ERROR 2025-09-11 00:13:49,955 log Internal Server Error: /about/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: main_aboutcompany.logo
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\main\views.py", line 28, in about
+    about_text = AboutCompany.objects.first()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\query.py", line 1104, in first
+    for obj in queryset[:1]:
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: main_aboutcompany.logo
+ERROR 2025-09-11 00:13:49,961 basehttp "GET /about/ HTTP/1.1" 500 146507
+INFO 2025-09-11 00:15:48,251 autoreload Watching for file changes with StatReloader
+ERROR 2025-09-11 00:15:49,228 log Internal Server Error: /about/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: main_aboutcompany.logo
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\main\views.py", line 28, in about
+    about_text = AboutCompany.objects.first()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\query.py", line 1104, in first
+    for obj in queryset[:1]:
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\query.py", line 1945, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: main_aboutcompany.logo
+ERROR 2025-09-11 00:15:49,235 basehttp "GET /about/ HTTP/1.1" 500 146644
+INFO 2025-09-11 00:16:38,386 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:16:39,441 basehttp "GET /about/ HTTP/1.1" 200 7555
+INFO 2025-09-11 00:16:39,459 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:16:39,582 basehttp "GET /static/css/about.css HTTP/1.1" 200 1420
+INFO 2025-09-11 00:17:42,637 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-11 00:17:42,650 basehttp "GET / HTTP/1.1" 200 5765
+INFO 2025-09-11 00:17:43,468 basehttp "GET /user/login/ HTTP/1.1" 200 5619
+INFO 2025-09-11 00:17:47,798 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-11 00:17:47,816 basehttp "GET /user/profile/ HTTP/1.1" 200 9036
+INFO 2025-09-11 00:18:06,429 basehttp "GET /user/profile/ HTTP/1.1" 200 9005
+INFO 2025-09-11 00:18:42,797 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:18:45,189 basehttp "GET /user/profile/ HTTP/1.1" 200 9107
+INFO 2025-09-11 00:18:47,311 basehttp "GET /admin/ HTTP/1.1" 200 20501
+INFO 2025-09-11 00:18:59,964 basehttp "GET /admin/main/aboutcompany/ HTTP/1.1" 200 20032
+INFO 2025-09-11 00:19:00,017 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:19:13,579 basehttp "GET /admin/auth/group/ HTTP/1.1" 200 17704
+INFO 2025-09-11 00:19:13,593 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:19:15,609 basehttp "GET /admin/carts/cart/ HTTP/1.1" 200 19181
+INFO 2025-09-11 00:19:15,622 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:19:18,555 basehttp "GET /admin/main/aboutcompany/ HTTP/1.1" 200 20032
+INFO 2025-09-11 00:19:18,568 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:23:29,466 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:23:30,517 basehttp "GET /admin/main/aboutcompany/ HTTP/1.1" 200 20032
+INFO 2025-09-11 00:23:30,533 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:23:32,483 basehttp "GET /admin/main/aboutcompany/?o=1 HTTP/1.1" 200 20316
+INFO 2025-09-11 00:23:32,501 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:23:32,671 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-09-11 00:23:33,315 basehttp "GET /admin/main/aboutcompany/?o=-1 HTTP/1.1" 200 20318
+INFO 2025-09-11 00:23:33,329 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:23:37,316 basehttp "GET /admin/main/aboutcompany/ HTTP/1.1" 200 20032
+INFO 2025-09-11 00:23:37,330 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:23:40,206 basehttp "GET /admin/main/aboutcompany/add/ HTTP/1.1" 200 19991
+INFO 2025-09-11 00:23:40,222 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:23:40,232 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-09-11 00:23:40,238 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-09-11 00:23:40,247 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-09-11 00:23:40,251 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-09-11 00:23:48,219 basehttp "GET /admin/main/aboutcompany/ HTTP/1.1" 200 20032
+INFO 2025-09-11 00:23:49,312 basehttp "GET /admin/main/aboutcompany/1/change/ HTTP/1.1" 200 24381
+INFO 2025-09-11 00:23:49,329 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:26:17,043 basehttp "POST /admin/main/aboutcompany/1/change/ HTTP/1.1" 200 25068
+INFO 2025-09-11 00:26:17,058 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:26:34,915 basehttp "POST /admin/main/aboutcompany/1/change/ HTTP/1.1" 200 25064
+INFO 2025-09-11 00:26:34,929 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:26:46,216 basehttp "POST /admin/main/aboutcompany/1/change/ HTTP/1.1" 302 0
+INFO 2025-09-11 00:26:46,239 basehttp "GET /admin/main/aboutcompany/ HTTP/1.1" 200 21559
+INFO 2025-09-11 00:26:46,252 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:26:46,275 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-09-11 00:26:50,225 basehttp "GET / HTTP/1.1" 200 6510
+INFO 2025-09-11 00:26:50,237 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:26:51,826 basehttp "GET / HTTP/1.1" 200 6510
+INFO 2025-09-11 00:26:52,884 basehttp "GET /about/ HTTP/1.1" 200 8937
+INFO 2025-09-11 00:26:52,894 basehttp "GET /static/css/about.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:32:29,889 basehttp "GET /admin/ HTTP/1.1" 200 20911
+INFO 2025-09-11 00:32:50,544 basehttp "GET /admin/main/aboutcompany/1/change/ HTTP/1.1" 200 24842
+INFO 2025-09-11 00:32:50,557 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:35:09,855 basehttp "POST /admin/main/aboutcompany/1/change/ HTTP/1.1" 302 0
+INFO 2025-09-11 00:35:09,873 basehttp "GET /admin/main/aboutcompany/ HTTP/1.1" 200 21559
+INFO 2025-09-11 00:35:09,889 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 00:35:12,406 basehttp "GET / HTTP/1.1" 200 6510
+INFO 2025-09-11 00:35:12,418 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:35:14,246 basehttp "GET /about/ HTTP/1.1" 200 9358
+INFO 2025-09-11 00:35:14,256 basehttp "GET /static/css/about.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:35:14,268 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-09-11 00:45:58,565 basehttp "GET / HTTP/1.1" 200 6510
+INFO 2025-09-11 00:45:58,575 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:45:59,728 basehttp "GET / HTTP/1.1" 200 6510
+INFO 2025-09-11 00:46:00,652 basehttp "GET /about/ HTTP/1.1" 200 9358
+INFO 2025-09-11 00:46:00,664 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 304 0
+INFO 2025-09-11 00:46:00,664 basehttp "GET /static/css/about.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:46:01,705 basehttp "GET /contact/ HTTP/1.1" 200 10486
+INFO 2025-09-11 00:46:03,320 basehttp "GET /about/ HTTP/1.1" 200 9358
+INFO 2025-09-11 00:49:06,780 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:49:07,882 basehttp "GET /about/ HTTP/1.1" 200 9424
+INFO 2025-09-11 00:49:07,891 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 304 0
+INFO 2025-09-11 00:49:14,027 basehttp "GET /about/ HTTP/1.1" 200 9424
+INFO 2025-09-11 00:49:31,871 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:49:32,927 basehttp "GET /about/ HTTP/1.1" 200 9424
+INFO 2025-09-11 00:49:33,080 basehttp "GET /static/css/about.css HTTP/1.1" 200 2180
+INFO 2025-09-11 00:51:29,228 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:51:30,140 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-09-11 00:51:30,301 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 304 0
+INFO 2025-09-11 00:51:30,350 basehttp "GET /static/css/footer.css HTTP/1.1" 200 928
+INFO 2025-09-11 00:51:30,361 basehttp "GET /static/css/about.css HTTP/1.1" 200 1248

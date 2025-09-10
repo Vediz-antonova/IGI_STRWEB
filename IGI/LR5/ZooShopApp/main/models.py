@@ -3,6 +3,11 @@ from django.utils.timezone import now
 
 class AboutCompany(models.Model):
     description = models.TextField(blank=True, null=True)
+    logo = models.ImageField(upload_to='logos/', blank=True, null=True)
+    video_url = models.URLField(blank=True, null=True)
+    history = models.JSONField(blank=True, null=True)
+    requisites = models.TextField(blank=True, null=True)
+    certificate = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f'{self.description}'

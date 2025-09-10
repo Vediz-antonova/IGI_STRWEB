@@ -1,0 +1,45 @@
+/* ──────────────────────────────── */
+/* FOOTER STYLES                */
+/* ──────────────────────────────── */
+
+.footer {
+  background-color: #343a40;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-center {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-calendar {
+  flex: 0 0 300px;
+  max-width: 300px;
+  overflow-y: auto;
+  padding-left: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-calendar {
+    max-width: 100%;
+    padding-left: 0;
+  }
+}

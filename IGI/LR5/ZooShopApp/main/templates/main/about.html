@@ -2,27 +2,78 @@
 {% load static %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static "css/my_footer_css.css" %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
 {% endblock css %}
 
 {% block content %}
-    <div class="mt-5 pt-5 bg-white custom-shadow rounded">
-	    <h2>О нас</h2>
-        <p>{{ content }}</p>
-    </div>
+    <article class="about-section">
+      <header>
+        <h1>О компании</h1>
+      </header>
+
+      {% if content.logo %}
+        <figure class="company-logo">
+          <img src="{{ content.logo.url }}" alt="Логотип компании">
+          <figcaption>Наш логотип</figcaption>
+        </figure>
+      {% endif %}
+
+      {% if content.video_url %}
+        <section class="company-video">
+          <h2>Видео о нас</h2>
+          <video controls width="100%">
+            <source src="{{ content.video_url }}" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+          </video>
+        </section>
+      {% endif %}
+
+      {% if content.description %}
+        <section class="company-description">
+          <h2>Описание</h2>
+          <p>{{ content.description }}</p>
+        </section>
+      {% endif %}
+
+      {% if content.history %}
+        <section class="company-history">
+          <h2>История по годам</h2>
+          <ul>
+            {% for year, event in content.history.items %}
+              <li><strong>{{ year }}:</strong> {{ event }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+
+      {% if content.requisites %}
+        <section class="company-requisites">
+          <h2>Реквизиты</h2>
+          <pre>{{ content.requisites }}</pre>
+        </section>
+      {% endif %}
+
+      {% if content.certificate %}
+        <section class="company-certificate">
+          <h2>Сертификат</h2>
+          <p>{{ content.certificate }}</p>
+        </section>
+      {% endif %}
+    </article>
 {% endblock content %}
 
 {% block footer %}
-    <footer class="bg-dark py-2">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="text-center flex-grow-1">
-                <small>© 2025 ZooShop. Все права защищены</small>
-                <br>
-                <small>Текущая дата: {% now "d/m/Y" %}</small>
-            </div>
-            <div class="calendar text-white ms-3" style="max-width: 200px;">
-                {{ month_calendar|safe }}
-            </div>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-center">
+          <small>© 2025 ZooShop. Все права защищены</small>
+          <br>
+          <small>Текущая дата: {% now "d/m/Y" %}</small>
         </div>
+        <aside class="footer-calendar">
+          {{ month_calendar|safe }}
+        </aside>
+      </div>
     </footer>
 {% endblock footer %}

@@ -45,7 +45,7 @@
                         <li><a href="{% url 'users-cart' %}">Корзина</a></li>
                       {% endif %}
                       <li><a href="{% url 'profile' %}">Личный кабинет</a></li>
-                      {% if user.is_admin %}
+                      {% if user.is_superuser %}
                         <li><a href="{% url 'admin:index' %}">Админ панель</a></li>
                       {% endif %}
                       <li><a href="{% url 'logout' %}">Выйти</a></li>
