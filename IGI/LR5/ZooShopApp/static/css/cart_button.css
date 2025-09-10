@@ -32,22 +32,28 @@
   width: 100%;
   height: 100%;
   z-index: 999;
+  font-family: Arial, sans-serif;
 }
+
 .cart-modal[aria-hidden="false"] {
   display: block;
 }
+
 .cart-modal-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
 }
+
+/* Основное окно */
 .cart-modal-content {
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fff;
+  background-color: #f8f9fa;
+  color: #212529;
   width: 90%;
   max-width: 600px;
   border-radius: 8px;
@@ -56,17 +62,24 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Заголовок и кнопка закрытия */
+/* Заголовок */
 .cart-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   background-color: #343a40;
-  color: white;
+  color: #fff;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
+
+.cart-modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+/* Кнопка закрытия */
 .cart-close-button {
   background: none;
   border: none;
@@ -78,7 +91,54 @@
   color: #ff6b6b;
 }
 
-/* Контент корзины */
+/* Тело корзины */
 .cart-modal-body {
   padding: 1rem;
+  background-color: #fff;
+  color: #212529;
+}
+
+/* Элементы товаров */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+.cart-item .item-name {
+  font-weight: bold;
+}
+
+.cart-item .item-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-item .item-controls button {
+  background-color: #198754;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cart-item .item-controls button:hover {
+  background-color: #157347;
+}
+
+/* Кнопка оформления заказа */
+.cart-modal-body .checkout-link {
+  display: block;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  color: #198754;
+  text-decoration: none;
+}
+.cart-modal-body .checkout-link:hover {
+  text-decoration: underline;
 }

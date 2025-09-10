@@ -1,5 +1,9 @@
 {% load static %}
 
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/notifications.css' %}">
+{% endblock %}
+
 {% if form.non_field_errors %}
 <section class="notification-wrapper">
   <div class="notification error">
@@ -31,20 +35,3 @@
     </div>
   {% endif %}
 </section>
-
-<script>
-    // Автоматическое скрытие уведомления
-    const autoNotification = document.getElementById("notification");
-    if (autoNotification) {
-      setTimeout(() => {
-        autoNotification.style.display = "none";
-      }, 7000);
-    }
-
-    // Закрытие по кнопке
-    document.querySelectorAll(".notification-close").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        btn.parentElement.style.display = "none";
-      });
-    });
-</script>
