@@ -2,140 +2,110 @@
 {% load goods_tags %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "css/bootstrap/bootstrap.min.css" %}">
-    <link rel="stylesheet" href="{% static "css/my_css.css" %}">
+    <meta name="author" content="Vediz_antonava">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
     {% block css%} {% endblock css%}
     <title>{{ title }}</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-            <div class="container">
-                <a class="navbar-brand" href="{% url 'index' %}">Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Информация
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item  text-white" href="{% url 'news' %}">Новости</a></li>
-                                <li><a class="dropdown-item  text-white" href="{% url 'contact' %}">Контактная информация</a></li>
-                                <li><a class="dropdown-item  text-white" href="{% url 'faq' %}">Часто задаваемые вопросы</a></li>
-                                <li><a class="dropdown-item  text-white" href="{% url 'about' %}">Про нас</a></li>
-                                <li><a class="dropdown-item  text-white" href="{% url 'privacy_policy' %}">Политика конфиденциальности</a></li>
-                                <li><a class="dropdown-item  text-white" href="{% url 'promotional' %}">Промокоды</a></li>
-                            </ul>
-                        </li>
+        <nav aria-label="Главное меню">
+            <div class="nav-container">
+              <ul class="nav-bar">
+                <li><a href="{% url 'index' %}">Главная</a></li>
 
-                        <li class="nav-item">
-                            <a class="nav-link  text-white" href="{% url 'job_list' %}">Вакансии</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  text-white" href="{% url 'review_list' %}">Отзывы</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  text-white" href="{% url 'statistics' %}">Статистика</a>
-                        </li>
-                        {% if not user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link  text-white" href="{% url 'login' %}">Войти</a>
-                            </li>
-                        {% else %}
-                            <li class="nav-item dropdown ">
-                                <a class="nav-link dropdown-toggle text-white" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Мой профиль
-                                </a>
-                                <ul class="dropdown-menu">
-                                    {% if request.user.is_authenticated and not request.user.is_employee %}
-                                        <li><a class="dropdown-item  text-white" href="{% url 'users-cart' %}">Корзина</a>
-                                    {% endif %}
-                                    <li><a class="dropdown-item  text-white" href="{% url 'profile' %}">Личный кабинет</a>
-                                    </li>
-                                    {% if user.is_admin or user.is_staff %}
-                                        <li><a class="dropdown-item  text-white" href="{% url 'admin:index' %}">Админ панель</a></li>
-                                    {% endif %}
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item  text-white" href="{% url 'logout' %}">Выйти</a></li>
-                                </ul>
-                            </li>
-                        {% endif %}
-                    {% if request.user.is_authenticated and request.user.is_employee %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'supplier_list' %}">📦 Поставщики</a>
-                        </li>
-                    {% endif %}
-                    {% if request.user.is_authenticated and request.user.is_employee %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'user_list' %}">👥 Пользователи</a>
-                        </li>
-                    {% endif %}
+                <li class="dropdown">
+                  <button class="dropbtn">Информация ▾</button>
+                  <ul class="dropdown-content">
+                    <li><a href="{% url 'about' %}">О компании</a></li>
+                    <li><a href="{% url 'contact' %}">Контакты</a></li>
+                    <li><a href="{% url 'job_list' %}">Вакансии</a></li>
+                    <li><a href="{% url 'statistics' %}">Статистика</a></li>
+                    <li><a href="{% url 'promotional' %}">Промокоды</a></li>
+                    <li><a href="{% url 'privacy_policy' %}">Политика конфиденциальности</a></li>
+                  </ul>
+                </li>
+
+                <li><a href="{% url 'news' %}">Новости</a></li>
+                <li><a href="{% url 'faq' %}">FAQ</a></li>
+                <li><a href="{% url 'review_list' %}">Отзывы</a></li>
+                {% if not user.is_authenticated %}
+                  <li><a href="{% url 'login' %}">Войти</a></li>
+                {% else %}
+                  <li class="dropdown">
+                    <button class="dropbtn">Мой профиль ▾</button>
+                    <ul class="dropdown-content">
+                      {% if request.user.is_authenticated and not request.user.is_employee %}
+                        <li><a href="{% url 'users-cart' %}">Корзина</a></li>
+                      {% endif %}
+                      <li><a href="{% url 'profile' %}">Личный кабинет</a></li>
+                      {% if user.is_admin %}
+                        <li><a href="{% url 'admin:index' %}">Админ панель</a></li>
+                      {% endif %}
+                      <li><a href="{% url 'logout' %}">Выйти</a></li>
                     </ul>
-                    <form class="d-flex" role="search" action="{% url 'search' %}" method="get">
-                        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success text-white" type="submit">Поиск</button>
-                    </form>
-                </div>
+                  </li>
+
+                  {% if request.user.is_employee %}
+                    <li><a href="{% url 'supplier_list' %}">Поставщики</a></li>
+                    <li><a href="{% url 'user_list' %}">Пользователи</a></li>
+                  {% endif %}
+                  {% if request.user.is_superuser %}
+                    <li><a href="{% url 'admin_orders' %}">Все заказы</a></li>
+                  {% endif %}
+                {% endif %}
+              </ul>
+              <form class="search-form" role="search" action="{% url 'search' %}" method="get">
+                <label for="search-input" class="visually-hidden">Поиск</label>
+                <input id="search-input" type="search" name="q" placeholder="Поиск..." aria-label="Поиск">
+                <button type="submit">Найти</button>
+              </form>
             </div>
         </nav>
     </header>
-    <section>
-        <div class="container">
-            <!-- Каталог и корзина с фиксированным расположением на странице -->
-            <div class="row mt-1 position-fixed z-3">
-                <!-- Каталог -->
-                <div class="dropdown mb-2">
-                    <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Каталог
-                        <img class="mx-1" src="{% static "icons/grid-fill.svg" %}" alt="Catalog Icon" width="16"
-                             height="16">
-                    </button>
-                    <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
-                        {% tag_categories as categories %}
-                        {% for category in categories %}
-                            <li><a class="dropdown-item text-white" href="{% url 'catalog' category.slug %}">{{ category.name }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <!-- Значек корзины, вызывает модальное окно -->
-                {% block modal_cart %}{% endblock %}
-                <!-- Закончилась разметка модального окна -->
-            </div>
-        </div>
 
-        <!-- Контент -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
-                    <h1 class="mt-2 pt-3"></h1>
-                </div>
-                <div class="col-lg-10">
-                    {% include "includes/notifications.html" %}
-                    {% block content %} {% endblock content %}
-                </div>
-            </div>
+
+    <main>
+      <section class="catalog-bar">
+        <nav class="catalog-nav" aria-label="Каталог товаров">
+          <details>
+            <summary>
+              <span>Каталог</span>
+              <img src="{% static 'icons/grid-fill.svg' %}" alt="Иконка каталога" width="16" height="16">
+            </summary>
+            <ul>
+              {% tag_categories as categories %}
+              {% for category in categories %}
+                <li><a href="{% url 'catalog' category.slug %}">{{ category.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </details>
+        </nav>
+
+        {% block modal_cart %}{% endblock %}
+      </section>
+
+      <section class="main-content">
+        <div class="layout">
+          <aside class="sidebar">
+            <h1></h1>
+          </aside>
+          <article class="content-area">
+            {% include "includes/notifications.html" %}
+            {% block content %}{% endblock %}
+          </article>
         </div>
-    </section>
+      </section>
+    </main>
+
     {% block footer %} {% endblock footer %}
     <script src="{% static "js/jquery/jquery-3.7.0.min.js" %}"></script>
     <script src="{% static "js/jquery-ajax.js" %}"></script>
-    <script src="{% static "js/bootstrap/bootstrap.bundle.min.js" %}"></script>
 </body>
-
 </html>

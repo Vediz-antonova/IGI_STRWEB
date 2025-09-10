@@ -63,8 +63,142 @@ INFO 2025-05-28 19:55:43,328 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 
 INFO 2025-05-28 19:55:43,333 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22644
 INFO 2025-05-28 19:55:43,335 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
 INFO 2025-05-28 19:55:43,335 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33018
-INFO 2025-05-28 19:55:59,166 basehttp "GET / HTTP/1.1" 200 7922
-ERROR 2025-05-28 20:30:37,978 log Internal Server Error: /catalog/all/
+INFO 2025-05-28 19:55:59,166 basehttp "GET / HTTP/1.1" 200 7922INFO 2025-05-29 16:03:00,295 autoreload Watching for file changes with StatReloader
+INFO 2025-05-29 16:04:21,467 basehttp "GET / HTTP/1.1" 200 7922
+INFO 2025-05-29 16:04:21,508 basehttp "GET /static/css/bootstrap/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:21,508 basehttp "GET /static/css/my_css.css HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:21,509 basehttp "GET /static/css/my_footer_css.css HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:21,509 basehttp "GET /static/js/jquery/jquery-3.7.0.min.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:21,510 basehttp "GET /static/js/jquery-ajax.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:21,542 basehttp "GET /static/js/bootstrap/bootstrap.bundle.min.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:21,542 basehttp "GET /static/icons/grid-fill.svg HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:21,549 basehttp "GET /static/images/bg-image.jpg HTTP/1.1" 304 0
+WARNING 2025-05-29 16:04:21,693 log Not Found: /favicon.ico
+WARNING 2025-05-29 16:04:21,694 basehttp "GET /favicon.ico HTTP/1.1" 404 5488
+INFO 2025-05-29 16:04:25,533 basehttp "GET /user/login/ HTTP/1.1" 200 7820
+INFO 2025-05-29 16:04:32,095 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:04:32,177 basehttp "GET /user/profile/ HTTP/1.1" 200 12027
+INFO 2025-05-29 16:04:32,201 basehttp "GET /media/users/506e8fe625c1f8707cec23d6b130dc08_sqZJoDz.jpeg HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:36,587 basehttp "GET /admin/ HTTP/1.1" 200 20870
+INFO 2025-05-29 16:04:36,608 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:36,608 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:36,614 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:36,622 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:36,624 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:36,625 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:36,632 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:36,643 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:36,644 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,673 basehttp "GET /admin/main/promotional/add/ HTTP/1.1" 200 18934
+INFO 2025-05-29 16:04:42,709 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,709 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,711 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,711 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,712 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,721 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,725 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,727 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,728 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,730 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,733 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,736 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,739 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,753 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,780 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:04:42,845 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-05-29 16:04:42,845 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-05-29 16:05:01,467 basehttp "POST /admin/main/promotional/add/ HTTP/1.1" 200 19207
+INFO 2025-05-29 16:05:01,496 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:05:05,326 basehttp "POST /admin/main/promotional/add/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:05:05,363 basehttp "GET /admin/main/promotional/add/ HTTP/1.1" 200 19184
+INFO 2025-05-29 16:05:05,388 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:05:05,418 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-05-29 16:05:23,258 basehttp "POST /admin/main/promotional/add/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:05:23,293 basehttp "GET /admin/main/promotional/add/ HTTP/1.1" 200 19183
+INFO 2025-05-29 16:05:23,316 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:05:36,875 basehttp "POST /admin/main/promotional/add/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:05:36,912 basehttp "GET /admin/main/promotional/add/ HTTP/1.1" 200 19183
+INFO 2025-05-29 16:05:36,935 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:05:49,202 basehttp "POST /admin/main/promotional/add/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:05:49,244 basehttp "GET /admin/main/promotional/add/ HTTP/1.1" 200 19183
+INFO 2025-05-29 16:05:49,267 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:05:51,443 basehttp "GET / HTTP/1.1" 200 9289
+INFO 2025-05-29 16:05:54,317 basehttp "GET /promotional/ HTTP/1.1" 200 9804
+INFO 2025-05-29 16:06:09,579 autoreload Watching for file changes with StatReloader
+INFO 2025-05-29 16:06:43,671 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:06:43,720 basehttp "GET / HTTP/1.1" 200 8052
+INFO 2025-05-29 16:06:44,840 basehttp "GET /user/login/ HTTP/1.1" 200 7820
+INFO 2025-05-29 16:06:58,058 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:06:58,107 basehttp "GET /user/profile/ HTTP/1.1" 200 12004
+INFO 2025-05-29 16:06:58,134 basehttp "GET /media/users/9a14b8b2c9494052fab98e31e76bb929.jpg HTTP/1.1" 304 0
+INFO 2025-05-29 16:07:03,251 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:07:03,266 basehttp "GET / HTTP/1.1" 200 8052
+INFO 2025-05-29 16:10:17,183 basehttp "GET /user/login/ HTTP/1.1" 200 7820
+INFO 2025-05-29 16:10:24,113 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:10:24,149 basehttp "GET /user/profile/ HTTP/1.1" 200 12027
+INFO 2025-05-29 16:10:27,329 basehttp "GET /admin/ HTTP/1.1" 200 20644
+INFO 2025-05-29 16:11:16,368 basehttp "GET /admin/main/promotional/ HTTP/1.1" 200 18792
+INFO 2025-05-29 16:11:16,414 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:11:16,416 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-05-29 16:11:16,425 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-05-29 16:11:16,483 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-05-29 16:11:19,978 basehttp "GET /admin/main/promotional/add/ HTTP/1.1" 200 18934
+INFO 2025-05-29 16:11:20,008 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:11:30,278 basehttp "POST /admin/main/promotional/add/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:11:30,319 basehttp "GET /admin/main/promotional/add/ HTTP/1.1" 200 19183
+INFO 2025-05-29 16:11:30,342 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:11:42,922 basehttp "POST /admin/main/promotional/add/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:11:42,958 basehttp "GET /admin/main/promotional/add/ HTTP/1.1" 200 19182
+INFO 2025-05-29 16:11:42,983 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:11:52,053 basehttp "POST /admin/main/promotional/add/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:11:52,099 basehttp "GET /admin/main/promotional/add/ HTTP/1.1" 200 19183
+INFO 2025-05-29 16:11:52,127 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:12:03,776 basehttp "POST /admin/main/promotional/add/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:12:03,821 basehttp "GET /admin/main/promotional/add/ HTTP/1.1" 200 19183
+INFO 2025-05-29 16:12:03,846 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:12:06,807 basehttp "GET /admin/main/promotional/ HTTP/1.1" 200 19905
+INFO 2025-05-29 16:12:06,831 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:12:09,166 basehttp "GET / HTTP/1.1" 200 9289
+INFO 2025-05-29 16:12:15,335 basehttp "GET /user/users/ HTTP/1.1" 200 11672
+INFO 2025-05-29 16:12:20,503 basehttp "GET /admin/ HTTP/1.1" 200 20501
+INFO 2025-05-29 16:12:26,215 basehttp "GET /admin/users/user/add/ HTTP/1.1" 200 35374
+INFO 2025-05-29 16:12:26,241 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-29 16:12:28,533 basehttp "GET /admin/ HTTP/1.1" 200 20501
+INFO 2025-05-29 16:12:54,708 basehttp "GET / HTTP/1.1" 200 9289
+INFO 2025-05-29 16:12:59,076 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:12:59,094 basehttp "GET / HTTP/1.1" 200 8052
+INFO 2025-05-29 16:13:00,410 basehttp "GET /user/login/ HTTP/1.1" 200 7820
+INFO 2025-05-29 16:13:01,783 basehttp "GET /user/registration/ HTTP/1.1" 200 11321
+INFO 2025-05-29 16:13:37,782 basehttp "POST /user/registration/ HTTP/1.1" 200 12254
+INFO 2025-05-29 16:13:49,221 basehttp "POST /user/registration/ HTTP/1.1" 200 12265
+INFO 2025-05-29 16:14:06,073 basehttp "POST /user/registration/ HTTP/1.1" 200 12194
+INFO 2025-05-29 16:14:29,943 basehttp "POST /user/registration/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:14:29,969 basehttp "GET /user/profile/ HTTP/1.1" 200 12036
+INFO 2025-05-29 16:14:29,985 basehttp "GET /static/images/baseavatar.jpg HTTP/1.1" 304 0
+INFO 2025-05-29 16:14:33,008 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:14:33,025 basehttp "GET / HTTP/1.1" 200 8052
+INFO 2025-05-29 16:14:34,155 basehttp "GET /user/login/ HTTP/1.1" 200 7820
+INFO 2025-05-29 16:14:36,358 basehttp "GET /user/registration/ HTTP/1.1" 200 11321
+INFO 2025-05-29 16:15:18,679 basehttp "POST /user/registration/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:15:18,748 basehttp "GET /user/profile/ HTTP/1.1" 200 13218
+INFO 2025-05-29 16:15:22,526 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:15:22,545 basehttp "GET / HTTP/1.1" 200 8052
+INFO 2025-05-29 16:15:23,671 basehttp "GET /user/login/ HTTP/1.1" 200 7820
+INFO 2025-05-29 16:15:26,057 basehttp "GET /user/registration/ HTTP/1.1" 200 11321
+INFO 2025-05-29 16:16:33,992 basehttp "POST /user/registration/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:16:34,019 basehttp "GET /user/profile/ HTTP/1.1" 200 13218
+INFO 2025-05-29 16:16:38,068 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:16:38,087 basehttp "GET / HTTP/1.1" 200 8052
+INFO 2025-05-29 16:22:11,534 autoreload Watching for file changes with StatReloader
+INFO 2025-05-29 16:27:13,087 autoreload Watching for file changes with StatReloader
+INFO 2025-05-29 16:27:15,140 basehttp "GET /user/login/ HTTP/1.1" 200 7820
+INFO 2025-05-29 16:30:44,362 autoreload C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\users\views.py changed, reloading.
+INFO 2025-05-29 16:30:48,504 autoreload Watching for file changes with StatReloader
+INFO 2025-05-29 16:32:59,611 autoreload Watching for file changes with StatReloader
+INFO 2025-05-29 16:33:08,040 basehttp "GET /user/login/ HTTP/1.1" 200 7841
+INFO 2025-05-29 16:33:12,147 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:33:12,195 basehttp "GET /user/profile/ HTTP/1.1" 200 12156
+ERROR 2025-05-29 16:33:14,430 log Internal Server Error: /user/admin_orders/
 Traceback (most recent call last):
   File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
@@ -72,72 +206,519 @@ Traceback (most recent call last):
   File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\goods\views.py", line 43, in catalog
-    return render(request, 'goods/catalog.html', context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\users\views.py", line 112, in admin_orders
+    return render(request, "orders/admin_orders.html", {"orders": orders})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
     content = loader.render_to_string(template_name, context, request, using=using)
               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
-    return self.template.render(context)
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: orders/admin_orders.html
+ERROR 2025-05-29 16:33:14,435 basehttp "GET /user/admin_orders/ HTTP/1.1" 500 97995
+INFO 2025-05-29 16:33:42,356 autoreload Watching for file changes with StatReloader
+INFO 2025-05-29 16:33:44,878 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 9703
+INFO 2025-05-29 16:33:56,088 basehttp "GET /user/users/ HTTP/1.1" 200 13284
+INFO 2025-05-29 16:33:59,219 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 9703
+INFO 2025-05-29 16:35:19,267 autoreload C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\users\views.py changed, reloading.
+INFO 2025-05-29 16:35:22,173 autoreload Watching for file changes with StatReloader
+INFO 2025-05-29 16:35:39,533 autoreload Watching for file changes with StatReloader
+INFO 2025-05-29 16:35:45,075 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 11965
+INFO 2025-05-29 16:36:44,658 autoreload Watching for file changes with StatReloader
+INFO 2025-05-29 16:36:46,440 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 12053
+INFO 2025-05-29 16:37:08,854 basehttp "GET / HTTP/1.1" 200 9506
+INFO 2025-05-29 16:50:34,222 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:50:34,241 basehttp "GET / HTTP/1.1" 200 8073
+INFO 2025-05-29 16:57:24,468 basehttp "GET /news/ HTTP/1.1" 200 12199
+INFO 2025-05-29 16:57:47,827 basehttp "GET / HTTP/1.1" 200 7943
+INFO 2025-05-29 16:57:53,931 basehttp "GET /contact/ HTTP/1.1" 200 11931
+INFO 2025-05-29 16:58:00,001 basehttp "GET /about/ HTTP/1.1" 200 9296
+INFO 2025-05-29 16:58:07,490 basehttp "GET /faq/ HTTP/1.1" 200 9239
+INFO 2025-05-29 16:58:12,097 basehttp "GET /promotional/ HTTP/1.1" 200 8768
+INFO 2025-05-29 16:58:13,947 basehttp "GET /jobs/ HTTP/1.1" 200 11900
+INFO 2025-05-29 16:58:16,010 basehttp "GET /reviews/ HTTP/1.1" 200 10921
+INFO 2025-05-29 16:58:20,277 basehttp "GET /user/login/ HTTP/1.1" 200 7841
+INFO 2025-05-29 16:58:32,367 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:58:32,412 basehttp "GET /user/profile/ HTTP/1.1" 200 23649
+INFO 2025-05-29 16:58:36,557 basehttp "GET /catalog/all/ HTTP/1.1" 200 16704
+INFO 2025-05-29 16:58:36,587 basehttp "GET /static/icons/basket2-fill.svg HTTP/1.1" 304 0
+INFO 2025-05-29 16:58:36,588 basehttp "GET /media/goods_images/rabbit_house.jpg HTTP/1.1" 304 0
+INFO 2025-05-29 16:58:36,588 basehttp "GET /media/goods_images/aquarium.jpg HTTP/1.1" 304 0
+INFO 2025-05-29 16:58:36,595 basehttp "GET /media/goods_images/cat_tree.jpg HTTP/1.1" 304 0
+INFO 2025-05-29 16:58:36,596 basehttp "GET /static/icons/cart-plus.svg HTTP/1.1" 304 0
+INFO 2025-05-29 16:58:40,814 basehttp "POST /cart/cart_add/ HTTP/1.1" 200 2963
+INFO 2025-05-29 16:58:40,837 basehttp "GET /static/icons/trash3-fill.svg HTTP/1.1" 304 0
+INFO 2025-05-29 16:58:41,941 basehttp "POST /cart/cart_add/ HTTP/1.1" 200 2963
+INFO 2025-05-29 16:58:44,735 basehttp "GET /orders/create-order/ HTTP/1.1" 200 15617
+INFO 2025-05-29 16:58:53,235 basehttp "POST /cart/cart_change/ HTTP/1.1" 200 2993
+INFO 2025-05-29 16:58:54,288 basehttp "POST /cart/cart_change/ HTTP/1.1" 200 2993
+INFO 2025-05-29 16:59:16,515 basehttp "POST /orders/create-order/ HTTP/1.1" 302 0
+INFO 2025-05-29 16:59:16,565 basehttp "GET /user/profile/ HTTP/1.1" 200 26188
+INFO 2025-05-29 16:59:39,375 basehttp "GET /analytics/ HTTP/1.1" 200 9588
+INFO 2025-05-29 16:59:40,318 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-05-29 16:59:40,345 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-05-29 16:59:40,374 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-05-29 16:59:40,383 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-05-29 17:00:15,074 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-05-29 17:00:15,095 basehttp "GET / HTTP/1.1" 200 8073
+INFO 2025-05-29 17:00:16,186 basehttp "GET /user/login/ HTTP/1.1" 200 7841
+INFO 2025-05-29 17:00:22,895 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-05-29 17:00:22,921 basehttp "GET /user/profile/ HTTP/1.1" 200 12025
+INFO 2025-05-29 17:00:27,674 basehttp "GET /catalog/all/ HTTP/1.1" 200 15438
+INFO 2025-05-29 17:00:29,585 basehttp "GET /catalog/new_product/add/ HTTP/1.1" 200 10551
+INFO 2025-05-29 17:00:48,178 basehttp "POST /catalog/new_product/add/ HTTP/1.1" 302 0
+INFO 2025-05-29 17:00:48,212 basehttp "GET /catalog/all/ HTTP/1.1" 200 15444
+INFO 2025-05-29 17:00:48,242 basehttp "GET /media/images/Not%20found%20image.png HTTP/1.1" 304 0
+INFO 2025-05-29 17:00:54,897 basehttp "GET /catalog/product/sdfgh/ HTTP/1.1" 200 10266
+INFO 2025-05-29 17:00:54,917 basehttp "GET /static/images/Not%20found%20image.png HTTP/1.1" 304 0
+INFO 2025-05-29 17:01:02,122 basehttp "POST /catalog/delete/23/ HTTP/1.1" 302 0
+INFO 2025-05-29 17:01:02,158 basehttp "GET /catalog/all/ HTTP/1.1" 200 15574
+INFO 2025-06-17 01:55:22,839 autoreload Watching for file changes with StatReloader
+INFO 2025-06-17 01:55:42,999 basehttp "GET / HTTP/1.1" 200 8163
+INFO 2025-06-17 01:55:43,032 basehttp "GET /static/css/my_css.css HTTP/1.1" 304 0
+INFO 2025-06-17 01:55:43,032 basehttp "GET /static/css/bootstrap/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-06-17 01:55:43,034 basehttp "GET /static/css/my_footer_css.css HTTP/1.1" 304 0
+INFO 2025-06-17 01:55:43,035 basehttp "GET /static/js/jquery/jquery-3.7.0.min.js HTTP/1.1" 304 0
+INFO 2025-06-17 01:55:43,036 basehttp "GET /static/js/jquery-ajax.js HTTP/1.1" 304 0
+INFO 2025-06-17 01:55:43,086 basehttp "GET /static/js/bootstrap/bootstrap.bundle.min.js HTTP/1.1" 304 0
+INFO 2025-06-17 01:55:43,086 basehttp "GET /static/icons/grid-fill.svg HTTP/1.1" 304 0
+INFO 2025-06-17 01:55:43,091 basehttp "GET /static/images/bg-image.jpg HTTP/1.1" 304 0
+WARNING 2025-06-17 01:55:43,184 log Not Found: /favicon.ico
+WARNING 2025-06-17 01:55:43,184 basehttp "GET /favicon.ico HTTP/1.1" 404 5488
+INFO 2025-06-17 01:55:46,934 basehttp "GET /user/login/ HTTP/1.1" 200 7841
+INFO 2025-06-17 02:16:50,025 autoreload Watching for file changes with StatReloader
+INFO 2025-06-17 02:17:04,488 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-06-17 02:17:04,611 basehttp "GET /user/profile/ HTTP/1.1" 200 12025
+INFO 2025-06-17 02:17:04,635 basehttp "GET /media/users/9a14b8b2c9494052fab98e31e76bb929.jpg HTTP/1.1" 304 0
+INFO 2025-06-17 02:17:17,715 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-06-17 02:17:17,773 basehttp "GET / HTTP/1.1" 200 8293
+INFO 2025-06-17 02:17:19,051 basehttp "GET /user/login/ HTTP/1.1" 200 7841
+INFO 2025-06-17 02:17:49,818 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-06-17 02:17:49,850 basehttp "GET /user/profile/ HTTP/1.1" 200 26138
+INFO 2025-06-17 02:17:49,867 basehttp "GET /static/images/baseavatar.jpg HTTP/1.1" 304 0
+INFO 2025-06-17 02:17:57,117 basehttp "GET /catalog/korm/ HTTP/1.1" 200 16289
+INFO 2025-06-17 02:17:57,130 basehttp "GET /media/goods_images/cat_food.jpg HTTP/1.1" 304 0
+INFO 2025-06-17 02:17:57,130 basehttp "GET /static/icons/basket2-fill.svg HTTP/1.1" 304 0
+INFO 2025-06-17 02:17:57,130 basehttp "GET /media/goods_images/fish_food.jpg HTTP/1.1" 304 0
+INFO 2025-06-17 02:17:57,135 basehttp "GET /media/goods_images/parrot_food.jpg HTTP/1.1" 304 0
+INFO 2025-06-17 02:17:57,135 basehttp "GET /static/icons/cart-plus.svg HTTP/1.1" 304 0
+INFO 2025-06-17 02:17:59,309 basehttp "POST /cart/cart_add/ HTTP/1.1" 200 3013
+INFO 2025-06-17 02:17:59,317 basehttp "GET /static/icons/trash3-fill.svg HTTP/1.1" 304 0
+INFO 2025-06-17 02:17:59,936 basehttp "POST /cart/cart_add/ HTTP/1.1" 200 3013
+INFO 2025-06-17 02:18:03,428 basehttp "GET /orders/create-order/ HTTP/1.1" 200 15635
+INFO 2025-09-10 01:59:19,070 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 01:59:26,007 basehttp "GET / HTTP/1.1" 200 7955
+INFO 2025-09-10 01:59:26,658 basehttp "GET /static/css/my_footer_css.css HTTP/1.1" 200 161
+INFO 2025-09-10 01:59:26,672 basehttp "GET /static/icons/grid-fill.svg HTTP/1.1" 200 539
+INFO 2025-09-10 01:59:26,703 basehttp "GET /static/js/jquery-ajax.js HTTP/1.1" 200 9746
+INFO 2025-09-10 01:59:26,735 basehttp "GET /static/js/jquery/jquery-3.7.0.min.js HTTP/1.1" 200 87464
+INFO 2025-09-10 01:59:26,741 basehttp "GET /static/css/my_css.css HTTP/1.1" 200 671
+INFO 2025-09-10 01:59:26,741 basehttp "GET /static/css/bootstrap/bootstrap.min.css HTTP/1.1" 200 232929
+INFO 2025-09-10 01:59:26,767 basehttp "GET /static/images/bg-image.jpg HTTP/1.1" 200 91856
+INFO 2025-09-10 01:59:26,771 basehttp "GET /static/js/bootstrap/bootstrap.bundle.min.js HTTP/1.1" 200 80437
+WARNING 2025-09-10 01:59:26,828 log Not Found: /favicon.ico
+WARNING 2025-09-10 01:59:26,829 basehttp "GET /favicon.ico HTTP/1.1" 404 5488
+INFO 2025-09-10 01:59:31,848 basehttp "GET / HTTP/1.1" 200 7955
+INFO 2025-09-10 01:59:35,065 basehttp "GET /user/login/ HTTP/1.1" 200 7841
+INFO 2025-09-10 01:59:37,678 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 01:59:37,728 basehttp "GET /user/profile/ HTTP/1.1" 200 28461
+INFO 2025-09-10 01:59:37,745 basehttp "GET /static/images/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-09-10 01:59:37,754 basehttp "GET /static/icons/trash3-fill.svg HTTP/1.1" 200 578
+INFO 2025-09-10 01:59:40,305 basehttp "GET /orders/create-order/ HTTP/1.1" 200 15635
+INFO 2025-09-10 01:59:44,525 basehttp "GET /orders/create-order/ HTTP/1.1" 200 15635
+INFO 2025-09-10 01:59:54,830 basehttp "GET /analytics/ HTTP/1.1" 200 9588
+INFO 2025-09-10 01:59:54,855 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-09-10 01:59:54,855 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-09-10 01:59:54,862 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-09-10 01:59:54,862 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-09-10 02:00:09,614 basehttp "GET / HTTP/1.1" 200 12747
+INFO 2025-09-10 02:00:09,636 basehttp "GET /static/icons/basket2-fill.svg HTTP/1.1" 200 538
+INFO 2025-09-10 02:00:14,361 basehttp "GET /news/ HTTP/1.1" 200 12533
+INFO 2025-09-10 02:00:28,823 basehttp "GET /catalog/all/ HTTP/1.1" 200 19027
+INFO 2025-09-10 02:00:28,837 basehttp "GET /media/goods_images/aquarium.jpg HTTP/1.1" 200 60510
+INFO 2025-09-10 02:00:28,841 basehttp "GET /media/goods_images/cat_tree.jpg HTTP/1.1" 200 35022
+INFO 2025-09-10 02:00:28,842 basehttp "GET /media/goods_images/rabbit_house.jpg HTTP/1.1" 200 166474
+INFO 2025-09-10 02:00:28,847 basehttp "GET /static/icons/cart-plus.svg HTTP/1.1" 200 565
+INFO 2025-09-10 02:00:33,977 basehttp "GET /catalog/all/?page=2 HTTP/1.1" 200 18999
+INFO 2025-09-10 02:00:33,989 basehttp "GET /media/goods_images/cat_toy.jpg HTTP/1.1" 200 14225
+INFO 2025-09-10 02:00:33,994 basehttp "GET /media/goods_images/bird_cage.jpg HTTP/1.1" 200 114791
+INFO 2025-09-10 02:00:34,001 basehttp "GET /media/goods_images/dog_toy.jpg HTTP/1.1" 200 34242
+INFO 2025-09-10 02:00:38,073 basehttp "GET /catalog/product/igrushka-dlya-sobak/ HTTP/1.1" 200 13454
+WARNING 2025-09-10 02:00:38,089 basehttp "GET /static/goods_images/dog_toy.jpg HTTP/1.1" 404 1886
+INFO 2025-09-10 02:00:40,791 basehttp "POST /cart/cart_add/ HTTP/1.1" 200 5404
+INFO 2025-09-10 02:00:44,109 basehttp "GET / HTTP/1.1" 200 14960
+INFO 2025-09-10 17:08:03,155 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 17:08:14,050 basehttp "GET / HTTP/1.1" 200 14960
+WARNING 2025-09-10 17:08:14,310 log Not Found: /favicon.ico
+WARNING 2025-09-10 17:08:14,311 basehttp "GET /favicon.ico HTTP/1.1" 404 5488
+INFO 2025-09-10 17:08:21,750 basehttp "GET /user/profile/ HTTP/1.1" 200 30545
+INFO 2025-09-10 17:08:24,788 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-10 17:08:24,812 basehttp "GET / HTTP/1.1" 200 8085
+INFO 2025-09-10 17:08:26,041 basehttp "GET /user/login/ HTTP/1.1" 200 7841
+INFO 2025-09-10 17:08:33,669 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 17:08:33,735 basehttp "GET /user/profile/ HTTP/1.1" 200 12244
+INFO 2025-09-10 17:08:34,084 basehttp "GET /media/users/506e8fe625c1f8707cec23d6b130dc08_sqZJoDz.jpeg HTTP/1.1" 200 846399
+INFO 2025-09-10 17:08:40,202 basehttp "GET /admin/ HTTP/1.1" 200 20501
+INFO 2025-09-10 17:08:40,253 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-09-10 17:08:40,253 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-09-10 17:08:40,254 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-09-10 17:08:40,256 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-09-10 17:08:40,261 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-09-10 17:08:40,283 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-09-10 17:08:40,313 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-09-10 17:08:40,319 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-09-10 17:08:40,319 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-09-10 17:08:40,319 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-09-10 17:08:57,579 basehttp "GET /admin/users/user/ HTTP/1.1" 200 21798
+INFO 2025-09-10 17:08:57,627 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-09-10 17:08:57,634 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-09-10 17:08:57,649 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-09-10 17:08:57,653 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-09-10 17:08:57,661 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-10 17:08:57,674 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-09-10 17:08:57,681 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-09-10 17:08:57,682 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-09-10 17:08:57,687 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-09-10 17:08:57,725 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-09-10 17:08:57,757 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-09-10 17:08:57,843 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-09-10 17:08:57,888 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-09-10 17:09:15,297 basehttp "GET /admin/ HTTP/1.1" 200 20501
+INFO 2025-09-10 17:09:27,005 basehttp "GET / HTTP/1.1" 200 9518
+INFO 2025-09-10 17:09:30,923 basehttp "GET /analytics/ HTTP/1.1" 200 10181
+INFO 2025-09-10 17:09:30,956 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-09-10 17:09:30,958 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-09-10 17:09:30,964 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-09-10 17:09:30,965 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-09-10 17:09:47,086 basehttp "GET /analytics/ HTTP/1.1" 200 10181
+INFO 2025-09-10 17:09:47,121 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-09-10 17:09:47,128 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-09-10 17:09:47,130 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-09-10 17:09:47,132 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-09-10 17:10:51,423 basehttp "GET / HTTP/1.1" 200 9518
+INFO 2025-09-10 17:18:33,621 basehttp "GET /analytics/ HTTP/1.1" 200 10181
+INFO 2025-09-10 17:18:33,658 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-09-10 17:18:33,659 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-09-10 17:18:33,667 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-09-10 17:18:33,667 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-09-10 17:18:35,389 basehttp "GET /analytics/ HTTP/1.1" 200 10181
+INFO 2025-09-10 17:18:35,428 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-09-10 17:18:35,431 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-09-10 17:18:35,435 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-09-10 17:18:35,440 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-09-10 17:18:42,154 basehttp "GET /suppliers/ HTTP/1.1" 200 12223
+INFO 2025-09-10 17:18:46,750 basehttp "GET /user/users/ HTTP/1.1" 200 13372
+INFO 2025-09-10 17:18:59,702 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 12569
+INFO 2025-09-10 17:19:22,594 basehttp "GET /catalog/all/ HTTP/1.1" 200 15634
+INFO 2025-09-10 17:19:28,101 basehttp "GET /catalog/product/domik-dlya-krolika/ HTTP/1.1" 200 10835
+WARNING 2025-09-10 17:19:28,128 basehttp "GET /static/goods_images/rabbit_house.jpg HTTP/1.1" 404 1901
+INFO 2025-09-10 17:19:33,555 basehttp "POST /cart/update_price/8/ HTTP/1.1" 302 0
+INFO 2025-09-10 17:19:33,585 basehttp "GET /catalog/product/domik-dlya-krolika/ HTTP/1.1" 200 10836
+WARNING 2025-09-10 17:19:33,609 basehttp "GET /static/goods_images/rabbit_house.jpg HTTP/1.1" 404 1901
+INFO 2025-09-10 17:19:36,603 basehttp "GET /catalog/select_supplier/domik-dlya-krolika/ HTTP/1.1" 200 9560
+INFO 2025-09-10 17:19:46,167 basehttp "GET /suppliers/ HTTP/1.1" 200 12223
+INFO 2025-09-10 17:19:50,819 basehttp - Broken pipe from ('127.0.0.1', 53297)
+INFO 2025-09-10 17:19:51,847 basehttp "GET /analytics/ HTTP/1.1" 200 10181
+INFO 2025-09-10 17:19:51,887 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-09-10 17:19:51,890 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-09-10 17:19:51,906 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-09-10 17:19:51,912 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-09-10 17:19:56,940 basehttp "GET /catalog/korm/ HTTP/1.1" 200 15219
+INFO 2025-09-10 17:19:56,978 basehttp "GET /media/goods_images/parrot_food.jpg HTTP/1.1" 200 159905
+INFO 2025-09-10 17:19:56,992 basehttp "GET /media/goods_images/fish_food.jpg HTTP/1.1" 200 58544
+INFO 2025-09-10 17:19:56,998 basehttp "GET /media/goods_images/cat_food.jpg HTTP/1.1" 200 127347
+INFO 2025-09-10 17:20:01,052 basehttp "GET /catalog/product/konservy-dlya-koshek/ HTTP/1.1" 200 10811
+WARNING 2025-09-10 17:20:01,077 basehttp "GET /static/goods_images/cat_food.jpg HTTP/1.1" 404 1889
+INFO 2025-09-10 17:20:06,975 basehttp "GET /catalog/all/ HTTP/1.1" 200 15635
+INFO 2025-09-10 17:20:08,251 basehttp "GET /catalog/new_product/add/ HTTP/1.1" 200 10747
+INFO 2025-09-10 17:20:21,843 basehttp "GET /jobs/ HTTP/1.1" 200 13463
+INFO 2025-09-10 17:20:33,546 basehttp "GET /contact/ HTTP/1.1" 200 13494
+INFO 2025-09-10 17:20:33,594 basehttp "GET /media/users/9a14b8b2c9494052fab98e31e76bb929.jpg HTTP/1.1" 200 1340200
+INFO 2025-09-10 17:21:25,239 basehttp "GET / HTTP/1.1" 200 9518
+INFO 2025-09-10 17:21:26,980 basehttp "GET /suppliers/ HTTP/1.1" 200 12223
+INFO 2025-09-10 17:21:29,324 basehttp "GET / HTTP/1.1" 200 9518
+INFO 2025-09-10 17:24:28,311 basehttp "GET / HTTP/1.1" 200 9518
+INFO 2025-09-10 17:24:39,567 basehttp "GET /news/ HTTP/1.1" 200 12670
+INFO 2025-09-10 17:24:48,507 basehttp "GET /jobs/ HTTP/1.1" 200 13463
+INFO 2025-09-10 17:24:52,479 basehttp "GET /reviews/ HTTP/1.1" 200 12485
+INFO 2025-09-10 17:25:01,166 basehttp "GET /analytics/ HTTP/1.1" 200 10181
+INFO 2025-09-10 17:25:01,205 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-09-10 17:25:01,208 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-09-10 17:25:01,215 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-09-10 17:25:01,217 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-09-10 17:25:03,062 basehttp - Broken pipe from ('127.0.0.1', 53316)
+INFO 2025-09-10 17:25:05,889 basehttp "GET /catalog/all/ HTTP/1.1" 200 15635
+INFO 2025-09-10 17:25:08,896 basehttp "GET / HTTP/1.1" 200 9518
+INFO 2025-09-10 17:25:18,717 basehttp "GET /analytics/ HTTP/1.1" 200 10181
+INFO 2025-09-10 17:25:18,762 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-09-10 17:25:18,766 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-09-10 17:25:18,770 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-09-10 17:25:18,770 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-09-10 17:25:22,835 basehttp "GET /user/profile/ HTTP/1.1" 200 12115
+INFO 2025-09-10 17:25:35,045 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-10 17:25:35,067 basehttp "GET / HTTP/1.1" 200 8085
+INFO 2025-09-10 17:25:37,868 basehttp "GET /user/login/ HTTP/1.1" 200 7841
+INFO 2025-09-10 17:25:45,352 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 17:25:45,378 basehttp "GET /user/profile/ HTTP/1.1" 200 12025
+INFO 2025-09-10 17:26:02,884 basehttp "GET /user/users/ HTTP/1.1" 200 13176
+INFO 2025-09-10 17:26:12,537 basehttp "GET /catalog/korm/ HTTP/1.1" 200 15023
+INFO 2025-09-10 17:26:20,111 basehttp "GET /admin/ HTTP/1.1" 200 12508
+INFO 2025-09-10 17:26:37,248 basehttp "GET / HTTP/1.1" 200 9322
+INFO 2025-09-10 17:26:48,339 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-10 17:26:48,363 basehttp "GET / HTTP/1.1" 200 8085
+INFO 2025-09-10 17:26:49,844 basehttp "GET /user/login/ HTTP/1.1" 200 7841
+INFO 2025-09-10 17:26:56,449 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 17:26:56,498 basehttp "GET /user/profile/ HTTP/1.1" 200 30674
+INFO 2025-09-10 17:27:19,414 basehttp "GET /orders/create-order/ HTTP/1.1" 200 17848
+INFO 2025-09-10 17:27:27,686 basehttp "GET /orders/create-order/ HTTP/1.1" 200 17848
+INFO 2025-09-10 17:27:59,416 basehttp "GET / HTTP/1.1" 200 14960
+INFO 2025-09-10 23:04:03,245 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:04:09,295 basehttp "GET / HTTP/1.1" 200 11872
+WARNING 2025-09-10 23:04:09,516 log Not Found: /favicon.ico
+WARNING 2025-09-10 23:04:09,516 basehttp "GET /favicon.ico HTTP/1.1" 404 5488
+INFO 2025-09-10 23:04:13,250 basehttp "GET / HTTP/1.1" 200 11872
+INFO 2025-09-10 23:04:16,252 basehttp "GET /news/ HTTP/1.1" 200 9495
+INFO 2025-09-10 23:04:17,969 basehttp "GET /contact/ HTTP/1.1" 200 9813
+INFO 2025-09-10 23:04:19,669 basehttp "GET /faq/ HTTP/1.1" 200 7121
+INFO 2025-09-10 23:04:21,126 basehttp "GET /about/ HTTP/1.1" 200 7190
+INFO 2025-09-10 23:05:16,577 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:05:24,378 basehttp "GET /about/ HTTP/1.1" 200 5935
+INFO 2025-09-10 23:05:34,134 basehttp "GET /contact/ HTTP/1.1" 200 8557
+INFO 2025-09-10 23:05:35,097 basehttp "GET /faq/ HTTP/1.1" 200 5866
+INFO 2025-09-10 23:05:37,179 basehttp "GET /promotional/ HTTP/1.1" 200 5389
+INFO 2025-09-10 23:05:38,883 basehttp "GET /about/ HTTP/1.1" 200 5935
+INFO 2025-09-10 23:05:39,592 basehttp "GET /faq/ HTTP/1.1" 200 5866
+INFO 2025-09-10 23:08:45,034 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:08:47,264 basehttp "GET /faq/ HTTP/1.1" 200 5864
+INFO 2025-09-10 23:08:47,378 basehttp "GET /static/css/base.css HTTP/1.1" 200 2443
+INFO 2025-09-10 23:08:51,646 basehttp "GET / HTTP/1.1" 200 10615
+INFO 2025-09-10 23:08:51,654 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:08:56,425 basehttp "GET / HTTP/1.1" 200 10615
+INFO 2025-09-10 23:08:56,433 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:08:58,802 basehttp "GET / HTTP/1.1" 200 10615
+INFO 2025-09-10 23:08:58,810 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:09:01,755 basehttp "GET /news/ HTTP/1.1" 200 7794
+INFO 2025-09-10 23:09:01,763 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:09:03,638 basehttp "GET / HTTP/1.1" 200 10615
+INFO 2025-09-10 23:09:03,646 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:09:24,312 basehttp "POST /cart/cart_change/ HTTP/1.1" 200 5434
+INFO 2025-09-10 23:09:46,273 basehttp "GET / HTTP/1.1" 200 10615
+INFO 2025-09-10 23:09:46,283 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:13:22,335 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:13:23,255 basehttp "GET / HTTP/1.1" 200 10597
+INFO 2025-09-10 23:13:23,379 basehttp "GET /static/css/base.css HTTP/1.1" 200 2977
+INFO 2025-09-10 23:13:26,539 basehttp "GET /privacy_policy/ HTTP/1.1" 200 4491
+INFO 2025-09-10 23:13:26,549 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:13:27,889 basehttp "GET /about/ HTTP/1.1" 200 5915
+INFO 2025-09-10 23:13:27,897 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:13:29,327 basehttp "GET /jobs/ HTTP/1.1" 200 8506
+INFO 2025-09-10 23:13:29,334 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:13:32,789 basehttp "GET /news/ HTTP/1.1" 200 8188
+INFO 2025-09-10 23:13:32,802 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:16:24,652 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:16:28,430 basehttp "GET /news/ HTTP/1.1" 200 12521
+INFO 2025-09-10 23:16:34,910 basehttp "GET /jobs/ HTTP/1.1" 200 12849
+INFO 2025-09-10 23:16:35,621 basehttp "GET /reviews/ HTTP/1.1" 200 11871
+INFO 2025-09-10 23:16:37,049 basehttp "GET /analytics/ HTTP/1.1" 200 9567
+INFO 2025-09-10 23:16:37,515 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-09-10 23:16:37,562 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-09-10 23:16:37,571 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-09-10 23:16:37,579 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-09-10 23:23:55,350 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:23:57,041 basehttp "GET /analytics/ HTTP/1.1" 200 6926
+INFO 2025-09-10 23:23:57,052 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:23:57,359 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-09-10 23:23:57,399 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-09-10 23:23:57,408 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-09-10 23:23:57,412 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-09-10 23:27:19,079 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:27:21,349 basehttp "GET /analytics/ HTTP/1.1" 200 7310
+INFO 2025-09-10 23:27:21,360 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:27:21,716 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26227
+INFO 2025-09-10 23:27:21,733 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33017
+INFO 2025-09-10 23:27:21,747 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 28819
+INFO 2025-09-10 23:27:21,754 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-09-10 23:27:24,869 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-10 23:27:24,882 basehttp "GET / HTTP/1.1" 200 6325
+INFO 2025-09-10 23:27:25,942 basehttp "GET /user/login/ HTTP/1.1" 200 6081
+INFO 2025-09-10 23:27:32,502 basehttp "GET /user/login/ HTTP/1.1" 200 6081
+INFO 2025-09-10 23:27:32,638 basehttp - Broken pipe from ('127.0.0.1', 52091)
+INFO 2025-09-10 23:27:37,879 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 23:27:37,917 basehttp "GET /user/profile/ HTTP/1.1" 200 28396
+INFO 2025-09-10 23:27:45,932 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-10 23:27:45,941 basehttp "GET / HTTP/1.1" 200 6325
+INFO 2025-09-10 23:27:46,659 basehttp "GET /user/login/ HTTP/1.1" 200 6081
+INFO 2025-09-10 23:27:53,646 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 23:27:53,664 basehttp "GET /user/profile/ HTTP/1.1" 200 9419
+INFO 2025-09-10 23:27:58,975 basehttp "GET /suppliers/ HTTP/1.1" 200 9421
+INFO 2025-09-10 23:28:00,161 basehttp "GET /user/users/ HTTP/1.1" 200 10570
+INFO 2025-09-10 23:28:05,421 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-10 23:28:05,431 basehttp "GET / HTTP/1.1" 200 6325
+INFO 2025-09-10 23:28:06,369 basehttp "GET /user/login/ HTTP/1.1" 200 6081
+INFO 2025-09-10 23:28:11,350 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 23:28:11,364 basehttp "GET /user/profile/ HTTP/1.1" 200 9536
+INFO 2025-09-10 23:31:32,500 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:31:33,534 basehttp "GET /user/profile/ HTTP/1.1" 200 9399
+INFO 2025-09-10 23:31:33,544 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:32:05,983 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:32:07,016 basehttp "GET /user/profile/ HTTP/1.1" 200 9395
+INFO 2025-09-10 23:32:09,757 basehttp "GET /user/profile/ HTTP/1.1" 200 9395
+INFO 2025-09-10 23:32:16,530 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:32:17,464 basehttp "GET /user/profile/ HTTP/1.1" 200 9395
+INFO 2025-09-10 23:32:19,566 basehttp "GET /user/profile/ HTTP/1.1" 200 9395
+INFO 2025-09-10 23:34:52,680 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:34:53,696 basehttp "GET /user/profile/ HTTP/1.1" 200 9548
+INFO 2025-09-10 23:34:53,816 basehttp "GET /static/css/base.css HTTP/1.1" 200 3840
+INFO 2025-09-10 23:35:00,626 basehttp "GET / HTTP/1.1" 200 6951
+INFO 2025-09-10 23:35:00,636 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:35:03,534 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-10 23:35:03,543 basehttp "GET / HTTP/1.1" 200 6406
+INFO 2025-09-10 23:35:03,553 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+ERROR 2025-09-10 23:35:12,856 log Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 171, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
-    nodelist.append(node.render_annotated(context))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
-    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'product' with arguments '('',)' not found. 1 pattern(s) tried: ['catalog/product/(?P<product_slug>[\\w-]+)/$']
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001E728A44D10>: Failed to resolve 'newsapi.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='newsapi.org', port=443): Max retries exceeded with url: /v2/everything?q=birds&apiKey=9b9791430dae4f92afdb02bbb56defdf (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E728A44D10>: Failed to resolve 'newsapi.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\main\views.py", line 88, in news
+    response = requests.get(NEWS_URL)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='newsapi.org', port=443): Max retries exceeded with url: /v2/everything?q=birds&apiKey=9b9791430dae4f92afdb02bbb56defdf (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E728A44D10>: Failed to resolve 'newsapi.org' ([Errno 11001] getaddrinfo failed)"))
+INFO 2025-09-10 23:35:12,862 basehttp - Broken pipe from ('127.0.0.1', 52208)
+INFO 2025-09-10 23:36:45,102 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:36:46,054 basehttp "GET / HTTP/1.1" 200 6276
+INFO 2025-09-10 23:36:46,181 basehttp "GET /static/css/base.css HTTP/1.1" 200 2480
+INFO 2025-09-10 23:40:27,010 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:40:28,049 basehttp "GET / HTTP/1.1" 200 5271
+INFO 2025-09-10 23:40:28,159 basehttp "GET /static/css/base.css HTTP/1.1" 200 3997
+INFO 2025-09-10 23:40:32,317 basehttp "GET / HTTP/1.1" 200 5271
+INFO 2025-09-10 23:40:32,328 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:40:34,320 basehttp "GET / HTTP/1.1" 200 5271
+INFO 2025-09-10 23:40:35,454 basehttp "GET /about/ HTTP/1.1" 200 6624
+INFO 2025-09-10 23:40:37,056 basehttp "GET /contact/ HTTP/1.1" 200 9247
+INFO 2025-09-10 23:40:37,067 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:40:38,750 basehttp "GET /about/ HTTP/1.1" 200 6624
+INFO 2025-09-10 23:40:39,532 basehttp "GET / HTTP/1.1" 200 5271
+INFO 2025-09-10 23:40:43,766 basehttp "GET /news/ HTTP/1.1" 200 9447
+INFO 2025-09-10 23:40:43,778 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:40:47,613 basehttp "GET /catalog/all/ HTTP/1.1" 200 10046
+INFO 2025-09-10 23:40:49,219 basehttp "GET / HTTP/1.1" 200 5271
+INFO 2025-09-10 23:40:49,232 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:43:17,224 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:43:18,234 basehttp "GET / HTTP/1.1" 200 5323
+INFO 2025-09-10 23:43:18,351 basehttp "GET /static/css/base.css HTTP/1.1" 200 3997
+INFO 2025-09-10 23:44:43,539 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:44:45,938 basehttp "GET / HTTP/1.1" 200 5323
+INFO 2025-09-10 23:44:45,948 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:44:48,597 basehttp "GET /catalog/all/ HTTP/1.1" 200 10098
+INFO 2025-09-10 23:44:51,813 basehttp "GET / HTTP/1.1" 200 5323
+INFO 2025-09-10 23:44:53,224 basehttp "GET /about/ HTTP/1.1" 200 6676
+INFO 2025-09-10 23:44:54,812 basehttp "GET /contact/ HTTP/1.1" 200 9299
+INFO 2025-09-10 23:44:54,821 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:44:56,822 basehttp "GET /jobs/ HTTP/1.1" 200 9268
+INFO 2025-09-10 23:46:01,609 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:46:02,702 basehttp "GET /jobs/ HTTP/1.1" 200 9268
+INFO 2025-09-10 23:46:02,840 basehttp "GET /static/css/base.css HTTP/1.1" 200 4018
+INFO 2025-09-10 23:46:16,375 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:46:17,321 basehttp "GET /jobs/ HTTP/1.1" 200 9268
+INFO 2025-09-10 23:46:17,445 basehttp "GET /static/css/base.css HTTP/1.1" 200 4033
+INFO 2025-09-10 23:46:23,784 basehttp "GET /about/ HTTP/1.1" 200 6676
+INFO 2025-09-10 23:46:23,797 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:46:25,268 basehttp "GET /about/ HTTP/1.1" 200 6676
+INFO 2025-09-10 23:46:25,277 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:46:35,973 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:46:36,998 basehttp "GET /about/ HTTP/1.1" 200 6676
+INFO 2025-09-10 23:46:37,007 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:48:09,080 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:48:10,201 basehttp "GET /about/ HTTP/1.1" 200 6676
+INFO 2025-09-10 23:48:10,311 basehttp "GET /static/css/base.css HTTP/1.1" 200 4074
+INFO 2025-09-10 23:48:12,190 basehttp "GET /about/ HTTP/1.1" 200 6676
+INFO 2025-09-10 23:48:12,198 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:48:19,889 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:48:20,949 basehttp "GET /about/ HTTP/1.1" 200 6676
+INFO 2025-09-10 23:48:20,962 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:50:02,991 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:50:03,992 basehttp "GET /about/ HTTP/1.1" 200 6676
+INFO 2025-09-10 23:50:04,111 basehttp "GET /static/css/base.css HTTP/1.1" 200 4124
+INFO 2025-09-10 23:50:20,126 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:50:21,102 basehttp "GET /about/ HTTP/1.1" 200 6676
+INFO 2025-09-10 23:50:21,212 basehttp "GET /static/css/base.css HTTP/1.1" 200 4088
+INFO 2025-09-10 23:50:30,771 basehttp "GET / HTTP/1.1" 200 5323
+INFO 2025-09-10 23:50:30,780 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:50:32,485 basehttp "GET /contact/ HTTP/1.1" 200 9299
+INFO 2025-09-10 23:50:32,493 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:50:33,497 basehttp "GET /about/ HTTP/1.1" 200 6676
+INFO 2025-09-10 23:50:33,505 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:50:35,484 basehttp "GET /contact/ HTTP/1.1" 200 9299
+INFO 2025-09-10 23:50:35,495 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:50:43,671 basehttp "GET / HTTP/1.1" 200 5323
+INFO 2025-09-10 23:50:43,679 basehttp "GET /static/css/base.css HTTP/1.1" 304 0

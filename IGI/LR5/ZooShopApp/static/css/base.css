@@ -1,0 +1,202 @@
+/* ──────────────────────────────── */
+/* HEADER & NAVIGATION STYLES   */
+/* ──────────────────────────────── */
+
+/* Контейнер навигации */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #343a40;
+  padding: 0.5rem 1rem;
+}
+
+/* Основное меню */
+.nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-bar li {
+  position: relative;
+  margin-right: 1rem;
+}
+.nav-bar a,
+.dropbtn {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  display: inline-block;
+  border-radius: 4px;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+.nav-bar a:hover,
+.dropbtn:hover {
+  background-color: #495057;
+}
+
+/* Выпадающее меню */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #343a40;
+  min-width: 180px;
+  z-index: 1000;
+  border-radius: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dropdown-content li {
+  margin: 0;
+}
+.dropdown-content a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+.dropdown-content a:hover {
+  background-color: #495057;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Форма поиска */
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+}
+.search-form input[type="search"] {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.search-form input:focus {
+  border-color: #198754;
+  outline: none;
+}
+.search-form button {
+  background-color: #198754;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.search-form button:hover {
+  background-color: #157347;
+}
+
+/* Скрытый label для доступности */
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+/* Адаптивность навигации */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .nav-bar {
+    flex-direction: column;
+  }
+  .nav-bar li {
+    margin-bottom: 0.5rem;
+  }
+  .search-form {
+    width: 100%;
+  }
+}
+
+/* ──────────────────────────────── */
+/* CATALOG BAR & MODAL CART     */
+/* ──────────────────────────────── */
+.catalog-bar {
+  position: fixed;
+  top: 6rem;
+  left: 1rem;
+  z-index: 100;
+  background-color: #343a40;
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: white;
+}
+.catalog-nav details {
+  color: white;
+}
+.catalog-nav summary {
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.catalog-nav ul {
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+.catalog-nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem 0.5rem;
+}
+.catalog-nav li a:hover {
+  background-color: #495057;
+  border-radius: 4px;
+}
+
+/* ──────────────────────────────── */
+/* MAIN CONTENT LAYOUT          */
+/* ──────────────────────────────── */
+.main-content {
+  margin-top: 6rem;
+  padding: 1rem;
+}
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.sidebar {
+  flex: 0 0 20%;
+}
+.content-area {
+  flex: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .catalog-bar {
+    position: static;
+    margin-bottom: 1rem;
+  }
+  .layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    flex: 1;
+  }
+}

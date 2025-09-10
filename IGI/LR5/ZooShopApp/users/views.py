@@ -100,3 +100,18 @@ def user_list(request):
 
     users = User.objects.all()
     return render(request, "users/user_list.html", {"users": users})
+
+
+@login_required
+def admin_orders(request):
+    if not request.user.is_staff:
+        return render(request, "403.html")
+
+    orders = Order.objects.prefetch_related(
+        Prefetch(
+            "orderitem_set",
+            queryset=OrderItem.objects.select_related("product")
+        )
+    ).order_by("-created_timestamp")
+
+    return render(request, "users/admin_orders.html", {"orders": orders})
