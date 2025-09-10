@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.timezone import now
-from main.models import AboutCompany, Promotional, FAQ, News
+from main.models import AboutCompany, Promotional, FAQ, News, Partner
 from users.models import User
 from goods.models import Supplier, ProductSupply
 from django.contrib.auth.decorators import login_required
@@ -17,10 +17,14 @@ def generate_calendar():
     return c.formatmonth(today.year, today.month)
 
 def index(request):
+    latest_article = News.objects.order_by("-id").first()
+    partners = Partner.objects.all()
 
     context = {
-        'title': 'Home',
-        'month_calendar': generate_calendar()
+        'title': 'Главная',
+        'month_calendar': generate_calendar(),
+        'latest_article': latest_article,
+        'partners': partners,
     }
     return render(request, 'main/index.html', context)
 

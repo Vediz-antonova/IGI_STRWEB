@@ -14,98 +14,98 @@
 </head>
 
 <body>
-    <header>
-        <nav aria-label="Главное меню">
-            <div class="nav-container">
-              <ul class="nav-bar">
-                <li><a href="{% url 'index' %}">Главная</a></li>
+    <div class="page-wrapper">
+        <header>
+            <nav aria-label="Главное меню">
+                <div class="nav-container">
+                  <ul class="nav-bar">
+                    <li><a href="{% url 'index' %}">Главная</a></li>
 
-                <li class="dropdown">
-                  <button class="dropbtn">Информация ▾</button>
-                  <ul class="dropdown-content">
-                    <li><a href="{% url 'about' %}">О компании</a></li>
-                    <li><a href="{% url 'contact' %}">Контакты</a></li>
-                    <li><a href="{% url 'job_list' %}">Вакансии</a></li>
-                    <li><a href="{% url 'statistics' %}">Статистика</a></li>
-                    <li><a href="{% url 'promotional' %}">Промокоды</a></li>
-                    <li><a href="{% url 'privacy_policy' %}">Политика конфиденциальности</a></li>
+                    <li class="dropdown">
+                      <button class="dropbtn">Информация ▾</button>
+                      <ul class="dropdown-content">
+                        <li><a href="{% url 'about' %}">О компании</a></li>
+                        <li><a href="{% url 'contact' %}">Контакты</a></li>
+                        <li><a href="{% url 'job_list' %}">Вакансии</a></li>
+                        <li><a href="{% url 'statistics' %}">Статистика</a></li>
+                        <li><a href="{% url 'promotional' %}">Промокоды</a></li>
+                        <li><a href="{% url 'privacy_policy' %}">Политика конфиденциальности</a></li>
+                      </ul>
+                    </li>
+
+                    <li><a href="{% url 'news' %}">Новости</a></li>
+                    <li><a href="{% url 'faq' %}">FAQ</a></li>
+                    <li><a href="{% url 'review_list' %}">Отзывы</a></li>
+                    {% if not user.is_authenticated %}
+                      <li><a href="{% url 'login' %}">Войти</a></li>
+                    {% else %}
+                      <li class="dropdown">
+                        <button class="dropbtn">Мой профиль ▾</button>
+                        <ul class="dropdown-content">
+                          {% if request.user.is_authenticated and not request.user.is_employee %}
+                            <li><a href="{% url 'users-cart' %}">Корзина</a></li>
+                          {% endif %}
+                          <li><a href="{% url 'profile' %}">Личный кабинет</a></li>
+                          {% if user.is_superuser %}
+                            <li><a href="{% url 'admin:index' %}">Админ панель</a></li>
+                          {% endif %}
+                          <li><a href="{% url 'logout' %}">Выйти</a></li>
+                        </ul>
+                      </li>
+
+                      {% if request.user.is_employee %}
+                        <li><a href="{% url 'supplier_list' %}">Поставщики</a></li>
+                        <li><a href="{% url 'user_list' %}">Пользователи</a></li>
+                      {% endif %}
+                      {% if request.user.is_superuser %}
+                        <li><a href="{% url 'admin_orders' %}">Все заказы</a></li>
+                      {% endif %}
+                    {% endif %}
                   </ul>
-                </li>
+                  <form class="search-form" role="search" action="{% url 'search' %}" method="get">
+                    <label for="search-input" class="visually-hidden">Поиск</label>
+                    <input id="search-input" type="search" name="q" placeholder="Поиск..." aria-label="Поиск">
+                    <button type="submit">Найти</button>
+                  </form>
+                </div>
+            </nav>
+        </header>
 
-                <li><a href="{% url 'news' %}">Новости</a></li>
-                <li><a href="{% url 'faq' %}">FAQ</a></li>
-                <li><a href="{% url 'review_list' %}">Отзывы</a></li>
-                {% if not user.is_authenticated %}
-                  <li><a href="{% url 'login' %}">Войти</a></li>
-                {% else %}
-                  <li class="dropdown">
-                    <button class="dropbtn">Мой профиль ▾</button>
-                    <ul class="dropdown-content">
-                      {% if request.user.is_authenticated and not request.user.is_employee %}
-                        <li><a href="{% url 'users-cart' %}">Корзина</a></li>
-                      {% endif %}
-                      <li><a href="{% url 'profile' %}">Личный кабинет</a></li>
-                      {% if user.is_superuser %}
-                        <li><a href="{% url 'admin:index' %}">Админ панель</a></li>
-                      {% endif %}
-                      <li><a href="{% url 'logout' %}">Выйти</a></li>
-                    </ul>
-                  </li>
 
-                  {% if request.user.is_employee %}
-                    <li><a href="{% url 'supplier_list' %}">Поставщики</a></li>
-                    <li><a href="{% url 'user_list' %}">Пользователи</a></li>
-                  {% endif %}
-                  {% if request.user.is_superuser %}
-                    <li><a href="{% url 'admin_orders' %}">Все заказы</a></li>
-                  {% endif %}
-                {% endif %}
-              </ul>
-              <form class="search-form" role="search" action="{% url 'search' %}" method="get">
-                <label for="search-input" class="visually-hidden">Поиск</label>
-                <input id="search-input" type="search" name="q" placeholder="Поиск..." aria-label="Поиск">
-                <button type="submit">Найти</button>
-              </form>
+        <main>
+          <section class="catalog-bar">
+            <nav class="catalog-nav" aria-label="Каталог товаров">
+              <details>
+                <summary>
+                  <span>Каталог</span>
+                  <img src="{% static 'icons/grid-fill.svg' %}" alt="Иконка каталога" width="16" height="16">
+                </summary>
+                <ul>
+                  {% tag_categories as categories %}
+                  {% for category in categories %}
+                    <li><a href="{% url 'catalog' category.slug %}">{{ category.name }}</a></li>
+                  {% endfor %}
+                </ul>
+              </details>
+            </nav>
+
+            {% block modal_cart %}{% endblock %}
+          </section>
+
+          <section class="main-content">
+            <div class="layout">
+              <aside class="sidebar">
+                <h1></h1>
+              </aside>
+              <article class="content-area">
+                {% include "includes/notifications.html" %}
+                {% block content %}{% endblock %}
+              </article>
             </div>
-        </nav>
-    </header>
-
-
-    <main>
-      <section class="catalog-bar">
-        <nav class="catalog-nav" aria-label="Каталог товаров">
-          <details>
-            <summary>
-              <span>Каталог</span>
-              <img src="{% static 'icons/grid-fill.svg' %}" alt="Иконка каталога" width="16" height="16">
-            </summary>
-            <ul>
-              {% tag_categories as categories %}
-              {% for category in categories %}
-                <li><a href="{% url 'catalog' category.slug %}">{{ category.name }}</a></li>
-              {% endfor %}
-            </ul>
-          </details>
-        </nav>
-
-        {% block modal_cart %}{% endblock %}
-      </section>
-
-      <section class="main-content">
-        <div class="layout">
-          <aside class="sidebar">
-            <h1></h1>
-          </aside>
-          <article class="content-area">
-            {% include "includes/notifications.html" %}
-            {% block content %}{% endblock %}
-          </article>
-        </div>
-      </section>
-    </main>
+          </section>
+        </main>
+    </div>
 
     {% block footer %} {% endblock footer %}
-    <script src="{% static "js/jquery/jquery-3.7.0.min.js" %}"></script>
-    <script src="{% static "js/jquery-ajax.js" %}"></script>
 </body>
 </html>

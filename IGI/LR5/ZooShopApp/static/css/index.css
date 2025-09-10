@@ -1,0 +1,59 @@
+.home-page {
+  padding: 2rem;
+}
+
+.site-logo {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+.banner-section img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.catalog-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.catalog-list li a {
+  background-color: #198754;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.catalog-list li a:hover {
+  background-color: #157347;
+}
+
+.latest-article img {
+  max-width: 100%;
+  margin-top: 1rem;
+  border-radius: 6px;
+}
+
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #212529;
+}
+.partner-card img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}

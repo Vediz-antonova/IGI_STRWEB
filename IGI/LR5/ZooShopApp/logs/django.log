@@ -965,3 +965,68 @@ INFO 2025-09-11 00:51:30,140 basehttp "GET /about/ HTTP/1.1" 200 9484
 INFO 2025-09-11 00:51:30,301 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 304 0
 INFO 2025-09-11 00:51:30,350 basehttp "GET /static/css/footer.css HTTP/1.1" 200 928
 INFO 2025-09-11 00:51:30,361 basehttp "GET /static/css/about.css HTTP/1.1" 200 1248
+INFO 2025-09-11 00:53:32,833 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:53:33,723 basehttp "GET / HTTP/1.1" 200 6365
+INFO 2025-09-11 00:53:33,734 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:53:33,736 basehttp "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:56:39,843 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:56:41,000 basehttp "GET / HTTP/1.1" 200 6365
+INFO 2025-09-11 00:56:41,118 basehttp "GET /static/css/footer.css HTTP/1.1" 200 1310
+INFO 2025-09-11 00:56:43,968 basehttp "GET /about/ HTTP/1.1" 200 9696
+INFO 2025-09-11 00:56:43,979 basehttp "GET /static/css/about.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:56:43,979 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 304 0
+INFO 2025-09-11 00:56:43,979 basehttp "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:57:28,626 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:57:29,594 basehttp "GET /about/ HTTP/1.1" 200 9696
+INFO 2025-09-11 00:57:29,604 basehttp "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:57:29,604 basehttp "GET /static/css/about.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:57:30,378 basehttp "GET / HTTP/1.1" 200 6365
+INFO 2025-09-11 00:57:31,295 basehttp "GET / HTTP/1.1" 200 6365
+INFO 2025-09-11 00:57:39,551 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:57:40,688 basehttp "GET / HTTP/1.1" 200 6365
+INFO 2025-09-11 00:57:40,698 basehttp "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2025-09-11 01:02:05,006 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 01:02:17,008 basehttp "GET / HTTP/1.1" 200 6634
+INFO 2025-09-11 01:02:17,015 basehttp "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2025-09-11 01:02:17,015 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-11 01:02:38,127 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-11 01:02:38,138 basehttp "GET / HTTP/1.1" 200 5821
+INFO 2025-09-11 01:02:41,364 basehttp "GET /user/login/ HTTP/1.1" 200 5809
+INFO 2025-09-11 01:02:44,989 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-11 01:02:45,003 basehttp "GET /user/profile/ HTTP/1.1" 200 9396
+INFO 2025-09-11 01:05:14,793 autoreload C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-09-11 01:05:16,334 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 01:06:13,115 autoreload C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-09-11 01:06:14,608 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 01:08:32,861 autoreload C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-09-11 01:08:35,725 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 01:09:07,561 autoreload C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-09-11 01:09:09,119 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 01:09:29,274 autoreload C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\main\models.py changed, reloading.
+INFO 2025-09-11 01:09:30,633 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 01:10:12,606 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 01:10:14,518 basehttp "GET /user/profile/ HTTP/1.1" 200 9365
+INFO 2025-09-11 01:10:14,527 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-11 01:10:16,625 basehttp "GET /about/ HTTP/1.1" 200 9742
+INFO 2025-09-11 01:10:16,634 basehttp "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2025-09-11 01:10:16,634 basehttp "GET /static/css/about.css HTTP/1.1" 304 0
+INFO 2025-09-11 01:10:16,635 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 304 0
+INFO 2025-09-11 01:10:20,014 basehttp "GET / HTTP/1.1" 200 7625
+WARNING 2025-09-11 01:10:20,042 basehttp "GET /static/images/logo.png HTTP/1.1" 404 1859
+WARNING 2025-09-11 01:10:20,042 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 404 1868
+WARNING 2025-09-11 01:10:20,048 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 404 1868
+INFO 2025-09-11 01:10:20,138 basehttp "GET /static/css/index.css HTTP/1.1" 200 959
+INFO 2025-09-11 01:11:03,001 basehttp "GET /admin/ HTTP/1.1" 200 21314
+INFO 2025-09-11 01:11:10,969 basehttp "GET /admin/main/aboutcompany/ HTTP/1.1" 200 20032
+INFO 2025-09-11 01:11:10,991 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 01:11:21,828 basehttp "GET /admin/main/ HTTP/1.1" 200 7208
+INFO 2025-09-11 01:11:42,531 basehttp "GET /admin/ HTTP/1.1" 200 21314
+INFO 2025-09-11 01:14:42,938 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 01:14:44,028 basehttp "GET /admin/ HTTP/1.1" 200 21899
+INFO 2025-09-11 01:14:46,415 basehttp "GET /admin/main/partner/ HTTP/1.1" 200 16483
+INFO 2025-09-11 01:14:46,428 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 01:14:49,196 basehttp "GET /admin/main/partner/add/ HTTP/1.1" 200 18512
+INFO 2025-09-11 01:14:49,210 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 01:15:08,459 basehttp "POST /admin/main/partner/add/ HTTP/1.1" 302 0
+INFO 2025-09-11 01:15:08,478 basehttp "GET /admin/main/partner/add/ HTTP/1.1" 200 18748
+INFO 2025-09-11 01:15:08,492 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342

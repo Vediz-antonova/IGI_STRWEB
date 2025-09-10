@@ -40,3 +40,11 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
+
+class Partner(models.Model):
+    name = models.CharField(max_length=255)
+    logo = models.ImageField(upload_to='partners/')
+    website = models.URLField()
+
+    def __str__(self):
+        return self.name

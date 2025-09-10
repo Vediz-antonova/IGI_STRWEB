@@ -43,3 +43,24 @@
     padding-left: 0;
   }
 }
+
+/* Обёртка всей страницы */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Контент растягивается */
+main,
+.about-section {
+  flex: 1;
+}
+
+/* Футер прикреплён снизу */
+.footer {
+  background-color: #343a40;
+  color: white;
+  padding: 1rem;
+  margin-top: auto;
+}
