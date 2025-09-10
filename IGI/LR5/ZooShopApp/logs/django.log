@@ -1456,3 +1456,21 @@ INFO 2025-09-11 02:28:00,801 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js
 INFO 2025-09-11 02:28:28,248 basehttp "POST /orders/create-order/ HTTP/1.1" 200 10757
 INFO 2025-09-11 02:28:42,869 basehttp "POST /orders/create-order/ HTTP/1.1" 302 0
 INFO 2025-09-11 02:28:42,897 basehttp "GET /user/profile/ HTTP/1.1" 200 26350
+INFO 2025-09-11 02:32:51,663 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 02:32:53,672 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-11 02:32:53,695 basehttp "GET / HTTP/1.1" 200 7143
+INFO 2025-09-11 02:32:53,710 basehttp "GET /static/css/index.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:32:53,712 basehttp "GET /static/css/footer.css HTTP/1.1" 304 0
+WARNING 2025-09-11 02:32:53,724 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 404 1868
+INFO 2025-09-11 02:32:53,724 basehttp "GET /media/partners/baseavatar.jpg HTTP/1.1" 304 0
+WARNING 2025-09-11 02:32:53,732 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 404 1868
+INFO 2025-09-11 02:32:53,735 basehttp "GET /media/partners/baseavatar_64wQ8mi.jpg HTTP/1.1" 304 0
+INFO 2025-09-11 02:32:53,740 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 304 0
+WARNING 2025-09-11 02:32:53,741 basehttp "GET /static/images/logo.png HTTP/1.1" 404 1859
+INFO 2025-09-11 02:32:53,741 basehttp "GET /media/partners/baseavatar_xg5AIgP.jpg HTTP/1.1" 304 0
+INFO 2025-09-11 02:32:53,743 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-09-11 02:32:57,607 basehttp "GET /user/login/ HTTP/1.1" 200 5476
+INFO 2025-09-11 02:33:01,892 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-11 02:33:01,921 basehttp "GET /user/profile/ HTTP/1.1" 200 9063
+INFO 2025-09-11 02:33:05,200 basehttp "GET /user/users/ HTTP/1.1" 200 9255
+INFO 2025-09-11 02:33:05,357 basehttp "GET /static/css/user_list.css HTTP/1.1" 200 976

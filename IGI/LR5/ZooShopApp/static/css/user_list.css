@@ -1,0 +1,49 @@
+/* ──────────────────────────────── */
+/* USER LIST TABLE STYLES       */
+/* ──────────────────────────────── */
+
+.user-list-wrapper {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.user-list-wrapper h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #343a40;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+}
+
+.user-table td {
+  color: #212529;
+}
+
+.user-table td[headers="th-email"] {
+  background-color: #f1f3f5;
+}
+
+.no-users {
+  text-align: center;
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 2rem;
+}
