@@ -26,14 +26,19 @@ def create_order(request):
                             user=user,
                             phone_number=form.cleaned_data["phone_number"],
                             requires_delivery=form.cleaned_data["requires_delivery"],
-                            delivery_address=form.cleaned_data["delivery_address"],
+                            delivery_address = form.cleaned_data.get("delivery_address") if form.cleaned_data["requires_delivery"] else "",
                             payment_on_get=form.cleaned_data["payment_on_get"],
                         )
 
                         promo_code = form.cleaned_data.get("promo_code")
                         discount_percent = 0
                         if promo_code:
-                            promo = Promotional.objects.get(code=promo_code)
+                            try:
+                                promo = Promotional.objects.get(code=promo_code)
+                                discount_percent = promo.discount
+                            except Promotional.DoesNotExist:
+                                messages.warning(request, "Промокод не найден. Скидка не применена.")
+
                             discount_percent = promo.discount
 
                         total_price = 0
