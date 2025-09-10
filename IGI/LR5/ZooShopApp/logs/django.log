@@ -1309,3 +1309,54 @@ INFO 2025-09-11 01:59:09,818 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js
 INFO 2025-09-11 01:59:48,872 autoreload Watching for file changes with StatReloader
 INFO 2025-09-11 01:59:52,056 basehttp "GET /catalog/korm/ HTTP/1.1" 200 17911
 INFO 2025-09-11 01:59:52,069 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-09-11 02:05:33,195 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 02:05:37,047 basehttp "GET /catalog/korm/ HTTP/1.1" 200 16314
+INFO 2025-09-11 02:05:37,060 basehttp "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:05:37,064 basehttp "GET /static/css/notifications.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:05:37,077 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-09-11 02:05:37,084 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-09-11 02:05:37,281 basehttp "GET /static/css/included_cart.css HTTP/1.1" 200 1846
+INFO 2025-09-11 02:05:37,287 basehttp "GET /static/css/cart_button.css HTTP/1.1" 200 2937
+INFO 2025-09-11 02:05:51,237 basehttp "GET /orders/create-order/ HTTP/1.1" 200 13477
+INFO 2025-09-11 02:05:51,248 basehttp "GET /static/css/included_cart.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:05:56,161 basehttp "GET /catalog/all/ HTTP/1.1" 200 16730
+INFO 2025-09-11 02:05:56,178 basehttp "GET /static/css/included_cart.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:06:03,351 basehttp "GET /catalog/product/domik-dlya-krolika/ HTTP/1.1" 200 11064
+INFO 2025-09-11 02:06:03,368 basehttp "GET /static/css/included_cart.css HTTP/1.1" 304 0
+WARNING 2025-09-11 02:06:03,368 basehttp "GET /static/goods_images/rabbit_house.jpg HTTP/1.1" 404 1901
+INFO 2025-09-11 02:06:07,975 basehttp "GET /catalog/korm/ HTTP/1.1" 200 16314
+INFO 2025-09-11 02:06:07,985 basehttp "GET /static/css/included_cart.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:06:35,480 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 02:06:42,615 basehttp "GET /user/users-cart/ HTTP/1.1" 200 8328
+INFO 2025-09-11 02:06:42,627 basehttp "GET /static/css/included_cart.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:07:53,617 basehttp "GET /catalog/igrushki/ HTTP/1.1" 200 16134
+INFO 2025-09-11 02:07:53,631 basehttp "GET /static/css/included_cart.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:07:53,636 basehttp "GET /static/css/cart_button.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:07:53,643 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-09-11 02:07:53,644 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-09-11 02:07:53,787 basehttp "GET /media/goods_images/hamster_wheel.jpg HTTP/1.1" 200 116176
+INFO 2025-09-11 02:07:57,569 basehttp "GET /orders/create-order/ HTTP/1.1" 200 13477
+INFO 2025-09-11 02:08:01,333 basehttp "GET /user/users-cart/ HTTP/1.1" 200 8328
+INFO 2025-09-11 02:08:02,785 basehttp "GET /orders/create-order/ HTTP/1.1" 200 13477
+INFO 2025-09-11 02:08:04,858 basehttp "GET /user/users-cart/ HTTP/1.1" 200 8328
+INFO 2025-09-11 02:09:53,331 basehttp "GET /orders/create-order/ HTTP/1.1" 200 13477
+INFO 2025-09-11 02:09:53,341 basehttp "GET /static/css/notifications.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:09:53,342 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:09:53,343 basehttp "GET /static/css/included_cart.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:09:53,343 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-09-11 02:11:45,159 basehttp "GET /user/users-cart/ HTTP/1.1" 200 8328
+INFO 2025-09-11 02:11:45,172 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-09-11 02:11:45,173 basehttp "GET /static/css/included_cart.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:11:45,177 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-09-11 02:13:50,122 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 02:13:53,802 basehttp "GET /user/users-cart/ HTTP/1.1" 200 7884
+INFO 2025-09-11 02:13:53,813 basehttp "GET /static/css/included_cart.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:13:53,815 basehttp "GET /static/css/notifications.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:13:53,815 basehttp "GET /static/js/script.js HTTP/1.1" 304 0
+INFO 2025-09-11 02:13:53,915 basehttp "GET /static/css/users_cart.css HTTP/1.1" 200 665
+INFO 2025-09-11 02:13:57,612 basehttp "GET /user/users-cart/ HTTP/1.1" 200 7884
+INFO 2025-09-11 02:13:57,623 basehttp "GET /static/css/users_cart.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:14:00,969 basehttp "GET /orders/create-order/ HTTP/1.1" 200 13477
+INFO 2025-09-11 02:14:05,104 basehttp "GET /catalog/all/ HTTP/1.1" 200 16730
+INFO 2025-09-11 02:14:05,116 basehttp "GET /static/css/cart_button.css HTTP/1.1" 304 0
+INFO 2025-09-11 02:14:05,117 basehttp "GET /static/css/footer.css HTTP/1.1" 304 0
