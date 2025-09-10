@@ -722,3 +722,42 @@ INFO 2025-09-10 23:50:35,484 basehttp "GET /contact/ HTTP/1.1" 200 9299
 INFO 2025-09-10 23:50:35,495 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
 INFO 2025-09-10 23:50:43,671 basehttp "GET / HTTP/1.1" 200 5323
 INFO 2025-09-10 23:50:43,679 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:55:51,304 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:55:52,911 basehttp "GET / HTTP/1.1" 200 5323
+INFO 2025-09-10 23:55:52,920 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:55:56,189 basehttp "GET /user/login/ HTTP/1.1" 200 5209
+INFO 2025-09-10 23:56:02,032 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 23:56:02,048 basehttp "GET /user/profile/ HTTP/1.1" 200 8599
+INFO 2025-09-10 23:56:05,458 basehttp "GET /catalog/all/ HTTP/1.1" 200 12013
+INFO 2025-09-10 23:56:13,670 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-10 23:56:13,681 basehttp "GET / HTTP/1.1" 200 5453
+INFO 2025-09-10 23:56:14,490 basehttp "GET /user/login/ HTTP/1.1" 200 5209
+INFO 2025-09-10 23:56:19,451 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-10 23:56:19,470 basehttp "GET /user/profile/ HTTP/1.1" 200 27572
+INFO 2025-09-10 23:56:23,829 basehttp "GET /catalog/all/ HTTP/1.1" 200 17809
+INFO 2025-09-10 23:57:13,738 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:57:15,021 basehttp "GET /catalog/all/ HTTP/1.1" 200 18383
+INFO 2025-09-10 23:57:15,034 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:57:19,439 basehttp "GET /catalog/all/ HTTP/1.1" 200 18383
+INFO 2025-09-10 23:57:19,905 basehttp "GET /catalog/all/ HTTP/1.1" 200 18383
+INFO 2025-09-10 23:57:26,747 basehttp "GET /catalog/all/ HTTP/1.1" 200 18383
+INFO 2025-09-10 23:59:21,885 autoreload Watching for file changes with StatReloader
+INFO 2025-09-10 23:59:24,325 basehttp "GET /catalog/all/ HTTP/1.1" 200 22346
+INFO 2025-09-10 23:59:24,337 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-10 23:59:27,109 basehttp "GET /catalog/all/ HTTP/1.1" 200 22346
+INFO 2025-09-10 23:59:32,484 basehttp "GET /catalog/korm/ HTTP/1.1" 200 21930
+INFO 2025-09-10 23:59:36,045 basehttp "GET /user/users-cart/ HTTP/1.1" 200 9610
+INFO 2025-09-10 23:59:39,613 basehttp "GET /orders/create-order/ HTTP/1.1" 200 14746
+INFO 2025-09-11 00:03:05,858 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:03:09,590 basehttp "GET /orders/create-order/ HTTP/1.1" 200 15156
+INFO 2025-09-11 00:03:09,600 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:03:13,479 basehttp "GET /orders/create-order/ HTTP/1.1" 200 15156
+INFO 2025-09-11 00:03:15,080 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-11 00:03:15,096 basehttp "GET / HTTP/1.1" 200 5765
+INFO 2025-09-11 00:03:16,407 basehttp "GET /user/login/ HTTP/1.1" 200 5619
+INFO 2025-09-11 00:03:19,341 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-11 00:03:19,376 basehttp "GET /user/profile/ HTTP/1.1" 200 27884
+INFO 2025-09-11 00:04:31,796 autoreload Watching for file changes with StatReloader
+INFO 2025-09-11 00:04:32,858 basehttp "GET /user/profile/ HTTP/1.1" 200 27853
+INFO 2025-09-11 00:04:32,870 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-11 00:04:35,514 basehttp "GET /catalog/aksessuary/ HTTP/1.1" 200 22457

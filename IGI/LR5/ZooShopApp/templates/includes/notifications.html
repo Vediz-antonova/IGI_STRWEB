@@ -1,38 +1,50 @@
 {% load static %}
 
 {% if form.non_field_errors %}
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="alert alert-danger alert-dismissible fade show custom-shadow" role="alert">
-                {{ form.non_field_errors }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    </div>
-</div>
+<section class="notification-wrapper">
+  <div class="notification error">
+    <span>{{ form.non_field_errors }}</span>
+    <button class="notification-close" aria-label="Закрыть">✖</button>
+  </div>
+</section>
 {% endif %}
 
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            {% if messages %}
-                {% for message in messages %}
-                    {% if message.tags == 'success' %}
-                    <div id="notification" class="position-fixed start-50 translate-middle-x z-3 alert alert-success fade show custom-shadow" role="alert">
-                        {{ message }}
-                    </div>
-                    {% endif %}
-                    {% if message.tags == 'warning' %}
-                    <div id="notification" class="position-fixed start-50 translate-middle-x z-3 alert alert-danger fade show custom-shadow" role="alert">
-                        {{ message }}
-                    </div>
-                    {% endif %}
-                {% endfor %}
-            {% else %}
-            <div id="jq-notification" class="position-fixed start-50 translate-middle-x z-3 alert alert-success fade show custom-shadow" style="display: none;" role="alert">
-            </div>
-            {% endif %}
+<section class="notification-wrapper">
+  {% if messages %}
+    {% for message in messages %}
+      {% if message.tags == 'success' %}
+        <div id="notification" class="notification success">
+          <span>{{ message }}</span>
+          <button class="notification-close" aria-label="Закрыть">✖</button>
         </div>
+      {% elif message.tags == 'warning' %}
+        <div id="notification" class="notification warning">
+          <span>{{ message }}</span>
+          <button class="notification-close" aria-label="Закрыть">✖</button>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <div id="jq-notification" class="notification success" style="display: none;">
+      <span></span>
+      <button class="notification-close" aria-label="Закрыть">✖</button>
     </div>
-</div>
+  {% endif %}
+</section>
+
+<script>
+    // Автоматическое скрытие уведомления
+    const autoNotification = document.getElementById("notification");
+    if (autoNotification) {
+      setTimeout(() => {
+        autoNotification.style.display = "none";
+      }, 7000);
+    }
+
+    // Закрытие по кнопке
+    document.querySelectorAll(".notification-close").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.style.display = "none";
+      });
+    });
+</script>
