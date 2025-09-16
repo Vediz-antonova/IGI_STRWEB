@@ -1,72 +1,64 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock %}
+
 {% block modal_cart %}
-    {% if request.user.is_authenticated and not request.user.is_employee %}
-        {% include "includes/cart_button.html" %}
-    {% endif %}
+  {% if request.user.is_authenticated and not request.user.is_employee %}
+    {% include "includes/cart_button.html" %}
+  {% endif %}
 {% endblock %}
 
 {% block content %}
-	<div class="container mt-5">
-        <div class="card mb-4 custom-shadow">
-            <div class="row">
-                <!-- Миниатюры -->
-                <div class="col-md-4">
-                    <img src="{{ product.image.url }}"
-                        class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal1">
-                </div>
-                <div class="col-md-4 ">
-                    <p class="product_id mt-3">id: {{ product.id }}</p>
-                </div>
-                <!-- Увеличить изображение в модальном окне -->
-                <div class="modal fade" id="imageModal1" tabindex="-1"
-                    aria-labelledby="imageModal1Label" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="imageModal1Label">{{ product.name }}</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Закрыть"></button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="{% static product.image %}"
-                                    class="img-fluid" alt="Изображение 1">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Описание товара -->
-            <div class="col-md-6">
-                <p><strong>Артикул:</strong> {{ product.article }}</p>
-                <p><strong>Категория:</strong> {{ product.category.name }}</p>
-                <p><strong>Описание:</strong> {{ product.description }}</p>
-                <p><strong>Количество на складе:</strong> {{ product.quantity }}</p>
-                <p><strong>Текущая цена:</strong> {{ product.default_price }} BYN</p>
-
-                {% if request.user.is_authenticated and not request.user.is_employee %}
-                    <a href="{% url 'cart_add' %}" class="btn btn-dark add-to-cart"
-                       data-product-id="{{ product.id }}">
-                        {% csrf_token %}
-                        Добавить в корзину</a>
-                {% elif request.user.is_employee %}
-                    <form method="POST" action="{% url 'update_price' product.id %}">
-                        {% csrf_token %}
-                        <input type="number" name="new_price" step="0.01" min="0" placeholder="Введите новую цену" required>
-                        <button type="submit" class="btn btn-warning">Обновить стоимость</button>
-                    </form>
-                {% endif %}
-                {% if request.user.is_authenticated and request.user.is_employee %}
-                    {% if suppliers.exists %}
-                        <a href="{% url 'select_supplier' product.slug %}" class="btn btn-dark">
-                            {% csrf_token %}
-                            Заказать товар у поставщиков</a>
-                    {% else %}
-                        <p class="text-danger">Нет поставщиков для этого товара</p>
-                    {% endif %}
-                {% endif %}
-            </div>
-        </div>
+<section class="product-wrapper">
+  <div class="product-card">
+    <div class="product-preview">
+      <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-thumbnail" onclick="openModal()">
+      <p class="product-id">ID: {{ product.id }}</p>
     </div>
+
+    <div class="product-info">
+      <h2>{{ product.name }}</h2>
+      <p><strong>Артикул:</strong> {{ product.article }}</p>
+      <p><strong>Категория:</strong> {{ product.category.name }}</p>
+      <p><strong>Описание:</strong> {{ product.description }}</p>
+      <p><strong>Количество на складе:</strong> {{ product.quantity }}</p>
+      <p><strong>Текущая цена:</strong> {{ product.default_price }} BYN</p>
+
+      {% if request.user.is_authenticated and not request.user.is_employee %}
+        <a href="{% url 'cart_add' %}" class="add-to-cart" data-product-id="{{ product.id }}">
+          {% csrf_token %}
+          Добавить в корзину
+        </a>
+      {% elif request.user.is_employee %}
+        <form method="POST" action="{% url 'update_price' product.id %}" class="price-form">
+          {% csrf_token %}
+          <input type="number" name="new_price" step="0.01" min="0" placeholder="Введите новую цену" required>
+          <button type="submit">Обновить стоимость</button>
+        </form>
+      {% endif %}
+
+      {% if request.user.is_authenticated and request.user.is_employee %}
+        {% if suppliers.exists %}
+          <a href="{% url 'select_supplier' product.slug %}" class="supplier-button">
+            {% csrf_token %}
+            Заказать товар у поставщиков
+          </a>
+        {% else %}
+          <p class="no-suppliers">Нет поставщиков для этого товара</p>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Модальное окно изображения -->
+  <div id="imageModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">✖</span>
+      <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    </div>
+  </div>
+</section>
 {% endblock %}

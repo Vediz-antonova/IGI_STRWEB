@@ -1,59 +1,65 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/add_product.css' %}">
+{% endblock %}
 
 {% block content %}
-    <div class="container mt-5 bg-white p-4 rounded custom-shadow">
-        <h2 class="text-center mb-4">Добавить новый товар</h2>
+<section class="add-product-wrapper">
+  <div class="add-product-card">
+    <h2>🛠 Добавить новый товар</h2>
 
-        {% if request.user.is_authenticated and request.user.is_employee %}
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
+    {% if request.user.is_authenticated and request.user.is_employee %}
+      <form method="POST" enctype="multipart/form-data" class="add-product-form">
+        {% csrf_token %}
 
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="id_article" class="form-label">Артикул:</label>
-                        <input type="text" class="form-control" id="id_article" name="article"
-                            required minlength="3" maxlength="100">
-                    </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="id_article">Артикул:</label>
+            <input type="text" id="id_article" name="article" required minlength="3" maxlength="100">
+          </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label for="id_name" class="form-label">Название товара:</label>
-                        <input type="text" class="form-control" id="id_name" name="name" required>
-                    </div>
+          <div class="form-group">
+            <label for="id_name">Название товара:</label>
+            <input type="text" id="id_name" name="name" required>
+          </div>
 
-                    <div class="col-md-12 mb-3">
-                        <label for="id_description" class="form-label">Описание:</label>
-                        <textarea class="form-control" id="id_description" name="description" rows="3"></textarea>
-                    </div>
+          <div class="form-group full-width">
+            <label for="id_description">Описание:</label>
+            <textarea id="id_description" name="description" rows="3"></textarea>
+          </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label for="id_category" class="form-label">Категория:</label>
-                        <select class="form-select" id="id_category" name="category">
-                            {% for category in categories %}
-                                <option value="{{ category.id }}">{{ category.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
+          <div class="form-group">
+            <label for="id_category">Категория:</label>
+            <select id="id_category" name="category">
+              {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label for="id_quantity" class="form-label">Количество:</label>
-                        <input type="number" class="form-control" id="id_quantity" name="quantity" min="1" required>
-                    </div>
+          <div class="form-group">
+            <label for="id_quantity">Количество:</label>
+            <input type="number" id="id_quantity" name="quantity" min="1" required>
+          </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label for="id_default_price" class="form-label">Цена:</label>
-                        <input type="number" class="form-control" id="id_default_price" name="default_price" step="0.01" required>
-                    </div>
+          <div class="form-group">
+            <label for="id_default_price">Цена:</label>
+            <input type="number" id="id_default_price" name="default_price" step="0.01" required>
+          </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label for="id_image" class="form-label">Изображение:</label>
-                        <input type="file" class="form-control" id="id_image" name="image" accept="image/*">
-                    </div>
-                </div>
+          <div class="form-group">
+            <label for="id_image">Изображение:</label>
+            <input type="file" id="id_image" name="image" accept="image/*">
+          </div>
+        </div>
 
-                <button type="submit" class="btn btn-success">Добавить товар</button>
-            </form>
-        {% else %}
-            <p class="text-danger text-center">У вас нет прав на добавление товаров.</p>
-        {% endif %}
-    </div>
+        <button type="submit" class="submit-button">Добавить товар</button>
+      </form>
+    {% else %}
+      <p class="no-access">У вас нет прав на добавление товаров.</p>
+    {% endif %}
+  </div>
+</section>
 {% endblock %}

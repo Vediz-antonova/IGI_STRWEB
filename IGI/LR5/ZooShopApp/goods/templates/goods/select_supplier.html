@@ -1,50 +1,55 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/select_supplier.css' %}">
+{% endblock %}
 
 {% block content %}
-    <div class="container mt-5 bg-white custom-shadow rounded">
-        <h2>Заказ товара: {{ product.name }}</h2>
+<section class="supplier-order-wrapper">
+  <div class="supplier-order-card">
+    <h2>Заказ товара: {{ product.name }}</h2>
 
-        <form method="POST">
-            {% csrf_token %}
-            <label>Выберите поставщика: </label>
-            <select name="supplier_id" id="supplier">
-                {% for supplier in suppliers %}
-                    <option value="{{ supplier.supplier.id }}" data-price="{{ supplier.unit_price }}">
-                        {{ supplier.supplier.name }} - {{ supplier.unit_price }} BYN
-                    </option>
-                {% endfor %}
-            </select>
+    <form method="POST" class="supplier-form">
+      {% csrf_token %}
+      <label for="supplier">Выберите поставщика:</label>
+      <select name="supplier_id" id="supplier" required>
+        {% for supplier in suppliers %}
+          <option value="{{ supplier.supplier.id }}" data-price="{{ supplier.unit_price }}">
+            {{ supplier.supplier.name }} — {{ supplier.unit_price }} BYN
+          </option>
+        {% endfor %}
+      </select>
 
-            <label for="quantity">Количество:</label>
-            <input type="number" name="quantity" id="quantity" step="1" min="1" required>
+      <label for="quantity">Количество:</label>
+      <input type="number" name="quantity" id="quantity" step="1" min="1" required>
 
-            <p><strong>Общая стоимость:</strong> <span id="total_price">0</span> BYN</p>
+      <p><strong>Общая стоимость:</strong> <span id="total_price">0</span> BYN</p>
 
-            <button type="submit" class="btn btn-success">Заказать</button>
-        </form>
-        {% if messages %}
-            <div class="mt-3 alert alert-success">
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
-            </div>
-        {% endif %}
-    </div>
+      <button type="submit">Заказать</button>
+    </form>
 
-    <script>
-        document.getElementById("quantity").addEventListener("input", updatePrice);
-        document.getElementById("supplier").addEventListener("change", updatePrice);
+    {% if messages %}
+      <div class="order-message">
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
 
-        function updatePrice() {
-            let quantity = document.getElementById("quantity").value;
-            let supplierSelect = document.getElementById("supplier");
-            let price = supplierSelect.options[supplierSelect.selectedIndex].getAttribute("data-price");
+<script>
+  document.getElementById("quantity").addEventListener("input", updatePrice);
+  document.getElementById("supplier").addEventListener("change", updatePrice);
 
-            if (price) {
-                document.getElementById("total_price").innerText = (quantity * parseFloat(price)).toFixed(2);
-            } else {
-                document.getElementById("total_price").innerText = "0";
-            }
-        }
-    </script>
-{% endblock content %}
+  function updatePrice() {
+    const quantity = document.getElementById("quantity").value;
+    const supplierSelect = document.getElementById("supplier");
+    const price = supplierSelect.options[supplierSelect.selectedIndex].getAttribute("data-price");
+
+    const total = price ? (quantity * parseFloat(price)).toFixed(2) : "0";
+    document.getElementById("total_price").innerText = total;
+  }
+</script>
+{% endblock %}
