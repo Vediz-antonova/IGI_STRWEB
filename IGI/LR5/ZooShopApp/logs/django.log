@@ -1731,3 +1731,34 @@ INFO 2025-09-16 10:41:06,084 basehttp "GET /static/css/job_list.css HTTP/1.1" 30
 INFO 2025-09-16 10:41:45,043 autoreload Watching for file changes with StatReloader
 INFO 2025-09-16 10:41:46,165 basehttp "GET /jobs/ HTTP/1.1" 200 10020
 INFO 2025-09-16 10:41:46,173 basehttp "GET /static/css/job_list.css HTTP/1.1" 304 0
+INFO 2025-09-16 10:45:16,504 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 10:45:19,447 basehttp "GET /jobs/ HTTP/1.1" 200 10020
+INFO 2025-09-16 10:45:19,456 basehttp "GET /static/css/job_list.css HTTP/1.1" 304 0
+INFO 2025-09-16 10:45:22,206 basehttp "GET /reviews/ HTTP/1.1" 200 9107
+INFO 2025-09-16 10:45:22,318 basehttp "GET /static/css/review_list.css HTTP/1.1" 200 1278
+INFO 2025-09-16 10:45:42,463 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 10:45:43,357 basehttp "GET /reviews/ HTTP/1.1" 200 9057
+INFO 2025-09-16 10:45:43,369 basehttp "GET /static/css/review_list.css HTTP/1.1" 304 0
+INFO 2025-09-16 10:45:50,539 basehttp "GET /reviews/add/ HTTP/1.1" 200 5556
+INFO 2025-09-16 10:45:55,331 basehttp "GET /user/profile/ HTTP/1.1" 200 9092
+INFO 2025-09-16 10:45:57,282 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-16 10:45:57,295 basehttp "GET / HTTP/1.1" 200 7143
+WARNING 2025-09-16 10:45:57,316 basehttp "GET /static/images/logo.png HTTP/1.1" 404 1859
+WARNING 2025-09-16 10:45:57,317 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 404 1868
+WARNING 2025-09-16 10:45:57,323 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 404 1868
+INFO 2025-09-16 10:45:59,591 basehttp "GET /reviews/ HTTP/1.1" 200 8151
+INFO 2025-09-16 10:45:59,601 basehttp "GET /static/css/review_list.css HTTP/1.1" 304 0
+INFO 2025-09-16 10:46:01,056 basehttp "GET /user/login/ HTTP/1.1" 200 5476
+INFO 2025-09-16 10:46:05,341 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-16 10:46:05,353 basehttp "GET /user/profile/ HTTP/1.1" 200 9123
+INFO 2025-09-16 10:46:08,062 basehttp "GET /reviews/ HTTP/1.1" 200 9057
+INFO 2025-09-16 10:46:08,071 basehttp "GET /static/css/review_list.css HTTP/1.1" 304 0
+INFO 2025-09-16 10:48:49,460 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 10:48:52,872 basehttp "GET /reviews/ HTTP/1.1" 200 9053
+INFO 2025-09-16 10:48:52,881 basehttp "GET /static/css/review_list.css HTTP/1.1" 304 0
+INFO 2025-09-16 10:48:54,844 basehttp "GET /user/profile/ HTTP/1.1" 200 9092
+INFO 2025-09-16 10:48:59,042 basehttp "GET /user/profile/ HTTP/1.1" 200 9092
+INFO 2025-09-16 10:49:04,224 basehttp "GET /reviews/add/ HTTP/1.1" 200 5593
+INFO 2025-09-16 10:49:04,332 basehttp "GET /static/css/add_review.css HTTP/1.1" 200 1520
+INFO 2025-09-16 10:49:13,431 basehttp "POST /reviews/add/ HTTP/1.1" 302 0
+INFO 2025-09-16 10:49:13,454 basehttp "GET /reviews/ HTTP/1.1" 200 9313

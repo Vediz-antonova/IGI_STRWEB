@@ -1,13 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/add_review.css' %}">
+{% endblock %}
 
 {% block content %}
-    <div class="container mt-5 pt-5 bg-white custom-shadow rounded">
-        <h2>Оставить отзыв</h2>
+<section class="review-form-wrapper">
+  <div class="review-form-card">
+    <h2>Оставить отзыв</h2>
 
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-success">Отправить</button>
-        </form>
-    </div>
-{% endblock content %}
+    <form method="POST" class="review-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
