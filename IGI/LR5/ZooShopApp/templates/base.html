@@ -54,11 +54,11 @@
                       </li>
 
                       {% if request.user.is_employee %}
-                        <li><a href="{% url 'supplier_list' %}">Поставщики</a></li>
-                        <li><a href="{% url 'user_list' %}">Пользователи</a></li>
+                          <li><a href="{% url 'supplier_list' %}" class="nav-muted">Поставщики</a></li>
+                          <li><a href="{% url 'user_list' %}" class="nav-muted">Пользователи</a></li>
                       {% endif %}
                       {% if request.user.is_superuser %}
-                        <li><a href="{% url 'admin_orders' %}">Все заказы</a></li>
+                          <li><a href="{% url 'admin_orders' %}" class="nav-muted">Все заказы</a></li>
                       {% endif %}
                     {% endif %}
                   </ul>

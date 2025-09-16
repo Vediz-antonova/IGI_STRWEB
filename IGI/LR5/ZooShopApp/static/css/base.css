@@ -41,6 +41,15 @@
   background-color: #495057;
 }
 
+.nav-muted {
+  color: grey !important;
+  text-decoration: none;
+}
+.nav-muted:hover {
+  color: darkgrey !important;
+  text-decoration: underline;
+}
+
 /* Выпадающее меню */
 .dropdown {
   position: relative;

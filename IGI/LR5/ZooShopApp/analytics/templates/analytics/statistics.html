@@ -1,35 +1,46 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/statistics.css' %}">
+{% endblock %}
 
 {% block content %}
-    <div class="container mt-5 bg-white p-4 rounded custom-shadow">
-        <h2 class="text-center mb-4">Статистика сайта</h2>
+<section class="statistics-wrapper">
+  <div class="statistics-block">
+    <h2 class="statistics-title">Статистика сайта</h2>
 
-        <p><strong>Общая сумма продаж:</strong> {{ total_sales }} BYN</p>
-        <p><strong>Средняя сумма продаж:</strong> {{ sales_avg }} BYN</p>
-        <p><strong>Медиана продаж:</strong> {{ sales_median }} BYN</p>
-        <p><strong>Средний возраст клиентов:</strong> {{ age_avg }} лет</p>
-        <p><strong>Медиана возраста клиентов:</strong> {{ age_median }} лет</p>
+    <ul class="statistics-list">
+      <li><strong>Общая сумма продаж:</strong> {{ total_sales }} BYN</li>
+      <li><strong>Средняя сумма продаж:</strong> {{ sales_avg }} BYN</li>
+      <li><strong>Медиана продаж:</strong> {{ sales_median }} BYN</li>
+      <li><strong>Средний возраст клиентов:</strong> {{ age_avg }} лет</li>
+      <li><strong>Медиана возраста клиентов:</strong> {{ age_median }} лет</li>
+    </ul>
 
-        <h4>Популярные категории товаров:</h4>
-        <ul>
-            {% for category in popular_categories %}
-                <li>{{ category.name }} ({{ category.num_orders }} продаж)</li>
-            {% endfor %}
-        </ul>
+    <h3>Популярные категории товаров:</h3>
+    <ul class="category-list">
+      {% for category in popular_categories %}
+        <li>{{ category.name }} — {{ category.num_orders }} продаж</li>
+      {% endfor %}
+    </ul>
 
-        <h4>Самые прибыльные товары:</h4>
-        <ul>
-            {% for product in profitable_products %}
-                <li>{{ product.name }} ({{ product.total_income }} BYN)</li>
-            {% endfor %}
-        </ul>
-    </div>
+    <h3>Самые прибыльные товары:</h3>
+    <ul class="product-list">
+      {% for product in profitable_products %}
+        <li>{{ product.name }} — {{ product.total_income }} BYN</li>
+      {% endfor %}
+    </ul>
+  </div>
 
-    <div class="container mt-5 bg-white p-4 rounded custom-shadow">
-        <h2 class="text-center mb-4">Статистика продаж по категориям</h2>
-        {% for category, chart_url in category_charts.items %}
-            <h4>{{ category.name }}</h4>
-            <img src="{{ chart_url }}" alt="График доходов {{ category.name }}" class="img-fluid">
-        {% endfor %}
-    </div>
+  <div class="statistics-block">
+    <h2 class="statistics-title">Статистика продаж по категориям</h2>
+    {% for category, chart_url in category_charts.items %}
+      <div class="chart-section">
+        <h4>{{ category.name }}</h4>
+        <img src="{{ chart_url }}" alt="График доходов {{ category.name }}">
+      </div>
+    {% endfor %}
+  </div>
+</section>
 {% endblock %}
