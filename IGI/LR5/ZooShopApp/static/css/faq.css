@@ -1,0 +1,55 @@
+/* ──────────────────────────────── */
+/* FAQ PAGE STYLES               */
+/* ──────────────────────────────── */
+
+.faq-wrapper {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.faq-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.faq-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #343a40;
+}
+
+.faq-item {
+  margin-bottom: 2rem;
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  color: #198754;
+  margin-bottom: 0.5rem;
+}
+
+.faq-answer {
+  font-size: 1rem;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.faq-date {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 1rem;
+  }
+
+  .faq-question {
+    font-size: 1.1rem;
+  }
+}
