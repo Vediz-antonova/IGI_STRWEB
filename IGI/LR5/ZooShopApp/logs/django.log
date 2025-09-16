@@ -2422,3 +2422,9 @@ INFO 2025-09-16 22:38:37,927 basehttp "GET /static/css/main/index.css HTTP/1.1" 
 INFO 2025-09-16 22:38:42,389 basehttp "GET /about/ HTTP/1.1" 200 9474
 INFO 2025-09-16 22:38:42,412 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 1248
 INFO 2025-09-16 22:38:48,246 basehttp "GET /news/ HTTP/1.1" 200 10377
+INFO 2025-09-16 22:42:15,488 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 22:42:17,943 basehttp "GET /news/ HTTP/1.1" 200 10052
+INFO 2025-09-16 22:42:18,085 basehttp "GET /static/css/main/news.css HTTP/1.1" 200 1740
+INFO 2025-09-16 22:42:43,602 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 22:42:54,518 basehttp "GET /news/ HTTP/1.1" 200 9905
+INFO 2025-09-16 22:42:54,531 basehttp "GET /static/css/main/news.css HTTP/1.1" 304 0

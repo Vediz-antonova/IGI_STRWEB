@@ -1,24 +1,32 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/main/news.css' %}">
+{% endblock %}
+
 {% block content %}
-    <div class="container mt-5 pt-5 bg-white custom-shadow rounded">
-        <h2>Новости</h2>
+<section class="news-wrapper">
+  <div class="news-container">
+    <h2>Новости</h2>
 
-        {% for news in news_list %}
-            <div class="news-item mb-4">
-                <h4 class="text-primary">{{ news.title }}</h4>
-                <p>{{ news.summary }}</p>
-                {% if news.image_url %}
-                    <img src="{{ news.image_url }}" class="img-fluid" alt="Новость">
-                {% endif %}
-            </div>
-            <hr>
-        {% endfor %}
+    {% for news in news_list %}
+      <article class="news-item">
+        <h3 class="news-title">{{ news.title }}</h3>
+        <p class="news-summary">{{ news.summary }}</p>
+        {% if news.image_url %}
+          <img src="{{ news.image_url }}" alt="Новость" class="news-image">
+        {% endif %}
+      </article>
+      <hr>
+    {% endfor %}
 
-        <h3>🐱 Интересные факты о котах</h3>
-        {% for fact in cat_facts %}
-            <p>✔ {{ fact }}</p>
-        {% endfor %}
-    </div>
-{% endblock content %}
+    <h3 class="cat-facts-title">Интересные факты о котах</h3>
+    <ul class="cat-facts-list">
+      {% for fact in cat_facts %}
+        <li>{{ fact }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}
