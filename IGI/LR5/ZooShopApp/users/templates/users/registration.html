@@ -1,41 +1,43 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+{% endblock %}
+
 {% block content %}
-    <div class="row">
-        <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-9 bg-white p-4 mb-5 mx-2 rounded custom-shadow">
-                    <h2 class="text-center mb-4">Регистрация</h2>
-                    <form action="{% url 'registration' %}" method="post">
-                        {% csrf_token %}
-                        <div class="row">
-                        {% for item in form %}
-                            {% if item.name != "job_description" %}
-                                <div class="col-md-6 mb-3">
-                                    <label for="{{ item.id_for_label }}" class="form-label">{{ item.label }}</label>
-                                    {{ item }}
-                                {% if item.errors %}
-                                    <div class="alert alert-danger alert-dismissible fade show">{{ item.errors }}</div>
-                                {% endif %}
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                        {% if form.is_employee.value %}
-                            <div class="col-md-6 mb-3">
-                                <label for="{{ form.job_description.id_for_label }}" class="form-label">{{ form.job_description.label }}</label>
-                                {{ form.job_description }}
-                            {% if item.errors %}
-                                <div class="alert alert-danger alert-dismissible fade show">{{ item.errors }}</div>
-                            {% endif %}
-                            </div>
-                        {% endif %}
-                        </div>
-                        <button type="submit"
-                            class="btn btn-dark btn-block">Зарегистрироваться</button>
-                    </form>
-                </div>
+<section class="registration-wrapper">
+  <div class="registration-card">
+    <h2>Регистрация</h2>
+
+    <form action="{% url 'registration' %}" method="post" class="registration-form">
+      {% csrf_token %}
+      <div class="form-grid">
+        {% for item in form %}
+          {% if item.name != "job_description" %}
+            <div class="form-group">
+              <label for="{{ item.id_for_label }}">{{ item.label }}</label>
+              {{ item }}
+              {% if item.errors %}
+                <p class="form-error">{{ item.errors }}</p>
+              {% endif %}
             </div>
-        </div>
-    </div>
-{% endblock content %}
+          {% endif %}
+        {% endfor %}
+
+        {% if form.is_employee.value %}
+          <div class="form-group">
+            <label for="{{ form.job_description.id_for_label }}">{{ form.job_description.label }}</label>
+            {{ form.job_description }}
+            {% if form.job_description.errors %}
+              <p class="form-error">{{ form.job_description.errors }}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

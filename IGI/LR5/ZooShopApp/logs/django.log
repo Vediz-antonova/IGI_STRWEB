@@ -1762,3 +1762,204 @@ INFO 2025-09-16 10:49:04,224 basehttp "GET /reviews/add/ HTTP/1.1" 200 5593
 INFO 2025-09-16 10:49:04,332 basehttp "GET /static/css/add_review.css HTTP/1.1" 200 1520
 INFO 2025-09-16 10:49:13,431 basehttp "POST /reviews/add/ HTTP/1.1" 302 0
 INFO 2025-09-16 10:49:13,454 basehttp "GET /reviews/ HTTP/1.1" 200 9313
+INFO 2025-09-16 10:51:37,627 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 10:51:38,568 basehttp "GET /reviews/ HTTP/1.1" 200 9313
+INFO 2025-09-16 10:51:38,579 basehttp "GET /static/css/review_list.css HTTP/1.1" 304 0
+ERROR 2025-09-16 10:51:41,016 log Internal Server Error: /user/profile/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\users\views.py", line 83, in profile
+    return render(request, 'users/profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-16 10:51:41,024 basehttp "GET /user/profile/ HTTP/1.1" 500 161089
+INFO 2025-09-16 10:52:18,128 autoreload Watching for file changes with StatReloader
+ERROR 2025-09-16 10:52:21,889 log Internal Server Error: /user/profile/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\users\views.py", line 83, in profile
+    return render(request, 'users/profile.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Labs\353504_Antonava_01\IGI\LR5\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'static', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-09-16 10:52:21,894 basehttp "GET /user/profile/ HTTP/1.1" 500 161226
+INFO 2025-09-16 10:59:24,027 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 10:59:26,963 basehttp "GET /user/profile/ HTTP/1.1" 200 6927
+INFO 2025-09-16 10:59:27,086 basehttp "GET /static/css/profile.css HTTP/1.1" 200 3119
+INFO 2025-09-16 10:59:35,156 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-16 10:59:35,183 basehttp "GET / HTTP/1.1" 200 7143
+WARNING 2025-09-16 10:59:35,203 basehttp "GET /static/images/logo.png HTTP/1.1" 404 1859
+WARNING 2025-09-16 10:59:35,205 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 404 1868
+WARNING 2025-09-16 10:59:35,212 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 404 1868
+INFO 2025-09-16 10:59:38,330 basehttp "GET /user/login/ HTTP/1.1" 200 5476
+INFO 2025-09-16 10:59:44,249 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-16 10:59:44,282 basehttp "GET /user/profile/ HTTP/1.1" 200 12886
+INFO 2025-09-16 10:59:44,295 basehttp "GET /static/css/included_cart.css HTTP/1.1" 304 0
+INFO 2025-09-16 11:49:11,878 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 11:49:12,940 basehttp "GET /user/profile/ HTTP/1.1" 200 13484
+INFO 2025-09-16 11:49:13,071 basehttp "GET /static/css/profile.css HTTP/1.1" 200 2126
+INFO 2025-09-16 11:49:44,527 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 11:51:17,345 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 11:52:52,859 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 11:52:54,127 basehttp "GET /user/profile/ HTTP/1.1" 200 13474
+INFO 2025-09-16 11:52:54,260 basehttp "GET /static/css/profile.css HTTP/1.1" 200 3690
+INFO 2025-09-16 11:53:11,941 basehttp "POST /user/profile/ HTTP/1.1" 302 0
+INFO 2025-09-16 11:53:11,958 basehttp "GET /user/profile/ HTTP/1.1" 200 13516
+INFO 2025-09-16 11:53:11,967 basehttp "GET /static/css/profile.css HTTP/1.1" 304 0
+INFO 2025-09-16 11:53:15,580 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-16 11:53:15,592 basehttp "GET / HTTP/1.1" 200 7143
+WARNING 2025-09-16 11:53:15,614 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 404 1868
+WARNING 2025-09-16 11:53:15,616 basehttp "GET /static/images/logo.png HTTP/1.1" 404 1859
+WARNING 2025-09-16 11:53:15,622 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 404 1868
+INFO 2025-09-16 11:53:17,715 basehttp "GET /user/login/ HTTP/1.1" 200 4950
+INFO 2025-09-16 11:53:17,724 basehttp "GET /static/css/login.css HTTP/1.1" 200 1627
+INFO 2025-09-16 11:53:22,923 basehttp "GET /user/registration/ HTTP/1.1" 200 8977
+INFO 2025-09-16 11:53:27,819 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-16 11:53:27,838 basehttp "GET /user/profile/ HTTP/1.1" 200 13505
+INFO 2025-09-16 11:53:27,848 basehttp "GET /static/css/profile.css HTTP/1.1" 304 0
+INFO 2025-09-16 11:55:07,298 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 11:55:08,235 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-09-16 11:55:08,324 basehttp "GET / HTTP/1.1" 200 7143
+WARNING 2025-09-16 11:55:08,346 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 404 1868
+WARNING 2025-09-16 11:55:08,349 basehttp "GET /static/images/logo.png HTTP/1.1" 404 1859
+WARNING 2025-09-16 11:55:08,470 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 404 1868
+INFO 2025-09-16 11:55:11,211 basehttp "GET /user/login/ HTTP/1.1" 200 4945
+INFO 2025-09-16 11:55:11,223 basehttp "GET /static/css/login.css HTTP/1.1" 304 0
+INFO 2025-09-16 11:55:13,134 basehttp "GET /user/registration/ HTTP/1.1" 200 7054
+INFO 2025-09-16 11:55:13,272 basehttp "GET /static/css/registration.css HTTP/1.1" 200 1736
+INFO 2025-09-16 11:56:55,833 basehttp "POST /user/registration/ HTTP/1.1" 200 8051
+INFO 2025-09-16 11:56:55,844 basehttp "GET /static/css/registration.css HTTP/1.1" 304 0
+INFO 2025-09-16 11:57:15,179 basehttp "GET /user/registration/ HTTP/1.1" 200 7049
+INFO 2025-09-16 11:57:23,501 basehttp "GET / HTTP/1.1" 200 7111
+INFO 2025-09-16 12:03:00,660 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 12:03:02,262 basehttp "GET / HTTP/1.1" 200 7111
+WARNING 2025-09-16 12:03:02,283 basehttp "GET /static/images/logo.png HTTP/1.1" 404 1859
+WARNING 2025-09-16 12:03:02,283 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 404 1868
+WARNING 2025-09-16 12:03:02,288 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 404 1868
+INFO 2025-09-16 12:03:07,371 basehttp "GET /user/login/ HTTP/1.1" 200 4945
+INFO 2025-09-16 12:03:07,383 basehttp "GET /static/css/login.css HTTP/1.1" 304 0
+INFO 2025-09-16 12:03:12,629 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-09-16 12:03:12,656 basehttp "GET /user/profile/ HTTP/1.1" 200 7577
+INFO 2025-09-16 12:03:12,666 basehttp "GET /static/css/profile.css HTTP/1.1" 304 0
+INFO 2025-09-16 12:03:24,207 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 8735
+INFO 2025-09-16 12:03:24,327 basehttp "GET /static/css/admin_orders.css HTTP/1.1" 200 1447
+INFO 2025-09-16 12:03:33,186 basehttp "GET /user/users/ HTTP/1.1" 200 9315
+INFO 2025-09-16 12:03:33,196 basehttp "GET /static/css/user_list.css HTTP/1.1" 304 0
+INFO 2025-09-16 12:03:36,261 basehttp "GET /suppliers/ HTTP/1.1" 200 9200
+INFO 2025-09-16 12:03:44,164 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 8735
+INFO 2025-09-16 12:03:44,173 basehttp "GET /static/css/admin_orders.css HTTP/1.1" 304 0
