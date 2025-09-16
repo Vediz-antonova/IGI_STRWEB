@@ -2411,3 +2411,14 @@ INFO 2025-09-16 22:27:24,933 basehttp "GET /promotional/ HTTP/1.1" 200 8036
 INFO 2025-09-16 22:27:24,942 basehttp "GET /static/css/promotional.css HTTP/1.1" 304 0
 INFO 2025-09-16 22:27:26,182 basehttp "GET /suppliers/ HTTP/1.1" 200 8214
 INFO 2025-09-16 22:27:26,309 basehttp "GET /static/css/supplier_list.css HTTP/1.1" 200 1325
+INFO 2025-09-16 22:38:31,988 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 22:38:35,598 basehttp "GET /suppliers/ HTTP/1.1" 200 8219
+INFO 2025-09-16 22:38:35,717 basehttp "GET /static/css/main/supplier_list.css HTTP/1.1" 200 1325
+INFO 2025-09-16 22:38:37,898 basehttp "GET / HTTP/1.1" 200 8021
+WARNING 2025-09-16 22:38:37,916 basehttp "GET /static/images/logo.png HTTP/1.1" 404 1859
+WARNING 2025-09-16 22:38:37,926 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 404 1868
+WARNING 2025-09-16 22:38:37,927 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 404 1868
+INFO 2025-09-16 22:38:37,927 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 959
+INFO 2025-09-16 22:38:42,389 basehttp "GET /about/ HTTP/1.1" 200 9474
+INFO 2025-09-16 22:38:42,412 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 1248
+INFO 2025-09-16 22:38:48,246 basehttp "GET /news/ HTTP/1.1" 200 10377
