@@ -1706,3 +1706,28 @@ INFO 2025-09-16 10:37:01,116 basehttp "GET /catalog/all/ HTTP/1.1" 200 10187
 INFO 2025-09-16 10:37:01,127 basehttp "GET /static/css/catalog.css HTTP/1.1" 304 0
 INFO 2025-09-16 10:37:02,949 basehttp "GET /catalog/new_product/add/ HTTP/1.1" 200 6978
 INFO 2025-09-16 10:37:03,059 basehttp "GET /static/css/add_product.css HTTP/1.1" 200 1693
+INFO 2025-09-16 10:37:38,273 basehttp "POST /catalog/new_product/add/ HTTP/1.1" 302 0
+INFO 2025-09-16 10:37:38,286 basehttp "GET /catalog/all/ HTTP/1.1" 200 10038
+INFO 2025-09-16 10:37:38,307 basehttp "GET /media/goods_images/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-09-16 10:37:42,720 basehttp "POST /catalog/delete/15/ HTTP/1.1" 302 0
+INFO 2025-09-16 10:37:42,733 basehttp "GET /catalog/all/ HTTP/1.1" 200 10225
+INFO 2025-09-16 10:40:15,180 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 10:40:19,264 basehttp "GET /jobs/ HTTP/1.1" 200 10075
+INFO 2025-09-16 10:40:19,381 basehttp "GET /static/css/job_list.css HTTP/1.1" 200 1106
+INFO 2025-09-16 10:40:26,670 basehttp "GET /contact/ HTTP/1.1" 200 10471
+INFO 2025-09-16 10:40:29,944 basehttp "GET /contact/ HTTP/1.1" 200 10471
+INFO 2025-09-16 10:40:32,281 basehttp "GET /contact/ HTTP/1.1" 200 10471
+INFO 2025-09-16 10:40:45,867 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 10:40:49,048 basehttp "GET /contact/ HTTP/1.1" 200 10471
+INFO 2025-09-16 10:40:51,349 basehttp "GET /contact/ HTTP/1.1" 200 10471
+INFO 2025-09-16 10:40:51,623 basehttp "GET /contact/ HTTP/1.1" 200 10471
+INFO 2025-09-16 10:40:52,558 basehttp "GET / HTTP/1.1" 200 8016
+WARNING 2025-09-16 10:40:52,575 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 404 1868
+WARNING 2025-09-16 10:40:52,575 basehttp "GET /static/images/logo.png HTTP/1.1" 404 1859
+WARNING 2025-09-16 10:40:52,584 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 404 1868
+INFO 2025-09-16 10:40:54,434 basehttp "GET /contact/ HTTP/1.1" 200 10471
+INFO 2025-09-16 10:41:06,076 basehttp "GET /jobs/ HTTP/1.1" 200 10075
+INFO 2025-09-16 10:41:06,084 basehttp "GET /static/css/job_list.css HTTP/1.1" 304 0
+INFO 2025-09-16 10:41:45,043 autoreload Watching for file changes with StatReloader
+INFO 2025-09-16 10:41:46,165 basehttp "GET /jobs/ HTTP/1.1" 200 10020
+INFO 2025-09-16 10:41:46,173 basehttp "GET /static/css/job_list.css HTTP/1.1" 304 0
