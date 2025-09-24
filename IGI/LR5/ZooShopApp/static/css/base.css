@@ -1,8 +1,11 @@
-/* ──────────────────────────────── */
-/* HEADER & NAVIGATION STYLES   */
-/* ──────────────────────────────── */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #212529;
+}
 
-/* Контейнер навигации */
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -12,7 +15,6 @@
   padding: 0.5rem 1rem;
 }
 
-/* Основное меню */
 .nav-bar {
   display: flex;
   flex-wrap: wrap;
@@ -20,13 +22,15 @@
   margin: 0;
   padding: 0;
 }
+
 .nav-bar li {
   position: relative;
   margin-right: 1rem;
 }
+
 .nav-bar a,
-.dropbtn {
-  color: #fff;
+.nav-button {
+  color: white;
   text-decoration: none;
   padding: 0.5rem 0.75rem;
   display: inline-block;
@@ -36,23 +40,10 @@
   font: inherit;
   cursor: pointer;
 }
+
 .nav-bar a:hover,
-.dropbtn:hover {
+.nav-button:hover {
   background-color: #495057;
-}
-
-.nav-muted {
-  color: grey !important;
-  text-decoration: none;
-}
-.nav-muted:hover {
-  color: darkgrey !important;
-  text-decoration: underline;
-}
-
-/* Выпадающее меню */
-.dropdown {
-  position: relative;
 }
 
 .dropdown-content {
@@ -68,40 +59,39 @@
   margin: 0;
   padding: 0;
 }
+
 .dropdown-content li {
   margin: 0;
 }
+
 .dropdown-content a {
   display: block;
   padding: 0.5rem 1rem;
-  color: #fff;
+  color: white;
 }
+
 .dropdown-content a:hover {
   background-color: #495057;
 }
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Форма поиска */
 .search-form {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  margin: 0.5rem 0;
-  flex-wrap: wrap;
+  margin-left: auto;
 }
+
 .search-form input[type="search"] {
-  flex: 1;
   padding: 0.5rem 0.75rem;
   border: 1px solid #ced4da;
   border-radius: 4px;
   font-size: 1rem;
 }
-.search-form input:focus {
-  border-color: #198754;
-  outline: none;
-}
+
 .search-form button {
   background-color: #198754;
   color: white;
@@ -111,101 +101,113 @@
   font-size: 1rem;
   cursor: pointer;
 }
+
 .search-form button:hover {
   background-color: #157347;
 }
 
-/* Скрытый label для доступности */
-.visually-hidden {
-  position: absolute;
-  left: -9999px;
-}
-
-/* Адаптивность навигации */
-@media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .nav-bar {
-    flex-direction: column;
-  }
-  .nav-bar li {
-    margin-bottom: 0.5rem;
-  }
-  .search-form {
-    width: 100%;
-  }
-}
-
-/* ──────────────────────────────── */
-/* CATALOG BAR & MODAL CART     */
-/* ──────────────────────────────── */
 .catalog-bar {
   position: fixed;
   top: 6rem;
   left: 1rem;
   z-index: 100;
-  background-color: #343a40;
+  background-color: #212529;
   padding: 0.5rem;
   border-radius: 6px;
+  width: 160px;
+  font-size: 0.9rem;
   color: white;
 }
-.catalog-nav details {
-  color: white;
-}
+
 .catalog-nav summary {
   cursor: pointer;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  color: white;
 }
-.catalog-nav ul {
+
+#catalog-list {
   list-style: none;
-  padding: 0.5rem 0;
   margin: 0;
+  padding: 0;
 }
+
+#catalog-list li {
+  margin: 0;
+  padding: 0;
+}
+
+#catalog-list li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem 0.5rem;
+}
+
+#catalog-list li a:hover {
+  background-color: #495057;
+  border-radius: 4px;
+}
+
 .catalog-nav li a {
   color: white;
   text-decoration: none;
   display: block;
   padding: 0.25rem 0.5rem;
 }
+
 .catalog-nav li a:hover {
   background-color: #495057;
   border-radius: 4px;
 }
 
-/* ──────────────────────────────── */
-/* MAIN CONTENT LAYOUT          */
-/* ──────────────────────────────── */
 .main-content {
   margin-top: 6rem;
   padding: 1rem;
 }
+
 .layout {
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
 }
+
 .sidebar {
-  flex: 0 0 20%;
-}
-.content-area {
-  flex: 1;
+  flex: 0 0 10%;
+  background-color: #e9ecef;
+  padding: 0.5rem;
+  border-radius: 6px;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-  .catalog-bar {
-    position: static;
-    margin-bottom: 1rem;
-  }
-  .layout {
-    flex-direction: column;
-  }
-  .sidebar {
-    flex: 1;
-  }
+.vertical-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vertical-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.vertical-nav a {
+  text-decoration: none;
+  color: #212529;
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.vertical-nav a:hover {
+  background-color: #dee2e6;
+}
+
+.content-area {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
 }

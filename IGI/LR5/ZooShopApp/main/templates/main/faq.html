@@ -6,29 +6,32 @@
 {% endblock %}
 
 {% block content %}
-<section class="faq-wrapper">
-  <div class="faq-container">
-    <h2>Часто задаваемые вопросы</h2>
+<main class="faq-wrapper" role="main" itemscope itemtype="https://schema.org/FAQPage">
+  <header>
+    <h1 itemprop="name">Словарь терминов и понятий ZooShop</h1>
+    <p><abbr title="Frequently Asked Questions">FAQ</abbr> — ответы на часто задаваемые вопросы, связанные с работой магазина, доставкой, питомцами и товарами.</p>
+  </header>
 
+  <section class="faq-list">
     {% for faq in faqs %}
-      <article class="faq-item">
-        <h3 class="faq-question">{{ faq.question }}</h3>
-        <p class="faq-answer">{{ faq.answer }}</p>
-        <p class="faq-date">Обновлено: {{ faq.updated_at|date:"d/m/Y H:i" }}</p>
-      </article>
-      <hr>
-    {% endfor %}
-  </div>
-</section>
-{% endblock %}
+    <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" id="faq-{{ faq.id }}">
+      <header>
+        <h2 itemprop="name">{{ faq.question }}</h2>
+        <time datetime="{{ faq.created_at|date:'Y-m-d' }}" title="Дата добавления">{{ faq.created_at|date:"d/m/Y" }}</time>
+      </header>
 
-{% block footer %}
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-center">
-      <small>© 2025 ZooShop. Все права защищены</small><br>
-      <small>Текущая дата: {% now "d/m/Y" %}</small>
-    </div>
-  </div>
-</footer>
+      <details>
+        <summary>Показать ответ</summary>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text">{{ faq.answer }}</p>
+        </div>
+      </details>
+
+      <footer>
+        <p><small>Обновлено: <time datetime="{{ faq.updated_at|date:'Y-m-d H:i' }}">{{ faq.updated_at|date:"d/m/Y H:i" }}</time></small></p>
+      </footer>
+    </article>
+    {% endfor %}
+  </section>
+</main>
 {% endblock %}
