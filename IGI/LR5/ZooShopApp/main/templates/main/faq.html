@@ -15,15 +15,14 @@
   <section class="faq-list">
     {% for faq in faqs %}
     <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" id="faq-{{ faq.id }}">
-      <header>
-        <h2 itemprop="name">{{ faq.question }}</h2>
-        <time datetime="{{ faq.created_at|date:'Y-m-d' }}" title="Дата добавления">{{ faq.created_at|date:"d/m/Y" }}</time>
+      <header class="faq-header">
+        <h2 class="faq-question" itemprop="name">{{ faq.question }}</h2>
       </header>
 
-      <details>
-        <summary>Показать ответ</summary>
+      <details class="faq-details">
+        <summary class="faq-toggle">Показать ответ</summary>
         <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-          <p itemprop="text">{{ faq.answer }}</p>
+          <p class="faq-answer" itemprop="text">{{ faq.answer }}</p>
         </div>
       </details>
 

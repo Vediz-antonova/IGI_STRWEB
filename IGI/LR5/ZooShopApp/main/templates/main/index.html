@@ -20,14 +20,26 @@
         <img src="{% static 'icons/animal.ico' %}" alt="Логотип ZooShop" class="site-logo">
       </section>
 
-      <!-- Баннеры -->
       <section class="banner-section">
+      <picture>
+        <source srcset="{% static 'images/banner1-small.jpg' %}" media="(max-width: 600px)">
+        <source srcset="{% static 'images/banner1.jpg' %}">
         <img src="{% static 'images/banner1.jpg' %}" alt="Баннер 1">
+      </picture>
+
+      <picture>
+        <source srcset="{% static 'images/banner2-small.jpg' %}" media="(max-width: 600px)">
+        <source srcset="{% static 'images/banner2.jpg' %}">
         <img src="{% static 'images/banner2.jpg' %}" alt="Баннер 2">
+      </picture>
+
+      <picture>
+        <source srcset="{% static 'images/banner3-small.jpg' %}" media="(max-width: 600px)">
+        <source srcset="{% static 'images/banner3.jpg' %}">
         <img src="{% static 'images/banner3.jpg' %}" alt="Баннер 3">
+      </picture>
       </section>
 
-      <!-- Последняя статья -->
       {% if latest_article %}
       <section class="latest-article">
         <h2>Последняя статья</h2>

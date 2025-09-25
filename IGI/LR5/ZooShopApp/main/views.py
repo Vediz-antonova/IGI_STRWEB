@@ -102,17 +102,33 @@ def news(request):
             "image_url": article["urlToImage"],
         })
 
-    news = local_news + news_list
+    local_news_objects = News.objects.order_by("-id")[:5]
+
+    external_news_objects = []
+    for article in news_data[:5]:
+        external_news_objects.append({
+            "title": article["title"],
+            "summary": article["description"],
+            "image_url": article["urlToImage"],
+            "publish_date": None,
+            "external": True,
+        })
+
+    combined_news = list(local_news_objects) + external_news_objects
 
     cat_response = requests.get("https://catfact.ninja/facts")
     cat_facts = cat_response.json().get("data", [])[:3]
 
     context = {
         "title": "Новости",
-        "news_list": news,
+        "news_list": combined_news,
         "cat_facts": [fact["fact"] for fact in cat_facts],
     }
     return render(request, "main/news.html", context)
+
+def news_detail(request, pk):
+    news = get_object_or_404(News, pk=pk)
+    return render(request, 'news_detail.html', {'news': news})
 
 @login_required
 def supplier_list(request):

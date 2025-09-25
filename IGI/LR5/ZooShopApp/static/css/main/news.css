@@ -1,90 +1,52 @@
-/* ──────────────────────────────── */
-/* NEWS PAGE STYLES             */
-/* ──────────────────────────────── */
-
-.news-wrapper {
-  padding: 2rem;
-  background-color: #f8f9fa;
-}
-
-.news-container {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 900px;
-  margin: 0 auto;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-}
-
-.news-container h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #198754;
-}
-
 .news-item {
   margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
 }
 
 .news-title {
-  font-size: 1.2rem;
-  color: #343a40;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #198754;
   margin-bottom: 0.5rem;
-}
-
-.news-summary {
-  font-size: 1rem;
-  color: #212529;
-  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .news-image {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  margin-top: 0.5rem;
-}
-
-/* ──────────────────────────────── */
-/* CAT FACTS SECTION            */
-/* ──────────────────────────────── */
-
-.cat-facts-title {
-  margin-top: 2rem;
-  color: #198754;
-}
-
-.cat-facts-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 1rem;
-}
-
-.cat-facts-list li {
   margin-bottom: 0.5rem;
-  padding-left: 1.2rem;
-  position: relative;
-  color: #495057;
+  object-fit: cover;
 }
 
-.cat-facts-list li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
+.news-summary {
+  font-size: 1rem;
+  color: #212529;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.news-details {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #212529;
+}
+
+.read-more-summary {
+  cursor: pointer;
+  font-weight: bold;
   color: #198754;
+  margin-bottom: 0.5rem;
+  display: inline-block;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-  .news-container {
-    padding: 1rem;
-  }
+.read-more-summary:hover {
+  text-decoration: underline;
+}
 
-  .news-title {
-    font-size: 1.1rem;
-  }
-
-  .news-summary {
-    font-size: 0.95rem;
-  }
+.news-full {
+  margin-top: 0.5rem;
 }

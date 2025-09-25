@@ -14,20 +14,40 @@
 
       {% if content.logo %}
         <figure class="company-logo">
-          <img src="{{ content.logo.url }}" alt="Логотип компании">
+          <img
+            src="{{ content.logo.url }}"
+            srcset="{{ content.logo.url }} 1x, {{ content.logo.url }} 2x"
+            alt="Логотип компании"
+            class="responsive-logo">
           <figcaption>Наш логотип</figcaption>
         </figure>
       {% endif %}
 
       {% if content.video_url %}
-        <section class="company-video">
-          <h2>Видео о нас</h2>
-          <video controls width="100%">
-            <source src="{{ content.video_url }}" type="video/mp4">
-            Ваш браузер не поддерживает видео.
-          </video>
-        </section>
+      <section class="company-video">
+        <h2>Видео о нас</h2>
+        <iframe
+          width="100%"
+          height="360"
+          src="https://www.youtube.com/embed/{{ content.video_url|cut:'https://www.youtube.com/watch?v=' }}"
+          title="YouTube video"
+          allowfullscreen>
+        </iframe>
+      </section>
       {% endif %}
+
+      <video width="100%" height="360" controls preload="metadata" poster="{% static 'images/video-preview.jpg' %}">
+        <source src="{% static 'media/company_intro.mp4' %}" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+
+      <section class="company-audio">
+        <h2>Аудио-приветствие</h2>
+        <audio controls>
+          <source src="{% static 'media/welcome.mp3' %}" type="audio/mpeg">
+          Ваш браузер не поддерживает аудио.
+        </audio>
+      </section>
 
       {% if content.description %}
         <section class="company-description">

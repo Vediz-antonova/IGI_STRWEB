@@ -8,14 +8,6 @@
   margin: 0 auto 2rem;
 }
 
-.banner-section img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-}
-
 .catalog-list {
   list-style: none;
   padding: 0;
@@ -57,3 +49,16 @@
   height: auto;
   margin-bottom: 0.5rem;
 }
+
+.banner-section picture {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.banner-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+

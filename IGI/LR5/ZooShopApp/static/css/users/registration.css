@@ -1,7 +1,3 @@
-/* ──────────────────────────────── */
-/* REGISTRATION FORM STYLES     */
-/* ──────────────────────────────── */
-
 .registration-wrapper {
   padding: 2rem;
   background-color: #f8f9fa;
@@ -75,15 +71,4 @@
 }
 .registration-form button:hover {
   background-color: #495057;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .registration-card {
-    padding: 1rem;
-  }
-
-  .registration-form button {
-    align-self: center;
-  }
 }

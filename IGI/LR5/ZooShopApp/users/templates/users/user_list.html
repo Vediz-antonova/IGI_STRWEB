@@ -11,6 +11,7 @@
 
   {% if users %}
     <table class="user-table">
+      <caption><strong>Таблица зарегистрированных пользователей</strong></caption>
       <thead>
         <tr>
           <th id="th-name">Имя</th>
@@ -23,22 +24,25 @@
       <tbody>
         {% for user in users %}
           <tr>
-            <td headers="th-name">{{ user.first_name }}</td>
-            <td headers="th-lastname">{{ user.last_name }}</td>
-            <td headers="th-username">{{ user.username }}</td>
+            <td headers="th-name"><em>{{ user.first_name }}</em></td>
+            <td headers="th-lastname"><strong>{{ user.last_name }}</strong></td>
+            <td headers="th-username"><i>{{ user.username }}</i></td>
             <td headers="th-email">{{ user.email }}</td>
             <td headers="th-email">{{ user.phone }}</td>
             <td headers="th-role">
               {% if user.is_employee %}
-                ✅ Да
+                ✅ <abbr title="Сотрудник компании">Да</abbr>
               {% else %}
-                ❌ Нет
+                ❌ <s>Нет</s>
               {% endif %}
             </td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
+
+    <p>Дата последнего обновления: <time datetime="2025-09-24">24.09.2025</time></p>
+
   {% else %}
     <p class="no-users">Нет зарегистрированных пользователей</p>
   {% endif %}
