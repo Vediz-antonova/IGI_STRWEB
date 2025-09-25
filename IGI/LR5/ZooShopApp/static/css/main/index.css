@@ -27,7 +27,8 @@
 }
 
 .latest-article img {
-  max-width: 100%;
+  width: auto;
+  height: 300px;
   margin-top: 1rem;
   border-radius: 6px;
 }
@@ -50,15 +51,23 @@
   margin-bottom: 0.5rem;
 }
 
+.banner-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .banner-section picture {
-  display: block;
-  margin-bottom: 1rem;
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
 }
 
 .banner-section img {
   width: 100%;
-  height: auto;
+  height: 400px;
   border-radius: 8px;
   object-fit: cover;
+  display: block;
 }
 

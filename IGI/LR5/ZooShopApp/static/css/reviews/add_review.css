@@ -1,7 +1,3 @@
-/* ──────────────────────────────── */
-/* ADD REVIEW FORM STYLES       */
-/* ──────────────────────────────── */
-
 .review-form-wrapper {
   padding: 2rem;
   background-color: #f8f9fa;
@@ -68,11 +64,4 @@
 }
 .review-form button:hover {
   background-color: #157347;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .review-form-card {
-    padding: 1rem;
-  }
 }

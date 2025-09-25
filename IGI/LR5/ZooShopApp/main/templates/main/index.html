@@ -15,28 +15,27 @@
 
 {% block content %}
     <main class="home-page">
-      <!-- Логотип -->
       <section class="logo-section">
-        <img src="{% static 'icons/animal.ico' %}" alt="Логотип ZooShop" class="site-logo">
+        <img src="{% static 'icons/animal.ico' %}" alt="Логотип ZooShop" class="site-logo" title="Логотип ZooShop">
       </section>
 
       <section class="banner-section">
       <picture>
         <source srcset="{% static 'images/banner1-small.jpg' %}" media="(max-width: 600px)">
         <source srcset="{% static 'images/banner1.jpg' %}">
-        <img src="{% static 'images/banner1.jpg' %}" alt="Баннер 1">
+        <img src="{% static 'images/banner1.jpg' %}" alt="Баннер 1" title="Баннер 1">
       </picture>
 
       <picture>
         <source srcset="{% static 'images/banner2-small.jpg' %}" media="(max-width: 600px)">
         <source srcset="{% static 'images/banner2.jpg' %}">
-        <img src="{% static 'images/banner2.jpg' %}" alt="Баннер 2">
+        <img src="{% static 'images/banner2.jpg' %}" alt="Баннер 2" title="Баннер 2">
       </picture>
 
       <picture>
         <source srcset="{% static 'images/banner3-small.jpg' %}" media="(max-width: 600px)">
         <source srcset="{% static 'images/banner3.jpg' %}">
-        <img src="{% static 'images/banner3.jpg' %}" alt="Баннер 3">
+        <img src="{% static 'images/banner3.jpg' %}" alt="Баннер 3" title="Баннер 3">
       </picture>
       </section>
 
@@ -51,7 +50,6 @@
       </section>
       {% endif %}
 
-      <!-- Партнёры -->
       <section class="partners-section">
         <h2>Наши партнёры</h2>
         <div class="partners-grid">

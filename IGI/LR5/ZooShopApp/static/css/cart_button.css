@@ -1,8 +1,3 @@
-/* ──────────────────────────────── */
-/* CART BUTTON & MODAL STYLES   */
-/* ──────────────────────────────── */
-
-/* Кнопка корзины */
 .cart-button-wrapper {
   position: relative;
   display: inline-block;
@@ -23,7 +18,6 @@
   background-color: #495057;
 }
 
-/* Модальное окно */
 .cart-modal {
   display: none;
   position: fixed;
@@ -46,7 +40,6 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
-/* Основное окно */
 .cart-modal-content {
   position: absolute;
   top: 10%;
@@ -62,7 +55,6 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Заголовок */
 .cart-modal-header {
   display: flex;
   justify-content: space-between;
@@ -79,7 +71,6 @@
   font-size: 1.25rem;
 }
 
-/* Кнопка закрытия */
 .cart-close-button {
   background: none;
   border: none;
@@ -91,14 +82,12 @@
   color: #ff6b6b;
 }
 
-/* Тело корзины */
 .cart-modal-body {
   padding: 1rem;
   background-color: #fff;
   color: #212529;
 }
 
-/* Элементы товаров */
 .cart-item {
   display: flex;
   justify-content: space-between;
@@ -130,7 +119,6 @@
   background-color: #157347;
 }
 
-/* Кнопка оформления заказа */
 .cart-modal-body .checkout-link {
   display: block;
   text-align: center;

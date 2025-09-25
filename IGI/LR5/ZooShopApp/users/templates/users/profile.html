@@ -10,13 +10,11 @@
 {% user_carts request as carts %}
 <section class="profile-page">
   <div class="profile-layout">
-    <!-- Профиль -->
       <div class="profile-section">
       <h2>Профиль пользователя</h2>
       <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data" class="profile-form">
         {% csrf_token %}
         <div class="profile-grid">
-          <!-- Аватар -->
           <div class="profile-avatar">
             {% if user.image %}
               <img src="{{ user.image.url }}" alt="Аватар пользователя">
@@ -29,7 +27,6 @@
             </label>
           </div>
 
-          <!-- Поля формы -->
           <div class="profile-fields">
             {% for item in form %}
               {% if item.name != "password" and item.name != "image" %}
@@ -48,8 +45,6 @@
       </form>
     </div>
 
-
-    <!-- Корзина -->
     {% if request.user.is_authenticated and not request.user.is_employee %}
     <div class="cart-section">
       <h2>Корзина</h2>
@@ -60,12 +55,10 @@
     {% endif %}
   </div>
 
-  <!-- Оставить отзыв -->
   <div class="review-button">
     <a href="{% url 'add_review' %}">Оставить отзыв</a>
   </div>
 
-  <!-- Заказы -->
   {% if request.user.is_authenticated and not request.user.is_employee %}
   <div class="orders-section">
     <h2>Мои заказы</h2>

@@ -1,7 +1,3 @@
-/* ──────────────────────────────── */
-/* CATALOG PAGE STYLES          */
-/* ──────────────────────────────── */
-
 .catalog-wrapper {
   padding: 2rem;
   background-color: #f8f9fa;
@@ -184,23 +180,4 @@
   text-decoration: none;
   color: inherit;
   display: block;
-}
-
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .filter-dropdown summary {
-    font-size: 1rem;
-  }
-
-  .product-info h3 {
-    font-size: 1.1rem;
-  }
-
-  .pagination-list {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 }

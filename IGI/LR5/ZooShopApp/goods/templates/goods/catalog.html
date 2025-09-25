@@ -15,7 +15,6 @@
 
 {% block content %}
 <section class="catalog-wrapper">
-  <!-- Форма фильтров -->
   <details class="filter-dropdown">
     <summary>Фильтры</summary>
     <form action="{% if request.GET.q %}{% url 'search' %}{% else %}{% url 'catalog' slug_url %}{% endif %}" method="get">
@@ -38,7 +37,6 @@
     </div>
   {% endif %}
 
-  <!-- Сетка товаров -->
   <div class="product-grid">
     {% for good in products %}
       <article class="product-card">
@@ -78,7 +76,6 @@
     {% endfor %}
   </div>
 
-  <!-- Пагинация -->
   {% if products.has_other_pages %}
     <nav class="pagination-nav">
       <ul class="pagination-list">

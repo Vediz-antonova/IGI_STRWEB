@@ -1,7 +1,3 @@
-/* ──────────────────────────────── */
-/* PROFILE PAGE STYLES          */
-/* ──────────────────────────────── */
-
 .profile-section {
   background-color: #fff;
   padding: 2rem;
@@ -114,10 +110,6 @@
   background-color: #157347;
 }
 
-/* ──────────────────────────────── */
-/* ORDER ACCORDION STYLES       */
-/* ──────────────────────────────── */
-
 .accordion {
   border-radius: 6px;
   overflow: hidden;
@@ -172,24 +164,4 @@
 }
 .orders-table a:hover {
   text-decoration: underline;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .profile-section,
-  .cart-section,
-  .orders-section {
-    padding: 1rem;
-  }
-  .accordion-button {
-    font-size: 0.95rem;
-  }
-  .profile-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .profile-fields button {
-    align-self: center;
-  }
 }

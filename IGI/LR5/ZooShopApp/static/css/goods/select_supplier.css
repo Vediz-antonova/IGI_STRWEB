@@ -1,7 +1,3 @@
-/* ──────────────────────────────── */
-/* SELECT SUPPLIER STYLES       */
-/* ──────────────────────────────── */
-
 .supplier-order-wrapper {
   padding: 2rem;
   background-color: #f8f9fa;
@@ -70,11 +66,4 @@
   border-radius: 6px;
   color: #0f5132;
   font-weight: bold;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .supplier-order-card {
-    padding: 1rem;
-  }
 }

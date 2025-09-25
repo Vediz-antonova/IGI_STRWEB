@@ -23,16 +23,17 @@
         <ul class="nav-bar">
           <li><a href="{% url 'index' %}">Главная</a></li>
           <li><a href="javascript:history.back()">← Назад</a></li>
-          <li class="dropdown">
-            <button class="nav-button">Информация ▾</button>
-            <ul class="dropdown-content">
-              <li><a href="{% url 'about' %}">О компании</a></li>
-              <li><a href="{% url 'contact' %}">Контакты</a></li>
-              <li><a href="{% url 'job_list' %}">Вакансии</a></li>
-              <li><a href="{% url 'statistics' %}">Статистика</a></li>
-              <li><a href="{% url 'promotional' %}">Промокоды</a></li>
-              <li><a href="{% url 'privacy_policy' %}">Политика конфиденциальности</a></li>
-            </ul>
+          <li class="nav-select">
+              <label for="info-select" class="visually-hidden">Информация</label>
+              <select id="info-select" onchange="location.href=this.value" title="Выберите раздел">
+                <option disabled selected>Информация</option>
+                <option value="{% url 'about' %}">О компании</option>
+                <option value="{% url 'contact' %}">Контакты</option>
+                <option value="{% url 'job_list' %}">Вакансии</option>
+                <option value="{% url 'statistics' %}">Статистика</option>
+                <option value="{% url 'promotional' %}">Промокоды</option>
+                <option value="{% url 'privacy_policy' %}">Политика конфиденциальности</option>
+              </select>
           </li>
           <li><a href="{% url 'news' %}">Новости</a></li>
           <li><a href="{% url 'faq' %}">FAQ</a></li>

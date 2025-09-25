@@ -211,3 +211,21 @@ body {
   position: absolute;
   left: -9999px;
 }
+
+.nav-select {
+  margin-right: 1rem;
+}
+
+.nav-select select {
+  background-color: #343a40;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.nav-select select:hover {
+  background-color: #495057;
+}

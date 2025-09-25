@@ -1,7 +1,3 @@
-/* ──────────────────────────────── */
-/* PRIVACY POLICY PAGE STYLES   */
-/* ──────────────────────────────── */
-
 .privacy-wrapper {
   padding: 2rem;
   background-color: #f8f9fa;
@@ -52,19 +48,4 @@
   font-size: 0.85rem;
   color: #6c757d;
   text-align: right;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .privacy-container {
-    padding: 1rem;
-  }
-
-  .privacy-container h1 {
-    font-size: 1.5rem;
-  }
-
-  .privacy-container h2 {
-    font-size: 1.1rem;
-  }
 }

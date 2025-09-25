@@ -1,7 +1,3 @@
-/* ──────────────────────────────── */
-/* PROMOTIONAL PAGE STYLES      */
-/* ──────────────────────────────── */
-
 .promo-wrapper {
   padding: 2rem;
   background-color: #f8f9fa;
@@ -64,17 +60,4 @@
   color: #6c757d;
   background-color: transparent;
   padding: 1rem;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .promo-container {
-    padding: 1rem;
-  }
-
-  .promo-list li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-  }
 }

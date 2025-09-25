@@ -1,7 +1,3 @@
-/* ──────────────────────────────── */
-/* ADD PRODUCT FORM STYLES      */
-/* ──────────────────────────────── */
-
 .add-product-wrapper {
   padding: 2rem;
   background-color: #f8f9fa;
@@ -84,11 +80,4 @@ textarea {
   color: #dc3545;
   font-weight: bold;
   margin-top: 2rem;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .add-product-card {
-    padding: 1rem;
-  }
 }

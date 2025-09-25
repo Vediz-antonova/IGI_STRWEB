@@ -1,7 +1,3 @@
-/* ──────────────────────────────── */
-/* INCLUDED CART STYLES         */
-/* ──────────────────────────────── */
-
 .cart-items-list {
   display: flex;
   flex-direction: column;

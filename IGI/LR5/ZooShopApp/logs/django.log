@@ -4239,3 +4239,177 @@ INFO 2025-09-25 05:38:48,225 basehttp "GET /static/media/company_intro.mp4 HTTP/
 INFO 2025-09-25 05:39:06,594 basehttp "GET /user/login/ HTTP/1.1" 200 4749
 INFO 2025-09-25 05:39:08,862 basehttp "POST /user/login/ HTTP/1.1" 302 0
 INFO 2025-09-25 05:39:08,890 basehttp "GET /user/profile/ HTTP/1.1" 200 7265
+INFO 2025-09-25 13:59:30,647 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 13:59:36,839 basehttp "GET /user/login/ HTTP/1.1" 200 5737
+INFO 2025-09-25 13:59:38,643 basehttp "GET / HTTP/1.1" 200 9318
+INFO 2025-09-25 13:59:38,658 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 13:59:38,661 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 13:59:38,661 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 13:59:38,819 basehttp "GET /static/css/base.css HTTP/1.1" 200 3626
+INFO 2025-09-25 14:00:55,349 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 14:00:56,273 basehttp "GET / HTTP/1.1" 200 9242
+INFO 2025-09-25 14:00:56,283 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-25 17:09:03,094 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:09:11,212 basehttp "GET / HTTP/1.1" 200 9314
+INFO 2025-09-25 17:09:11,250 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-25 17:09:11,256 basehttp "GET /static/icons/animal.ico HTTP/1.1" 304 0
+INFO 2025-09-25 17:09:11,257 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:09:11,332 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:09:11,334 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:09:23,335 basehttp "GET /about/ HTTP/1.1" 200 9985
+INFO 2025-09-25 17:09:23,389 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 304 0
+INFO 2025-09-25 17:09:27,083 basehttp "GET / HTTP/1.1" 200 9314
+INFO 2025-09-25 17:09:36,671 basehttp "GET /about/ HTTP/1.1" 200 9985
+INFO 2025-09-25 17:09:57,949 basehttp - Broken pipe from ('127.0.0.1', 54455)
+INFO 2025-09-25 17:10:03,463 basehttp "GET /news/ HTTP/1.1" 200 19331
+INFO 2025-09-25 17:10:16,161 basehttp "GET /user/profile/ HTTP/1.1" 200 7429
+INFO 2025-09-25 17:10:19,806 basehttp "GET /suppliers/ HTTP/1.1" 200 8096
+INFO 2025-09-25 17:10:21,080 basehttp "GET /user/users/ HTTP/1.1" 200 10080
+INFO 2025-09-25 17:14:14,756 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:14:32,312 basehttp "GET /admin/ HTTP/1.1" 200 21447
+WARNING 2025-09-25 17:14:32,471 log Not Found: /favicon.ico
+WARNING 2025-09-25 17:14:32,472 basehttp "GET /favicon.ico HTTP/1.1" 404 5761
+INFO 2025-09-25 17:14:41,450 basehttp "GET /admin/main/partner/ HTTP/1.1" 200 18292
+INFO 2025-09-25 17:14:41,538 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-25 17:14:44,093 basehttp "GET /admin/main/partner/3/change/ HTTP/1.1" 200 18993
+INFO 2025-09-25 17:14:44,120 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-25 17:14:56,460 basehttp "POST /admin/main/partner/3/change/ HTTP/1.1" 302 0
+INFO 2025-09-25 17:14:56,499 basehttp "GET /admin/main/partner/ HTTP/1.1" 200 18492
+INFO 2025-09-25 17:14:56,525 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-25 17:15:06,829 basehttp "GET /admin/main/partner/2/change/ HTTP/1.1" 200 18972
+INFO 2025-09-25 17:15:06,855 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-25 17:15:13,748 basehttp "POST /admin/main/partner/2/change/ HTTP/1.1" 302 0
+INFO 2025-09-25 17:15:13,794 basehttp "GET /admin/main/partner/ HTTP/1.1" 200 18487
+INFO 2025-09-25 17:15:13,824 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-25 17:15:32,374 basehttp "GET /admin/main/partner/1/change/ HTTP/1.1" 200 18977
+INFO 2025-09-25 17:15:32,402 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-25 17:15:40,421 basehttp "POST /admin/main/partner/1/change/ HTTP/1.1" 302 0
+INFO 2025-09-25 17:15:40,465 basehttp "GET /admin/main/partner/ HTTP/1.1" 200 18488
+INFO 2025-09-25 17:15:40,491 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-25 17:15:43,259 basehttp "GET / HTTP/1.1" 200 9308
+INFO 2025-09-25 17:18:42,380 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:18:57,256 basehttp "GET / HTTP/1.1" 200 9426
+INFO 2025-09-25 17:19:05,144 basehttp "GET / HTTP/1.1" 200 9426
+INFO 2025-09-25 17:19:06,793 basehttp "GET / HTTP/1.1" 200 9426
+INFO 2025-09-25 17:20:32,013 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:20:56,909 basehttp "GET / HTTP/1.1" 200 9387
+INFO 2025-09-25 17:20:56,924 basehttp "GET /static/images/banner2-small.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:20:56,926 basehttp "GET /static/images/banner1-small.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:20:56,929 basehttp "GET /static/images/banner3-small.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:23:24,325 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:23:28,250 basehttp "GET / HTTP/1.1" 200 9387
+INFO 2025-09-25 17:23:32,712 basehttp "GET / HTTP/1.1" 200 9387
+INFO 2025-09-25 17:23:34,992 basehttp "GET /about/ HTTP/1.1" 200 9985
+INFO 2025-09-25 17:23:37,495 basehttp "GET / HTTP/1.1" 200 9387
+INFO 2025-09-25 17:24:10,299 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:24:15,742 basehttp "GET / HTTP/1.1" 200 9309
+INFO 2025-09-25 17:25:10,263 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:25:15,627 basehttp "GET / HTTP/1.1" 200 9309
+INFO 2025-09-25 17:25:18,593 basehttp "GET / HTTP/1.1" 200 9309
+INFO 2025-09-25 17:26:20,157 basehttp "GET / HTTP/1.1" 200 9277
+WARNING 2025-09-25 17:26:24,134 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-25 17:26:24,135 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
+INFO 2025-09-25 17:27:41,489 basehttp "GET / HTTP/1.1" 200 9277
+INFO 2025-09-25 17:27:42,254 basehttp "GET /static/css/base.css HTTP/1.1" 200 3626
+INFO 2025-09-25 17:27:42,260 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 15668
+INFO 2025-09-25 17:27:42,264 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 8842
+INFO 2025-09-25 17:27:42,276 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 1007
+INFO 2025-09-25 17:27:42,302 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-09-25 17:27:42,309 basehttp "GET /media/partners/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:27:42,315 basehttp "GET /media/partners/baseavatar_64wQ8mi.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:27:42,319 basehttp "GET /media/partners/baseavatar_xg5AIgP.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:27:42,383 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-09-25 17:27:42,572 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-09-25 17:27:42,579 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-09-25 17:27:42,599 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 42882
+INFO 2025-09-25 17:27:42,613 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-09-25 17:27:42,646 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-09-25 17:29:20,127 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:29:24,587 basehttp "GET / HTTP/1.1" 200 9343
+INFO 2025-09-25 17:29:24,604 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:29:24,609 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:29:24,611 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:30:49,534 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:30:52,514 basehttp "GET / HTTP/1.1" 200 9322
+INFO 2025-09-25 17:30:52,537 basehttp "GET /static/css/notifications.css HTTP/1.1" 304 0
+INFO 2025-09-25 17:30:52,541 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:30:52,544 basehttp "GET /static/css/footer.css HTTP/1.1" 304 0
+INFO 2025-09-25 17:30:52,547 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:30:52,547 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:31:09,571 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:31:16,906 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:32:28,076 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:33:03,054 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:33:08,222 basehttp "GET / HTTP/1.1" 200 9277
+INFO 2025-09-25 17:33:09,018 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 1007
+INFO 2025-09-25 17:33:09,023 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 15668
+INFO 2025-09-25 17:33:09,028 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 8842
+INFO 2025-09-25 17:33:09,040 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-09-25 17:33:09,046 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-09-25 17:33:09,051 basehttp "GET /media/partners/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:33:09,055 basehttp "GET /media/partners/baseavatar_64wQ8mi.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:33:09,061 basehttp "GET /media/partners/baseavatar_xg5AIgP.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:33:09,113 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-09-25 17:33:09,194 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-09-25 17:33:09,211 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-09-25 17:33:09,237 basehttp "GET /static/css/base.css HTTP/1.1" 200 3626
+INFO 2025-09-25 17:33:09,263 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 42882
+INFO 2025-09-25 17:33:09,282 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-09-25 17:33:26,854 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:33:28,670 basehttp "GET / HTTP/1.1" 200 9277
+INFO 2025-09-25 17:33:29,293 basehttp "GET /static/css/base.css HTTP/1.1" 200 3626
+INFO 2025-09-25 17:33:29,298 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 15668
+INFO 2025-09-25 17:33:29,303 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 8842
+INFO 2025-09-25 17:33:29,310 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-09-25 17:33:29,316 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-09-25 17:33:29,321 basehttp "GET /media/partners/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:33:29,326 basehttp "GET /media/partners/baseavatar_64wQ8mi.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:33:29,330 basehttp "GET /media/partners/baseavatar_xg5AIgP.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:33:29,520 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-09-25 17:33:29,669 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-09-25 17:33:29,699 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 1008
+INFO 2025-09-25 17:33:29,780 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-09-25 17:33:29,805 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 42882
+INFO 2025-09-25 17:33:29,818 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-09-25 17:34:14,985 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:35:23,405 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:35:25,880 basehttp "GET / HTTP/1.1" 200 9277
+INFO 2025-09-25 17:35:25,897 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:35:25,905 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:35:25,906 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-09-25 17:35:26,134 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 1167
+INFO 2025-09-25 17:35:26,172 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-09-25 17:35:47,759 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:35:51,664 basehttp "GET / HTTP/1.1" 200 9277
+INFO 2025-09-25 17:35:52,448 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-09-25 17:35:52,453 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 15668
+INFO 2025-09-25 17:35:52,457 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 8842
+INFO 2025-09-25 17:35:52,464 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-09-25 17:35:52,469 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-09-25 17:35:52,475 basehttp "GET /media/partners/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:35:52,480 basehttp "GET /media/partners/baseavatar_64wQ8mi.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:35:52,484 basehttp "GET /media/partners/baseavatar_xg5AIgP.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:35:52,593 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 1166
+INFO 2025-09-25 17:35:52,600 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-09-25 17:35:52,702 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 42882
+INFO 2025-09-25 17:35:52,740 basehttp "GET /static/css/base.css HTTP/1.1" 200 3626
+INFO 2025-09-25 17:35:52,745 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-09-25 17:35:52,776 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-09-25 17:36:57,698 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:37:04,226 basehttp "GET / HTTP/1.1" 200 9277
+INFO 2025-09-25 17:37:05,515 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-09-25 17:37:05,522 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 15668
+INFO 2025-09-25 17:37:05,527 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 8842
+INFO 2025-09-25 17:37:05,534 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-09-25 17:37:05,540 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-09-25 17:37:05,553 basehttp "GET /media/partners/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:37:05,555 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 1180
+INFO 2025-09-25 17:37:05,558 basehttp "GET /media/partners/baseavatar_64wQ8mi.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:37:05,563 basehttp "GET /media/partners/baseavatar_xg5AIgP.jpg HTTP/1.1" 200 13823
+INFO 2025-09-25 17:37:05,563 basehttp "GET /static/css/base.css HTTP/1.1" 200 3626
+INFO 2025-09-25 17:37:05,583 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-09-25 17:37:05,681 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-09-25 17:37:05,697 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 42882
+INFO 2025-09-25 17:37:05,715 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-09-25 17:37:56,789 autoreload Watching for file changes with StatReloader
+INFO 2025-09-25 17:40:58,583 autoreload Watching for file changes with StatReloader
