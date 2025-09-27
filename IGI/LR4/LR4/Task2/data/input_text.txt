@@ -1,0 +1,7 @@
+Hello, this is a sample text for testing regex patterns. 
+Are you ready to see the analysis results? 
+Wow! Incredible performance in text analysis! 
+This text includes many aspects: uppercase letters like ABCXYZ, valid smileys such as :---((( and ;-[[[, and also some invalid ones like :-- and ;[). 
+Moreover, observe the sequence aaaabbbcccc that should be replaced with qqq. 
+Notice, unbelievably, and extraordinarily, longwords like супердлинноеслово and необыкновенное which ends with е. 
+Do you think these sentences provide enough examples, or should we add more?
