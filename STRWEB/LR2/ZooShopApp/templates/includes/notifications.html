@@ -1,0 +1,37 @@
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/notifications.css' %}">
+{% endblock %}
+
+{% if form.non_field_errors %}
+<section class="notification-wrapper">
+  <div class="notification error">
+    <span>{{ form.non_field_errors }}</span>
+    <button class="notification-close" aria-label="Закрыть">✖</button>
+  </div>
+</section>
+{% endif %}
+
+<section class="notification-wrapper">
+  {% if messages %}
+    {% for message in messages %}
+      {% if message.tags == 'success' %}
+        <div id="notification" class="notification success">
+          <span>{{ message }}</span>
+          <button class="notification-close" aria-label="Закрыть">✖</button>
+        </div>
+      {% elif message.tags == 'warning' %}
+        <div id="notification" class="notification warning">
+          <span>{{ message }}</span>
+          <button class="notification-close" aria-label="Закрыть">✖</button>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <div id="jq-notification" class="notification success" style="display: none;">
+      <span></span>
+      <button class="notification-close" aria-label="Закрыть">✖</button>
+    </div>
+  {% endif %}
+</section>

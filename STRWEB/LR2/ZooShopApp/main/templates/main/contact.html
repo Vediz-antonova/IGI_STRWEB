@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/main/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="team-wrapper">
+  <div class="team-container">
+    <h2>Наши сотрудники</h2>
+    <div class="team-grid">
+      {% for employee in employees %}
+        <article class="employee-card">
+          <div class="employee-photo">
+            {% if employee.image %}
+              <img src="{{ employee.image.url }}" alt="Фото {{ employee.username }}">
+            {% else %}
+              <img src="{% static 'images/baseavatar.jpg' %}" alt="Фото отсутствует">
+            {% endif %}
+          </div>
+          <div class="employee-info">
+            <h3>{{ employee.first_name }} {{ employee.last_name }}</h3>
+            <p class="username">{{ employee.username }}</p>
+            {% if employee.phone %}
+              <p>{{ employee.phone }}</p>
+            {% endif %}
+            {% if employee.email %}
+              <p>✉<a href="mailto:{{ employee.email }}">{{ employee.email }}</a></p>
+            {% endif %}
+            {% if employee.job_description %}
+              <div class="job-description">
+                <strong>Описание работы:</strong>
+                <p>{{ employee.job_description }}</p>
+              </div>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

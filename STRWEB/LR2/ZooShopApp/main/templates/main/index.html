@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% load goods_tags %}
+
+{% block modal_cart %}
+    {% if request.user.is_authenticated and not request.user.is_employee %}
+        {% include "includes/cart_button.html" %}
+    {% endif %}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/main/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <main class="home-page">
+      <section class="logo-section">
+        <img src="{% static 'icons/animal.ico' %}" alt="Логотип ZooShop" class="site-logo" title="Логотип ZooShop">
+      </section>
+
+      <section class="banner-section">
+      <picture>
+        <source srcset="{% static 'images/banner1-small.jpg' %}" media="(max-width: 600px)">
+        <source srcset="{% static 'images/banner1.jpg' %}">
+        <img src="{% static 'images/banner1.jpg' %}" alt="Баннер 1" title="Баннер 1">
+      </picture>
+
+      <picture>
+        <source srcset="{% static 'images/banner2-small.jpg' %}" media="(max-width: 600px)">
+        <source srcset="{% static 'images/banner2.jpg' %}">
+        <img src="{% static 'images/banner2.jpg' %}" alt="Баннер 2" title="Баннер 2">
+      </picture>
+
+      <picture>
+        <source srcset="{% static 'images/banner3-small.jpg' %}" media="(max-width: 600px)">
+        <source srcset="{% static 'images/banner3.jpg' %}">
+        <img src="{% static 'images/banner3.jpg' %}" alt="Баннер 3" title="Баннер 3">
+      </picture>
+      </section>
+
+      {% if latest_article %}
+      <section class="latest-article">
+        <h2>Последняя статья</h2>
+        <h3>{{ latest_article.title }}</h3>
+        <p>{{ latest_article.summary }}</p>
+        {% if latest_article.image_url %}
+          <img src="{{ latest_article.image_url }}" alt="Изображение статьи">
+        {% endif %}
+      </section>
+      {% endif %}
+
+      <section class="partners-section">
+        <h2>Наши партнёры</h2>
+        <div class="partners-grid">
+          {% for partner in partners %}
+            <a href="{{ partner.website }}" target="_blank" class="partner-card">
+              <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
+              <span>{{ partner.name }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+{% endblock content %}
+
+{% block footer %}
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-center">
+          <small>© 2025 ZooShop. Все права защищены</small>
+          <br>
+          <small>Текущая дата: {% now "d/m/Y" %}</small>
+        </div>
+        <aside class="footer-calendar">
+          {{ month_calendar|safe }}
+        </aside>
+      </div>
+    </footer>
+{% endblock footer %}

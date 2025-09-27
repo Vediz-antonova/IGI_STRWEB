@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% load carts_tags %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/carts/included_cart.css' %}">
+  <link rel="stylesheet" href="{% static 'css/users/users_cart.css' %}">
+{% endblock %}
+
+{% block content %}
+  {% user_carts request as carts %}
+  <section class="users-cart-wrapper">
+    <div class="users-cart-container">
+      <h2 class="users-cart-title">Корзина</h2>
+      <div id="cart-items-container">
+        {% include "carts/includes/included_cart.html" %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

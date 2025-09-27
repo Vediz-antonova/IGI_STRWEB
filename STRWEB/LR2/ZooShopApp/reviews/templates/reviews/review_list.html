@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/reviews/review_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="review-wrapper">
+  <div class="review-container">
+    <h2>Отзывы</h2>
+
+    <a href="{% if request.user.is_authenticated %}{% url 'profile' %}{% else %}{% url 'login' %}{% endif %}" class="add-review-button">
+      + Добавить отзыв
+    </a>
+
+    {% for review in reviews %}
+      <article class="review-item">
+        <h3 class="review-author">{{ review.user.username }}</h3>
+        <p><strong>Оценка:</strong> {{ review.rating }} ⭐</p>
+        <p class="review-text">{{ review.text }}</p>
+        <p class="review-date">{{ review.created_at|date:"d/m/Y H:i" }}</p>
+      </article>
+      <hr>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

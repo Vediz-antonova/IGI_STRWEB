@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ news.title }}{% endblock %}
+
+{% block content %}
+<div class="news-container">
+  <article class="news-full">
+    <h1>{{ news.title }}</h1>
+
+    <div class="text-muted">
+      Опубликовано: {{ news.publish_date|date:"d.m.Y H:i" }}
+    </div>
+
+    {% if news.image_url %}
+      <img src="{{ news.image_url }}" class="news-image" alt="{{ news.title }}">
+    {% endif %}
+
+    <div class="news-content">
+      {{ news.full_content|linebreaks }}
+    </div>
+
+    <a href="{% url 'news' %}" class="btn btn-outline-secondary mt-3">← Все новости</a>
+  </article>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/main/supplier_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="supplier-wrapper">
+  <div class="supplier-container">
+    <h2>Поставщики</h2>
+
+    {% if supplier_data %}
+      <table class="supplier-table">
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>Адрес</th>
+            <th>Телефон</th>
+            <th>Продукты</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in supplier_data %}
+            <tr>
+              <td>{{ item.supplier.name }}</td>
+              <td>{{ item.supplier.address }}</td>
+              <td>{{ item.supplier.phone }}</td>
+              <td>{{ item.products }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="no-suppliers">Нет доступных поставщиков</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

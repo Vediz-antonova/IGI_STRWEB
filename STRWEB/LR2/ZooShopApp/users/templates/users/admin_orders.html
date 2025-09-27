@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/users/admin_orders.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="admin-orders-wrapper">
+  <div class="admin-orders-container">
+    <h2>Все заказы</h2>
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th>№ заказа</th>
+          <th>Пользователь</th>
+          <th>Телефон</th>
+          <th>Статус</th>
+          <th>Дата</th>
+          <th>Товары</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in orders %}
+        <tr>
+          <td>{{ order.id }}</td>
+          <td>{{ order.user.username }}</td>
+          <td>{{ order.phone_number }}</td>
+          <td>{{ order.status }}</td>
+          <td>{{ order.created_timestamp|date:"d.m.Y H:i" }}</td>
+          <td>
+            <ul>
+              {% for item in order.orderitem_set.all %}
+              <li>{{ item.name }} — {{ item.price|floatformat:2 }} BYN ({{ item.quantity }} шт.)</li>
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

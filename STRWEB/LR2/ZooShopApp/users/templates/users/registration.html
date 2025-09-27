@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/users/registration.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="registration-wrapper" translate="no">
+  <div class="registration-card">
+    <h2>Регистрация</h2>
+
+    <form action="{% url 'registration' %}" method="post" class="registration-form">
+      {% csrf_token %}
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="first_name">Имя</label>
+          <input tabindex="1" type="text" name="first_name" id="first_name" required pattern="[А-Яа-яЁёA-Za-z\s-]+" title="Только буквы, пробелы и дефисы" placeholder="Введите имя">
+        </div>
+
+        <div class="form-group">
+          <label for="last_name">Фамилия</label>
+          <input dir="ltr" tabindex="2" type="text" name="last_name" id="last_name" required pattern="[А-Яа-яЁёA-Za-z\s-]+" title="Только буквы, пробелы и дефисы" placeholder="Введите фамилию">
+        </div>
+
+        <div class="form-group">
+          <label for="username">Имя пользователя</label>
+          <input tabindex="3" type="text" name="username" id="username" required minlength="4" maxlength="150" placeholder="Введите имя пользователя">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required placeholder="youremail@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="password1">Пароль</label>
+          <input type="password" name="password1" id="password1" required minlength="8" placeholder="Введите пароль">
+        </div>
+
+        <div class="form-group">
+          <label for="password2">Подтвердите пароль</label>
+          <input type="password" name="password2" id="password2" required minlength="8" placeholder="Подтвердите пароль">
+        </div>
+
+        <div class="form-group">
+          <label for="birth_date">Дата рождения</label>
+          <input type="date" name="birth_date" id="birth_date" required max="{{ max_birth_date }}" title="Вам должно быть не менее 18 лет">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="text" name="phone" id="phone" required pattern="^\+375\s*\(29\)\s*\d{3}-\d{2}-\d{2}$" title="Формат: +375 (29) XXX-XX-XX" placeholder="+375 (29) 123-45-67">
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="is_employee" id="is_employee" onchange="toggleJobField()"> Я сотрудник
+          </label>
+        </div>
+
+        <div class="form-group" id="job_description_group" style="display: none;">
+          <label for="job_description">Описание работы</label>
+          <textarea spellcheck="true" name="job_description" id="job_description" maxlength="300" placeholder="Опишите ваши обязанности"></textarea>
+        </div>
+
+      </div>
+
+      <button type="submit" accesskey="r" title="Нажмите Alt+R для отправки формы">Зарегистрироваться</button>
+    </form>
+
+    <div contenteditable="true" style="margin-top: 2rem; border: 1px dashed #ccc; padding: 0.5rem;" title="Редактируемый блок">
+      Здесь можно ввести заметку или комментарий вручную.
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleJobField() {
+    const checkbox = document.getElementById("is_employee");
+    const jobField = document.getElementById("job_description_group");
+    const jobInput = document.getElementById("job_description");
+
+    if (checkbox.checked) {
+      jobField.style.display = "block";
+      jobInput.setAttribute("required", "required");
+    } else {
+      jobField.style.display = "none";
+      jobInput.removeAttribute("required");
+    }
+  }
+</script>
+
+{% endblock %}

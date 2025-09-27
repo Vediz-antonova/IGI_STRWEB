@@ -1,0 +1,129 @@
+.statistics-wrapper {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.statistics-block {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.statistics-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: #343a40;
+}
+
+.statistics-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.statistics-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #212529;
+}
+
+.category-list,
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.category-list li,
+.product-list li {
+  margin-bottom: 0.5rem;
+  color: white;
+  background-color: #198754;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #198754;
+  font-style: italic;
+  color: #495057;
+}
+
+cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+pre {
+  background-color: #e9ecef;
+  padding: 1rem;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  font-family: monospace;
+  margin-bottom: 1rem;
+}
+
+.scroll-down {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: #0d6efd;
+}
+
+.scroll-down:hover {
+  text-decoration: underline;
+}
+
+.chart-section {
+  margin-bottom: 2rem;
+}
+
+.chart-section figcaption {
+  margin-bottom: 0.5rem;
+  color: #198754;
+  font-weight: bold;
+}
+
+.chart-section img {
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.statistics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.statistics-table th,
+.statistics-table td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.statistics-table th {
+  background-color: #343a40;
+  color: white;
+}
+
+.statistics-table td {
+  background-color: #ffffff;
+}
+
+abbr,
+dfn {
+  border-bottom: 1px dotted #6c757d;
+  cursor: help;
+}

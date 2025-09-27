@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/main/promotional.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="promo-wrapper">
+  <div class="promo-container">
+    <h2>Действующие промокоды</h2>
+    <ul class="promo-list active">
+      {% for coupon in active_coupons %}
+        <li>
+          <strong>{{ coupon.code }}</strong> — {{ coupon.discount }}%
+          <span class="expires">(истекает {{ coupon.expiration_date|date:"d/m/Y" }})</span>
+        </li>
+      {% empty %}
+        <li class="empty">Нет активных промокодов</li>
+      {% endfor %}
+    </ul>
+
+    <h2>Истекшие промокоды</h2>
+    <ul class="promo-list expired">
+      {% for coupon in expired_coupons %}
+        <li>
+          <strong>{{ coupon.code }}</strong> — {{ coupon.discount }}%
+          <span class="expired">истек {{ coupon.expiration_date|date:"d/m/Y" }}</span>
+        </li>
+      {% empty %}
+        <li class="empty">Нет истекших промокодов</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-center">
+          <small>© 2025 ZooShop. Все права защищены</small>
+          <br>
+          <small>Текущая дата: {% now "d/m/Y" %}</small>
+        </div>
+        <aside class="footer-calendar">
+          {{ month_calendar|safe }}
+        </aside>
+      </div>
+    </footer>
+{% endblock footer %}
