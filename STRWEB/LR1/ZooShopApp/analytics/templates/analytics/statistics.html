@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/analytics/statistics.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="statistics-wrapper" itemscope itemtype="https://schema.org/Report">
+  <div class="statistics-block">
+    <h2 class="statistics-title" itemprop="name">Статистика сайта</h2>
+
+    <ul class="statistics-list">
+      <li><strong itemprop="totalSales">Общая сумма продаж:</strong> {{ total_sales }} BYN</li>
+      <li><strong itemprop="averageSales">Средняя сумма продаж:</strong> {{ sales_avg }} BYN</li>
+      <li><strong>Медиана продаж:</strong> {{ sales_median }} BYN</li>
+      <li><strong>Средний возраст клиентов:</strong> {{ age_avg }} лет</li>
+      <li><strong>Медиана возраста клиентов:</strong> {{ age_median }} лет</li>
+    </ul>
+
+    <h3>Популярные категории товаров:</h3>
+    <ul class="category-list">
+      {% for category in popular_categories %}
+        <li><em>{{ category.name }}</em> — <strong>{{ category.num_orders }}</strong> продаж</li>
+      {% endfor %}
+    </ul>
+
+    <h3>Самые прибыльные товары:</h3>
+    <ul class="product-list">
+      {% for product in profitable_products %}
+        <li><i>{{ product.name }}</i> — <strong>{{ product.total_income }}</strong> BYN</li>
+      {% endfor %}
+    </ul>
+
+    <blockquote>
+      «Анализ данных — это не просто цифры, это <strong>понимание поведения</strong> клиентов.»
+      <cite>— Внутренний отчёт отдела аналитики</cite>
+    </blockquote>
+
+    <p>Файл с полной статистикой можно <a href="{% static 'docs/statistics.pdf' %}" download>скачать здесь (PDF)</a>.</p>
+
+    <pre>
+      Продажи растут
+      Клиенты довольны
+      Категории живут
+      Доход стабильный
+    </pre>
+
+    <p><abbr title="Средняя арифметическая">Ср. знач.</abbr> и <dfn title="Значение, разделяющее выборку пополам">медиана</dfn> — ключевые показатели.</p>
+  </div>
+
+  <div class="statistics-block">
+    <h2 class="statistics-title">Статистика продаж по категориям</h2>
+    {% for category, chart_url in category_charts.items %}
+      <figure class="chart-section">
+        <figcaption>{{ category.name }}</figcaption>
+        <img src="{{ chart_url }}" alt="График доходов {{ category.name }}">
+      </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% load static %}
+{% load goods_tags %}
+
+<!DOCTYPE html>
+<html lang="ru" itemscope itemtype="https://schema.org/WebPage">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Vediz_antonava">
+    <meta name="description" content="Интернет-магазин с товарами, поставщиками и отзывами">
+    <!--<meta name="keywords" content="товары, поставщики, заказы, отзывы, Django, магазин">-->
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <link rel="shortcut icon" href="{% static 'icons/animal.ico' %}" type="image/x-icon" />
+    {% block css%} {% endblock css%}
+    <title>{{ title }}</title>
+</head>
+
+<body>
+  <header>
+    <nav aria-label="Главное меню">
+      <div class="nav-container">
+        <ul class="nav-bar">
+          <li><a href="{% url 'index' %}">Главная</a></li>
+          <li><a href="javascript:history.back()">← Назад</a></li>
+          <li class="nav-select">
+              <label for="info-select" class="visually-hidden">Информация</label>
+              <select id="info-select" onchange="location.href=this.value" title="Выберите раздел">
+                <option disabled selected>Информация</option>
+                <option value="{% url 'about' %}">О компании</option>
+                <option value="{% url 'contact' %}">Контакты</option>
+                <option value="{% url 'job_list' %}">Вакансии</option>
+                <option value="{% url 'statistics' %}">Статистика</option>
+                <option value="{% url 'promotional' %}">Промокоды</option>
+                <option value="{% url 'privacy_policy' %}">Политика конфиденциальности</option>
+              </select>
+          </li>
+          <li><a href="{% url 'news' %}">Новости</a></li>
+          <li><a href="{% url 'faq' %}">FAQ</a></li>
+          <li><a href="{% url 'review_list' %}">Отзывы</a></li>
+          {% if not user.is_authenticated %}
+            <li><a href="{% url 'login' %}">Войти</a></li>
+          {% else %}
+            <li class="dropdown">
+              <button class="nav-button">Мой профиль ▾</button>
+              <ul class="dropdown-content">
+                {% if request.user.is_authenticated and not request.user.is_employee %}
+                  <li><a href="{% url 'users-cart' %}">Корзина</a></li>
+                {% endif %}
+                <li><a href="{% url 'profile' %}">Личный кабинет</a></li>
+                {% if user.is_superuser %}
+                  <li><a href="{% url 'admin:index' %}">Админ панель</a></li>
+                {% endif %}
+                <li><a href="{% url 'logout' %}">Выйти</a></li>
+              </ul>
+            </li>
+          {% endif %}
+        </ul>
+        <form class="search-form" role="search" action="{% url 'search' %}" method="get">
+          <label for="search-input" class="visually-hidden">Поиск</label>
+          <input id="search-input" type="search" name="q" placeholder="Поиск..." aria-label="Поиск">
+          <button type="submit">Найти</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="catalog-bar">
+      <nav aria-label="Каталог товаров">
+        <details>
+          <summary>Каталог</summary>
+          <ul id="catalog-list">
+              {% tag_categories as categories %}
+              {% for category in categories %}
+                <li><a href="{% url 'catalog' category.slug %}">{{ category.name }}</a></li>
+              {% endfor %}
+          </ul>
+        </details>
+      </nav>
+    </section>
+
+    <section class="main-content">
+      <div class="layout">
+        <aside class="sidebar">
+          {% if user.is_superuser %}
+            <nav aria-label="Вертикальная навигация">
+              <ul class="vertical-nav">
+                <li><a href="{% url 'supplier_list' %}">Поставщики</a></li>
+                <li><a href="{% url 'user_list' %}">Пользователи</a></li>
+                <li><a href="{% url 'admin_orders' %}">Заказы</a></li>
+              </ul>
+            </nav>
+          {% endif %}
+        </aside>
+
+        <article class="content-area">
+          {% include "includes/notifications.html" %}
+          {% block content %}{% endblock %}
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    {% block footer %}{% endblock %}
+  </footer>
+
+  <script src="{% static 'js/jquery/jquery-3.7.1.min.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

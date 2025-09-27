@@ -1,0 +1,31 @@
+{% load static %}
+{% load carts_tags %}
+
+{% user_carts request as carts %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/cart_button.css' %}">
+{% endblock %}
+
+
+<div class="cart-button-wrapper">
+  <button type="button" class="cart-button" id="modalButton" aria-expanded="false">
+    <img src="{% static 'icons/basket2-fill.svg' %}" alt="Корзина" width="24" height="24">
+    <span id="goods-in-cart-count">{{ carts.total_quantity }}</span>
+  </button>
+</div>
+
+<section class="cart-modal" id="cartModal" aria-hidden="true">
+  <div class="cart-modal-overlay" id="cartOverlay"></div>
+  <div class="cart-modal-content" role="dialog" aria-labelledby="cartModalTitle">
+    <header class="cart-modal-header">
+      <h3 id="cartModalTitle">Корзина</h3>
+      <button class="cart-close-button" id="closeModal" aria-label="Закрыть">✖</button>
+    </header>
+    <div class="cart-modal-body">
+      <div id="cart-items-container">
+        {% include "carts/includes/included_cart.html" %}
+      </div>
+    </div>
+  </div>
+</section>

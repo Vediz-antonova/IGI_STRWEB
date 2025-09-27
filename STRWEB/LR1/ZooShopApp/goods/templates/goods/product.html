@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/goods/product.css' %}">
+{% endblock %}
+
+{% block modal_cart %}
+  {% if request.user.is_authenticated and not request.user.is_employee %}
+    {% include "includes/cart_button.html" %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+<section class="product-wrapper">
+  <div class="product-card">
+    <div class="product-preview">
+      <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-thumbnail" onclick="openModal()">
+      <p class="product-id">ID: {{ product.id }}</p>
+    </div>
+
+    <div class="product-info">
+      <h2>{{ product.name }}</h2>
+      <p><strong>Артикул:</strong> {{ product.article }}</p>
+      <p><strong>Категория:</strong> {{ product.category.name }}</p>
+      <p><strong>Описание:</strong> {{ product.description }}</p>
+      <p><strong>Количество на складе:</strong> {{ product.quantity }}</p>
+      <p><strong>Текущая цена:</strong> {{ product.default_price }} BYN</p>
+
+      {% if request.user.is_authenticated and not request.user.is_employee %}
+        <a href="{% url 'cart_add' %}" class="add-to-cart" data-product-id="{{ product.id }}">
+          {% csrf_token %}
+          Добавить в корзину
+        </a>
+      {% elif request.user.is_employee %}
+        <form method="POST" action="{% url 'update_price' product.id %}" class="price-form">
+          {% csrf_token %}
+          <input type="number" name="new_price" step="0.01" min="0" placeholder="Введите новую цену" required>
+          <button type="submit">Обновить стоимость</button>
+        </form>
+      {% endif %}
+
+      {% if request.user.is_authenticated and request.user.is_employee %}
+        {% if suppliers.exists %}
+          <a href="{% url 'select_supplier' product.slug %}" class="supplier-button">
+            {% csrf_token %}
+            Заказать товар у поставщиков
+          </a>
+        {% else %}
+          <p class="no-suppliers">Нет поставщиков для этого товара</p>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  <div id="imageModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">✖</span>
+      <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    </div>
+  </div>
+</section>
+{% endblock %}

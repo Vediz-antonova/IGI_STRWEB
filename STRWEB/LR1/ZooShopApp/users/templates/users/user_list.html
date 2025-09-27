@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/users/user_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="user-list-wrapper">
+  <h2>Список пользователей</h2>
+
+  {% if users %}
+    <table class="user-table">
+      <caption><strong>Таблица зарегистрированных пользователей</strong></caption>
+      <thead>
+        <tr>
+          <th id="th-name">Имя</th>
+          <th id="th-lastname">Фамилия</th>
+          <th id="th-username">Имя пользователя</th>
+          <th id="th-email" colspan="2">Контакты</th>
+          <th id="th-role">Сотрудник</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+          <tr>
+            <td headers="th-name"><em>{{ user.first_name }}</em></td>
+            <td headers="th-lastname"><strong>{{ user.last_name }}</strong></td>
+            <td headers="th-username"><i>{{ user.username }}</i></td>
+            <td headers="th-email">{{ user.email }}</td>
+            <td headers="th-email">{{ user.phone }}</td>
+            <td headers="th-role">
+              {% if user.is_employee %}
+                ✅ <abbr title="Сотрудник компании">Да</abbr>
+              {% else %}
+                ❌ <s>Нет</s>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <p>Дата последнего обновления: <time datetime="2025-09-24">24.09.2025</time></p>
+
+  {% else %}
+    <p class="no-users">Нет зарегистрированных пользователей</p>
+  {% endif %}
+</section>
+{% endblock %}

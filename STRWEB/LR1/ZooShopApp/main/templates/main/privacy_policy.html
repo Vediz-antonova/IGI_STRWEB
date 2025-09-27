@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/main/privacy_policy.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="privacy-wrapper">
+  <div class="privacy-container">
+    <h1>Политика конфиденциальности</h1>
+
+    <code>
+      var fruits = ["apples", "oranges", "mangoes", "cherries"];<br>
+      document.writeln("I like " + fruits.length + " fruits");
+    </code>
+
+    <section aria-labelledby="poem-title">
+      <h2 id="poem-title">Аналитический стих</h2>
+      <p>
+        Данные — <strong>золото</strong>, что мы храним,<br>
+        В графиках смысл, в отчётах — режим.<br>
+        Категории растут и доходы <wbr>вверх,<br>
+        В цифрах — уверенность, в коде — успех.
+      </p>
+    </section>
+
+  </div>
+</section>
+{% endblock %}
