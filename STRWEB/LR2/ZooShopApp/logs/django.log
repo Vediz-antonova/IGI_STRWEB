@@ -1561,3 +1561,43 @@ INFO 2025-10-06 23:11:14,727 basehttp "GET /static/css/main/faq.css HTTP/1.1" 20
 INFO 2025-10-06 23:11:14,734 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
 INFO 2025-10-06 23:11:14,741 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
 INFO 2025-10-06 23:11:14,758 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 23:13:39,648 basehttp "GET /privacy_policy/ HTTP/1.1" 200 4582
+INFO 2025-10-06 23:48:46,141 basehttp "GET /privacy_policy/ HTTP/1.1" 200 5798
+INFO 2025-10-06 23:48:46,157 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 23:48:46,170 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 23:48:46,171 basehttp "GET /static/css/main/privacy_policy.css HTTP/1.1" 200 803
+INFO 2025-10-06 23:48:46,172 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 23:48:46,174 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 23:48:46,210 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 23:49:03,034 basehttp "GET /privacy_policy/ HTTP/1.1" 200 5798
+INFO 2025-10-06 23:49:03,046 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 23:49:03,054 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 23:49:03,056 basehttp "GET /static/css/main/privacy_policy.css HTTP/1.1" 200 2057
+INFO 2025-10-06 23:49:03,057 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 23:49:03,058 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 23:49:03,100 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 23:50:53,740 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 23:54:09,656 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 23:54:11,585 basehttp "GET /privacy_policy/ HTTP/1.1" 200 6441
+INFO 2025-10-06 23:54:12,007 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 23:54:12,028 basehttp "GET /static/css/main/privacy_policy.css HTTP/1.1" 200 2230
+INFO 2025-10-06 23:54:12,041 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 23:54:12,057 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 23:54:12,075 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 23:54:12,118 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 23:55:06,534 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 23:55:09,473 basehttp "GET /privacy_policy/ HTTP/1.1" 200 6441
+INFO 2025-10-06 23:55:09,898 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 23:55:09,933 basehttp "GET /static/css/main/privacy_policy.css HTTP/1.1" 200 2226
+INFO 2025-10-06 23:55:09,973 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 23:55:09,973 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 23:55:09,978 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 23:55:09,999 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-07 00:05:40,140 autoreload Watching for file changes with StatReloader
+INFO 2025-10-07 00:05:40,921 basehttp "GET /privacy_policy/ HTTP/1.1" 200 6614
+INFO 2025-10-07 00:05:41,273 basehttp "GET /static/css/main/privacy_policy.css HTTP/1.1" 200 2340
+INFO 2025-10-07 00:05:41,348 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-07 00:05:41,390 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-07 00:05:41,396 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-07 00:05:41,409 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-07 00:05:41,438 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
