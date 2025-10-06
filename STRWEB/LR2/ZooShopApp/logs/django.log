@@ -577,3 +577,442 @@ INFO 2025-10-06 17:29:38,879 basehttp "GET /static/css/base.css HTTP/1.1" 200 41
 INFO 2025-10-06 17:29:49,376 autoreload Watching for file changes with StatReloader
 INFO 2025-10-06 17:29:49,968 basehttp "GET / HTTP/1.1" 200 11143
 INFO 2025-10-06 17:29:49,980 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:33:39,427 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:33:40,851 basehttp "GET / HTTP/1.1" 200 11143
+INFO 2025-10-06 17:33:40,861 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:33:40,972 basehttp "GET /static/css/base.css HTTP/1.1" 200 4347
+INFO 2025-10-06 17:33:54,937 basehttp "GET /user/login/ HTTP/1.1" 200 4878
+INFO 2025-10-06 17:33:54,946 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:33:54,948 basehttp "GET /static/css/users/login.css HTTP/1.1" 200 1273
+INFO 2025-10-06 17:34:13,505 basehttp "GET / HTTP/1.1" 200 11143
+INFO 2025-10-06 17:34:13,515 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:34:40,019 basehttp "GET /news/ HTTP/1.1" 200 18411
+INFO 2025-10-06 17:34:40,029 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:34:40,035 basehttp "GET /static/css/main/news.css HTTP/1.1" 200 854
+INFO 2025-10-06 17:38:04,942 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:38:13,296 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:38:13,307 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:38:13,308 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:38:13,894 basehttp - Broken pipe from ('127.0.0.1', 62955)
+INFO 2025-10-06 17:38:14,809 basehttp "GET /about/ HTTP/1.1" 200 9159
+INFO 2025-10-06 17:38:15,205 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 17:38:15,309 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 1266
+INFO 2025-10-06 17:38:15,355 basehttp - Broken pipe from ('127.0.0.1', 62962)
+INFO 2025-10-06 17:38:15,577 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 17:38:23,918 basehttp "GET /contact/ HTTP/1.1" 200 7782
+INFO 2025-10-06 17:38:23,932 basehttp "GET /static/css/main/contact.css HTTP/1.1" 200 1284
+INFO 2025-10-06 17:38:23,934 basehttp "GET /static/images/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 17:38:23,944 basehttp "GET /media/users/506e8fe625c1f8707cec23d6b130dc08_sqZJoDz.jpeg HTTP/1.1" 200 846399
+INFO 2025-10-06 17:38:23,950 basehttp "GET /media/users/9a14b8b2c9494052fab98e31e76bb929.jpg HTTP/1.1" 200 1340200
+INFO 2025-10-06 17:38:25,959 basehttp "GET /about/ HTTP/1.1" 200 9159
+INFO 2025-10-06 17:38:26,019 basehttp - Broken pipe from ('127.0.0.1', 62995)
+INFO 2025-10-06 17:38:26,187 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 17:38:26,538 basehttp - Broken pipe from ('127.0.0.1', 62963)
+INFO 2025-10-06 17:38:28,723 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:38:32,598 basehttp "GET /news/ HTTP/1.1" 200 18803
+INFO 2025-10-06 17:38:33,262 basehttp "GET /faq/ HTTP/1.1" 200 8609
+INFO 2025-10-06 17:38:33,271 basehttp "GET /static/css/main/faq.css HTTP/1.1" 200 912
+INFO 2025-10-06 17:38:39,054 basehttp "GET /user/login/ HTTP/1.1" 200 4915
+INFO 2025-10-06 17:38:40,516 basehttp "GET /reviews/ HTTP/1.1" 200 8378
+INFO 2025-10-06 17:38:40,523 basehttp "GET /static/css/reviews/review_list.css HTTP/1.1" 200 867
+INFO 2025-10-06 17:38:41,605 basehttp "GET /faq/ HTTP/1.1" 200 8609
+INFO 2025-10-06 17:38:41,613 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:38:41,675 basehttp - Broken pipe from ('127.0.0.1', 62961)
+INFO 2025-10-06 17:38:50,565 basehttp "GET /contact/ HTTP/1.1" 200 7782
+INFO 2025-10-06 17:38:52,227 basehttp "GET /jobs/ HTTP/1.1" 200 9084
+INFO 2025-10-06 17:38:52,235 basehttp "GET /static/css/jobs/job_list.css HTTP/1.1" 200 697
+INFO 2025-10-06 17:38:54,062 basehttp "GET /analytics/ HTTP/1.1" 200 7542
+INFO 2025-10-06 17:38:54,078 basehttp "GET /media/charts/all.png HTTP/1.1" 200 33023
+INFO 2025-10-06 17:38:54,083 basehttp "GET /static/css/analytics/statistics.css HTTP/1.1" 200 2110
+INFO 2025-10-06 17:38:54,087 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22613
+INFO 2025-10-06 17:38:54,087 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 26189
+INFO 2025-10-06 17:38:54,089 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 29446
+INFO 2025-10-06 17:38:58,875 basehttp "GET /promotional/ HTTP/1.1" 200 7085
+INFO 2025-10-06 17:38:58,884 basehttp "GET /static/css/main/promotional.css HTTP/1.1" 200 1074
+INFO 2025-10-06 17:39:04,026 basehttp "GET /privacy_policy/ HTTP/1.1" 200 4583
+INFO 2025-10-06 17:39:04,045 basehttp "GET /static/css/main/privacy_policy.css HTTP/1.1" 200 860
+INFO 2025-10-06 17:39:12,807 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:39:12,818 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:40:02,699 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:40:04,845 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:40:04,997 basehttp "GET /static/css/base.css HTTP/1.1" 200 4381
+INFO 2025-10-06 17:40:07,226 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:40:07,236 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:40:07,717 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:40:07,725 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:40:32,669 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:40:35,372 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:40:35,486 basehttp "GET /static/css/base.css HTTP/1.1" 200 4311
+INFO 2025-10-06 17:40:56,891 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:40:56,902 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:41:35,022 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:41:35,587 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:41:35,770 basehttp "GET /static/css/base.css HTTP/1.1" 200 4311
+INFO 2025-10-06 17:47:32,210 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:47:33,053 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:47:33,064 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:47:33,180 basehttp "GET /static/css/base.css HTTP/1.1" 200 4311
+INFO 2025-10-06 17:47:44,125 basehttp "GET /news/ HTTP/1.1" 200 18579
+INFO 2025-10-06 17:48:44,223 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:48:53,641 basehttp "GET /news/ HTTP/1.1" 200 18167
+INFO 2025-10-06 17:48:53,853 basehttp "GET /static/css/base.css HTTP/1.1" 200 4258
+INFO 2025-10-06 17:49:27,084 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:49:37,556 basehttp "GET /news/ HTTP/1.1" 200 18990
+INFO 2025-10-06 17:49:37,574 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:49:56,542 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:50:08,297 basehttp "GET /news/ HTTP/1.1" 200 18598
+INFO 2025-10-06 17:50:08,441 basehttp "GET /static/css/base.css HTTP/1.1" 200 4262
+INFO 2025-10-06 17:51:17,988 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:51:28,758 basehttp "GET /news/ HTTP/1.1" 200 18665
+INFO 2025-10-06 17:51:28,774 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:52:27,054 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:52:43,519 basehttp "GET /news/ HTTP/1.1" 200 18494
+INFO 2025-10-06 17:52:43,529 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:52:44,133 basehttp "GET / HTTP/1.1" 200 11952
+INFO 2025-10-06 17:53:02,356 basehttp "GET /news/ HTTP/1.1" 200 19233
+INFO 2025-10-06 17:53:02,471 basehttp "GET /static/css/main/news.css HTTP/1.1" 200 1589
+INFO 2025-10-06 17:53:29,621 basehttp "GET /news/ HTTP/1.1" 200 18540
+INFO 2025-10-06 17:53:29,632 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:53:56,165 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:53:56,175 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:53:56,175 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:54:19,265 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:54:24,916 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:54:25,042 basehttp "GET /static/css/base.css HTTP/1.1" 200 4262
+INFO 2025-10-06 17:54:26,571 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 17:54:26,581 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:54:30,244 basehttp "GET /news/ HTTP/1.1" 200 19448
+INFO 2025-10-06 17:54:30,258 basehttp "GET /static/css/main/news.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:54:58,678 basehttp "GET /news/ HTTP/1.1" 200 18059
+INFO 2025-10-06 17:54:58,687 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:58:44,056 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:59:13,086 basehttp "GET /news/ HTTP/1.1" 200 17793
+INFO 2025-10-06 17:59:13,101 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:59:48,272 basehttp "GET /news/ HTTP/1.1" 200 18553
+INFO 2025-10-06 17:59:48,284 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:00:03,833 basehttp "GET /news/ HTTP/1.1" 200 18844
+INFO 2025-10-06 18:00:03,968 basehttp "GET /static/css/main/news.css HTTP/1.1" 200 1634
+INFO 2025-10-06 18:02:05,972 basehttp "GET /news/ HTTP/1.1" 200 18535
+INFO 2025-10-06 18:02:05,985 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:04:43,075 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:04:49,959 basehttp "GET /news/ HTTP/1.1" 200 19708
+INFO 2025-10-06 18:04:49,974 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:05:23,142 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:05:29,619 basehttp "GET /news/ HTTP/1.1" 200 17992
+INFO 2025-10-06 18:05:59,316 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:06:11,534 basehttp "GET /news/ HTTP/1.1" 200 18496
+INFO 2025-10-06 18:06:11,548 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:06:46,588 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:07:05,837 basehttp "GET /news/ HTTP/1.1" 200 17642
+INFO 2025-10-06 18:08:32,402 basehttp "GET /news/ HTTP/1.1" 200 18482
+INFO 2025-10-06 18:08:32,662 basehttp "GET /static/css/main/news.css HTTP/1.1" 200 1702
+INFO 2025-10-06 18:08:32,746 basehttp "GET /static/css/base.css HTTP/1.1" 200 4262
+INFO 2025-10-06 18:08:32,750 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 18:08:32,769 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 18:08:32,774 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 18:08:32,776 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 18:08:39,757 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 18:08:39,776 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 5550
+INFO 2025-10-06 18:08:39,785 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 18:08:39,785 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 42882
+INFO 2025-10-06 18:08:39,786 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 15668
+INFO 2025-10-06 18:08:39,796 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 8842
+INFO 2025-10-06 18:08:39,797 basehttp "GET /media/partners/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 18:08:39,799 basehttp "GET /media/partners/baseavatar_64wQ8mi.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 18:08:39,800 basehttp "GET /media/partners/baseavatar_xg5AIgP.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 18:08:39,818 basehttp "GET /static/images/fish2.png HTTP/1.1" 200 1352197
+INFO 2025-10-06 18:08:39,822 basehttp "GET /static/images/seaweed.png HTTP/1.1" 200 1584444
+INFO 2025-10-06 18:08:39,830 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
+INFO 2025-10-06 18:08:48,189 basehttp "GET /about/ HTTP/1.1" 200 9159
+INFO 2025-10-06 18:08:48,211 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 1266
+INFO 2025-10-06 18:08:48,217 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 18:08:48,292 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 18:08:48,435 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 18:09:12,625 basehttp "GET /news/ HTTP/1.1" 200 18002
+INFO 2025-10-06 18:09:12,644 basehttp "GET /static/css/main/news.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:10:23,759 basehttp "GET / HTTP/1.1" 200 11952
+INFO 2025-10-06 18:10:31,604 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 18:10:31,630 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:10:55,474 basehttp "GET /news/ HTTP/1.1" 200 18662
+INFO 2025-10-06 18:10:55,494 basehttp "GET /static/css/main/news.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:13:23,079 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:13:33,848 basehttp "GET /news/ HTTP/1.1" 200 17305
+INFO 2025-10-06 18:13:33,867 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:13:34,020 basehttp "GET /static/css/main/news.css HTTP/1.1" 200 2382
+INFO 2025-10-06 18:13:51,665 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 18:23:19,779 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:23:23,128 basehttp "GET / HTTP/1.1" 200 11180
+INFO 2025-10-06 18:23:23,142 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:23:23,248 basehttp "GET /static/css/base.css HTTP/1.1" 200 4464
+ERROR 2025-10-06 18:23:44,267 log Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connection.py", line 790, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connection.py", line 969, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\util\ssl_.py", line 480, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\util\ssl_.py", line 524, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1382, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='newsapi.org', port=443): Max retries exceeded with url: /v2/everything?q=dogs&apiKey=9b9791430dae4f92afdb02bbb56defdf (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\main\views.py", line 87, in news
+    response = requests.get(NEWS_URL)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\adapters.py", line 675, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='newsapi.org', port=443): Max retries exceeded with url: /v2/everything?q=dogs&apiKey=9b9791430dae4f92afdb02bbb56defdf (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+ERROR 2025-10-06 18:23:44,285 basehttp "GET /news/ HTTP/1.1" 500 186240
+WARNING 2025-10-06 18:23:44,404 log Not Found: /favicon.ico
+WARNING 2025-10-06 18:23:44,404 basehttp "GET /favicon.ico HTTP/1.1" 404 5761
+INFO 2025-10-06 18:24:49,518 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\certifi\__init__.py changed, reloading.
+INFO 2025-10-06 18:24:50,584 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:25:17,575 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:25:27,503 basehttp "GET /news/ HTTP/1.1" 200 18496
+INFO 2025-10-06 18:25:27,530 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:25:27,683 basehttp "GET /static/css/main/news.css HTTP/1.1" 200 2532
+INFO 2025-10-06 18:26:25,166 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:26:40,100 basehttp "GET / HTTP/1.1" 200 11201
+INFO 2025-10-06 18:26:40,121 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:26:42,468 basehttp "GET / HTTP/1.1" 200 11201
+ERROR 2025-10-06 18:26:52,451 log Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1395, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 325, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 294, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1395, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 325, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 294, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\main\views.py", line 87, in news
+    response = requests.get(NEWS_URL)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\adapters.py", line 659, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+INFO 2025-10-06 18:26:52,466 basehttp - Broken pipe from ('127.0.0.1', 64419)
+INFO 2025-10-06 18:26:55,825 basehttp "GET /news/ HTTP/1.1" 200 18257
+INFO 2025-10-06 18:26:55,843 basehttp "GET /static/css/main/news.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:27:36,787 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:27:43,205 basehttp "GET / HTTP/1.1" 200 11201
+INFO 2025-10-06 18:27:43,230 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:27:54,595 basehttp "GET / HTTP/1.1" 200 11201
+ERROR 2025-10-06 18:27:56,185 log Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1395, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 325, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 294, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\urllib3\connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1395, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 325, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 294, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\main\views.py", line 87, in news
+    response = requests.get(NEWS_URL)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\requests\adapters.py", line 659, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+INFO 2025-10-06 18:27:56,195 basehttp - Broken pipe from ('127.0.0.1', 62937)
+INFO 2025-10-06 18:27:57,913 basehttp "GET /news/ HTTP/1.1" 200 18035
+INFO 2025-10-06 18:27:57,931 basehttp "GET /static/css/main/news.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:28:09,830 basehttp "GET / HTTP/1.1" 200 11201
+INFO 2025-10-06 18:28:36,428 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:28:58,747 basehttp "GET / HTTP/1.1" 200 11201
+INFO 2025-10-06 18:28:58,767 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:29:03,084 basehttp "GET /news/ HTTP/1.1" 200 18607
+INFO 2025-10-06 18:29:03,218 basehttp "GET /static/css/main/news.css HTTP/1.1" 200 2508
+INFO 2025-10-06 18:29:05,970 basehttp "GET / HTTP/1.1" 200 11201
+WARNING 2025-10-06 18:29:09,499 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-06 18:29:09,500 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
+INFO 2025-10-06 18:31:35,595 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 18:31:43,173 basehttp "GET / HTTP/1.1" 200 11201
+INFO 2025-10-06 18:31:43,192 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:31:43,315 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 5662

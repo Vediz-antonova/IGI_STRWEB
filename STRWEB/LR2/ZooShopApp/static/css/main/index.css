@@ -3,6 +3,13 @@
   position: relative;
 }
 
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.2rem;
+  color: #198754;
+  text-align: center;
+}
+
 /*------------- AQUARIUM -------------*/
 
 .aquarium {

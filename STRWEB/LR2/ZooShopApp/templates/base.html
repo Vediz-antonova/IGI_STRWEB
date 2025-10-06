@@ -25,7 +25,7 @@
           <li><a href="javascript:history.back()">← Назад</a></li>
           <li class="nav-select">
               <label for="info-select" class="visually-hidden">Информация</label>
-              <select id="info-select" title="Выберите раздел">
+              <select id="info-select" onchange="location.href=this.value;" title="Выберите раздел">
                 <option disabled selected>Информация</option>
                 <option value="{% url 'about' %}">О компании</option>
                 <option value="{% url 'contact' %}">Контакты</option>
