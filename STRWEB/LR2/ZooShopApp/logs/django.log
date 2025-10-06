@@ -1483,3 +1483,35 @@ INFO 2025-10-06 22:42:43,310 basehttp "GET /static/icons/animal.ico HTTP/1.1" 20
 INFO 2025-10-06 22:44:51,965 autoreload Watching for file changes with StatReloader
 INFO 2025-10-06 22:44:52,532 basehttp "GET /contact/ HTTP/1.1" 200 7759
 INFO 2025-10-06 22:44:52,700 basehttp "GET /static/css/main/contact.css HTTP/1.1" 200 1196
+INFO 2025-10-06 22:45:30,489 basehttp "GET /jobs/ HTTP/1.1" 200 9084
+INFO 2025-10-06 22:45:30,521 basehttp "GET /static/css/jobs/job_list.css HTTP/1.1" 200 697
+INFO 2025-10-06 22:47:54,149 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:47:54,661 basehttp "GET /jobs/ HTTP/1.1" 200 9434
+INFO 2025-10-06 22:47:54,929 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:47:55,024 basehttp "GET /static/css/jobs/job_list.css HTTP/1.1" 200 1060
+INFO 2025-10-06 22:47:55,031 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:47:55,063 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:47:55,156 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:47:55,177 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:48:13,749 basehttp "GET / HTTP/1.1" 200 11973
+INFO 2025-10-06 22:48:16,595 basehttp "GET /jobs/ HTTP/1.1" 200 10206
+INFO 2025-10-06 22:48:16,606 basehttp "GET /static/css/jobs/job_list.css HTTP/1.1" 200 1060
+INFO 2025-10-06 22:55:55,442 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:55:56,062 basehttp "GET /jobs/ HTTP/1.1" 200 9007
+INFO 2025-10-06 22:55:56,399 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:55:56,426 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:55:56,444 basehttp "GET /static/css/jobs/job_list.css HTTP/1.1" 200 1079
+INFO 2025-10-06 22:55:56,463 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:55:56,550 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:55:56,568 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:57:55,586 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:57:56,268 basehttp "GET /jobs/ HTTP/1.1" 200 9007
+INFO 2025-10-06 22:57:56,628 basehttp "GET /static/css/jobs/job_list.css HTTP/1.1" 200 1234
+INFO 2025-10-06 22:57:56,686 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:57:56,698 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:57:56,700 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:57:56,791 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:57:56,807 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:59:00,576 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:59:01,214 basehttp "GET /jobs/ HTTP/1.1" 200 9007
+INFO 2025-10-06 22:59:01,381 basehttp "GET /static/css/jobs/job_list.css HTTP/1.1" 200 964

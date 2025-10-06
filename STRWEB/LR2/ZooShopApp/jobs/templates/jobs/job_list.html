@@ -18,8 +18,8 @@
         <p><strong>Локация:</strong> {{ job.location|default:"Любое место" }}</p>
         <p class="job-date">Опубликовано: {{ job.posted_at|date:"d/m/Y H:i" }}</p>
       </article>
-      <hr>
     {% endfor %}
+    <div class="clearfix"></div>
   </div>
 </section>
 {% endblock %}
