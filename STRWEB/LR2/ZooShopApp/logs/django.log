@@ -510,3 +510,70 @@ INFO 2025-10-06 16:25:45,998 basehttp "GET /static/css/main/index.css HTTP/1.1" 
 INFO 2025-10-06 16:27:01,372 autoreload Watching for file changes with StatReloader
 INFO 2025-10-06 16:27:03,015 basehttp "GET / HTTP/1.1" 200 10550
 INFO 2025-10-06 16:27:03,135 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 4293
+INFO 2025-10-06 16:37:21,079 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 16:37:23,011 basehttp "GET / HTTP/1.1" 200 10550
+INFO 2025-10-06 16:37:23,023 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 16:37:23,155 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 4568
+INFO 2025-10-06 16:39:30,175 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 16:39:31,643 basehttp "GET / HTTP/1.1" 200 10550
+INFO 2025-10-06 16:39:31,773 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 4708
+INFO 2025-10-06 16:43:42,685 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 16:43:44,035 basehttp "GET / HTTP/1.1" 200 10550
+INFO 2025-10-06 16:43:44,044 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 16:43:44,164 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 4742
+INFO 2025-10-06 16:46:09,018 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 16:46:09,580 basehttp "GET / HTTP/1.1" 200 10550
+INFO 2025-10-06 16:46:09,739 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 5113
+INFO 2025-10-06 17:03:54,910 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:03:57,100 basehttp "GET / HTTP/1.1" 200 11206
+INFO 2025-10-06 17:03:57,111 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:03:57,251 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 5550
+INFO 2025-10-06 17:05:59,744 basehttp "GET / HTTP/1.1" 200 11204
+INFO 2025-10-06 17:05:59,756 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:08:40,398 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:08:41,199 basehttp "GET / HTTP/1.1" 200 11204
+INFO 2025-10-06 17:08:41,208 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:09:29,430 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:09:30,225 basehttp "GET / HTTP/1.1" 200 11993
+INFO 2025-10-06 17:09:41,738 basehttp "GET / HTTP/1.1" 200 11204
+INFO 2025-10-06 17:09:41,749 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:09:41,931 basehttp "GET /static/css/base.css HTTP/1.1" 200 4125
+INFO 2025-10-06 17:18:24,144 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:18:29,058 basehttp "GET / HTTP/1.1" 200 11168
+INFO 2025-10-06 17:18:29,068 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:18:29,210 basehttp "GET /static/css/base.css HTTP/1.1" 200 4216
+INFO 2025-10-06 17:24:54,718 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:24:55,975 basehttp "GET / HTTP/1.1" 200 11168
+INFO 2025-10-06 17:24:55,985 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:24:56,117 basehttp "GET /static/css/base.css HTTP/1.1" 200 4075
+INFO 2025-10-06 17:25:17,018 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:25:20,027 basehttp "GET / HTTP/1.1" 200 11168
+INFO 2025-10-06 17:25:20,142 basehttp "GET /static/css/base.css HTTP/1.1" 200 4101
+INFO 2025-10-06 17:25:21,122 basehttp "GET / HTTP/1.1" 200 11168
+INFO 2025-10-06 17:25:21,131 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:26:12,160 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:26:12,842 basehttp "GET / HTTP/1.1" 200 11168
+INFO 2025-10-06 17:26:12,977 basehttp "GET /static/css/base.css HTTP/1.1" 200 4165
+INFO 2025-10-06 17:26:14,486 basehttp "GET / HTTP/1.1" 200 11168
+INFO 2025-10-06 17:26:14,494 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:26:39,101 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:26:39,754 basehttp "GET / HTTP/1.1" 200 11168
+INFO 2025-10-06 17:26:39,887 basehttp "GET /static/css/base.css HTTP/1.1" 200 4080
+INFO 2025-10-06 17:26:40,980 basehttp "GET / HTTP/1.1" 200 11168
+INFO 2025-10-06 17:26:40,989 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:27:55,557 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:27:56,136 basehttp "GET / HTTP/1.1" 200 11168
+INFO 2025-10-06 17:27:56,149 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 17:27:56,273 basehttp "GET /static/css/base.css HTTP/1.1" 200 4209
+INFO 2025-10-06 17:28:43,743 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:28:44,272 basehttp "GET / HTTP/1.1" 200 11168
+INFO 2025-10-06 17:28:44,402 basehttp "GET /static/css/base.css HTTP/1.1" 200 4125
+INFO 2025-10-06 17:28:59,118 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:28:59,700 basehttp "GET / HTTP/1.1" 200 11168
+INFO 2025-10-06 17:28:59,844 basehttp "GET /static/css/base.css HTTP/1.1" 200 4454
+INFO 2025-10-06 17:29:38,033 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:29:38,760 basehttp "GET / HTTP/1.1" 200 11140
+INFO 2025-10-06 17:29:38,879 basehttp "GET /static/css/base.css HTTP/1.1" 200 4125
+INFO 2025-10-06 17:29:49,376 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 17:29:49,968 basehttp "GET / HTTP/1.1" 200 11143
+INFO 2025-10-06 17:29:49,980 basehttp "GET /static/css/base.css HTTP/1.1" 304 0

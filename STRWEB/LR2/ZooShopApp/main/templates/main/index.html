@@ -60,13 +60,25 @@
 
       {% if latest_article %}
       <section class="latest-article">
-        <h2>Последняя статья</h2>
-        <h3>{{ latest_article.title }}</h3>
-        <p>{{ latest_article.summary }}</p>
-        {% if latest_article.image_url %}
-          <img src="{{ latest_article.image_url }}" alt="Изображение статьи">
-        {% endif %}
-      </section>
+          <h2>Последняя статья</h2>
+          <article class="latest-article-card">
+            <h3>{{ latest_article.title }}</h3>
+
+            {% if latest_article.image_url %}
+              <figure>
+                <img src="{{ latest_article.image_url }}" alt="{{ latest_article.title }}">
+                <figcaption>Иллюстрация к статье</figcaption>
+              </figure>
+            {% endif %}
+
+            <p class="article-summary">{{ latest_article.summary|truncatechars:120 }}...</p>
+
+            <details class="article-details">
+              <summary class="read-more-summary">Читать далее</summary>
+              <p class="article-full">{{ latest_article.summary }}</p>
+            </details>
+          </article>
+        </section>
       {% endif %}
 
       <section class="partners-section">
