@@ -1460,3 +1460,26 @@ INFO 2025-10-06 22:36:24,395 basehttp "GET /about/ HTTP/1.1" 200 9452
 WARNING 2025-10-06 22:36:24,439 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
 WARNING 2025-10-06 22:36:24,440 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
 INFO 2025-10-06 22:36:24,616 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2970
+INFO 2025-10-06 22:40:29,993 basehttp "GET /contact/ HTTP/1.1" 200 7782
+INFO 2025-10-06 22:41:59,526 basehttp "GET / HTTP/1.1" 200 11201
+INFO 2025-10-06 22:41:59,550 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 5550
+INFO 2025-10-06 22:42:07,534 basehttp "GET /about/ HTTP/1.1" 200 9452
+INFO 2025-10-06 22:42:07,569 basehttp "GET /static/css/main/about.css HTTP/1.1" 304 0
+INFO 2025-10-06 22:42:14,815 basehttp "GET /privacy_policy/ HTTP/1.1" 200 4583
+INFO 2025-10-06 22:42:14,838 basehttp "GET /static/css/main/privacy_policy.css HTTP/1.1" 200 860
+INFO 2025-10-06 22:42:17,526 basehttp "GET /contact/ HTTP/1.1" 200 7782
+INFO 2025-10-06 22:42:37,684 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:42:38,274 basehttp "GET /contact/ HTTP/1.1" 200 7782
+INFO 2025-10-06 22:42:42,819 basehttp "GET /contact/ HTTP/1.1" 200 7782
+INFO 2025-10-06 22:42:43,098 basehttp "GET /static/css/main/contact.css HTTP/1.1" 200 1264
+INFO 2025-10-06 22:42:43,121 basehttp "GET /media/users/506e8fe625c1f8707cec23d6b130dc08_sqZJoDz.jpeg HTTP/1.1" 200 846399
+INFO 2025-10-06 22:42:43,125 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:42:43,127 basehttp "GET /static/images/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:42:43,131 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:42:43,132 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:42:43,134 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:42:43,134 basehttp "GET /media/users/9a14b8b2c9494052fab98e31e76bb929.jpg HTTP/1.1" 200 1340200
+INFO 2025-10-06 22:42:43,310 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:44:51,965 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:44:52,532 basehttp "GET /contact/ HTTP/1.1" 200 7759
+INFO 2025-10-06 22:44:52,700 basehttp "GET /static/css/main/contact.css HTTP/1.1" 200 1196
