@@ -2,13 +2,6 @@
   padding: 2rem;
 }
 
-.news-wrapper h2 {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.2rem;
-  color: #198754;
-  text-align: center;
-}
-
 .row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

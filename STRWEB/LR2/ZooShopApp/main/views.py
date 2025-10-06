@@ -97,7 +97,7 @@ def news(request):
             "image_url": article["urlToImage"],
         })
 
-    local_news_objects = News.objects.order_by("-id")[:5]
+    local_news_objects = News.objects.order_by("-id")[:2]
 
     external_news_objects = []
     for article in news_data[:5]:

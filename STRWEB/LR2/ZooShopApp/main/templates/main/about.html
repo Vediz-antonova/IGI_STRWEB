@@ -7,10 +7,8 @@
 {% endblock css %}
 
 {% block content %}
-    <article class="about-section">
-      <header>
-        <h1>О компании</h1>
-      </header>
+    <section class="about-section">
+      <h2>О компании</h2>
 
       {% if content.logo %}
         <figure class="company-logo">
@@ -25,7 +23,7 @@
 
       {% if content.video_url %}
       <section class="company-video">
-        <h2>Видео о нас</h2>
+        <h3>Видео о нас</h3>
         <iframe
           width="100%"
           height="360"
@@ -42,7 +40,7 @@
       </video>
 
       <section class="company-audio">
-        <h2>Аудио-приветствие</h2>
+        <h3>Аудио-приветствие</h3>
         <audio controls>
           <source src="{% static 'media/welcome.mp3' %}" type="audio/mpeg">
           Ваш браузер не поддерживает аудио.
@@ -51,14 +49,14 @@
 
       {% if content.description %}
         <section class="company-description">
-          <h2>Описание</h2>
+          <h3>Описание</h3>
           <p>{{ content.description }}</p>
         </section>
       {% endif %}
 
       {% if content.history %}
         <section class="company-history">
-          <h2>История по годам</h2>
+          <h3>История по годам</h3>
           <ul>
             {% for year, event in content.history.items %}
               <li><strong>{{ year }}:</strong> {{ event }}</li>
@@ -69,18 +67,24 @@
 
       {% if content.requisites %}
         <section class="company-requisites">
-          <h2>Реквизиты</h2>
+          <h3>Реквизиты</h3>
           <pre>{{ content.requisites }}</pre>
         </section>
       {% endif %}
 
       {% if content.certificate %}
-        <section class="company-certificate">
-          <h2>Сертификат</h2>
-          <p>{{ content.certificate }}</p>
-        </section>
-      {% endif %}
-    </article>
+      <section class="company-certificate">
+          <div class="certificate-wrapper">
+            <div class="certificate-bg"></div>
+            <img src="{% static 'images/border-frame.png' %}" alt="Рамка" class="certificate-border">
+            <div class="certificate-content">
+              <h3 class="certificate-title">Сертификат</h3>
+              <p class="certificate-text">{{ content.certificate }}</p>
+            </div>
+          </div>
+      </section>
+    {% endif %}
+    </section>
 {% endblock content %}
 
 {% block footer %}

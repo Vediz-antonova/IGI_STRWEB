@@ -1016,3 +1016,447 @@ INFO 2025-10-06 18:31:35,595 autoreload Watching for file changes with StatReloa
 INFO 2025-10-06 18:31:43,173 basehttp "GET / HTTP/1.1" 200 11201
 INFO 2025-10-06 18:31:43,192 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
 INFO 2025-10-06 18:31:43,315 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 5662
+INFO 2025-10-06 18:33:42,017 basehttp "GET /news/ HTTP/1.1" 200 18128
+INFO 2025-10-06 18:33:42,045 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 18:33:42,065 basehttp "GET /static/css/main/news.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:00:07,668 basehttp "GET / HTTP/1.1" 200 11201
+INFO 2025-10-06 19:00:07,690 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:00:07,695 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:00:14,087 basehttp "GET /about/ HTTP/1.1" 200 9159
+INFO 2025-10-06 19:01:43,309 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:01:46,256 basehttp "GET /about/ HTTP/1.1" 200 7492
+INFO 2025-10-06 19:04:53,448 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:04:54,141 basehttp "GET /about/ HTTP/1.1" 200 9159
+INFO 2025-10-06 19:04:54,333 basehttp "GET /static/css/base.css HTTP/1.1" 200 4499
+INFO 2025-10-06 19:05:20,716 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:05:32,454 basehttp - Broken pipe from ('127.0.0.1', 56044)
+INFO 2025-10-06 19:05:32,736 basehttp "GET / HTTP/1.1" 200 11201
+INFO 2025-10-06 19:05:32,758 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:05:32,900 basehttp "GET /static/css/base.css HTTP/1.1" 200 4464
+INFO 2025-10-06 19:05:34,565 basehttp "GET /about/ HTTP/1.1" 200 9159
+INFO 2025-10-06 19:05:34,587 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:05:42,325 basehttp "GET /contact/ HTTP/1.1" 200 7782
+INFO 2025-10-06 19:05:42,342 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:05:42,353 basehttp "GET /static/css/main/contact.css HTTP/1.1" 200 1284
+INFO 2025-10-06 19:05:42,355 basehttp "GET /static/images/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 19:05:42,365 basehttp "GET /media/users/506e8fe625c1f8707cec23d6b130dc08_sqZJoDz.jpeg HTTP/1.1" 200 846399
+INFO 2025-10-06 19:05:42,385 basehttp "GET /media/users/9a14b8b2c9494052fab98e31e76bb929.jpg HTTP/1.1" 200 1340200
+INFO 2025-10-06 19:05:44,280 basehttp "GET /about/ HTTP/1.1" 200 9159
+INFO 2025-10-06 19:05:52,808 basehttp "GET /contact/ HTTP/1.1" 200 7782
+INFO 2025-10-06 19:05:52,826 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:05:54,454 basehttp "GET /about/ HTTP/1.1" 200 9159
+INFO 2025-10-06 19:06:24,261 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:06:25,126 basehttp "GET /about/ HTTP/1.1" 200 9159
+INFO 2025-10-06 19:06:25,140 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:06:28,576 basehttp "GET /about/ HTTP/1.1" 200 9159
+INFO 2025-10-06 19:07:22,988 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:07:23,562 basehttp "GET /about/ HTTP/1.1" 200 9159
+INFO 2025-10-06 19:07:23,591 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:09:03,048 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:09:04,804 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:09:04,826 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:09:29,957 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:09:30,670 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:09:30,687 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:09:34,110 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:09:49,648 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:09:50,354 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:10:46,794 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:10:47,377 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:10:47,407 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:10:49,685 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:11:24,253 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:11:37,285 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:11:37,844 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:11:37,876 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:11:43,685 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:12:31,619 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:12:33,541 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:12:33,565 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:12:51,000 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:12:52,433 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:13:01,142 basehttp "GET / HTTP/1.1" 200 11973
+INFO 2025-10-06 19:13:04,244 basehttp "GET /about/ HTTP/1.1" 200 9898
+INFO 2025-10-06 19:13:04,585 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 873
+INFO 2025-10-06 19:13:04,606 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 19:13:04,716 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 19:13:04,850 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 19:13:59,872 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:14:00,520 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:14:00,544 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:14:02,595 basehttp "GET / HTTP/1.1" 200 11201
+INFO 2025-10-06 19:14:02,618 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:14:07,739 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:14:23,804 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:14:24,320 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:14:37,958 basehttp "GET / HTTP/1.1" 200 11973
+INFO 2025-10-06 19:14:40,904 basehttp "GET /about/ HTTP/1.1" 200 9898
+INFO 2025-10-06 19:14:41,036 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 785
+INFO 2025-10-06 19:14:51,142 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:15:26,747 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2025-10-06 19:15:26,768 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-06 19:15:26,769 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
+INFO 2025-10-06 19:15:53,355 basehttp "GET /about/ HTTP/1.1" 200 9126
+WARNING 2025-10-06 19:15:53,414 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-06 19:15:53,420 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
+INFO 2025-10-06 19:16:06,959 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:16:07,474 basehttp "GET /about/ HTTP/1.1" 200 9126
+WARNING 2025-10-06 19:16:07,507 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-06 19:16:07,508 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
+INFO 2025-10-06 19:17:13,153 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:17:18,547 basehttp "GET / HTTP/1.1" 200 11201
+INFO 2025-10-06 19:17:18,709 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 19:17:32,555 basehttp "GET /news/ HTTP/1.1" 200 19195
+INFO 2025-10-06 19:17:32,574 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:17:32,581 basehttp "GET /static/css/main/news.css HTTP/1.1" 200 2382
+INFO 2025-10-06 19:17:35,363 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:17:35,384 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:17:50,437 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2025-10-06 19:17:50,459 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-06 19:17:50,460 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
+INFO 2025-10-06 19:18:20,538 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:18:21,886 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:18:21,934 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2025-10-06 19:18:21,935 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-06 19:18:21,936 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
+INFO 2025-10-06 19:19:36,514 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:19:37,143 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:19:37,193 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+WARNING 2025-10-06 19:19:37,195 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-06 19:19:37,196 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
+INFO 2025-10-06 19:24:47,438 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:24:51,018 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:24:51,041 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:25:42,663 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:25:43,289 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 19:25:43,292 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 19:25:43,323 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 673
+INFO 2025-10-06 19:25:43,361 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 19:25:43,403 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 19:25:43,434 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 19:25:43,456 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 19:25:43,492 basehttp - Broken pipe from ('127.0.0.1', 63081)
+INFO 2025-10-06 19:25:45,303 basehttp - Broken pipe from ('127.0.0.1', 63726)
+INFO 2025-10-06 19:25:49,574 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 19:26:41,465 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:26:42,033 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:26:42,061 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-06 19:26:42,328 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 820
+INFO 2025-10-06 19:26:42,431 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 19:26:42,540 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 19:31:52,836 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:31:53,505 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:31:53,810 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 1724
+INFO 2025-10-06 19:31:53,827 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 19:31:53,830 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 19:31:53,831 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 19:31:53,834 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 19:31:53,842 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 19:31:53,921 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 19:31:54,022 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 19:31:54,137 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 19:31:59,605 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 19:32:15,888 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:32:16,398 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:32:16,731 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 1635
+INFO 2025-10-06 19:32:16,734 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 19:32:16,759 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 19:32:16,782 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 19:32:16,786 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 19:32:16,858 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 19:32:17,005 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 19:32:17,044 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 19:32:17,047 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 19:32:23,923 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 19:32:58,694 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:33:03,971 basehttp "GET /about/ HTTP/1.1" 200 9126
+INFO 2025-10-06 19:33:04,458 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 19:33:04,461 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 19:33:04,477 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 19:33:04,494 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 19:33:04,510 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 19:33:04,532 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 1498
+INFO 2025-10-06 19:33:04,588 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 19:33:04,622 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 19:33:04,737 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 19:33:10,051 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 19:36:15,752 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-10-06 19:36:16,934 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:45:58,045 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 19:45:58,711 basehttp "GET /about/ HTTP/1.1" 200 9226
+INFO 2025-10-06 19:45:59,005 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 19:45:59,028 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2774
+INFO 2025-10-06 19:45:59,039 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 19:45:59,040 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 19:45:59,041 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 19:45:59,045 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 19:45:59,135 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 19:45:59,172 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 19:45:59,181 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 19:45:59,268 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 19:45:59,382 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 19:46:03,988 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 21:57:33,310 basehttp "GET /about/ HTTP/1.1" 200 9226
+INFO 2025-10-06 21:57:33,335 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 21:57:33,338 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 21:57:33,345 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2774
+INFO 2025-10-06 21:57:33,346 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 21:57:33,348 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 21:57:33,349 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 21:57:33,353 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 21:57:33,449 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 21:57:33,461 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 21:57:33,509 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 21:57:33,655 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 21:57:38,392 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 21:58:46,100 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 21:58:46,788 basehttp "GET /about/ HTTP/1.1" 200 9226
+INFO 2025-10-06 21:58:47,162 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 21:58:47,179 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 21:58:47,182 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 21:58:47,183 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 21:58:47,186 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 21:58:47,197 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 21:58:47,215 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2774
+INFO 2025-10-06 21:58:47,272 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 21:58:47,281 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 21:58:47,324 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 21:58:47,429 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 21:58:59,046 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:00:44,797 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:00:46,339 basehttp "GET /about/ HTTP/1.1" 200 9452
+INFO 2025-10-06 22:00:46,752 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2829
+INFO 2025-10-06 22:00:46,780 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:00:46,785 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:00:46,791 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:00:46,792 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:00:46,797 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:00:46,802 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:00:46,827 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:00:46,880 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:00:46,921 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:00:47,135 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:01:25,900 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:02:53,015 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:02:53,639 basehttp "GET /about/ HTTP/1.1" 200 9405
+INFO 2025-10-06 22:02:53,834 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2481
+INFO 2025-10-06 22:02:55,849 basehttp "GET /about/ HTTP/1.1" 200 9405
+INFO 2025-10-06 22:02:55,867 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:02:55,871 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:02:55,872 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2481
+INFO 2025-10-06 22:02:55,876 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:02:55,878 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:02:55,883 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:02:55,884 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:02:55,911 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:02:55,942 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:02:59,209 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:07:01,420 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:07:02,173 basehttp "GET /about/ HTTP/1.1" 200 9405
+INFO 2025-10-06 22:07:02,348 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2641
+INFO 2025-10-06 22:09:00,961 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:09:04,121 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:09:04,479 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:09:04,484 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:09:04,489 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:09:04,494 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:09:04,498 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:09:04,520 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:09:04,536 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:09:04,551 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2650
+INFO 2025-10-06 22:09:04,624 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:09:04,667 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:09:04,808 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:09:36,975 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:09:49,316 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:09:50,077 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:09:50,212 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2633
+INFO 2025-10-06 22:09:59,772 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:10:01,473 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:10:01,604 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2633
+INFO 2025-10-06 22:10:02,410 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:10:02,425 basehttp "GET /static/css/main/about.css HTTP/1.1" 304 0
+INFO 2025-10-06 22:10:10,963 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:10:11,510 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:10:11,662 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2633
+INFO 2025-10-06 22:10:30,509 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:10:31,107 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:10:31,243 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2616
+INFO 2025-10-06 22:10:59,325 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:10:59,880 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:11:00,236 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:11:00,246 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:11:00,250 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:11:00,265 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:11:00,279 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:11:00,286 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2599
+INFO 2025-10-06 22:11:00,339 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:11:00,357 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:11:00,511 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:11:00,536 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:11:01,478 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:13:04,411 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:13:05,218 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:13:05,682 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:13:05,688 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:13:05,691 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:13:05,738 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:13:05,761 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:13:05,781 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:13:05,799 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2734
+INFO 2025-10-06 22:13:05,858 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:13:05,894 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:13:05,975 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:13:06,036 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:13:09,764 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:13:54,163 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:13:54,757 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:13:55,108 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2682
+INFO 2025-10-06 22:13:55,113 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:13:55,120 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:13:55,124 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:13:55,126 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:13:55,130 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:13:55,141 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:13:55,217 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:13:55,268 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:13:55,299 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:13:55,481 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:14:01,549 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:15:45,462 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:15:46,025 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:15:46,376 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:15:46,383 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:15:46,387 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:15:46,391 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:15:46,392 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2819
+INFO 2025-10-06 22:15:46,394 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:15:46,406 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:15:46,484 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:15:46,536 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:15:46,590 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:15:46,721 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:15:52,010 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:16:06,602 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:16:07,311 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:16:07,567 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:16:07,608 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2817
+INFO 2025-10-06 22:16:07,613 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:16:07,618 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:16:07,620 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:16:07,623 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:16:07,635 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:16:07,713 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:16:07,761 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:16:07,788 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:16:07,922 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:16:09,062 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:16:41,672 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:16:42,237 basehttp "GET /about/ HTTP/1.1" 200 9484
+INFO 2025-10-06 22:16:42,554 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:16:42,566 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:16:42,578 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:16:42,583 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:16:42,590 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:16:42,601 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2821
+INFO 2025-10-06 22:16:42,604 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:16:42,691 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:16:42,735 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:16:42,767 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:16:42,903 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:16:44,959 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:19:48,233 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:19:48,960 basehttp "GET /about/ HTTP/1.1" 200 9598
+INFO 2025-10-06 22:19:49,285 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 3112
+INFO 2025-10-06 22:19:49,292 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:19:49,296 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:19:49,302 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:19:49,306 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:19:49,317 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:19:49,319 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:19:49,408 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:19:49,453 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:19:49,516 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:19:49,639 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:19:55,132 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:32:48,139 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:32:48,731 basehttp "GET /about/ HTTP/1.1" 200 9452
+INFO 2025-10-06 22:32:49,133 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:32:49,158 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:32:49,163 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:32:49,169 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2997
+INFO 2025-10-06 22:32:49,170 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:32:49,173 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:32:49,174 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:32:49,190 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:32:49,219 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:32:49,266 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:32:49,392 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:32:50,545 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:34:17,826 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:34:18,391 basehttp "GET /about/ HTTP/1.1" 200 9452
+INFO 2025-10-06 22:34:18,818 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:34:18,829 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:34:18,834 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:34:18,842 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 3159
+INFO 2025-10-06 22:34:18,855 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:34:18,860 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:34:18,915 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:34:18,959 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:34:19,108 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:34:19,141 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:34:19,162 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:34:20,140 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:34:33,022 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:34:39,223 basehttp "GET /about/ HTTP/1.1" 200 9452
+INFO 2025-10-06 22:34:39,711 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:34:39,722 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:34:39,726 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:34:39,749 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:34:39,765 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:34:39,773 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2997
+INFO 2025-10-06 22:34:39,790 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:34:39,859 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:34:39,886 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:34:39,913 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:34:40,078 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:34:40,581 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:34:57,723 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:35:00,045 basehttp "GET /about/ HTTP/1.1" 200 9452
+INFO 2025-10-06 22:35:00,184 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 3020
+INFO 2025-10-06 22:35:04,626 basehttp "GET /about/ HTTP/1.1" 200 9452
+INFO 2025-10-06 22:35:04,652 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:35:04,654 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-10-06 22:35:04,660 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:35:04,660 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:35:04,661 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:35:04,662 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 3020
+INFO 2025-10-06 22:35:04,663 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:35:04,699 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:35:04,713 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:35:05,937 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:35:14,749 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-06 22:35:15,484 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-06 22:35:15,485 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
+INFO 2025-10-06 22:35:15,582 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2997
+INFO 2025-10-06 22:35:27,783 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:35:47,377 basehttp "GET /about/ HTTP/1.1" 200 9452
+INFO 2025-10-06 22:35:47,409 basehttp "GET /static/css/base.css HTTP/1.1" 200 4576
+INFO 2025-10-06 22:35:47,414 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+WARNING 2025-10-06 22:35:47,433 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-06 22:35:47,434 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
+INFO 2025-10-06 22:35:47,435 basehttp "GET /media/logos/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-10-06 22:35:47,440 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-06 22:35:47,442 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-06 22:35:47,442 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-06 22:35:47,443 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2936
+INFO 2025-10-06 22:35:47,473 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-10-06 22:35:47,518 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-10-06 22:35:47,587 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-10-06 22:35:47,756 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-10-06 22:35:50,814 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-06 22:36:23,739 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 22:36:24,395 basehttp "GET /about/ HTTP/1.1" 200 9452
+WARNING 2025-10-06 22:36:24,439 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-06 22:36:24,440 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5872
+INFO 2025-10-06 22:36:24,616 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2970
