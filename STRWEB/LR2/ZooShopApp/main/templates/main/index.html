@@ -14,29 +14,48 @@
 {% endblock css %}
 
 {% block content %}
-    <main class="home-page">
+    <div class="home-page">
+      <section class="aquarium">
+          <div class="fish-wrapper-right fish1">
+              <img src="{% static 'images/fish1.png' %}" alt="Рыбка" class="fish">
+          </div>
+          <div class="fish-wrapper-right fish2">
+              <img src="{% static 'images/fish2.png' %}" alt="Рыбка" class="fish">
+          </div>
+          <div class="fish-wrapper-left fish3">
+              <img src="{% static 'images/fish1.png' %}" alt="Рыбка" class="fish">
+          </div>
+          <div class="fish-wrapper-left fish4">
+              <img src="{% static 'images/fish2.png' %}" alt="Рыбка" class="fish">
+          </div>
+
+          {% for x in seaweed_positions %}
+            <img src="{% static 'images/seaweed.png' %}" alt="Водоросль" class="seaweed" style="left: {{ x }}px;">
+          {% endfor %}
+
+          <h1 class="shop-title">ZooShop</h1>
+      </section>
+
       <section class="logo-section">
         <img src="{% static 'icons/animal.ico' %}" alt="Логотип ZooShop" class="site-logo" title="Логотип ZooShop">
       </section>
 
       <section class="banner-section">
-      <picture>
-        <source srcset="{% static 'images/banner1-small.jpg' %}" media="(max-width: 600px)">
-        <source srcset="{% static 'images/banner1.jpg' %}">
-        <img src="{% static 'images/banner1.jpg' %}" alt="Баннер 1" title="Баннер 1">
-      </picture>
-
-      <picture>
-        <source srcset="{% static 'images/banner2-small.jpg' %}" media="(max-width: 600px)">
-        <source srcset="{% static 'images/banner2.jpg' %}">
-        <img src="{% static 'images/banner2.jpg' %}" alt="Баннер 2" title="Баннер 2">
-      </picture>
-
-      <picture>
-        <source srcset="{% static 'images/banner3-small.jpg' %}" media="(max-width: 600px)">
-        <source srcset="{% static 'images/banner3.jpg' %}">
-        <img src="{% static 'images/banner3.jpg' %}" alt="Баннер 3" title="Баннер 3">
-      </picture>
+          <picture>
+            <source srcset="{% static 'images/banner1-small.jpg' %}" media="(max-width: 600px)">
+            <source srcset="{% static 'images/banner1.jpg' %}">
+            <img src="{% static 'images/banner1.jpg' %}" alt="Баннер 1" title="Баннер 1">
+          </picture>
+          <picture>
+            <source srcset="{% static 'images/banner2-small.jpg' %}" media="(max-width: 600px)">
+            <source srcset="{% static 'images/banner2.jpg' %}">
+            <img src="{% static 'images/banner2.jpg' %}" alt="Баннер 2" title="Баннер 2">
+          </picture>
+          <picture>
+            <source srcset="{% static 'images/banner3-small.jpg' %}" media="(max-width: 600px)">
+            <source srcset="{% static 'images/banner3.jpg' %}">
+            <img src="{% static 'images/banner3.jpg' %}" alt="Баннер 3" title="Баннер 3">
+          </picture>
       </section>
 
       {% if latest_article %}
@@ -61,7 +80,20 @@
           {% endfor %}
         </div>
       </section>
-    </main>
+
+      <section class="preloader-spinner">
+        <div class="spinner-bar bar1"></div>
+        <div class="spinner-bar bar2"></div>
+        <div class="spinner-bar bar3"></div>
+        <div class="spinner-bar bar4"></div>
+        <div class="spinner-bar bar5"></div>
+        <div class="spinner-bar bar6"></div>
+        <div class="spinner-bar bar7"></div>
+        <div class="spinner-bar bar8"></div>
+        <div class="spinner-bar bar9"></div>
+        <div class="spinner-bar bar10"></div>
+      </section>
+    </div>
 {% endblock content %}
 
 {% block footer %}

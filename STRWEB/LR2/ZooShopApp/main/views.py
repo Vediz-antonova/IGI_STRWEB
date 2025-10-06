@@ -25,6 +25,7 @@ def index(request):
         'month_calendar': generate_calendar(),
         'latest_article': latest_article,
         'partners': partners,
+        'seaweed_positions': list(range(0, 1200, 200))
     }
     return render(request, 'main/index.html', context)
 
@@ -80,12 +81,6 @@ API_KEY = "9b9791430dae4f92afdb02bbb56defdf"
 TOPICS = ["pets", "pet food", "dogs", "cats", "birds", "exotic pets", "pet toys"]
 
 def news(request):
-    local_news_objects = News.objects.order_by("-id")[:5]
-    local_news = [
-        {"title": news.title, "summary": news.summary, "image_url": news.image_url}
-        for news in local_news_objects
-    ]
-
     random_topic = random.choice(TOPICS)
     NEWS_URL = f"https://newsapi.org/v2/everything?q={random_topic}&apiKey={API_KEY}"
 

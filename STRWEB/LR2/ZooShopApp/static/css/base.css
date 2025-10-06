@@ -229,3 +229,21 @@ body {
 .nav-select select:hover {
   background-color: #495057;
 }
+
+.catalog-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.catalog-list li a {
+  background-color: #198754;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.catalog-list li a:hover {
+  background-color: #157347;
+}
