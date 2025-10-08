@@ -1,11 +1,12 @@
 .notification-wrapper {
   position: fixed;
-  top: 1rem;
+  top: 6rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 999;
+  z-index: 1050;
   width: 90%;
   max-width: 500px;
+  pointer-events: none;
 }
 
 .notification {
