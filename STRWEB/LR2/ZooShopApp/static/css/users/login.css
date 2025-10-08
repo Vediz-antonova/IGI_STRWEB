@@ -1,3 +1,4 @@
+/* ----------- Обёртка и карточка ----------- */
 .login-wrapper {
   padding: 2rem;
   background-color: #f8f9fa;
@@ -12,19 +13,12 @@
   max-width: 400px;
   width: 100%;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
-}
-
-.login-card h2 {
-  margin-bottom: 1.5rem;
-  color: #343a40;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  text-align: left;
 }
 
 .form-group {
@@ -45,10 +39,11 @@
   border-radius: 4px;
   background-color: #fff;
   color: #212529;
+  line-height: 1.6;
 }
 
 .login-form button {
-  margin-top: 1rem;
+  align-self: flex-start;
   background-color: #343a40;
   color: white;
   padding: 0.6rem 1.2rem;
@@ -56,6 +51,7 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
 .login-form button:hover {
   background-color: #495057;
 }
@@ -63,13 +59,56 @@
 .login-links {
   margin-top: 1.5rem;
   font-size: 0.95rem;
-  color: #198754;
+  text-align: center;
 }
+
 .login-links a {
   color: #198754;
   text-decoration: none;
   margin: 0 0.5rem;
 }
+
 .login-links a:hover {
   text-decoration: underline;
+}
+
+input:enabled {
+  background-color: #ffffff;
+  border-color: #ced4da;
+}
+
+input:required {
+  border-left: 4px solid #198754;
+}
+
+input:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  border-color: #adb5bd;
+  cursor: not-allowed;
+}
+
+input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+input:invalid {
+  border-color: #dc3545;
+  background-color: #f8d7da;
+}
+
+input:valid {
+  border-color: #198754;
+}
+
+input::placeholder {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.form-error {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
 }

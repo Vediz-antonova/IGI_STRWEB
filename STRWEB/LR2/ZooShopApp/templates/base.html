@@ -41,18 +41,19 @@
           {% if not user.is_authenticated %}
             <li><a href="{% url 'login' %}">Войти</a></li>
           {% else %}
-            <li>
-              <button class="nav-button">Мой профиль ▾</button>
-              <ul class="dropdown-content">
+            <li class="nav-select">
+              <label for="profile-select" class="visually-hidden">Мой профиль</label>
+              <select id="profile-select" onchange="location.href=this.value;" title="Выберите действие">
+                <option disabled selected>Мой профиль</option>
                 {% if request.user.is_authenticated and not request.user.is_employee %}
-                  <li><a href="{% url 'users-cart' %}">Корзина</a></li>
+                  <option value="{% url 'users-cart' %}">Корзина</option>
                 {% endif %}
-                <li><a href="{% url 'profile' %}">Личный кабинет</a></li>
+                <option value="{% url 'profile' %}">Личный кабинет</option>
                 {% if user.is_superuser %}
-                  <li><a href="{% url 'admin:index' %}">Админ панель</a></li>
+                  <option value="{% url 'admin:index' %}">Админ панель</option>
                 {% endif %}
-                <li><a href="{% url 'logout' %}">Выйти</a></li>
-              </ul>
+                <option value="{% url 'logout' %}">Выйти</option>
+              </select>
             </li>
           {% endif %}
         </ul>

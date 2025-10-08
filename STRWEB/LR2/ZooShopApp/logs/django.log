@@ -1834,3 +1834,92 @@ INFO 2025-10-08 21:43:15,441 basehttp "GET /static/css/base.css HTTP/1.1" 200 45
 INFO 2025-10-08 21:43:15,445 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
 INFO 2025-10-08 21:43:15,453 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
 INFO 2025-10-08 21:43:15,473 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-08 21:47:13,766 basehttp "GET /reviews/ HTTP/1.1" 200 9152
+INFO 2025-10-08 21:47:13,796 basehttp "GET /static/css/reviews/review_list.css HTTP/1.1" 200 867
+INFO 2025-10-08 21:47:21,588 basehttp "GET /suppliers/ HTTP/1.1" 200 8488
+INFO 2025-10-08 21:47:21,613 basehttp "GET /static/css/main/supplier_list.css HTTP/1.1" 304 0
+INFO 2025-10-08 21:47:22,176 basehttp "GET /user/users/ HTTP/1.1" 200 10034
+INFO 2025-10-08 21:47:22,194 basehttp "GET /static/css/users/user_list.css HTTP/1.1" 304 0
+INFO 2025-10-08 21:47:22,759 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 8566
+INFO 2025-10-08 21:47:22,782 basehttp "GET /static/css/users/admin_orders.css HTTP/1.1" 304 0
+INFO 2025-10-08 21:47:23,598 basehttp "GET /user/users/ HTTP/1.1" 200 10034
+INFO 2025-10-08 21:47:24,232 basehttp "GET /suppliers/ HTTP/1.1" 200 8488
+INFO 2025-10-08 21:47:40,104 basehttp "GET /user/login/ HTTP/1.1" 200 5687
+ERROR 2025-10-08 21:47:43,988 log Internal Server Error: /user/registration/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\users\views.py", line 55, in registration
+    today = date.today()
+            ^^^^
+NameError: name 'date' is not defined
+ERROR 2025-10-08 21:47:43,989 basehttp "GET /user/registration/ HTTP/1.1" 500 73529
+WARNING 2025-10-08 21:47:44,066 log Not Found: /favicon.ico
+WARNING 2025-10-08 21:47:44,067 basehttp "GET /favicon.ico HTTP/1.1" 404 5761
+INFO 2025-10-08 21:47:49,149 basehttp "GET /privacy_policy/ HTTP/1.1" 200 7386
+INFO 2025-10-08 21:47:51,257 basehttp "GET / HTTP/1.1" 200 11973
+INFO 2025-10-08 21:52:45,328 autoreload Watching for file changes with StatReloader
+INFO 2025-10-08 21:56:19,063 autoreload Watching for file changes with StatReloader
+INFO 2025-10-08 21:56:20,383 basehttp "GET / HTTP/1.1" 200 12173
+INFO 2025-10-08 21:56:20,401 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-08 21:56:25,338 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-10-08 21:56:25,348 basehttp "GET / HTTP/1.1" 200 11233
+INFO 2025-10-08 21:56:27,623 basehttp "GET /user/login/ HTTP/1.1" 200 4915
+ERROR 2025-10-08 21:56:29,543 log Internal Server Error: /user/registration/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR2\ZooShopApp\users\views.py", line 55, in registration
+    today = date.today()
+            ^^^^
+NameError: name 'date' is not defined
+ERROR 2025-10-08 21:56:29,545 basehttp "GET /user/registration/ HTTP/1.1" 500 73366
+INFO 2025-10-08 21:58:33,094 autoreload Watching for file changes with StatReloader
+INFO 2025-10-08 21:58:35,745 basehttp "GET /user/registration/ HTTP/1.1" 200 8906
+INFO 2025-10-08 21:58:35,893 basehttp "GET /static/css/users/registration.css HTTP/1.1" 200 2722
+INFO 2025-10-08 21:59:25,343 basehttp "GET / HTTP/1.1" 200 11201
+INFO 2025-10-08 21:59:26,752 basehttp "GET /about/ HTTP/1.1" 200 9452
+INFO 2025-10-08 21:59:27,865 basehttp "GET /user/login/ HTTP/1.1" 200 4915
+INFO 2025-10-08 21:59:29,993 basehttp "GET /user/registration/ HTTP/1.1" 200 8906
+INFO 2025-10-08 21:59:30,013 basehttp "GET /static/css/users/registration.css HTTP/1.1" 304 0
+INFO 2025-10-08 22:00:40,741 autoreload Watching for file changes with StatReloader
+INFO 2025-10-08 22:00:41,258 basehttp "GET /user/registration/ HTTP/1.1" 200 8906
+INFO 2025-10-08 22:00:41,422 basehttp "GET /static/css/users/registration.css HTTP/1.1" 200 2705
+INFO 2025-10-08 22:01:05,281 autoreload Watching for file changes with StatReloader
+INFO 2025-10-08 22:01:05,751 basehttp "GET /user/registration/ HTTP/1.1" 200 8906
+INFO 2025-10-08 22:01:05,888 basehttp "GET /static/css/users/registration.css HTTP/1.1" 200 2552
+INFO 2025-10-08 22:03:48,982 autoreload Watching for file changes with StatReloader
+INFO 2025-10-08 22:03:50,719 basehttp "GET /user/login/ HTTP/1.1" 200 5006
+INFO 2025-10-08 22:03:50,750 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-08 22:03:53,816 basehttp "GET /user/login/ HTTP/1.1" 200 5006
+INFO 2025-10-08 22:03:54,193 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-08 22:03:54,211 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-08 22:03:54,228 basehttp "GET /static/css/users/login.css HTTP/1.1" 200 1901
+INFO 2025-10-08 22:03:54,236 basehttp "GET /static/css/base.css HTTP/1.1" 200 4597
+INFO 2025-10-08 22:03:54,246 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-08 22:03:54,267 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-08 22:06:29,159 autoreload Watching for file changes with StatReloader
+INFO 2025-10-08 22:06:33,160 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-10-08 22:06:33,192 basehttp "GET /user/profile/ HTTP/1.1" 200 7423
+INFO 2025-10-08 22:06:35,998 basehttp "GET /user/profile/ HTTP/1.1" 200 7392
+INFO 2025-10-08 22:06:36,445 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-10-08 22:06:36,563 basehttp "GET /static/css/users/profile.css HTTP/1.1" 200 3286
+INFO 2025-10-08 22:06:36,571 basehttp "GET /static/css/base.css HTTP/1.1" 200 4597
+INFO 2025-10-08 22:06:36,620 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-10-08 22:06:36,637 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 746
+INFO 2025-10-08 22:06:36,656 basehttp "GET /media/users/506e8fe625c1f8707cec23d6b130dc08_sqZJoDz.jpeg HTTP/1.1" 200 846399
+INFO 2025-10-08 22:06:36,669 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-10-08 22:07:58,361 autoreload Watching for file changes with StatReloader
+INFO 2025-10-08 22:07:59,900 basehttp "GET /user/profile/ HTTP/1.1" 200 7392
+INFO 2025-10-08 22:08:00,041 basehttp "GET /static/css/users/profile.css HTTP/1.1" 200 3217
+INFO 2025-10-08 22:08:06,192 basehttp "POST /user/profile/ HTTP/1.1" 302 0
+INFO 2025-10-08 22:08:06,201 basehttp "GET /user/profile/ HTTP/1.1" 200 7434
+INFO 2025-10-08 22:08:06,218 basehttp "GET /static/css/users/profile.css HTTP/1.1" 304 0

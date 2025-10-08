@@ -6,12 +6,6 @@
   margin-bottom: 2rem;
 }
 
-.profile-section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #343a40;
-}
-
 .profile-form {
   display: flex;
   flex-direction: column;
@@ -46,9 +40,11 @@
   cursor: pointer;
   font-size: 0.9rem;
 }
+
 .upload-label input {
   display: none;
 }
+
 .upload-label:hover {
   background-color: #157347;
 }
@@ -59,6 +55,11 @@
   gap: 1rem;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
 .form-group label {
   font-weight: bold;
   margin-bottom: 0.3rem;
@@ -66,7 +67,6 @@
 }
 
 .form-group input,
-.form-group select,
 .form-group textarea {
   padding: 0.5rem;
   font-size: 1rem;
@@ -74,6 +74,52 @@
   border-radius: 4px;
   background-color: #fff;
   color: #212529;
+  line-height: 1.6;
+}
+
+input:enabled,
+textarea:enabled {
+  background-color: #ffffff;
+  border-color: #ced4da;
+}
+
+input:required,
+textarea:required {
+  border-left: 4px solid #198754;
+}
+
+input:disabled,
+textarea:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  border-color: #adb5bd;
+  cursor: not-allowed;
+}
+
+input:out-of-range {
+  background-color: #fff3cd;
+  border-color: #ffc107;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+input:invalid {
+  border-color: #dc3545;
+  background-color: #f8d7da;
+}
+
+input:valid {
+  border-color: #198754;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6c757d;
+  font-style: italic;
 }
 
 .form-error {
@@ -91,6 +137,7 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
 .profile-fields button:hover {
   background-color: #495057;
 }
@@ -99,6 +146,7 @@
   text-align: center;
   margin: 2rem 0;
 }
+
 .review-button a {
   background-color: #198754;
   color: white;
@@ -106,6 +154,7 @@
   border-radius: 6px;
   text-decoration: none;
 }
+
 .review-button a:hover {
   background-color: #157347;
 }
@@ -113,27 +162,6 @@
 .accordion {
   border-radius: 6px;
   overflow: hidden;
-}
-
-.accordion-item {
-  border-bottom: 1px solid #dee2e6;
-}
-
-.accordion-button {
-  background-color: #f1f3f5;
-  color: #212529;
-  padding: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  width: 100%;
-  text-align: left;
-}
-.accordion-button:hover {
-  background-color: #e9ecef;
-}
-.accordion-button strong {
-  color: #198754;
 }
 
 .accordion-body {
@@ -145,23 +173,28 @@
   width: 100%;
   border-collapse: collapse;
 }
+
 .orders-table th,
 .orders-table td {
   border: 1px solid #dee2e6;
   padding: 0.75rem;
   text-align: left;
 }
+
 .orders-table th {
   background-color: #343a40;
   color: white;
 }
+
 .orders-table td {
   color: #212529;
 }
+
 .orders-table a {
   color: #198754;
   text-decoration: none;
 }
+
 .orders-table a:hover {
   text-decoration: underline;
 }

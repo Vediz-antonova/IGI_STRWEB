@@ -16,14 +16,23 @@
         <input type="hidden" name="next" value="{{ request.GET.next }}">
       {% endif %}
 
+      {% if form.non_field_errors %}
+        <div class="form-error">
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
+
       {% for item in form %}
         <div class="form-group">
           <label for="{{ item.id_for_label }}">{{ item.label }}</label>
           {{ item }}
+          {% if item.errors %}
+            <div class="form-error">{{ item.errors }}</div>
+          {% endif %}
         </div>
       {% endfor %}
 
-      <button type="submit">Войти</button>
+      <button type="submit" accesskey="l" title="Нажмите Alt+L для входа">Войти</button>
     </form>
 
     <div class="login-links">
