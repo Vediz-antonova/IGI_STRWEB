@@ -12,12 +12,6 @@
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
 }
 
-.review-container h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #343a40;
-}
-
 .add-review-button {
   display: inline-block;
   margin-bottom: 2rem;
@@ -26,27 +20,69 @@
   padding: 0.5rem 1rem;
   border-radius: 6px;
   text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: sans-serif;
 }
+
 .add-review-button:hover {
   background-color: #157347;
 }
 
 .review-item {
   margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #dee2e6;
+  transition: background-color 0.3s ease;
+}
+
+.review-item:first-child {
+  border-left-color: #198754;
+  background-color: #e9f7ef;
+}
+
+.review-item:last-child {
+  border-left-color: #0d6efd;
+  background-color: #e7f1ff;
+}
+
+.review-item:nth-child(3n) {
+  border-left-color: #ffc107;
+  background-color: #fff3cd;
 }
 
 .review-author {
   font-size: 1.2rem;
   color: #198754;
   margin-bottom: 0.5rem;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
 }
 
 .review-text {
   margin-bottom: 0.5rem;
   color: #212529;
+  font-size: 1rem;
+  font-family: sans-serif;
+  line-height: 1.6;
 }
 
 .review-date {
   font-size: 0.85rem;
   color: #6c757d;
+  font-family: monospace;
+}
+
+.review-item p strong {
+  font-weight: bold;
+  color: #343a40;
+  font-family: sans-serif;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dee2e6;
+  margin: 1rem 0;
 }

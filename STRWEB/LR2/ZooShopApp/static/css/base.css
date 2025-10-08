@@ -74,6 +74,11 @@ h2 {
   background-color: #495057;
 }
 
+.nav-bar a.active {
+  color: #a0fdd8;
+  font-weight: bold;
+}
+
 .nav-select {
   margin-right: 1rem;
   display: inline-block;
@@ -271,4 +276,29 @@ h2 {
   flex: 1;
   padding: 1rem;
   border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .nav-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .statistics-wrapper {
+    padding: 1rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .notification-wrapper {
+    top: 2rem;
+  }
 }

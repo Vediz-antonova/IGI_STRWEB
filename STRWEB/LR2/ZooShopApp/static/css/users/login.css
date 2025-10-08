@@ -112,3 +112,16 @@ input::placeholder {
   font-size: 0.85rem;
   margin-top: 0.25rem;
 }
+
+a:link {
+  color: #aca5a5;
+}
+
+a:visited {
+  color: #a186ca;
+}
+
+a:hover {
+  color: #9dcc65;
+  text-decoration: underline;
+}

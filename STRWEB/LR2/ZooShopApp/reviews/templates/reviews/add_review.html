@@ -12,7 +12,18 @@
 
     <form method="POST" class="review-form">
       {% csrf_token %}
-      {{ form.as_p }}
+      {% if form.non_field_errors %}
+        <div class="form-error">{{ form.non_field_errors }}</div>
+      {% endif %}
+      {% for field in form %}
+        <p>
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field }}
+          {% if field.errors %}
+            <span class="form-error">{{ field.errors }}</span>
+          {% endif %}
+        </p>
+      {% endfor %}
       <button type="submit">Отправить</button>
     </form>
   </div>

@@ -101,6 +101,19 @@ input[type="radio"]:checked {
   outline-offset: 2px;
 }
 
+input[name^="user"] {
+  border-left: 4px solid #0d6efd;
+}
+
+input[name$="_date"] {
+  background-color: #e9f7ef;
+}
+
+input[placeholder="Введите имя"] {
+  font-style: italic;
+  font-family: 'Georgia', serif;
+}
+
 input:focus,
 textarea:focus,
 select:focus {
