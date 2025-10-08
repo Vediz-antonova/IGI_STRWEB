@@ -5,41 +5,76 @@
 
 .user-list-wrapper h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: #343a40;
+  margin-bottom: 2rem;
+  color: #198754;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .user-table {
   width: 100%;
   border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  margin: 0 auto;
   background-color: #fff;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
 }
 
 .user-table caption {
   caption-side: top;
-  text-align: left;
+  font-size: 1.2rem;
   font-weight: bold;
-  padding: 0.5rem;
-  color: #212529;
+  color: #198754;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: capitalize;
 }
 
 .user-table th,
 .user-table td {
   border: 1px solid #dee2e6;
   padding: 0.75rem;
-  text-align: left;
+  text-align: center;
+  vertical-align: middle;
+  word-break: break-word;
+  line-height: 1.6;
+  font-family: 'Georgia', serif;
 }
 
 .user-table th {
   background-color: #343a40;
   color: white;
   font-weight: bold;
+  font-variant: small-caps;
 }
 
-.user-table td {
-  color: #212529;
+.user-table tbody tr:first-child {
+  background-color: #d1e7dd;
+}
+
+.user-table tbody tr:last-child {
+  background-color: #f8d7da;
+}
+
+.user-table tbody tr:nth-child(3n) {
+  background-color: #e2e3e5;
+}
+
+.user-table td:first-child {
+  font-weight: 600;
+  color: #0d6efd;
+  text-transform: capitalize;
+}
+
+.user-table td:last-child {
+  font-style: italic;
+  color: #198754;
+}
+
+.user-table td:nth-child(2) {
+  font-family: 'Courier New', monospace;
+  color: #495057;
 }
 
 .user-table td[headers="th-email"] {
@@ -51,51 +86,6 @@
   color: #dc3545;
   font-weight: bold;
   margin-top: 2rem;
-}
-
-blockquote {
-  margin: 1rem 0;
-  padding-left: 1rem;
-  border-left: 4px solid #198754;
-  font-style: italic;
-  color: #495057;
-}
-
-cite {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #6c757d;
-}
-
-dfn,
-abbr {
-  border-bottom: 1px dotted #6c757d;
-  cursor: help;
-}
-
-time {
-  font-weight: bold;
-  color: #0d6efd;
-}
-
-.scroll-down {
-  display: inline-block;
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  text-decoration: none;
-  color: #0d6efd;
-}
-
-.scroll-down:hover {
-  text-decoration: underline;
-}
-
-pre {
-  background-color: #e9ecef;
-  padding: 1rem;
-  border-radius: 6px;
-  white-space: pre-wrap;
-  font-family: monospace;
-  margin-top: 1rem;
+  font-size: 1rem;
+  font-variant: all-small-caps;
 }

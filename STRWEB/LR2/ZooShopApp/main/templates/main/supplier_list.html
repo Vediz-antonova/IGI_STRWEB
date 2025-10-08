@@ -12,6 +12,7 @@
 
     {% if supplier_data %}
       <table class="supplier-table">
+        <caption>Список поставщиков ZooShop</caption>
         <thead>
           <tr>
             <th>Название</th>
@@ -29,6 +30,19 @@
               <td>{{ item.products }}</td>
             </tr>
           {% endfor %}
+
+          <tr>
+            <td>ООО «АкваМир»</td>
+            <td>Минск, ул. Рыбная 12</td>
+            <td></td>
+            <td>Аквариумы, корм</td>
+          </tr>
+          <tr>
+            <td>ИП «Зоосфера»</td>
+            <td></td>
+            <td>+375 29 123-45-67</td>
+            <td></td>
+          </tr>
         </tbody>
       </table>
     {% else %}

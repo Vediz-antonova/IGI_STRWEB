@@ -164,6 +164,7 @@ h2 {
 }
 
 .search-form button:hover {
+  cursor: progress;
   background-color: #157347;
 }
 
@@ -171,7 +172,7 @@ h2 {
 
 .catalog-bar {
   position: fixed;
-  top: 6rem;
+  top: 5rem;
   left: 1rem;
   z-index: 100;
   background-color: #212529;
