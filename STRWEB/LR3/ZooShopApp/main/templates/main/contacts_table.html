@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/main/contacts_table.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contacts-table-wrapper">
+  <h2>Сотрудники</h2>
+
+  <div class="controls">
+    <input type="text" id="filter-input" placeholder="Фильтр по имени, email..." />
+    <button id="filter-btn">Найти</button>
+    <button id="add-btn">Добавить</button>
+    <button id="reward-btn">Премировать</button>
+  </div>
+
+  <div id="add-form" class="hidden">
+    <input type="text" id="add-name" placeholder="ФИО" />
+    <input type="text" id="add-phone" placeholder="Телефон" />
+    <input type="text" id="add-email" placeholder="Email" />
+    <input type="text" id="add-url" placeholder="Фото URL (.jpg/.png/.jpeg/.webp)" />
+    <textarea id="add-desc" placeholder="Описание работы"></textarea>
+    <button id="validate-btn">Проверить</button>
+    <div id="validation-result"></div>
+    <button id="submit-btn" disabled>Добавить в таблицу</button>
+  </div>
+
+  <section id="preloader" class="preloader-spinner hidden">
+    <div class="spinner-bar bar1"></div>
+    <div class="spinner-bar bar2"></div>
+    <div class="spinner-bar bar3"></div>
+    <div class="spinner-bar bar4"></div>
+    <div class="spinner-bar bar5"></div>
+    <div class="spinner-bar bar6"></div>
+    <div class="spinner-bar bar7"></div>
+    <div class="spinner-bar bar8"></div>
+    <div class="spinner-bar bar9"></div>
+    <div class="spinner-bar bar10"></div>
+  </section>
+
+  <table id="contacts-table">
+    <thead>
+      <tr>
+        <th data-sort="name">ФИО</th>
+        <th>Фото</th>
+        <th data-sort="job_description">Описание</th>
+        <th data-sort="phone">Телефон</th>
+        <th data-sort="email">Email</th>
+        <th>Выбрать</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div id="pagination"></div>
+  <div id="details-block"></div>
+  <div id="reward-result"></div>
+</section>
+{% endblock %}
+
+{% block footer %}
+  <script src="{% static 'js/contacts_table.js' %}"></script>
+{% endblock %}

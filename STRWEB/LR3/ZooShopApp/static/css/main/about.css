@@ -1,0 +1,152 @@
+/*------------- ABOUT SECTION -------------*/
+
+.about-section h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.6rem;
+  color: #195987;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/*------------- LOGO -------------*/
+
+.company-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.company-logo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.company-logo img:hover {
+  transform: scale(1.05);
+}
+
+/*------------- VIDEO and AUDIO -------------*/
+
+.company-video iframe,
+video,
+audio {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dee2e6;
+  margin-bottom: 1rem;
+}
+
+/*------------- HISTORY -------------*/
+
+.company-history ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 1rem;
+  border-left: 3px solid #198754;
+}
+
+.company-history li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  color: #212529;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: background-color 0.3s ease;
+}
+
+.company-history li:hover {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+/*------------- REQUISITES -------------*/
+
+.company-requisites pre {
+  background-color: #f1f3f5;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #343a40;
+  white-space: pre-wrap;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/*------------- CERTIFICATE -------------*/
+
+.company-certificate {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.certificate-wrapper {
+  position: relative;
+  width: 640px;
+  height: 880px;
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Фоновая текстура */
+.certificate-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../images/certificate-bg.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.95;
+  z-index: 1;
+}
+
+/* PNG-рамка */
+.certificate-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Контент */
+.certificate-content {
+  position: relative;
+  z-index: 3;
+  font-family: 'Georgia', serif;
+  color: #212529;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.certificate-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.6rem;
+  color: #195987;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  letter-spacing: 1px;
+  text-align: center !important;
+}
+
+.certificate-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  white-space: pre-line;
+  text-align: center;
+  padding: 0 2rem;
+}

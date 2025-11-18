@@ -1,0 +1,91 @@
+.user-list-wrapper {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.user-list-wrapper h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #198754;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.user-table caption {
+  caption-side: top;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #198754;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  text-align: center;
+  vertical-align: middle;
+  word-break: break-word;
+  line-height: 1.6;
+  font-family: 'Georgia', serif;
+}
+
+.user-table th {
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+.user-table tbody tr:first-child {
+  background-color: #d1e7dd;
+}
+
+.user-table tbody tr:last-child {
+  background-color: #f8d7da;
+}
+
+.user-table tbody tr:nth-child(3n) {
+  background-color: #e2e3e5;
+}
+
+.user-table td:first-child {
+  font-weight: 600;
+  color: #0d6efd;
+  text-transform: capitalize;
+}
+
+.user-table td:last-child {
+  font-style: italic;
+  color: #198754;
+}
+
+.user-table td:nth-child(2) {
+  font-family: 'Courier New', monospace;
+  color: #495057;
+}
+
+.user-table td[headers="th-email"] {
+  background-color: #f1f3f5;
+}
+
+.no-users {
+  text-align: center;
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-variant: all-small-caps;
+}
