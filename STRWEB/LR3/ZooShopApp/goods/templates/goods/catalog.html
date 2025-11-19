@@ -8,7 +8,6 @@
 {% block content %}
 <section class="catalog-wrapper">
 
-  <!-- Фильтры -->
   <details class="filter-dropdown">
     <summary>Фильтры</summary>
     <form action="{% url 'catalog' slug_url %}" method="get">
@@ -25,14 +24,12 @@
     </form>
   </details>
 
-  <!-- Кнопка добавления -->
   {% if request.user.is_authenticated and request.user.is_employee %}
     <div class="add-product-button">
       <a href="{% url 'add_product' %}">+ Добавить товар</a>
     </div>
   {% endif %}
 
-  <!-- Селектор количества -->
   <div class="page-size-selector">
     <label for="page-size">Показать на странице:</label>
     <select id="page-size">
@@ -43,15 +40,12 @@
     </select>
   </div>
 
-  <!-- Сетка товаров -->
   <div class="product-grid" id="product-grid"></div>
 
-  <!-- Пагинация -->
   <div class="pagination-nav">
     <div id="pagination-controls"></div>
   </div>
 
-  <!-- JS-данные -->
   <script>
     const productsData = [
       {% for good in products %}
@@ -69,5 +63,6 @@
     ];
   </script>
   <script src="{% static 'js/catalog_pagination.js' %}"></script>
+  <script src="{% static 'js/card_hover_effect.js' %}"></script>
 </section>
 {% endblock %}
