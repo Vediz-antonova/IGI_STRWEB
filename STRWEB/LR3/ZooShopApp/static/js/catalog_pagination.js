@@ -19,7 +19,7 @@ function renderProducts() {
         <img src="${product.image}" alt="${product.name}">
       </div>
       <div class="product-info">
-        <a href="/product/${product.slug}" class="product-name">${product.name}</a>
+        <a href="${product.url}" class="product-name">${product.name}</a>
         <p class="product-description">${product.description}</p>
         <p class="product-article">Артикул: ${product.article}</p>
         <p class="product-quantity">Количество: ${product.quantity}</p>
@@ -27,11 +27,26 @@ function renderProducts() {
           ${product.quantity <= 0
             ? `<p class="out-of-stock">Нет поставок</p>`
             : `<p class="product-price">${product.price} BYN</p>`}
+          ${product.is_employee === "true"
+            ? `<form method="POST" action="${product.delete_url}">
+                 <input type="hidden" name="csrfmiddlewaretoken" value="${getCSRFToken()}">
+                 <button type="submit" class="delete-button">Удалить</button>
+               </form>`
+            : product.is_user === "true" && product.quantity > 0
+            ? `<a href="${product.cart_url}" class="add-to-cart" data-product-id="${product.id}">
+                 <input type="hidden" name="csrfmiddlewaretoken" value="${getCSRFToken()}">
+                 <img src="/static/icons/cart-plus.svg" alt="Добавить в корзину" width="32" height="32">
+               </a>`
+            : ""}
         </div>
       </div>
     `;
     grid.appendChild(card);
   });
+}
+
+function getCSRFToken() {
+  return document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
 }
 
 function renderPagination() {

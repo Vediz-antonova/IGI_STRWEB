@@ -35,6 +35,8 @@ def catalog(request, category_slug=None):
         'title': 'Catalog',
         'products': products,
         'slug_url': category_slug,
+        'is_employee': request.user.is_authenticated and request.user.is_employee,
+        'is_user': request.user.is_authenticated and not request.user.is_employee,
     }
     return render(request, 'goods/catalog.html', context)
 

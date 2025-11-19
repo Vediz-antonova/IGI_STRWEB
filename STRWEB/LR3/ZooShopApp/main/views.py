@@ -55,17 +55,17 @@ def index(request):
         {
             "image": "images/banner1.jpg",
             "text": "Аксессуары для питомцев, недорого)",
-            "link": "/promotions/1"
+            "link": "/catalog/aksessuary/"
         },
         {
             "image": "images/banner2.jpg",
             "text": "Акция на корма!",
-            "link": "/promotions/2"
+            "link": "/catalog/korm/"
         },
         {
             "image": "images/banner3.jpg",
             "text": "Игрушки для питомцев",
-            "link": "/promotions/3"
+            "link": "/catalog/igrushki/"
         }
     ]
 

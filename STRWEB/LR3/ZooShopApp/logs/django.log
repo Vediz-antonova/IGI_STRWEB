@@ -4636,3 +4636,654 @@ INFO 2025-11-19 16:13:05,528 basehttp "GET /media/goods_images/cat_food.jpg HTTP
 INFO 2025-11-19 16:13:05,528 basehttp "GET /media/goods_images/rabbit_house.jpg HTTP/1.1" 304 0
 INFO 2025-11-19 16:13:05,531 basehttp "GET /media/goods_images/bird_cage.jpg HTTP/1.1" 304 0
 INFO 2025-11-19 16:13:05,535 basehttp "GET /static/js/card_hover_effect.js HTTP/1.1" 200 806
+INFO 2025-11-19 16:16:51,378 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:17:17,553 log Not Found: /product/whiskas-govyadina
+WARNING 2025-11-19 16:17:17,554 basehttp "GET /product/whiskas-govyadina HTTP/1.1" 404 6899
+INFO 2025-11-19 16:17:43,482 basehttp "GET /user/users/ HTTP/1.1" 200 6464
+INFO 2025-11-19 16:17:43,774 basehttp "GET /static/css/users/user_list.css HTTP/1.1" 200 1686
+INFO 2025-11-19 16:17:48,649 basehttp "GET /suppliers/ HTTP/1.1" 200 9286
+INFO 2025-11-19 16:17:48,701 basehttp "GET /static/css/main/supplier_list.css HTTP/1.1" 200 1876
+INFO 2025-11-19 16:17:51,044 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 5681
+INFO 2025-11-19 16:17:51,101 basehttp "GET /static/css/users/admin_orders.css HTTP/1.1" 200 2115
+INFO 2025-11-19 16:17:53,284 basehttp "GET /contacts/table/ HTTP/1.1" 200 7208
+INFO 2025-11-19 16:17:53,333 basehttp "GET /static/css/main/contacts_table.css HTTP/1.1" 200 3897
+INFO 2025-11-19 16:17:53,351 basehttp "GET /static/js/contacts_table.js HTTP/1.1" 200 10243
+INFO 2025-11-19 16:17:53,380 basehttp "GET /contacts/api/ HTTP/1.1" 200 6080
+INFO 2025-11-19 16:18:02,450 basehttp "GET /catalog/all/ HTTP/1.1" 200 12040
+INFO 2025-11-19 16:18:02,496 basehttp "GET /static/css/goods/catalog.css HTTP/1.1" 304 0
+INFO 2025-11-19 16:18:02,505 basehttp "GET /static/js/card_hover_effect.js HTTP/1.1" 304 0
+WARNING 2025-11-19 16:18:05,527 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:18:05,528 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+WARNING 2025-11-19 16:19:49,758 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:19:49,759 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+WARNING 2025-11-19 16:19:49,888 log Not Found: /favicon.ico
+WARNING 2025-11-19 16:19:49,889 basehttp "GET /favicon.ico HTTP/1.1" 404 6857
+INFO 2025-11-19 16:21:08,294 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:21:12,163 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:21:12,164 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+INFO 2025-11-19 16:21:17,791 basehttp "GET /catalog/all/ HTTP/1.1" 200 12040
+INFO 2025-11-19 16:21:18,962 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 16:21:18,970 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 16:21:18,974 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 16:21:19,031 basehttp "GET /static/css/goods/catalog.css HTTP/1.1" 200 3933
+INFO 2025-11-19 16:21:19,043 basehttp "GET /static/js/card_hover_effect.js HTTP/1.1" 200 806
+INFO 2025-11-19 16:21:19,074 basehttp "GET /static/js/catalog_pagination.js HTTP/1.1" 200 3428
+INFO 2025-11-19 16:21:19,110 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 16:21:19,128 basehttp "GET /media/goods_images/bird_cage.jpg HTTP/1.1" 200 114791
+INFO 2025-11-19 16:21:19,130 basehttp "GET /media/goods_images/cat_food.jpg HTTP/1.1" 200 127347
+INFO 2025-11-19 16:21:19,131 basehttp "GET /media/goods_images/rabbit_house.jpg HTTP/1.1" 200 166474
+INFO 2025-11-19 16:21:19,136 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 16:21:19,198 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+WARNING 2025-11-19 16:21:21,228 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:21:21,229 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+WARNING 2025-11-19 16:21:21,352 log Not Found: /favicon.ico
+WARNING 2025-11-19 16:21:21,353 basehttp "GET /favicon.ico HTTP/1.1" 404 6857
+INFO 2025-11-19 16:22:32,960 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:22:35,074 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:22:35,074 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+INFO 2025-11-19 16:32:56,930 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:33:01,895 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:33:01,896 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+INFO 2025-11-19 16:33:31,943 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:33:33,953 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:33:33,954 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+WARNING 2025-11-19 16:33:35,979 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:33:35,980 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+WARNING 2025-11-19 16:33:37,301 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:33:37,301 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+WARNING 2025-11-19 16:33:37,387 log Not Found: /favicon.ico
+WARNING 2025-11-19 16:33:37,387 basehttp "GET /favicon.ico HTTP/1.1" 404 6857
+INFO 2025-11-19 16:33:46,913 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:33:50,953 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:33:50,954 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+WARNING 2025-11-19 16:33:54,296 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:33:54,298 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+INFO 2025-11-19 16:34:04,678 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\goods\urls.py changed, reloading.
+INFO 2025-11-19 16:34:06,795 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 16:34:19,573 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:34:23,747 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:34:23,748 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+WARNING 2025-11-19 16:34:24,676 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:34:24,678 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+INFO 2025-11-19 16:35:28,861 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:35:29,791 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:35:29,792 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+INFO 2025-11-19 16:36:39,081 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:36:42,349 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:36:42,351 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+WARNING 2025-11-19 16:36:44,046 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:36:44,047 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+INFO 2025-11-19 16:37:14,842 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:37:16,449 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:37:16,451 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+INFO 2025-11-19 16:39:43,306 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:39:44,388 log Not Found: /product/domik-dlya-krolika
+WARNING 2025-11-19 16:39:44,389 basehttp "GET /product/domik-dlya-krolika HTTP/1.1" 404 6902
+INFO 2025-11-19 16:41:14,888 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 16:41:17,706 basehttp "GET / HTTP/1.1" 200 13408
+INFO 2025-11-19 16:41:17,776 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-11-19 16:41:17,779 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-19 16:41:17,794 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 16:41:17,797 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 16:41:17,801 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 16:41:17,803 basehttp "GET /media/partners/Zoobazar.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 16:41:17,812 basehttp "GET /media/partners/zoomarket.webp HTTP/1.1" 304 0
+INFO 2025-11-19 16:41:17,814 basehttp "GET /media/partners/petstop.png HTTP/1.1" 304 0
+ERROR 2025-11-19 16:41:20,490 log Internal Server Error: /catalog/all/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\goods\views.py", line 39, in catalog
+    return render(request, 'goods/catalog.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 682, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse some characters: request.user.is_authenticated| and request.user.is_employee||yesno:"true,false"
+ERROR 2025-11-19 16:41:20,509 basehttp "GET /catalog/all/ HTTP/1.1" 500 226627
+WARNING 2025-11-19 16:41:20,787 log Not Found: /favicon.ico
+WARNING 2025-11-19 16:41:20,788 basehttp "GET /favicon.ico HTTP/1.1" 404 6857
+INFO 2025-11-19 16:42:07,178 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\goods\views.py changed, reloading.
+INFO 2025-11-19 16:42:09,701 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 16:42:35,133 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 16:42:37,764 basehttp "GET /catalog/all/ HTTP/1.1" 200 14450
+INFO 2025-11-19 16:42:37,811 basehttp "GET /static/css/goods/catalog.css HTTP/1.1" 304 0
+INFO 2025-11-19 16:42:37,820 basehttp "GET /static/js/card_hover_effect.js HTTP/1.1" 304 0
+WARNING 2025-11-19 16:42:39,776 log Not Found: /product/whiskas-govyadina
+WARNING 2025-11-19 16:42:39,777 basehttp "GET /product/whiskas-govyadina HTTP/1.1" 404 6899
+INFO 2025-11-19 16:43:08,312 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 16:43:11,485 basehttp "GET / HTTP/1.1" 200 13408
+ERROR 2025-11-19 16:43:14,796 log Internal Server Error: /catalog/korm/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\goods\views.py", line 41, in catalog
+    return render(request, 'goods/catalog.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'catalog/product' not found. 'catalog/product' is not a valid view function or pattern name.
+ERROR 2025-11-19 16:43:14,815 basehttp "GET /catalog/korm/ HTTP/1.1" 500 201623
+INFO 2025-11-19 16:43:38,441 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 16:43:40,991 basehttp "GET / HTTP/1.1" 200 13408
+ERROR 2025-11-19 16:43:45,676 log Internal Server Error: /catalog/all/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\goods\views.py", line 41, in catalog
+    return render(request, 'goods/catalog.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'catalog' with arguments '('product', 'whiskas-govyadina')' not found. 1 pattern(s) tried: ['catalog/(?P<category_slug>[\\w-]+)/$']
+ERROR 2025-11-19 16:43:45,692 basehttp "GET /catalog/all/ HTTP/1.1" 500 217591
+WARNING 2025-11-19 16:43:45,949 log Not Found: /favicon.ico
+WARNING 2025-11-19 16:43:45,951 basehttp "GET /favicon.ico HTTP/1.1" 404 6857
+INFO 2025-11-19 16:45:13,226 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 16:45:15,629 basehttp "GET / HTTP/1.1" 200 13408
+ERROR 2025-11-19 16:45:19,685 log Internal Server Error: /catalog/all/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\goods\views.py", line 41, in catalog
+    return render(request, 'goods/catalog.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'catalog' with arguments '('product', 'whiskas-govyadina')' not found. 1 pattern(s) tried: ['catalog/(?P<category_slug>[\\w-]+)/$']
+ERROR 2025-11-19 16:45:19,701 basehttp "GET /catalog/all/ HTTP/1.1" 500 217591
+WARNING 2025-11-19 16:45:19,963 log Not Found: /favicon.ico
+WARNING 2025-11-19 16:45:19,964 basehttp "GET /favicon.ico HTTP/1.1" 404 6857
+ERROR 2025-11-19 16:45:31,036 log Internal Server Error: /catalog/igrushki/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\goods\views.py", line 41, in catalog
+    return render(request, 'goods/catalog.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'catalog' with arguments '('product', 'myshka-s-peryami')' not found. 1 pattern(s) tried: ['catalog/(?P<category_slug>[\\w-]+)/$']
+ERROR 2025-11-19 16:45:31,045 basehttp "GET /catalog/igrushki/ HTTP/1.1" 500 201637
+INFO 2025-11-19 16:45:58,988 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 16:46:01,275 basehttp "GET / HTTP/1.1" 200 13408
+INFO 2025-11-19 16:46:04,575 basehttp "GET /catalog/korm/ HTTP/1.1" 200 8880
+INFO 2025-11-19 16:46:04,615 basehttp "GET /static/css/goods/catalog.css HTTP/1.1" 304 0
+INFO 2025-11-19 16:46:04,623 basehttp "GET /static/js/card_hover_effect.js HTTP/1.1" 304 0
+INFO 2025-11-19 16:46:04,647 basehttp "GET /media/goods_images/fish_food.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 16:46:04,648 basehttp "GET /media/goods_images/parrot_food.jpg HTTP/1.1" 304 0
+WARNING 2025-11-19 16:46:06,119 log Not Found: /product/whiskas-govyadina
+WARNING 2025-11-19 16:46:06,120 basehttp "GET /product/whiskas-govyadina HTTP/1.1" 404 6899
+WARNING 2025-11-19 16:46:06,251 log Not Found: /favicon.ico
+WARNING 2025-11-19 16:46:06,252 basehttp "GET /favicon.ico HTTP/1.1" 404 6857
+INFO 2025-11-19 16:48:16,000 autoreload Watching for file changes with StatReloader
+WARNING 2025-11-19 16:48:17,038 log Not Found: /product/whiskas-govyadina
+WARNING 2025-11-19 16:48:17,039 basehttp "GET /product/whiskas-govyadina HTTP/1.1" 404 6899
+INFO 2025-11-19 20:16:24,263 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 20:16:33,722 basehttp "GET / HTTP/1.1" 200 13408
+INFO 2025-11-19 20:16:33,783 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:33,787 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:33,797 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:33,798 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:33,812 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:33,815 basehttp "GET /media/partners/Zoobazar.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:33,822 basehttp "GET /media/partners/zoomarket.webp HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:33,823 basehttp "GET /media/partners/petstop.png HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:37,151 basehttp "GET /catalog/all/ HTTP/1.1" 200 14450
+INFO 2025-11-19 20:16:37,174 basehttp "GET /static/css/goods/catalog.css HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:37,182 basehttp "GET /static/js/card_hover_effect.js HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:37,342 basehttp "GET /static/js/catalog_pagination.js HTTP/1.1" 200 4264
+INFO 2025-11-19 20:16:37,349 basehttp "GET /media/goods_images/cat_food.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:37,349 basehttp "GET /media/goods_images/rabbit_house.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:37,349 basehttp "GET /media/goods_images/bird_cage.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:16:38,485 basehttp "GET /catalog/product/whiskas-govyadina/ HTTP/1.1" 200 6982
+INFO 2025-11-19 20:16:38,511 basehttp "GET /static/css/goods/product.css HTTP/1.1" 200 2245
+INFO 2025-11-19 20:18:26,522 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 20:18:35,659 basehttp "GET /catalog/product/domik-dlya-krolika/ HTTP/1.1" 200 7081
+INFO 2025-11-19 20:18:47,361 basehttp "GET /catalog/product/zolotaya-kletka/ HTTP/1.1" 200 7042
+INFO 2025-11-19 20:18:59,630 basehttp "POST /cart/update_price/6/ HTTP/1.1" 302 0
+INFO 2025-11-19 20:18:59,645 basehttp "GET /catalog/product/zolotaya-kletka/ HTTP/1.1" 200 7042
+INFO 2025-11-19 20:19:06,217 basehttp "GET / HTTP/1.1" 200 13408
+ERROR 2025-11-19 20:19:09,699 log Internal Server Error: /catalog/all/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'footer'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\goods\views.py", line 41, in catalog
+    return render(request, 'goods/catalog.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\base.py", line 577, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 76: 'footer'. Did you forget to register or load this tag?
+ERROR 2025-11-19 20:19:09,709 basehttp "GET /catalog/all/ HTTP/1.1" 500 182859
+WARNING 2025-11-19 20:19:09,853 log Not Found: /favicon.ico
+WARNING 2025-11-19 20:19:09,854 basehttp "GET /favicon.ico HTTP/1.1" 404 6857
+INFO 2025-11-19 20:19:48,086 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 20:19:50,408 basehttp "GET /catalog/all/ HTTP/1.1" 200 14910
+INFO 2025-11-19 20:19:52,115 basehttp "GET /catalog/product/domik-dlya-krolika/ HTTP/1.1" 200 7081
+INFO 2025-11-19 20:19:55,444 basehttp "GET / HTTP/1.1" 200 13408
+WARNING 2025-11-19 20:20:11,157 log Not Found: /promotions/2
+WARNING 2025-11-19 20:20:11,158 basehttp "GET /promotions/2 HTTP/1.1" 404 6860
+INFO 2025-11-19 20:20:50,243 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-11-19 20:20:51,374 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 20:20:52,404 basehttp "GET /catalog/aksessuary/ HTTP/1.1" 200 10902
+INFO 2025-11-19 20:20:52,428 basehttp "GET /media/goods_images/cat_tree.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:21:08,664 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-11-19 20:21:09,842 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 20:21:11,545 basehttp "GET /catalog/korm/ HTTP/1.1" 200 9020
+INFO 2025-11-19 20:21:11,570 basehttp "GET /media/goods_images/parrot_food.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:21:11,596 basehttp "GET /media/goods_images/fish_food.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:21:21,969 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-11-19 20:21:23,145 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 20:21:24,869 basehttp "GET /catalog/igrushki/ HTTP/1.1" 200 7895
+INFO 2025-11-19 20:21:24,892 basehttp "GET /media/goods_images/cat_toy.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:21:24,907 basehttp "GET /media/goods_images/dog_toy.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 20:21:39,836 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 20:21:45,415 basehttp "GET / HTTP/1.1" 200 13421
+INFO 2025-11-19 20:21:47,113 basehttp "GET / HTTP/1.1" 200 13421
+INFO 2025-11-19 20:21:48,454 basehttp "GET / HTTP/1.1" 200 13421
+INFO 2025-11-19 20:21:49,017 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 7289
+INFO 2025-11-19 20:21:49,039 basehttp "GET /static/images/seaweed.png HTTP/1.1" 200 1584444
+INFO 2025-11-19 20:21:49,042 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2773
+INFO 2025-11-19 20:21:49,045 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 20:21:49,049 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 20:21:49,051 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 20:21:49,056 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 20:21:49,069 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 20:21:49,080 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 1876971
+INFO 2025-11-19 20:21:49,093 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 1749157
+INFO 2025-11-19 20:21:49,099 basehttp "GET /media/partners/Zoobazar.jpg HTTP/1.1" 200 37096
+INFO 2025-11-19 20:21:49,105 basehttp "GET /media/partners/zoomarket.webp HTTP/1.1" 200 6966
+INFO 2025-11-19 20:21:49,109 basehttp "GET /media/partners/petstop.png HTTP/1.1" 200 38070
+INFO 2025-11-19 20:21:49,111 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 1747168
+INFO 2025-11-19 20:21:49,115 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-11-19 20:21:49,124 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
+INFO 2025-11-19 20:21:49,139 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 20:21:49,164 basehttp "GET /static/images/fish2.png HTTP/1.1" 200 1352197
+INFO 2025-11-19 20:21:49,199 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 20:21:51,492 basehttp "GET /catalog/aksessuary/ HTTP/1.1" 200 10902
+INFO 2025-11-19 20:21:59,265 basehttp "GET / HTTP/1.1" 200 13421

@@ -47,6 +47,9 @@
   </div>
 
   <script>
+    const isEmployee = "{{ is_employee|yesno:'true,false' }}";
+    const isUser = "{{ is_user|yesno:'true,false' }}";
+
     const productsData = [
       {% for good in products %}
         {
@@ -57,12 +60,20 @@
           quantity: {{ good.quantity }},
           price: "{{ good.default_price }}",
           image: "{% if good.image %}{{ good.image.url }}{% else %}{% static 'images/Not found image.png' %}{% endif %}",
-          slug: "{{ good.slug }}"
+          slug: "{{ good.slug }}",
+          url: "{% url 'product' good.slug %}",
+          delete_url: "{% url 'delete_product' good.id %}",
+          cart_url: "{% url 'cart_add' %}",
+          is_employee: isEmployee,
+          is_user: isUser
         },
       {% endfor %}
     ];
   </script>
+</section>
+{% endblock %}
+
+{% block footer %}
   <script src="{% static 'js/catalog_pagination.js' %}"></script>
   <script src="{% static 'js/card_hover_effect.js' %}"></script>
-</section>
 {% endblock %}
