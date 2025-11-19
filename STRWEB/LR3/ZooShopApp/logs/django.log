@@ -5864,3 +5864,76 @@ INFO 2025-11-19 22:51:44,130 basehttp "GET /catalog/uhod/ HTTP/1.1" 200 6717
 INFO 2025-11-19 22:51:44,152 basehttp "GET /static/js/catalog_pagination.js HTTP/1.1" 304 0
 INFO 2025-11-19 22:51:49,210 basehttp "GET /catalog/all/ HTTP/1.1" 200 14321
 INFO 2025-11-19 22:51:49,231 basehttp "GET /static/js/catalog_pagination.js HTTP/1.1" 304 0
+INFO 2025-11-19 23:16:07,809 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 23:16:16,371 basehttp "GET / HTTP/1.1" 200 12959
+INFO 2025-11-19 23:16:21,101 basehttp "GET /faq/ HTTP/1.1" 200 17124
+INFO 2025-11-19 23:21:08,673 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 23:21:16,793 basehttp "GET / HTTP/1.1" 200 12959
+INFO 2025-11-19 23:21:19,167 basehttp "GET /faq/ HTTP/1.1" 200 17187
+INFO 2025-11-19 23:21:19,302 basehttp "GET /static/js/faq_scroll_animations.js HTTP/1.1" 200 466
+INFO 2025-11-19 23:22:40,300 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 23:22:40,789 basehttp "GET /faq/ HTTP/1.1" 200 17187
+INFO 2025-11-19 23:22:41,293 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 23:22:41,295 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 23:22:41,320 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 23:22:41,355 basehttp "GET /static/js/faq_scroll_animations.js HTTP/1.1" 200 466
+INFO 2025-11-19 23:22:41,370 basehttp "GET /static/css/main/faq.css HTTP/1.1" 200 1994
+INFO 2025-11-19 23:22:41,376 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 23:22:41,476 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 23:22:41,505 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 23:25:46,940 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 23:25:47,463 basehttp "GET /faq/ HTTP/1.1" 200 17403
+INFO 2025-11-19 23:25:47,735 basehttp "GET /static/css/main/faq.css HTTP/1.1" 200 2410
+WARNING 2025-11-19 23:25:47,744 basehttp "GET /static/images/parrot2.png HTTP/1.1" 404 1868
+INFO 2025-11-19 23:25:47,746 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 23:25:47,752 basehttp "GET /static/js/faq_scroll_animations.js HTTP/1.1" 200 585
+INFO 2025-11-19 23:25:47,754 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 23:25:47,756 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 23:25:47,758 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 23:25:47,774 basehttp "GET /static/images/parrot1.png HTTP/1.1" 200 1255713
+INFO 2025-11-19 23:25:47,893 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 23:25:47,955 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 23:29:15,561 basehttp "GET /faq/ HTTP/1.1" 200 17403
+INFO 2025-11-19 23:29:15,586 basehttp "GET /static/css/main/faq.css HTTP/1.1" 304 0
+INFO 2025-11-19 23:29:15,591 basehttp "GET /static/js/faq_scroll_animations.js HTTP/1.1" 304 0
+INFO 2025-11-19 23:29:15,592 basehttp "GET /static/images/parrot1.png HTTP/1.1" 304 0
+INFO 2025-11-19 23:29:15,617 basehttp "GET /static/images/parrot2.png HTTP/1.1" 200 2392492
+INFO 2025-11-19 23:29:17,258 basehttp "GET /faq/ HTTP/1.1" 200 17403
+INFO 2025-11-19 23:29:17,279 basehttp "GET /static/images/parrot2.png HTTP/1.1" 304 0
+INFO 2025-11-19 23:32:30,185 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 23:32:32,491 basehttp "GET /faq/ HTTP/1.1" 200 17403
+INFO 2025-11-19 23:32:32,819 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 23:32:32,847 basehttp "GET /static/images/parrot1.png HTTP/1.1" 200 1255713
+INFO 2025-11-19 23:32:32,852 basehttp "GET /static/js/faq_scroll_animations.js HTTP/1.1" 200 585
+INFO 2025-11-19 23:32:32,854 basehttp "GET /static/css/main/faq.css HTTP/1.1" 200 2419
+INFO 2025-11-19 23:32:32,860 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 23:32:32,861 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 23:32:32,861 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 23:32:32,865 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 23:32:32,870 basehttp "GET /static/images/parrot2.png HTTP/1.1" 200 2392492
+INFO 2025-11-19 23:32:32,906 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 23:33:51,347 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 23:33:51,842 basehttp "GET /faq/ HTTP/1.1" 200 17187
+INFO 2025-11-19 23:33:52,013 basehttp "GET /static/css/main/faq.css HTTP/1.1" 200 1994
+INFO 2025-11-19 23:33:52,015 basehttp "GET /static/js/faq_scroll_animations.js HTTP/1.1" 200 466
+INFO 2025-11-19 23:43:01,351 basehttp "GET / HTTP/1.1" 200 12959
+INFO 2025-11-19 23:43:01,400 basehttp "GET /media/partners/Zoobazar.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 23:43:01,402 basehttp "GET /media/partners/zoomarket.webp HTTP/1.1" 304 0
+INFO 2025-11-19 23:43:01,414 basehttp "GET /media/partners/petstop.png HTTP/1.1" 304 0
+INFO 2025-11-19 23:43:45,882 basehttp "GET /catalog/aksessuary/ HTTP/1.1" 200 10313
+INFO 2025-11-19 23:43:45,903 basehttp "GET /static/css/goods/catalog.css HTTP/1.1" 304 0
+INFO 2025-11-19 23:43:45,915 basehttp "GET /static/js/catalog_pagination.js HTTP/1.1" 200 5907
+INFO 2025-11-19 23:43:45,916 basehttp "GET /static/js/card_hover_effect.js HTTP/1.1" 304 0
+INFO 2025-11-20 01:48:41,221 basehttp "GET /faq/ HTTP/1.1" 200 17187
+INFO 2025-11-20 01:48:41,245 basehttp "GET /static/css/main/faq.css HTTP/1.1" 304 0
+INFO 2025-11-20 01:48:41,260 basehttp "GET /static/js/faq_scroll_animations.js HTTP/1.1" 304 0
+INFO 2025-11-20 01:55:47,537 autoreload Watching for file changes with StatReloader
+INFO 2025-11-20 01:55:48,750 basehttp "GET /faq/ HTTP/1.1" 200 17187
+INFO 2025-11-20 01:55:49,297 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-20 01:55:49,299 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-20 01:55:49,351 basehttp "GET /static/css/main/faq.css HTTP/1.1" 200 1953
+INFO 2025-11-20 01:55:49,378 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-20 01:55:49,396 basehttp "GET /static/js/faq_scroll_animations.js HTTP/1.1" 200 466
+INFO 2025-11-20 01:55:49,413 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-20 01:55:49,430 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-20 01:55:49,464 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453

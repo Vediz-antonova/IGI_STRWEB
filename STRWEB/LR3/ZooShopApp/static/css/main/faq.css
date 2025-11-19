@@ -8,8 +8,7 @@
   border-radius: 12px;
   max-width: 900px;
   margin: 0 auto;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 h3[itemprop="name"] {
@@ -94,3 +93,19 @@ footer small {
   display: block;
   margin-top: 1rem;
 }
+
+.faq-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.faq-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-item:hover {
+  transform: translateY(-2px) rotateZ(0.5deg);
+}
+
