@@ -39,6 +39,19 @@
                 </div>
               {% endif %}
             {% endfor %}
+
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="enableCustomInputs"> Добавить пользовательские поля
+              </label>
+            </div>
+
+            <div id="custom-inputs-container"></div>
+
+            <script>
+              const currentUsername = "{{ user.username|escapejs }}";
+            </script>
+
             <button type="submit">Сохранить</button>
           </div>
         </div>
@@ -96,4 +109,8 @@
   </div>
   {% endif %}
 </section>
+{% endblock %}
+
+{% block footer %}
+  <script src="{% static 'js/custom_inputs.js' %}"></script>
 {% endblock %}

@@ -198,3 +198,7 @@ textarea::placeholder {
 .orders-table a:hover {
   text-decoration: underline;
 }
+
+.custom-input-block input {
+  margin-bottom: 0.3rem;
+}
