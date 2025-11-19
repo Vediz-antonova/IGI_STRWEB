@@ -1,9 +1,11 @@
 from django.contrib import admin
 from django.urls import path, include
+from .views import index, update_slider_config
 from main import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('update-slider-config/', update_slider_config, name='update_slider_config'),
     path('about/', views.about, name='about'),
     path('privacy_policy/', views.privacy_policy, name='privacy_policy'),
     path('promotional/', views.promotional, name='promotional'),

@@ -42,22 +42,80 @@
         <img src="{% static 'icons/animal.ico' %}" alt="Логотип ZooShop" class="site-logo" title="Логотип ZooShop">
       </section>
 
-      <section class="banner-section">
-          <picture>
-            <source srcset="{% static 'images/banner1-small.jpg' %}" media="(max-width: 600px)">
-            <source srcset="{% static 'images/banner1.jpg' %}">
-            <img src="{% static 'images/banner1.jpg' %}" alt="Баннер 1" title="Баннер 1">
-          </picture>
-          <picture>
-            <source srcset="{% static 'images/banner2-small.jpg' %}" media="(max-width: 600px)">
-            <source srcset="{% static 'images/banner2.jpg' %}">
-            <img src="{% static 'images/banner2.jpg' %}" alt="Баннер 2" title="Баннер 2">
-          </picture>
-          <picture>
-            <source srcset="{% static 'images/banner3-small.jpg' %}" media="(max-width: 600px)">
-            <source srcset="{% static 'images/banner3.jpg' %}">
-            <img src="{% static 'images/banner3.jpg' %}" alt="Баннер 3" title="Баннер 3">
-          </picture>
+      <section class="slider-section"
+               data-loop="{{ slider_config.loop|yesno:'true,false' }}"
+               data-navs="{{ slider_config.navs|yesno:'true,false' }}"
+               data-pags="{{ slider_config.pags|yesno:'true,false' }}"
+               data-auto="{{ slider_config.auto|yesno:'true,false' }}"
+               data-stop-hover="{{ slider_config.stopMouseHover|yesno:'true,false' }}"
+               data-delay="{{ slider_config.delay }}">
+
+        <div class="slider-wrapper">
+          {% for slide in slides %}
+          <div class="slide" data-index="{{ forloop.counter0 }}">
+            <a href="{{ slide.link }}">
+              <img src="{% static slide.image %}" alt="Слайд {{ forloop.counter }}">
+            </a>
+            <div class="caption">{{ slide.text }}</div>
+          </div>
+          {% endfor %}
+        </div>
+
+        {% if slider_config.navs %}
+          <button class="slider-prev">←</button>
+          <button class="slider-next">→</button>
+        {% endif %}
+
+        {% if slider_config.pags %}
+          <div class="slider-pagination">
+            {% for slide in slides %}
+              <button class="slider-dot" data-slide="{{ forloop.counter0 }}">{{ forloop.counter }}</button>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="slider-counter">
+          <span id="current-slide">1</span> / {{ slides|length }}
+        </div>
+
+        <form method="post" action="{% url 'update_slider_config' %}" class="slider-config-form">
+          {% csrf_token %}
+          <fieldset>
+            <legend>Настройки слайдера</legend>
+
+            <label>
+              <input type="checkbox" name="loop" {% if slider_config.loop %}checked{% endif %}>
+              Зацикливание (loop)
+            </label>
+
+            <label>
+              <input type="checkbox" name="navs" {% if slider_config.navs %}checked{% endif %}>
+              Стрелки (navs)
+            </label>
+
+            <label>
+              <input type="checkbox" name="pags" {% if slider_config.pags %}checked{% endif %}>
+              Пагинация (pags)
+            </label>
+
+            <label>
+              <input type="checkbox" name="auto" {% if slider_config.auto %}checked{% endif %}>
+              Автопрокрутка (auto)
+            </label>
+
+            <label>
+              <input type="checkbox" name="stopMouseHover" {% if slider_config.stopMouseHover %}checked{% endif %}>
+              Остановка при наведении (stopMouseHover)
+            </label>
+
+            <label>
+              Задержка (сек):
+              <input type="number" name="delay" value="{{ slider_config.delay }}" min="1" max="60">
+            </label>
+
+            <button type="submit">Сохранить</button>
+          </fieldset>
+        </form>
       </section>
 
       {% if latest_article %}
@@ -94,19 +152,6 @@
           {% endfor %}
         </div>
       </section>
-
-      <section class="preloader-spinner">
-        <div class="spinner-bar bar1"></div>
-        <div class="spinner-bar bar2"></div>
-        <div class="spinner-bar bar3"></div>
-        <div class="spinner-bar bar4"></div>
-        <div class="spinner-bar bar5"></div>
-        <div class="spinner-bar bar6"></div>
-        <div class="spinner-bar bar7"></div>
-        <div class="spinner-bar bar8"></div>
-        <div class="spinner-bar bar9"></div>
-        <div class="spinner-bar bar10"></div>
-      </section>
     </div>
 {% endblock content %}
 
@@ -123,4 +168,6 @@
         </aside>
       </div>
     </footer>
+
+    <script src="{% static 'js/slider.js' %}"></script>
 {% endblock footer %}

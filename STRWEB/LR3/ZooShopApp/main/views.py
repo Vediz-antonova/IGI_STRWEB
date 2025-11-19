@@ -10,6 +10,8 @@ from django.http import JsonResponse
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.shortcuts import redirect
 import json
 import random
 import requests
@@ -22,16 +24,59 @@ def generate_calendar():
     c = calendar.HTMLCalendar()
     return c.formatmonth(today.year, today.month)
 
+slider_config_state = {
+    "loop": True,
+    "navs": True,
+    "pags": True,
+    "auto": True,
+    "stopMouseHover": True,
+    "delay": 5
+}
+
+@require_POST
+def update_slider_config(request):
+    slider_config_state["loop"] = bool(request.POST.get("loop"))
+    slider_config_state["navs"] = bool(request.POST.get("navs"))
+    slider_config_state["pags"] = bool(request.POST.get("pags"))
+    slider_config_state["auto"] = bool(request.POST.get("auto"))
+    slider_config_state["stopMouseHover"] = bool(request.POST.get("stopMouseHover"))
+    try:
+        slider_config_state["delay"] = max(1, int(request.POST.get("delay", 5)))
+    except ValueError:
+        slider_config_state["delay"] = 5
+
+    return redirect("index")
+
 def index(request):
     latest_article = News.objects.order_by("-id").first()
     partners = Partner.objects.all()
+
+    slides = [
+        {
+            "image": "images/banner1.jpg",
+            "text": "Аксессуары для питомцев, недорого)",
+            "link": "/promotions/1"
+        },
+        {
+            "image": "images/banner2.jpg",
+            "text": "Акция на корма!",
+            "link": "/promotions/2"
+        },
+        {
+            "image": "images/banner3.jpg",
+            "text": "Игрушки для питомцев",
+            "link": "/promotions/3"
+        }
+    ]
 
     context = {
         'title': 'Главная',
         'month_calendar': generate_calendar(),
         'latest_article': latest_article,
         'partners': partners,
-        'seaweed_positions': list(range(0, 1200, 200))
+        'seaweed_positions': list(range(0, 1200, 200)),
+        'slides': slides,
+        'slider_config': slider_config_state
     }
     return render(request, 'main/index.html', context)
 

@@ -3742,3 +3742,296 @@ INFO 2025-11-18 22:19:53,712 basehttp "GET /contacts/api/ HTTP/1.1" 200 6080
 INFO 2025-11-18 22:19:56,928 basehttp "GET /contacts/table/ HTTP/1.1" 200 6782
 INFO 2025-11-18 22:19:56,947 basehttp "GET /contacts/api/ HTTP/1.1" 200 6080
 INFO 2025-11-18 22:20:17,588 basehttp "GET /contact/ HTTP/1.1" 200 16365
+INFO 2025-11-19 08:26:13,850 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:26:26,999 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:26:29,561 basehttp "GET / HTTP/1.1" 200 9662
+INFO 2025-11-19 08:26:29,642 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-11-19 08:26:29,679 basehttp "GET /static/js/theme.js HTTP/1.1" 304 0
+INFO 2025-11-19 08:26:34,525 basehttp "GET /jobs/ HTTP/1.1" 200 4932
+INFO 2025-11-19 08:26:36,589 basehttp "GET /about/ HTTP/1.1" 200 7037
+INFO 2025-11-19 08:26:42,049 basehttp "GET / HTTP/1.1" 200 9662
+INFO 2025-11-19 08:32:46,656 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:32:50,145 basehttp "GET / HTTP/1.1" 200 10094
+INFO 2025-11-19 08:36:10,347 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-11-19 08:36:11,524 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:38:58,876 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-11-19 08:38:59,954 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:39:22,573 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:39:23,910 basehttp "GET / HTTP/1.1" 200 10206
+INFO 2025-11-19 08:43:38,144 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:43:40,176 basehttp "GET / HTTP/1.1" 200 10206
+INFO 2025-11-19 08:48:49,111 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:48:51,249 basehttp "GET / HTTP/1.1" 200 10292
+INFO 2025-11-19 08:48:55,615 basehttp "GET / HTTP/1.1" 200 10292
+WARNING 2025-11-19 08:48:57,993 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-19 08:48:57,993 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6685
+INFO 2025-11-19 08:50:25,769 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:50:28,975 basehttp "GET / HTTP/1.1" 200 10292
+WARNING 2025-11-19 08:50:30,242 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-19 08:50:30,243 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6685
+INFO 2025-11-19 08:51:09,850 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:51:11,889 basehttp "GET / HTTP/1.1" 200 10292
+WARNING 2025-11-19 08:51:13,912 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-19 08:51:13,912 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6685
+INFO 2025-11-19 08:53:19,483 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:53:20,949 basehttp "GET / HTTP/1.1" 200 10342
+INFO 2025-11-19 08:53:21,127 basehttp "GET /static/js/slider.js HTTP/1.1" 200 4044
+INFO 2025-11-19 08:53:24,113 basehttp "GET / HTTP/1.1" 200 10342
+INFO 2025-11-19 08:53:24,612 basehttp "GET / HTTP/1.1" 200 10342
+INFO 2025-11-19 08:53:24,990 basehttp "GET / HTTP/1.1" 200 10342
+INFO 2025-11-19 08:53:25,277 basehttp "GET / HTTP/1.1" 200 10342
+WARNING 2025-11-19 08:53:27,545 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-19 08:53:27,547 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6685
+INFO 2025-11-19 08:54:19,460 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:54:24,175 basehttp "GET / HTTP/1.1" 200 8801
+INFO 2025-11-19 08:54:24,185 basehttp "GET /static/js/contacts_table.js HTTP/1.1" 304 0
+WARNING 2025-11-19 08:54:24,211 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-19 08:54:24,212 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6685
+INFO 2025-11-19 08:54:28,929 basehttp "GET / HTTP/1.1" 200 8801
+WARNING 2025-11-19 08:54:28,959 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-19 08:54:28,960 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6685
+INFO 2025-11-19 08:54:29,967 basehttp "GET / HTTP/1.1" 200 8801
+WARNING 2025-11-19 08:54:30,000 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-19 08:54:30,001 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6685
+INFO 2025-11-19 08:54:31,265 basehttp "GET / HTTP/1.1" 200 8801
+WARNING 2025-11-19 08:54:31,302 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-19 08:54:31,303 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6685
+INFO 2025-11-19 08:54:43,211 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:54:44,226 basehttp "GET / HTTP/1.1" 200 10342
+INFO 2025-11-19 08:54:44,236 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+WARNING 2025-11-19 08:54:44,259 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-19 08:54:44,259 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6685
+INFO 2025-11-19 08:54:44,839 basehttp "GET / HTTP/1.1" 200 10342
+WARNING 2025-11-19 08:54:44,871 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-19 08:54:44,872 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 6685
+INFO 2025-11-19 08:57:50,596 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 08:57:51,342 basehttp "GET / HTTP/1.1" 200 10367
+INFO 2025-11-19 08:57:51,354 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-19 08:57:52,939 basehttp "GET / HTTP/1.1" 200 10367
+INFO 2025-11-19 08:58:01,385 basehttp "GET /catalog/dogs/ HTTP/1.1" 200 5994
+INFO 2025-11-19 08:58:05,027 basehttp "GET / HTTP/1.1" 200 10367
+INFO 2025-11-19 08:58:10,263 basehttp "GET /? HTTP/1.1" 200 10367
+INFO 2025-11-19 09:00:04,853 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:00:06,420 basehttp "GET / HTTP/1.1" 200 10367
+INFO 2025-11-19 09:00:06,514 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-19 09:00:07,790 basehttp "GET / HTTP/1.1" 200 10367
+INFO 2025-11-19 09:07:46,957 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-11-19 09:07:48,349 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:08:38,721 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-11-19 09:08:40,150 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:11:33,809 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:11:38,337 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:11:38,431 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:11:38,635 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2353
+INFO 2025-11-19 09:13:54,436 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:13:55,098 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:13:55,107 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-19 09:14:05,311 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:14:05,969 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:14:06,321 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:14:06,588 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:14:07,086 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:14:57,045 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:15:54,724 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:15:56,789 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:15:56,947 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2558
+INFO 2025-11-19 09:16:00,976 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:16:00,986 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-19 09:17:05,274 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:17:07,193 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:17:07,351 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2773
+INFO 2025-11-19 09:20:19,482 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:20:21,085 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:20:21,167 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-19 09:20:23,859 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:20:24,419 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 09:20:24,433 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 6171
+INFO 2025-11-19 09:20:24,436 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2773
+INFO 2025-11-19 09:20:24,440 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 09:20:24,447 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 09:20:24,451 basehttp "GET /static/images/seaweed.png HTTP/1.1" 200 1584444
+INFO 2025-11-19 09:20:24,452 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 09:20:24,456 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:20:24,456 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 42882
+INFO 2025-11-19 09:20:24,461 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 15668
+INFO 2025-11-19 09:20:24,463 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 8842
+INFO 2025-11-19 09:20:24,494 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
+INFO 2025-11-19 09:20:24,519 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 09:20:24,535 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-11-19 09:20:24,559 basehttp "GET /static/images/fish2.png HTTP/1.1" 200 1352197
+INFO 2025-11-19 09:20:24,584 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:22:13,262 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:22:14,006 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:22:14,175 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 6280
+INFO 2025-11-19 09:22:14,177 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+WARNING 2025-11-19 09:23:25,134 log Not Found: /promotions/3
+WARNING 2025-11-19 09:23:25,135 basehttp "GET /promotions/3 HTTP/1.1" 404 6577
+WARNING 2025-11-19 09:23:25,190 log Not Found: /favicon.ico
+WARNING 2025-11-19 09:23:25,190 basehttp "GET /favicon.ico HTTP/1.1" 404 6574
+INFO 2025-11-19 09:28:48,157 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:28:52,526 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:28:52,535 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-11-19 09:28:52,536 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-19 09:32:07,557 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:32:07,576 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-19 09:32:07,576 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-11-19 09:32:11,298 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:32:11,753 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 09:32:11,772 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 09:32:11,797 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-11-19 09:32:11,807 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2773
+INFO 2025-11-19 09:32:11,807 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 09:32:11,808 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 6280
+INFO 2025-11-19 09:32:11,813 basehttp "GET /static/images/fish2.png HTTP/1.1" 200 1352197
+INFO 2025-11-19 09:32:11,816 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 09:32:11,817 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 09:32:11,826 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 42882
+INFO 2025-11-19 09:32:11,827 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:32:11,843 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
+INFO 2025-11-19 09:32:11,852 basehttp "GET /static/images/seaweed.png HTTP/1.1" 200 1584444
+INFO 2025-11-19 09:32:11,859 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 1749157
+INFO 2025-11-19 09:32:11,859 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 1747168
+INFO 2025-11-19 09:32:11,869 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:32:50,748 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:32:51,636 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:32:51,649 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 09:32:51,653 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 09:33:13,160 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:33:13,900 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:33:13,914 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 09:33:13,917 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 09:33:14,069 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 6248
+INFO 2025-11-19 09:34:17,736 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:34:21,951 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:34:22,365 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 09:34:22,388 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 09:34:22,411 basehttp "GET /static/images/fish2.png HTTP/1.1" 200 1352197
+INFO 2025-11-19 09:34:22,423 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
+INFO 2025-11-19 09:34:22,426 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 6272
+INFO 2025-11-19 09:34:22,429 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2773
+INFO 2025-11-19 09:34:22,436 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 09:34:22,437 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 09:34:22,437 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-11-19 09:34:22,437 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:34:22,439 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 09:34:22,443 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 42882
+INFO 2025-11-19 09:34:22,457 basehttp "GET /static/images/seaweed.png HTTP/1.1" 200 1584444
+INFO 2025-11-19 09:34:22,474 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 1747168
+INFO 2025-11-19 09:34:22,476 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 1749157
+INFO 2025-11-19 09:34:22,511 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:34:49,475 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:34:54,190 basehttp "GET / HTTP/1.1" 200 9989
+INFO 2025-11-19 09:34:54,637 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-11-19 09:34:54,649 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 09:34:54,663 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 6248
+INFO 2025-11-19 09:34:54,673 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 09:34:54,675 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2773
+INFO 2025-11-19 09:34:54,677 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 09:34:54,682 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 09:34:54,685 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:34:54,690 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 09:34:54,691 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 42882
+INFO 2025-11-19 09:34:54,718 basehttp "GET /static/images/fish2.png HTTP/1.1" 200 1352197
+INFO 2025-11-19 09:34:54,743 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
+INFO 2025-11-19 09:34:54,750 basehttp "GET /static/images/seaweed.png HTTP/1.1" 200 1584444
+INFO 2025-11-19 09:34:54,774 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 1747168
+INFO 2025-11-19 09:34:54,775 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 1749157
+INFO 2025-11-19 09:34:54,795 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:37:07,486 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-11-19 09:37:08,924 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:40:19,999 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:40:20,978 basehttp "GET / HTTP/1.1" 200 10010
+INFO 2025-11-19 09:40:20,988 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-19 09:40:20,991 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 09:40:20,991 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 09:40:21,127 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 6451
+INFO 2025-11-19 09:40:25,255 basehttp "GET / HTTP/1.1" 200 10010
+INFO 2025-11-19 09:40:25,270 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 6451
+INFO 2025-11-19 09:40:25,272 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-11-19 09:40:25,272 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 09:40:25,273 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 09:40:25,283 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2773
+INFO 2025-11-19 09:40:25,283 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 09:40:25,291 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 09:40:25,292 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:40:25,295 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 09:40:25,343 basehttp "GET /static/images/seaweed.png HTTP/1.1" 200 1584444
+INFO 2025-11-19 09:40:25,353 basehttp "GET /static/images/fish2.png HTTP/1.1" 200 1352197
+INFO 2025-11-19 09:40:25,360 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 1876971
+INFO 2025-11-19 09:40:25,366 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
+INFO 2025-11-19 09:40:25,369 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 1747168
+INFO 2025-11-19 09:40:25,369 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 1749157
+INFO 2025-11-19 09:40:25,391 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:46:50,725 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-11-19 09:46:55,428 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:47:05,704 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-11-19 09:47:06,799 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:47:19,893 autoreload C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py changed, reloading.
+INFO 2025-11-19 09:47:21,121 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:47:41,164 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:48:07,682 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:49:17,504 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:49:21,135 basehttp "GET / HTTP/1.1" 200 11333
+INFO 2025-11-19 09:49:21,151 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-19 09:49:21,157 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 09:49:21,160 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 09:49:21,162 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 09:49:21,287 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 6092
+INFO 2025-11-19 09:49:34,379 basehttp "GET / HTTP/1.1" 200 11333
+INFO 2025-11-19 09:49:34,396 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 6092
+INFO 2025-11-19 09:49:34,397 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-11-19 09:49:34,397 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 09:49:34,398 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 09:49:34,426 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2773
+INFO 2025-11-19 09:49:34,431 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:49:34,434 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 09:49:34,436 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 09:49:34,439 basehttp "GET /static/images/fish2.png HTTP/1.1" 200 1352197
+INFO 2025-11-19 09:49:34,451 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 09:49:34,483 basehttp "GET /static/images/seaweed.png HTTP/1.1" 200 1584444
+INFO 2025-11-19 09:49:34,502 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
+INFO 2025-11-19 09:49:34,505 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 1749157
+INFO 2025-11-19 09:49:34,507 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 1876971
+INFO 2025-11-19 09:49:34,508 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 1747168
+INFO 2025-11-19 09:49:34,519 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:49:36,581 basehttp "GET / HTTP/1.1" 200 11333
+INFO 2025-11-19 09:49:36,595 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 09:49:36,596 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-11-19 09:49:36,596 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 6092
+INFO 2025-11-19 09:49:36,596 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 09:49:36,608 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 09:49:36,610 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2773
+INFO 2025-11-19 09:49:36,613 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:49:36,619 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 09:49:36,656 basehttp "GET /static/images/seaweed.png HTTP/1.1" 200 1584444
+INFO 2025-11-19 09:49:36,661 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 09:49:36,667 basehttp "GET /static/images/fish2.png HTTP/1.1" 200 1352197
+INFO 2025-11-19 09:49:36,680 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
+INFO 2025-11-19 09:49:36,684 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 1749157
+INFO 2025-11-19 09:49:36,685 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 1747168
+INFO 2025-11-19 09:49:36,688 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 1876971
+INFO 2025-11-19 09:49:36,705 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:49:46,700 basehttp "POST /update-slider-config/ HTTP/1.1" 302 0
+INFO 2025-11-19 09:49:46,721 basehttp "GET / HTTP/1.1" 200 11216
+INFO 2025-11-19 09:49:56,473 basehttp "POST /update-slider-config/ HTTP/1.1" 302 0
+INFO 2025-11-19 09:49:56,490 basehttp "GET / HTTP/1.1" 200 11321
+INFO 2025-11-19 09:50:14,671 basehttp "POST /update-slider-config/ HTTP/1.1" 302 0
+INFO 2025-11-19 09:50:14,689 basehttp "GET / HTTP/1.1" 200 11000
+INFO 2025-11-19 09:52:54,647 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 09:52:58,382 basehttp "GET / HTTP/1.1" 200 11333
+INFO 2025-11-19 09:52:58,785 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 09:52:58,798 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 7289
+INFO 2025-11-19 09:52:58,826 basehttp "GET /static/images/fish2.png HTTP/1.1" 200 1352197
+INFO 2025-11-19 09:52:58,827 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 09:52:58,837 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2773
+INFO 2025-11-19 09:52:58,837 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 09:52:58,839 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-11-19 09:52:58,844 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 09:52:58,845 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 09:52:58,845 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 09:52:58,855 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
+INFO 2025-11-19 09:52:58,879 basehttp "GET /static/images/seaweed.png HTTP/1.1" 200 1584444
+INFO 2025-11-19 09:52:58,884 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 1747168
+INFO 2025-11-19 09:52:58,885 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 1876971
+INFO 2025-11-19 09:52:58,885 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 1749157
+INFO 2025-11-19 09:52:58,922 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
