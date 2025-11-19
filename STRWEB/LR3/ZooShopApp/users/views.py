@@ -53,10 +53,9 @@ def registration(request):
     else:
         form = UserRegistrationForm()
 
-    today = date.today()
-    max_birth_date = date(today.year - 18, today.month, today.day).isoformat()
+    today = date.today().isoformat()
 
-    context = {"title": "Регистрация", "form": form, "max_birth_date": max_birth_date}
+    context = {"title": "Регистрация", "form": form, "today": today}
     return render(request, "users/registration.html", context)
 
 @login_required

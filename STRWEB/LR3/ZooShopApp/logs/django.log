@@ -5486,3 +5486,59 @@ INFO 2025-11-19 21:02:22,888 basehttp "GET /user/login/ HTTP/1.1" 200 5416
 INFO 2025-11-19 21:02:26,394 basehttp "POST /user/login/ HTTP/1.1" 302 0
 INFO 2025-11-19 21:02:26,405 basehttp "GET /user/profile/ HTTP/1.1" 200 7705
 INFO 2025-11-19 21:02:26,429 basehttp "GET /static/js/custom_inputs.js HTTP/1.1" 304 0
+INFO 2025-11-19 21:25:46,844 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 21:25:48,857 basehttp "GET / HTTP/1.1" 200 12866
+INFO 2025-11-19 21:25:51,762 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-11-19 21:25:51,774 basehttp "GET / HTTP/1.1" 200 12441
+INFO 2025-11-19 21:25:52,522 basehttp "GET /user/login/ HTTP/1.1" 200 5416
+INFO 2025-11-19 21:25:53,895 basehttp "GET /user/registration/ HTTP/1.1" 200 8621
+INFO 2025-11-19 21:25:54,033 basehttp "GET /static/js/birthdate_check.js HTTP/1.1" 200 1484
+INFO 2025-11-19 21:28:03,517 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 21:28:04,160 basehttp "GET /user/registration/ HTTP/1.1" 200 8604
+INFO 2025-11-19 21:28:04,198 basehttp "GET /static/js/birthdate_check.js HTTP/1.1" 304 0
+INFO 2025-11-19 21:30:05,478 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 21:30:06,174 basehttp "GET /user/registration/ HTTP/1.1" 200 8624
+INFO 2025-11-19 21:30:06,201 basehttp "GET /static/js/birthdate_check.js HTTP/1.1" 304 0
+INFO 2025-11-19 21:31:58,444 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 21:31:59,090 basehttp "GET /user/registration/ HTTP/1.1" 200 8621
+INFO 2025-11-19 21:31:59,114 basehttp "GET /static/js/birthdate_check.js HTTP/1.1" 304 0
+INFO 2025-11-19 21:33:02,183 basehttp "POST /user/registration/ HTTP/1.1" 200 9126
+INFO 2025-11-19 21:33:02,209 basehttp "GET /static/js/birthdate_check.js HTTP/1.1" 304 0
+INFO 2025-11-19 21:34:49,310 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 21:34:54,280 basehttp "POST /user/registration/ HTTP/1.1" 200 9126
+INFO 2025-11-19 21:34:54,419 basehttp "GET /static/js/birthdate_check.js HTTP/1.1" 200 1619
+INFO 2025-11-19 21:39:42,526 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 21:39:44,175 basehttp "GET / HTTP/1.1" 200 12409
+INFO 2025-11-19 21:39:44,230 basehttp "GET /media/partners/Zoobazar.jpg HTTP/1.1" 304 0
+INFO 2025-11-19 21:39:44,231 basehttp "GET /media/partners/zoomarket.webp HTTP/1.1" 304 0
+INFO 2025-11-19 21:39:44,235 basehttp "GET /media/partners/petstop.png HTTP/1.1" 304 0
+INFO 2025-11-19 21:39:46,485 basehttp "GET /user/login/ HTTP/1.1" 200 5416
+INFO 2025-11-19 21:39:47,875 basehttp "GET /user/registration/ HTTP/1.1" 200 8558
+INFO 2025-11-19 21:39:48,028 basehttp "GET /static/js/birthdate_check.js HTTP/1.1" 200 924
+INFO 2025-11-19 21:41:31,490 autoreload Watching for file changes with StatReloader
+INFO 2025-11-19 21:41:33,979 basehttp "GET /user/registration/ HTTP/1.1" 200 8558
+INFO 2025-11-19 21:41:34,573 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-11-19 21:41:34,575 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-11-19 21:41:34,598 basehttp "GET /static/css/users/registration.css HTTP/1.1" 200 2864
+INFO 2025-11-19 21:41:34,628 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-11-19 21:41:34,663 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-11-19 21:41:34,667 basehttp "GET /static/js/birthdate_check.js HTTP/1.1" 200 1796
+INFO 2025-11-19 21:41:34,680 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-11-19 21:41:34,740 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-19 21:42:31,511 basehttp "POST /user/registration/ HTTP/1.1" 302 0
+INFO 2025-11-19 21:42:31,536 basehttp "GET /user/profile/ HTTP/1.1" 200 8349
+INFO 2025-11-19 21:42:31,567 basehttp "GET /static/css/users/profile.css HTTP/1.1" 304 0
+INFO 2025-11-19 21:42:31,574 basehttp "GET /static/js/custom_inputs.js HTTP/1.1" 304 0
+INFO 2025-11-19 21:42:31,575 basehttp "GET /static/css/carts/included_cart.css HTTP/1.1" 200 1600
+INFO 2025-11-19 21:42:36,462 basehttp "GET /user/users-cart/ HTTP/1.1" 200 5285
+INFO 2025-11-19 21:42:36,482 basehttp "GET /static/css/users/users_cart.css HTTP/1.1" 200 419
+INFO 2025-11-19 21:42:38,645 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-11-19 21:42:38,663 basehttp "GET / HTTP/1.1" 200 12441
+INFO 2025-11-19 21:42:42,437 basehttp "GET /user/login/ HTTP/1.1" 200 5416
+INFO 2025-11-19 21:42:45,309 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-11-19 21:42:45,320 basehttp "GET /user/profile/ HTTP/1.1" 200 8309
+INFO 2025-11-19 21:42:52,386 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-11-19 21:42:52,397 basehttp "GET / HTTP/1.1" 200 12441
+INFO 2025-11-19 21:42:53,110 basehttp "GET /user/login/ HTTP/1.1" 200 5416
+INFO 2025-11-19 21:43:49,192 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-11-19 21:43:49,218 basehttp "GET /user/profile/ HTTP/1.1" 200 8279

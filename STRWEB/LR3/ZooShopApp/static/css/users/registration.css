@@ -156,3 +156,8 @@ textarea::placeholder {
   font-size: 0.85rem;
   margin-top: 0.25rem;
 }
+
+input.invalid-age {
+  border-color: #dc3545;
+  background-color: #f8d7da;
+}
