@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71d16f01-759b-4386-891f-5c124d5c975b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/LR3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ZooShopApp/static/js/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZooShopApp/static/js/catalog_pagination.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LR2/ZooShopApp/main/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZooShopApp/goods/templates/goods/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/goods/templates/goods/catalog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZooShopApp/goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/goods/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ZooShopApp/logs/django.log" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/logs/django.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZooShopApp/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/main/templates/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZooShopApp/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/main/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZooShopApp/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZooShopApp/static/css/main/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/static/css/main/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZooShopApp/static/images/banner1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/static/images/banner1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZooShopApp/static/images/banner2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/static/images/banner2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZooShopApp/static/images/banner3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/static/images/banner3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZooShopApp/static/css/goods/catalog.css" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/static/css/goods/catalog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZooShopApp/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +152,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763417867980</updated>
       <workItem from="1763417869106" duration="6776000" />
-      <workItem from="1763507907733" duration="6046000" />
+      <workItem from="1763507907733" duration="6896000" />
     </task>
     <servers />
   </component>

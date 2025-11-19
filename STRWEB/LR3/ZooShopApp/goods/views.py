@@ -12,9 +12,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 def catalog(request, category_slug=None):
-    page=request.GET.get('page', 1)
-    order_by = request.GET.get('order_by', None)
-    query=request.GET.get('q', None)
+    order_by = request.GET.get('order_by')
+    query = request.GET.get('q')
 
     if category_slug == 'all':
         products = Product.objects.all()
@@ -32,12 +31,9 @@ def catalog(request, category_slug=None):
     if order_by in allowed_sorting_fields:
         products = products.order_by(*allowed_sorting_fields[order_by])
 
-    paginator = Paginator(products, 3)
-    current_page = paginator.get_page(page)
-
     context = {
         'title': 'Catalog',
-        'products': current_page,
+        'products': products,
         'slug_url': category_slug,
     }
     return render(request, 'goods/catalog.html', context)
