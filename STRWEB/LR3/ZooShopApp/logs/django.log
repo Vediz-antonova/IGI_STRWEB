@@ -5937,3 +5937,121 @@ INFO 2025-11-20 01:55:49,396 basehttp "GET /static/js/faq_scroll_animations.js H
 INFO 2025-11-20 01:55:49,413 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
 INFO 2025-11-20 01:55:49,430 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
 INFO 2025-11-20 01:55:49,464 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-11-20 02:20:03,280 autoreload Watching for file changes with StatReloader
+INFO 2025-11-20 02:20:53,357 autoreload Watching for file changes with StatReloader
+INFO 2025-11-20 02:20:55,279 basehttp "GET /faq/ HTTP/1.1" 200 17187
+INFO 2025-11-20 02:20:55,307 basehttp "GET /static/css/main/faq.css HTTP/1.1" 304 0
+INFO 2025-11-20 02:20:55,307 basehttp "GET /static/js/faq_scroll_animations.js HTTP/1.1" 304 0
+INFO 2025-11-20 02:20:57,668 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-11-20 02:20:57,686 basehttp "GET / HTTP/1.1" 200 12441
+INFO 2025-11-20 02:20:57,712 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-11-20 02:20:57,719 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-11-20 02:20:57,719 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 304 0
+INFO 2025-11-20 02:20:57,721 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 304 0
+INFO 2025-11-20 02:20:57,723 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 304 0
+INFO 2025-11-20 02:20:57,734 basehttp "GET /media/partners/Zoobazar.jpg HTTP/1.1" 304 0
+INFO 2025-11-20 02:20:57,735 basehttp "GET /media/partners/zoomarket.webp HTTP/1.1" 304 0
+INFO 2025-11-20 02:20:57,737 basehttp "GET /media/partners/petstop.png HTTP/1.1" 304 0
+INFO 2025-11-20 02:20:58,806 basehttp "GET /user/login/ HTTP/1.1" 200 5416
+INFO 2025-11-20 02:21:03,040 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-11-20 02:21:03,066 basehttp "GET /user/profile/ HTTP/1.1" 200 8344
+INFO 2025-11-20 02:21:03,093 basehttp "GET /static/css/users/profile.css HTTP/1.1" 304 0
+INFO 2025-11-20 02:21:03,099 basehttp "GET /static/js/custom_inputs.js HTTP/1.1" 304 0
+ERROR 2025-11-20 02:21:04,612 log Internal Server Error: /function_plot/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py", line 249, in function_plot_view
+    return render(request, "statistics/function_plot.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: statistics/function_plot.html
+ERROR 2025-11-20 02:21:04,614 basehttp "GET /function_plot/ HTTP/1.1" 500 98403
+WARNING 2025-11-20 02:21:04,732 log Not Found: /favicon.ico
+WARNING 2025-11-20 02:21:04,732 basehttp "GET /favicon.ico HTTP/1.1" 404 7126
+INFO 2025-11-20 02:21:41,351 autoreload Watching for file changes with StatReloader
+ERROR 2025-11-20 02:21:42,847 log Internal Server Error: /function_plot/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py", line 249, in function_plot_view
+    return render(request, "function_plot.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: function_plot.html
+ERROR 2025-11-20 02:21:42,848 basehttp "GET /function_plot/ HTTP/1.1" 500 98166
+ERROR 2025-11-20 02:21:43,684 log Internal Server Error: /function_plot/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py", line 249, in function_plot_view
+    return render(request, "function_plot.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: function_plot.html
+ERROR 2025-11-20 02:21:43,686 basehttp "GET /function_plot/ HTTP/1.1" 500 98166
+ERROR 2025-11-20 02:21:44,709 log Internal Server Error: /function_plot/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py", line 249, in function_plot_view
+    return render(request, "function_plot.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: function_plot.html
+ERROR 2025-11-20 02:21:44,711 basehttp "GET /function_plot/ HTTP/1.1" 500 98166
+INFO 2025-11-20 02:22:05,883 autoreload Watching for file changes with StatReloader
+INFO 2025-11-20 02:22:06,442 basehttp "GET /function_plot/ HTTP/1.1" 200 5748
+INFO 2025-11-20 02:22:06,682 basehttp "GET /static/css/others/function_plot.css HTTP/1.1" 200 228
+INFO 2025-11-20 02:22:06,704 basehttp "GET /static/js/function_plot.js HTTP/1.1" 200 2053
+INFO 2025-11-20 02:23:18,649 basehttp "GET /function_plot/ HTTP/1.1" 200 5748
+INFO 2025-11-20 02:23:18,676 basehttp "GET /static/js/function_plot.js HTTP/1.1" 304 0
+INFO 2025-11-20 02:23:18,676 basehttp "GET /static/css/others/function_plot.css HTTP/1.1" 304 0
+INFO 2025-11-20 02:25:23,971 autoreload Watching for file changes with StatReloader
+INFO 2025-11-20 02:25:26,128 basehttp "GET /function_plot/ HTTP/1.1" 200 5856
+INFO 2025-11-20 02:25:26,409 basehttp "GET /static/js/function_plot.js HTTP/1.1" 200 2276
+INFO 2025-11-20 02:25:26,412 basehttp "GET /static/css/others/function_plot.css HTTP/1.1" 200 568

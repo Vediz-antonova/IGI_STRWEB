@@ -222,3 +222,33 @@ def supplier_list(request):
 
     context = {"supplier_data": supplier_data}
     return render(request, "main/supplier_list.html", context)
+
+
+
+from django.shortcuts import render
+import math
+
+def function_plot_view(request):
+    x_values = [round(x, 2) for x in frange(1.1, 3.0, 0.1)]
+    series_data = []
+    math_data = []
+
+    def series_ln(x, terms=10):
+        return 2 * sum(1 / ((2 * n + 1) * x**(2 * n + 1)) for n in range(terms))
+
+    for x in x_values:
+        series_data.append(round(series_ln(x), 6))
+        math_data.append(round(math.log((x + 1) / (x - 1)), 6))
+
+    context = {
+        "x_values": x_values,
+        "series_data": series_data,
+        "math_data": math_data,
+        "title": "График функции и её разложения"
+    }
+    return render(request, "others/function_plot.html", context)
+
+def frange(start, stop, step):
+    while start <= stop:
+        yield start
+        start += step

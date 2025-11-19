@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/others/function_plot.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>График функции и её разложения в ряд</h2>
+<p>Сравнение значений <code>F(x)</code> по ряду и через <code>Math.log</code> на интервале <code>x ∈ [1.1, 3]</code></p>
+
+<canvas id="functionChart" width="800" height="400"></canvas>
+
+<div class="chart-actions">
+  <button id="saveChartBtn">Сохранить графики</button>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="{% static 'js/function_plot.js' %}"></script>
+{% endblock %}
