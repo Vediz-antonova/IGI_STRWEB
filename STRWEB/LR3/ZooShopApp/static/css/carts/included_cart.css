@@ -1,5 +1,4 @@
 .cart-items-list {
-  display: flex;
   flex-direction: column;
   gap: 1rem;
 }
@@ -59,7 +58,7 @@
 }
 
 .item-price {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: #212529;
 }
 

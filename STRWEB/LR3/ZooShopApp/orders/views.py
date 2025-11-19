@@ -69,7 +69,6 @@ def create_order(request):
 
                             total_price += discounted_price * quantity
 
-                        # Очистить корзину пользователя после создания заказа
                         cart_items.delete()
 
                         messages.success(request, f"Заказ оформлен! Итоговая сумма: {total_price:.2f} BYN")
