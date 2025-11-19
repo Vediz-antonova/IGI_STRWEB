@@ -5,6 +5,40 @@ const grid = document.getElementById("product-grid");
 const pagination = document.getElementById("pagination-controls");
 const pageSizeSelector = document.getElementById("page-size");
 
+function getCSRFTokenFromCookie() {
+  const name = "csrftoken";
+  const cookies = document.cookie.split("; ");
+  for (let cookie of cookies) {
+    const [key, value] = cookie.split("=");
+    if (key === name) return value;
+  }
+  return "";
+}
+
+function initCardHoverEffect() {
+  const cards = document.querySelectorAll(".product-card");
+
+  cards.forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (x - centerX) / 10;
+
+      card.style.transform = `rotateX(${ -rotateX }deg) rotateY(${ rotateY }deg) scale(1.03)`;
+      card.style.boxShadow = `0 12px 24px rgba(0, 0, 0, 0.15)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "none";
+      card.style.boxShadow = "none";
+    });
+  });
+}
+
 function renderProducts() {
   grid.innerHTML = "";
   const start = (currentPage - 1) * pageSize;
@@ -29,24 +63,21 @@ function renderProducts() {
             : `<p class="product-price">${product.price} BYN</p>`}
           ${product.is_employee === "true"
             ? `<form method="POST" action="${product.delete_url}">
-                 <input type="hidden" name="csrfmiddlewaretoken" value="${getCSRFToken()}">
+                 <input type="hidden" name="csrfmiddlewaretoken" value="${getCSRFTokenFromCookie()}">
                  <button type="submit" class="delete-button">Удалить</button>
                </form>`
             : product.is_user === "true" && product.quantity > 0
-            ? `<a href="${product.cart_url}" class="add-to-cart" data-product-id="${product.id}">
-                 <input type="hidden" name="csrfmiddlewaretoken" value="${getCSRFToken()}">
+            ? `<button class="add-to-cart-button" data-cart-url="${product.cart_url}" data-product-id="${product.id}">
                  <img src="/static/icons/cart-plus.svg" alt="Добавить в корзину" width="32" height="32">
-               </a>`
+               </button>`
             : ""}
         </div>
       </div>
     `;
     grid.appendChild(card);
   });
-}
 
-function getCSRFToken() {
-  return document.querySelector('[name=csrfmiddlewaretoken]')?.value || '';
+  initCardHoverEffect();
 }
 
 function renderPagination() {
@@ -100,6 +131,33 @@ pageSizeSelector.addEventListener("change", () => {
   currentPage = 1;
   renderProducts();
   renderPagination();
+});
+
+document.addEventListener("click", (e) => {
+  const button = e.target.closest(".add-to-cart-button");
+  if (!button) return;
+
+  e.preventDefault();
+
+  const cartUrl = button.dataset.cartUrl;
+  const productId = button.dataset.productId;
+  const csrfToken = getCSRFTokenFromCookie();
+
+  fetch(cartUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-CSRFToken": csrfToken,
+    },
+    body: `product_id=${productId}`,
+  })
+    .then(res => res.ok ? res.text() : Promise.reject(res))
+    .then(() => {
+      alert("Товар добавлен в корзину!");
+    })
+    .catch(() => {
+      alert("Ошибка при добавлении.");
+    });
 });
 
 renderProducts();

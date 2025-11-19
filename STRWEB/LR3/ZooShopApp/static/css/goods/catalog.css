@@ -122,6 +122,17 @@
   color: #198754;
 }
 
+.product-image {
+  height: 450px;
+  overflow: hidden;
+}
+
+.product-image img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
 .out-of-stock {
   color: #dc3545;
   font-weight: bold;
