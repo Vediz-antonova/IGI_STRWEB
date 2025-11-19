@@ -6055,3 +6055,33 @@ INFO 2025-11-20 02:25:23,971 autoreload Watching for file changes with StatReloa
 INFO 2025-11-20 02:25:26,128 basehttp "GET /function_plot/ HTTP/1.1" 200 5856
 INFO 2025-11-20 02:25:26,409 basehttp "GET /static/js/function_plot.js HTTP/1.1" 200 2276
 INFO 2025-11-20 02:25:26,412 basehttp "GET /static/css/others/function_plot.css HTTP/1.1" 200 568
+INFO 2025-11-20 02:32:11,909 autoreload Watching for file changes with StatReloader
+INFO 2025-11-20 02:32:23,129 autoreload Watching for file changes with StatReloader
+INFO 2025-11-20 02:32:23,835 basehttp "GET /function_plot/ HTTP/1.1" 200 5925
+INFO 2025-11-20 02:32:23,857 basehttp "GET /static/css/others/function_plot.css HTTP/1.1" 304 0
+INFO 2025-11-20 02:32:23,857 basehttp "GET /static/js/function_plot.js HTTP/1.1" 304 0
+ERROR 2025-11-20 02:32:25,640 log Internal Server Error: /surname_check/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\main\views.py", line 259, in surname_check
+    return render(request, "statistics/surname_check.html", {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: statistics/surname_check.html
+ERROR 2025-11-20 02:32:25,643 basehttp "GET /surname_check/ HTTP/1.1" 500 91983
+INFO 2025-11-20 02:32:48,453 autoreload Watching for file changes with StatReloader
+INFO 2025-11-20 02:32:49,173 basehttp "GET /surname_check/ HTTP/1.1" 200 6109
+INFO 2025-11-20 02:32:49,332 basehttp "GET /static/css/others/surname_check.css HTTP/1.1" 200 1479
+INFO 2025-11-20 02:32:49,334 basehttp "GET /static/js/surname_check.js HTTP/1.1" 200 3153

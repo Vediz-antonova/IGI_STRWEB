@@ -228,7 +228,7 @@ def supplier_list(request):
 from django.shortcuts import render
 import math
 
-def function_plot_view(request):
+def function_plot(request):
     x_values = [round(x, 2) for x in frange(1.1, 3.0, 0.1)]
     series_data = []
     math_data = []
@@ -252,3 +252,10 @@ def frange(start, stop, step):
     while start <= stop:
         yield start
         start += step
+
+from django.shortcuts import render
+
+def surname_check(request):
+    return render(request, "others/surname_check.html", {
+        "title": "Проверка однофамильцев"
+    })

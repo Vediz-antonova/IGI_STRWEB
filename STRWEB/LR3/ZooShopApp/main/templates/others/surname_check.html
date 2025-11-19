@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/others/surname_check.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>Проверка однофамильцев среди учеников</h2>
+
+<form id="studentForm">
+  <label>Имя: <input type="text" id="firstName" required></label>
+  <label>Фамилия: <input type="text" id="lastName" required></label>
+  <label>Класс: <input type="text" id="schoolClass" required></label>
+  <label>Возраст: <input type="number" id="age" min="6" max="18"></label>
+  <button type="submit">Добавить ученика</button>
+</form>
+
+<div class="output">
+  <h3>Список учеников:</h3>
+  <ul id="studentList"></ul>
+
+  <h3>Результат:</h3>
+  <p id="resultText">Пока не проверено.</p>
+</div>
+{% endblock %}
+
+{% block footer %}
+  <script src="{% static 'js/surname_check.js' %}"></script>
+{% endblock %}

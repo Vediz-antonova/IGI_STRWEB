@@ -1,0 +1,80 @@
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #198754;
+}
+
+form#studentForm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+form#studentForm label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #212529;
+}
+
+form#studentForm input {
+  margin-top: 0.3rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #212529;
+}
+
+form#studentForm button {
+  grid-column: 1 / -1;
+  padding: 0.6rem 1rem;
+  background-color: #198754;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+form#studentForm button:hover {
+  background-color: #157347;
+}
+
+.output {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+}
+
+.output h3 {
+  margin-top: 1rem;
+  color: #871957;
+}
+
+#studentList {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+#studentList li {
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 1rem;
+  color: #212529;
+}
+
+#resultText {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #0d6efd;
+  margin-top: 0.5rem;
+}

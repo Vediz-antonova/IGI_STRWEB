@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71d16f01-759b-4386-891f-5c124d5c975b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ZooShopApp/main/templates/others/function_plot.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ZooShopApp/static/css/others/function_plot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ZooShopApp/static/js/function_plot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZooShopApp/main/templates/others/surname_check.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZooShopApp/static/css/others/surname_check.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ZooShopApp/static/js/surname_check.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LR2/ZooShopApp/main/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ZooShopApp/logs/django.log" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/logs/django.log" afterDir="false" />
@@ -161,7 +160,7 @@
       <workItem from="1763507907733" duration="6963000" />
       <workItem from="1763541881958" duration="787000" />
       <workItem from="1763551423112" duration="4863000" />
-      <workItem from="1763572565364" duration="12571000" />
+      <workItem from="1763572565364" duration="13456000" />
     </task>
     <servers />
   </component>
