@@ -8,8 +8,9 @@
       <change beforePath="$PROJECT_DIR$/../LR2/ZooShopApp/main/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ZooShopApp/logs/django.log" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/logs/django.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZooShopApp/main/templates/main/contacts_table.html" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/main/templates/main/contacts_table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ZooShopApp/static/js/contacts_table.js" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/static/js/contacts_table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZooShopApp/main/templates/main/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/main/templates/main/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZooShopApp/static/css/main/faq.css" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/static/css/main/faq.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZooShopApp/static/js/faq_scroll_animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/ZooShopApp/static/js/faq_scroll_animations.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +159,7 @@
       <workItem from="1763551423112" duration="4863000" />
       <workItem from="1763572565364" duration="13858000" />
       <workItem from="1763649266537" duration="4303000" />
-      <workItem from="1764203499144" duration="1466000" />
+      <workItem from="1764203499144" duration="4498000" />
     </task>
     <servers />
   </component>
