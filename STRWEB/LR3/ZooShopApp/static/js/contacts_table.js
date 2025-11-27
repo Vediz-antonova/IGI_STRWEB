@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentPage = 1;
   let sortField = null;
   let sortAsc = true;
+  let rewardedNames = new Set();
 
   // === Loader Control ===
   const showLoader = () => preloader.classList.remove("hidden");
@@ -72,10 +73,20 @@ document.addEventListener("DOMContentLoaded", () => {
         <td>${e.job_description || ""}</td>
         <td>${e.phone || ""}</td>
         <td>${e.email || ""}</td>
-        <td><input type="checkbox" data-name="${e.name}"/></td>
+        <td><input type="checkbox" data-name="${e.name}" ${rewardedNames.has(e.name) ? "checked" : ""}/></td>
       `;
       row.addEventListener("click", () => showDetails(e));
       tableBody.appendChild(row);
+    });
+
+    tableBody.querySelectorAll("input[type='checkbox']").forEach(cb => {
+      cb.addEventListener("change", () => {
+        if (cb.checked) {
+          rewardedNames.add(cb.dataset.name);
+        } else {
+          rewardedNames.delete(cb.dataset.name);
+        }
+      });
     });
 
     renderPagination(filtered.length);
@@ -163,8 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // === Reward Button ===
   rewardBtn.addEventListener("click", () => {
-    const selected = [...document.querySelectorAll("input[type='checkbox']:checked")];
-    const names = selected.map(cb => cb.dataset.name);
+    const names = Array.from(rewardedNames);
     rewardResult.textContent = names.length
       ? `Премированы: ${names.join(", ")}`
       : "Никто не выбран для премирования.";
@@ -191,31 +201,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const phoneInput = document.getElementById("add-phone");
     const emailInput = document.getElementById("add-email");
     const urlInput = document.getElementById("add-url");
+    const checkUrlInput = document.getElementById("add-check-url");
 
     let valid = true;
+    [nameInput, phoneInput, emailInput, urlInput, checkUrlInput].forEach(input => {
+      input.classList.remove("invalid");
+    });
+
     const raw = phoneInput.value.trim();
     const cleaned = raw.replace(/[\s\-()]/g, "");
     const phoneRegex = /^(\+375|80)(25|29|33|44)\d{7}$/;
-
     if (!phoneRegex.test(cleaned)) {
       phoneInput.classList.add("invalid");
       valid = false;
     }
 
     const imageRegex = /^https?:\/\/.+\.(jpg|jpeg|png|gif|webp)$/i;
-
-    if (!imageRegex.test(imageInput.value.trim())) {
-      imageInput.classList.add("invalid");
+    if (!imageRegex.test(urlInput.value.trim())) {
+      urlInput.classList.add("invalid");
       valid = false;
-      document.getElementById("validation-result").textContent = "Ссылка должна вести на изображение (.jpg/.png/...)";
-    } else {
-      imageInput.classList.remove("invalid");
-      document.getElementById("validation-result").textContent = "✅ Ссылка валидна";
     }
-
-    [nameInput, phoneInput, emailInput, urlInput].forEach(input => {
-      input.classList.remove("invalid");
-    });
 
     if (!emailInput.value.includes("@")) {
       emailInput.classList.add("invalid");
@@ -225,6 +230,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (nameInput.value.trim().split(" ").length < 2) {
       nameInput.classList.add("invalid");
       valid = false;
+    }
+
+    const pageRegex = /^https?:\/\/.+\.(php|html)$/i;
+    if (!pageRegex.test(checkUrlInput.value.trim())) {
+      checkUrlInput.classList.add("invalid");
+      valid = false;
+      document.getElementById("validation-result").textContent =
+        "URL должен начинаться с http:// или https:// и заканчиваться на .php или .html";
+    } else {
+      checkUrlInput.classList.remove("invalid");
+      document.getElementById("validation-result").textContent = "URL валиден";
     }
 
     validationResult.textContent = valid
