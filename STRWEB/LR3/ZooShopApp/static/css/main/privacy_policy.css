@@ -141,3 +141,76 @@
   background-color: #ffeeba;
   color: #212529;
 }
+
+.dark-theme .privacy-container {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  color: #ddd;
+}
+
+.dark-theme .privacy-title {
+  color: #6fcf97;
+}
+
+.dark-theme .section-heading {
+  color: #6fcf97;
+}
+
+.dark-theme .intro-text,
+.dark-theme .text-sample p,
+.dark-theme .variant-text,
+.dark-theme .spacing-text,
+.dark-theme .poem-text,
+.dark-theme .context-text {
+  color: #ccc;
+}
+
+.dark-theme .highlighted-block {
+  background-color: #2a2a2a;
+  border-left-color: #6fcf97;
+  color: #eee;
+}
+
+.dark-theme .quote-block {
+  color: #ccc;
+}
+
+.dark-theme .quote-level-1::before,
+.dark-theme .quote-level-1::after,
+.dark-theme .quote-level-2::before,
+.dark-theme .quote-level-2::after {
+  color: #6fcf97;
+}
+
+.dark-theme .styled-article p::first-letter {
+  color: #ff6b6b;
+}
+
+.dark-theme .styled-article p::first-line {
+  color: #6fcf97;
+}
+
+.dark-theme .privacy-container a {
+  color: #4da3ff;
+}
+
+.dark-theme .privacy-container a:hover {
+  text-decoration: underline;
+}
+
+.dark-theme .context-text::before {
+  color: #4da3ff;
+}
+
+.dark-theme .context-text::after {
+  color: #6fcf97;
+}
+
+.dark-theme .last-updated {
+  color: #aaa;
+}
+
+.dark-theme ::selection {
+  background-color: #444;
+  color: #fff;
+}

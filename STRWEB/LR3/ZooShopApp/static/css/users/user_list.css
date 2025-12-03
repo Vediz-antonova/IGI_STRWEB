@@ -89,3 +89,75 @@
   font-size: 1rem;
   font-variant: all-small-caps;
 }
+
+.dark-theme .user-list-wrapper {
+  background-color: transparent;
+}
+
+.dark-theme .user-list-wrapper h2 {
+  color: #6fcf97;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.dark-theme .user-table {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .user-table caption {
+  color: #6fcf97;
+}
+
+.dark-theme .user-table th {
+  background-color: #222;
+  color: #eee;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dark-theme .user-table td {
+  color: #ddd;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.dark-theme .user-table td:first-child {
+  color: #4da3ff;
+  font-weight: 600;
+}
+
+.dark-theme .user-table td:nth-child(2) {
+  color: #aaa;
+  font-family: 'Courier New', monospace;
+}
+
+.dark-theme .user-table td:last-child {
+  color: #6fcf97;
+  font-style: normal;
+}
+
+.dark-theme .user-table td[headers="th-email"] {
+  background-color: #2a2a2a;
+  color: #ccc;
+}
+
+.dark-theme .user-table tbody tr:first-child {
+  background-color: #2f4f4f;
+}
+
+.dark-theme .user-table tbody tr:last-child {
+  background-color: #5c2a2a;
+}
+
+.dark-theme .user-table tbody tr:nth-child(3n) {
+  background-color: #333;
+}
+
+.dark-theme .no-users {
+  color: #ff6b6b;
+}

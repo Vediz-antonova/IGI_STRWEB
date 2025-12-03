@@ -20,3 +20,16 @@
   font-size: 1.75rem;
   color: #343a40;
 }
+
+.dark-theme .users-cart-wrapper {
+  background-color: transparent;
+}
+
+.dark-theme .users-cart-container {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .users-cart-title {
+  color: #6fcf97;
+}

@@ -178,3 +178,67 @@ dfn {
   cursor: help;
   font-style: normal;
 }
+
+.dark-theme .statistics-wrapper {
+  background-color: transparent;
+}
+
+.dark-theme .statistics-block {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .statistics-title,
+.dark-theme .statistics-block h2,
+.dark-theme .statistics-block h3 {
+  color: #6fcf97;
+}
+
+.dark-theme .general-stats li {
+  background-color: #1e1e1e;
+  color: #ddd;
+  border-left: 4px solid #444;
+}
+
+.dark-theme .general-stats li:first-child {
+  background-color: #2f4f4f;
+  border-left-color: #6fcf97;
+}
+
+.dark-theme .general-stats li:last-child {
+  background-color: #1e2a44;
+  border-left-color: #4da3ff;
+}
+
+.dark-theme .general-stats li:nth-child(3n) {
+  background-color: #3a2a00;
+  border-left-color: #ffc107;
+}
+
+.dark-theme .general-stats li:hover {
+  background-color: #2a2a2a;
+}
+
+.dark-theme .category-list li,
+.dark-theme .product-list li {
+  background-color: #157347;
+  color: #eee;
+}
+
+.dark-theme .category-list li:first-child,
+.dark-theme .product-list li:first-child {
+  background-color: #4da3ff;
+  font-weight: bold;
+}
+
+.dark-theme .category-list li:last-child,
+.dark-theme .product-list li:last-child {
+  background-color: #ff6b6b;
+}
+
+.dark-theme blockquote {
+  border-left-color: #6fcf97;
+  color: #ccc;
+}
+
+

@@ -113,3 +113,85 @@
   font-size: 1rem;
   color: #0d6efd;
 }
+
+.dark-theme .admin-orders-wrapper {
+  background-color: transparent;
+}
+
+.dark-theme .admin-orders-container {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .admin-orders-container h2 {
+  color: #6fcf97;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.dark-theme .orders-table {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .orders-table caption {
+  color: #6fcf97;
+}
+
+.dark-theme .orders-table th {
+  background-color: #222;
+  color: #eee;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dark-theme .orders-table td {
+  color: #ddd;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.dark-theme .orders-table td:first-child {
+  color: #4da3ff;
+  font-weight: 600;
+}
+
+.dark-theme .orders-table td:nth-child(3) {
+  color: #aaa;
+  font-family: 'Courier New', monospace;
+}
+
+.dark-theme .orders-table td:last-child {
+  color: #6fcf97;
+  font-style: normal;
+}
+
+.dark-theme .orders-table td:empty {
+  background-color: #444;
+  color: #999;
+  font-style: italic;
+}
+
+.dark-theme .orders-table tbody tr:first-child {
+  background-color: #2f4f4f;
+}
+
+.dark-theme .orders-table tbody tr:last-child {
+  background-color: #5c2a2a;
+}
+
+.dark-theme .orders-table tbody tr:nth-child(3n) {
+  background-color: #333;
+}
+
+.dark-theme .orders-table li {
+  color: #ccc;
+}
+
+.dark-theme .orders-table li::before {
+  color: #4da3ff;
+}

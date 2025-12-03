@@ -125,3 +125,79 @@ a:hover {
   color: #9dcc65;
   text-decoration: underline;
 }
+
+.dark-theme .login-wrapper {
+  background-color: transparent;
+}
+
+.dark-theme .login-card {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .login-card h2 {
+  color: #6fcf97;
+  text-align: center;
+}
+
+.dark-theme .form-group label {
+  color: #ccc;
+}
+
+.dark-theme .form-group input {
+  background-color: #1e1e1e;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+.dark-theme input:disabled {
+  background-color: #2a2a2a;
+  color: #aaa;
+  border-color: #555;
+}
+
+.dark-theme input:focus {
+  border-color: #4da3ff;
+  box-shadow: 0 0 0 0.2rem rgba(77, 163, 255, 0.25);
+}
+
+.dark-theme input::placeholder {
+  color: #888;
+}
+
+.dark-theme .form-error {
+  color: #ff6b6b;
+}
+
+.dark-theme .login-form button {
+  background-color: #4da3ff;
+  color: #111;
+}
+
+.dark-theme .login-form button:hover {
+  background-color: #6fcf97;
+}
+
+.dark-theme .login-links {
+  color: #ccc;
+}
+
+.dark-theme .login-links a {
+  color: #6fcf97;
+}
+
+.dark-theme .login-links a:hover {
+  color: #4da3ff;
+}
+
+.dark-theme a:link {
+  color: #aaa;
+}
+
+.dark-theme a:visited {
+  color: #a186ca;
+}
+
+.dark-theme a:hover {
+  color: #9dcc65;
+}

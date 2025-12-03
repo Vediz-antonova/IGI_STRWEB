@@ -122,3 +122,52 @@
 .scroll-down-button:active {
   transform: translateY(4px);
 }
+
+.dark-theme .news-wrapper {
+  background-color: transparent;
+}
+
+.dark-theme .news-item {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .news-title {
+  color: #6fcf97;
+}
+
+.dark-theme .news-summary,
+.dark-theme .news-details,
+.dark-theme .news-full {
+  color: #ddd;
+}
+
+.dark-theme .read-more-summary {
+  color: #4da3ff;
+}
+
+.dark-theme .read-more-summary:hover {
+  text-decoration: underline;
+}
+
+.dark-theme .news-image {
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .cat-facts-title {
+  color: #6fcf97;
+}
+
+.dark-theme .cat-facts-list {
+  color: #ccc;
+}
+
+.dark-theme .scroll-down-button {
+  background-color: #6fcf97;
+  color: #111;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .scroll-down-button:hover {
+  background-color: #4caf91;
+}

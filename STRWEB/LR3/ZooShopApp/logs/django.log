@@ -7745,3 +7745,431 @@ INFO 2025-12-03 22:57:11,268 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 
 INFO 2025-12-03 22:57:11,276 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
 INFO 2025-12-03 22:57:11,325 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
 INFO 2025-12-03 22:57:11,390 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-03 23:39:53,357 autoreload Watching for file changes with StatReloader
+INFO 2025-12-03 23:39:56,166 basehttp "GET / HTTP/1.1" 200 14195
+INFO 2025-12-03 23:39:56,223 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-12-03 23:39:59,775 basehttp "GET / HTTP/1.1" 200 14195
+INFO 2025-12-03 23:40:00,317 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-03 23:40:00,332 basehttp "GET /static/images/fish2.png HTTP/1.1" 200 1352197
+INFO 2025-12-03 23:40:00,335 basehttp "GET /static/js/slider.js HTTP/1.1" 200 2884
+INFO 2025-12-03 23:40:00,339 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-03 23:40:00,339 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-03 23:40:00,342 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-03 23:40:00,344 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-03 23:40:00,368 basehttp "GET /static/images/seaweed.png HTTP/1.1" 200 1584444
+INFO 2025-12-03 23:40:00,372 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-03 23:40:00,374 basehttp "GET /static/images/banner1.jpg HTTP/1.1" 200 1876971
+INFO 2025-12-03 23:40:00,379 basehttp "GET /media/partners/Zoobazar.jpg HTTP/1.1" 200 37096
+INFO 2025-12-03 23:40:00,383 basehttp "GET /media/partners/zoomarket.webp HTTP/1.1" 200 6966
+INFO 2025-12-03 23:40:00,388 basehttp "GET /media/partners/petstop.png HTTP/1.1" 200 38070
+INFO 2025-12-03 23:40:00,400 basehttp "GET /static/images/banner2.jpg HTTP/1.1" 200 1749157
+INFO 2025-12-03 23:40:00,401 basehttp "GET /static/images/banner3.jpg HTTP/1.1" 200 1747168
+INFO 2025-12-03 23:40:00,429 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-12-03 23:40:00,437 basehttp "GET /static/css/main/index.css HTTP/1.1" 200 8385
+INFO 2025-12-03 23:40:00,465 basehttp "GET /static/images/fish1.png HTTP/1.1" 200 2205819
+INFO 2025-12-03 23:40:00,501 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-03 23:41:14,723 basehttp "GET /suppliers/ HTTP/1.1" 200 10048
+INFO 2025-12-03 23:41:18,936 basehttp "GET /user/users/ HTTP/1.1" 200 9989
+INFO 2025-12-03 23:41:21,778 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 7360
+INFO 2025-12-03 23:41:21,800 basehttp "GET /static/css/users/admin_orders.css HTTP/1.1" 200 2115
+INFO 2025-12-03 23:41:22,808 basehttp "GET /function_plot/ HTTP/1.1" 200 6553
+INFO 2025-12-03 23:41:27,055 basehttp "GET /surname_check/ HTTP/1.1" 200 6737
+INFO 2025-12-03 23:41:42,729 basehttp "GET /surname_check/ HTTP/1.1" 200 6737
+INFO 2025-12-03 23:41:43,587 basehttp "GET /contacts/table/ HTTP/1.1" 200 8070
+INFO 2025-12-03 23:41:43,636 basehttp "GET /contacts/api/ HTTP/1.1" 200 6080
+INFO 2025-12-03 23:43:12,554 basehttp "GET /about/ HTTP/1.1" 200 11864
+INFO 2025-12-03 23:43:12,589 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 2970
+INFO 2025-12-03 23:43:12,623 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-12-03 23:43:12,652 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-12-03 23:43:12,703 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-12-03 23:43:12,832 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-12-03 23:43:43,681 basehttp "GET /contact/ HTTP/1.1" 200 17553
+INFO 2025-12-03 23:43:52,990 basehttp "GET /jobs/ HTTP/1.1" 200 11346
+ERROR 2025-12-03 23:43:58,352 log Internal Server Error: /analytics/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\analytics\views.py", line 12, in statistics_view
+    generate_sales_chart()  # Генерируем графики
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\analytics\views.py", line 75, in generate_sales_chart
+    plt.savefig(os.path.join(settings.MEDIA_ROOT, "charts/all.png"))
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\pyplot.py", line 1250, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\figure.py", line 3490, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backend_bases.py", line 2186, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backend_bases.py", line 2042, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backends\backend_agg.py", line 481, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backends\backend_agg.py", line 430, in _print_pil
+    mpl.image.imsave(
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\image.py", line 1657, in imsave
+    image.save(fname, **pil_kwargs)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\PIL\Image.py", line 2566, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Labs\\353504_Antonava_01\\STRWEB\\LR3\\ZooShopApp\\media\\charts/all.png'
+ERROR 2025-12-03 23:43:58,359 basehttp "GET /analytics/ HTTP/1.1" 500 125299
+WARNING 2025-12-03 23:43:58,490 log Not Found: /favicon.ico
+WARNING 2025-12-03 23:43:58,490 basehttp "GET /favicon.ico HTTP/1.1" 404 7395
+ERROR 2025-12-03 23:44:22,523 log Internal Server Error: /analytics/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\analytics\views.py", line 12, in statistics_view
+    generate_sales_chart()  # Генерируем графики
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\analytics\views.py", line 75, in generate_sales_chart
+    plt.savefig(os.path.join(settings.MEDIA_ROOT, "charts/all.png"))
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\pyplot.py", line 1250, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\figure.py", line 3490, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backend_bases.py", line 2186, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backend_bases.py", line 2042, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backends\backend_agg.py", line 481, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backends\backend_agg.py", line 430, in _print_pil
+    mpl.image.imsave(
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\image.py", line 1657, in imsave
+    image.save(fname, **pil_kwargs)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\PIL\Image.py", line 2566, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Labs\\353504_Antonava_01\\STRWEB\\LR3\\ZooShopApp\\media\\charts/all.png'
+ERROR 2025-12-03 23:44:22,525 basehttp "GET /analytics/ HTTP/1.1" 500 125436
+ERROR 2025-12-03 23:44:23,592 log Internal Server Error: /analytics/
+Traceback (most recent call last):
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\analytics\views.py", line 12, in statistics_view
+    generate_sales_chart()  # Генерируем графики
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\analytics\views.py", line 75, in generate_sales_chart
+    plt.savefig(os.path.join(settings.MEDIA_ROOT, "charts/all.png"))
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\pyplot.py", line 1250, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\figure.py", line 3490, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backend_bases.py", line 2186, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backend_bases.py", line 2042, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backends\backend_agg.py", line 481, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\backends\backend_agg.py", line 430, in _print_pil
+    mpl.image.imsave(
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\matplotlib\image.py", line 1657, in imsave
+    image.save(fname, **pil_kwargs)
+  File "C:\Labs\353504_Antonava_01\STRWEB\LR3\ZooShopApp\.venv\Lib\site-packages\PIL\Image.py", line 2566, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Labs\\353504_Antonava_01\\STRWEB\\LR3\\ZooShopApp\\media\\charts/all.png'
+ERROR 2025-12-03 23:44:23,594 basehttp "GET /analytics/ HTTP/1.1" 500 125436
+INFO 2025-12-03 23:44:26,075 basehttp "GET /promotional/ HTTP/1.1" 200 9309
+INFO 2025-12-03 23:44:26,100 basehttp "GET /static/css/main/promotional.css HTTP/1.1" 200 1339
+INFO 2025-12-03 23:44:30,933 basehttp "GET /privacy_policy/ HTTP/1.1" 200 8723
+INFO 2025-12-03 23:44:49,493 basehttp "GET /news/ HTTP/1.1" 200 14279
+INFO 2025-12-03 23:44:49,526 basehttp "GET /static/css/main/news.css HTTP/1.1" 200 2382
+INFO 2025-12-03 23:45:06,632 basehttp "GET /faq/ HTTP/1.1" 200 18849
+INFO 2025-12-03 23:45:16,257 basehttp "GET /reviews/ HTTP/1.1" 200 6605
+INFO 2025-12-03 23:45:31,357 basehttp "GET /user/profile/ HTTP/1.1" 200 9010
+INFO 2025-12-03 23:45:35,925 basehttp "GET /admin/ HTTP/1.1" 200 21848
+INFO 2025-12-03 23:45:39,525 basehttp "GET / HTTP/1.1" 200 14195
+INFO 2025-12-03 23:45:39,556 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-12-03 23:45:39,564 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-12-03 23:45:45,067 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-12-03 23:45:45,078 basehttp "GET / HTTP/1.1" 200 11750
+INFO 2025-12-03 23:45:46,273 basehttp "GET /user/login/ HTTP/1.1" 200 6044
+INFO 2025-12-03 23:46:02,093 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-12-03 23:46:02,117 basehttp "GET /user/profile/ HTTP/1.1" 200 12655
+INFO 2025-12-03 23:46:28,229 basehttp "GET /orders/create-order/ HTTP/1.1" 200 10332
+INFO 2025-12-03 23:46:55,856 basehttp "GET /catalog/korm/ HTTP/1.1" 200 9059
+INFO 2025-12-03 23:46:55,901 basehttp "GET /static/icons/cart-plus.svg HTTP/1.1" 200 565
+INFO 2025-12-03 23:47:01,246 basehttp "GET /catalog/product/whiskas-govyadina/ HTTP/1.1" 200 6653
+INFO 2025-12-03 23:48:01,596 basehttp "GET /analytics/ HTTP/1.1" 200 9071
+INFO 2025-12-03 23:48:01,621 basehttp "GET /static/css/analytics/statistics.css HTTP/1.1" 200 3194
+INFO 2025-12-03 23:48:01,640 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 17710
+WARNING 2025-12-03 23:48:01,645 log Not Found: /media/charts/uhod.png
+INFO 2025-12-03 23:48:01,645 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22994
+INFO 2025-12-03 23:48:01,646 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 17795
+WARNING 2025-12-03 23:48:01,646 basehttp "GET /media/charts/uhod.png HTTP/1.1" 404 7657
+INFO 2025-12-03 23:48:01,647 basehttp "GET /media/charts/all.png HTTP/1.1" 200 23857
+INFO 2025-12-03 23:48:30,968 basehttp "GET / HTTP/1.1" 200 12268
+INFO 2025-12-03 23:48:30,991 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-12-03 23:54:28,415 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-12-03 23:54:28,426 basehttp "GET / HTTP/1.1" 200 11750
+INFO 2025-12-03 23:54:28,453 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-12-03 23:54:28,453 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-12-03 23:54:29,185 basehttp "GET /user/login/ HTTP/1.1" 200 6044
+INFO 2025-12-03 23:54:33,923 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-12-03 23:54:33,936 basehttp "GET /user/profile/ HTTP/1.1" 200 9041
+INFO 2025-12-03 23:54:35,096 basehttp "GET /suppliers/ HTTP/1.1" 200 10048
+INFO 2025-12-03 23:56:41,592 autoreload Watching for file changes with StatReloader
+INFO 2025-12-03 23:56:42,264 basehttp "GET /suppliers/ HTTP/1.1" 200 10048
+INFO 2025-12-03 23:56:46,828 basehttp "GET /suppliers/ HTTP/1.1" 200 10048
+INFO 2025-12-03 23:56:47,244 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-03 23:56:47,246 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-03 23:56:47,306 basehttp "GET /static/css/main/supplier_list.css HTTP/1.1" 200 1880
+INFO 2025-12-03 23:56:47,392 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-03 23:56:47,432 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-03 23:56:47,458 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-03 23:56:47,473 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-03 23:56:47,502 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-03 23:57:14,120 autoreload Watching for file changes with StatReloader
+INFO 2025-12-03 23:57:14,841 basehttp "GET /suppliers/ HTTP/1.1" 200 10048
+INFO 2025-12-03 23:57:15,247 basehttp "GET /static/css/main/supplier_list.css HTTP/1.1" 200 2442
+INFO 2025-12-03 23:57:15,249 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-03 23:57:15,270 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-03 23:57:15,311 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-03 23:57:15,337 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-03 23:57:15,501 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-03 23:57:15,536 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-03 23:57:15,573 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-03 23:58:23,743 autoreload Watching for file changes with StatReloader
+INFO 2025-12-03 23:58:24,259 basehttp "GET /suppliers/ HTTP/1.1" 200 10048
+INFO 2025-12-03 23:58:24,838 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-03 23:58:24,842 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-03 23:58:24,877 basehttp "GET /static/css/main/supplier_list.css HTTP/1.1" 200 3089
+INFO 2025-12-03 23:58:24,884 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-03 23:58:24,892 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-03 23:58:24,928 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-03 23:58:24,936 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-03 23:58:24,975 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-03 23:59:30,651 autoreload Watching for file changes with StatReloader
+INFO 2025-12-03 23:59:31,198 basehttp "GET /suppliers/ HTTP/1.1" 200 10048
+INFO 2025-12-03 23:59:31,741 basehttp "GET /static/css/main/supplier_list.css HTTP/1.1" 200 3095
+INFO 2025-12-03 23:59:31,743 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-03 23:59:31,752 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-03 23:59:31,773 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-03 23:59:31,785 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-03 23:59:31,799 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-03 23:59:31,899 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-03 23:59:31,932 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-03 23:59:49,592 basehttp "GET /user/users/ HTTP/1.1" 200 9989
+INFO 2025-12-04 00:02:22,228 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:02:22,749 basehttp "GET /user/users/ HTTP/1.1" 200 9989
+INFO 2025-12-04 00:02:23,156 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:02:23,158 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:02:23,170 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:02:23,190 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:02:23,220 basehttp "GET /static/css/users/user_list.css HTTP/1.1" 200 3101
+INFO 2025-12-04 00:02:23,454 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:02:23,458 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:02:23,499 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:02:37,996 basehttp "GET /suppliers/ HTTP/1.1" 200 10048
+INFO 2025-12-04 00:02:38,038 basehttp "GET /static/css/main/supplier_list.css HTTP/1.1" 304 0
+INFO 2025-12-04 00:02:39,812 basehttp "GET /user/users/ HTTP/1.1" 200 9989
+INFO 2025-12-04 00:02:39,834 basehttp "GET /static/css/users/user_list.css HTTP/1.1" 304 0
+INFO 2025-12-04 00:02:41,085 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 7360
+INFO 2025-12-04 00:08:29,506 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:08:32,741 basehttp "GET /user/admin_orders/ HTTP/1.1" 200 7360
+INFO 2025-12-04 00:08:33,299 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:08:33,303 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:08:33,363 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:08:33,370 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:08:33,417 basehttp "GET /static/css/users/admin_orders.css HTTP/1.1" 200 3773
+INFO 2025-12-04 00:08:33,429 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:08:33,432 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:08:33,500 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:08:55,338 basehttp "GET /contacts/table/ HTTP/1.1" 200 8070
+INFO 2025-12-04 00:08:55,398 basehttp "GET /contacts/api/ HTTP/1.1" 200 6080
+INFO 2025-12-04 00:10:33,452 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:10:33,964 basehttp "GET /contacts/table/ HTTP/1.1" 200 8070
+INFO 2025-12-04 00:10:34,515 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:10:34,519 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:10:34,522 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:10:34,566 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:10:34,600 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:10:34,635 basehttp "GET /static/css/main/contacts_table.css HTTP/1.1" 200 5619
+INFO 2025-12-04 00:10:34,639 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:10:34,658 basehttp "GET /static/js/contacts_table.js HTTP/1.1" 200 10820
+INFO 2025-12-04 00:10:34,667 basehttp "GET /contacts/api/ HTTP/1.1" 200 6080
+INFO 2025-12-04 00:10:35,120 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:10:57,756 basehttp "GET /contacts/table/ HTTP/1.1" 200 8070
+INFO 2025-12-04 00:10:57,779 basehttp "GET /static/css/main/contacts_table.css HTTP/1.1" 304 0
+INFO 2025-12-04 00:10:57,798 basehttp "GET /contacts/api/ HTTP/1.1" 200 6080
+INFO 2025-12-04 00:12:28,600 basehttp "GET /about/ HTTP/1.1" 200 11864
+INFO 2025-12-04 00:13:29,294 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:13:29,939 basehttp "GET /about/ HTTP/1.1" 200 11864
+INFO 2025-12-04 00:13:30,460 basehttp "GET /static/css/main/about.css HTTP/1.1" 200 3954
+INFO 2025-12-04 00:13:30,462 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:13:30,464 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:13:30,467 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:13:30,530 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:13:30,569 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-12-04 00:13:30,581 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:13:30,609 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:13:30,681 basehttp "GET /static/images/certificate-bg.png HTTP/1.1" 200 2483930
+INFO 2025-12-04 00:13:30,691 basehttp "GET /static/images/border-frame.png HTTP/1.1" 200 2053757
+INFO 2025-12-04 00:13:30,722 basehttp "GET /static/media/welcome.mp3 HTTP/1.1" 200 4661731
+INFO 2025-12-04 00:13:30,830 basehttp "GET /static/media/company_intro.mp4 HTTP/1.1" 200 22498702
+INFO 2025-12-04 00:13:31,025 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:13:56,489 basehttp "GET /contact/ HTTP/1.1" 200 17553
+INFO 2025-12-04 00:13:58,603 basehttp "GET /jobs/ HTTP/1.1" 200 11346
+INFO 2025-12-04 00:14:00,905 basehttp "GET /analytics/ HTTP/1.1" 200 9667
+INFO 2025-12-04 00:14:00,950 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22994
+WARNING 2025-12-04 00:14:00,952 log Not Found: /media/charts/uhod.png
+WARNING 2025-12-04 00:14:00,953 basehttp "GET /media/charts/uhod.png HTTP/1.1" 404 7657
+INFO 2025-12-04 00:14:00,956 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 17710
+INFO 2025-12-04 00:14:00,957 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 17795
+INFO 2025-12-04 00:14:00,957 basehttp "GET /media/charts/all.png HTTP/1.1" 200 23857
+INFO 2025-12-04 00:15:52,665 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:15:53,907 basehttp "GET /analytics/ HTTP/1.1" 200 9667
+INFO 2025-12-04 00:15:54,492 basehttp "GET /static/css/analytics/statistics.css HTTP/1.1" 200 4516
+INFO 2025-12-04 00:15:54,496 basehttp "GET /media/charts/igrushki.png HTTP/1.1" 200 17710
+INFO 2025-12-04 00:15:54,499 basehttp "GET /media/charts/aksessuary.png HTTP/1.1" 200 22994
+INFO 2025-12-04 00:15:54,502 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:15:54,506 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:15:54,509 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+WARNING 2025-12-04 00:15:54,517 log Not Found: /media/charts/uhod.png
+WARNING 2025-12-04 00:15:54,517 basehttp "GET /media/charts/uhod.png HTTP/1.1" 404 7657
+INFO 2025-12-04 00:15:54,517 basehttp "GET /media/charts/korm.png HTTP/1.1" 200 17795
+INFO 2025-12-04 00:15:54,555 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:15:54,566 basehttp "GET /media/charts/all.png HTTP/1.1" 200 23857
+INFO 2025-12-04 00:15:54,588 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:15:54,594 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:15:54,627 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:16:29,469 basehttp "GET /privacy_policy/ HTTP/1.1" 200 8723
+INFO 2025-12-04 00:18:12,137 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:18:15,341 basehttp "GET /privacy_policy/ HTTP/1.1" 200 8723
+INFO 2025-12-04 00:18:15,869 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:18:15,873 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:18:15,962 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:18:15,996 basehttp "GET /static/css/main/privacy_policy.css HTTP/1.1" 200 3647
+INFO 2025-12-04 00:18:16,021 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:18:16,028 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:18:16,035 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:18:16,084 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:19:23,707 basehttp "GET /news/ HTTP/1.1" 200 14100
+INFO 2025-12-04 00:20:50,721 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:20:55,676 basehttp "GET /news/ HTTP/1.1" 200 14158
+INFO 2025-12-04 00:20:56,137 basehttp "GET /static/css/footer.css HTTP/1.1" 200 701
+INFO 2025-12-04 00:20:56,142 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:20:56,144 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:20:56,251 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:20:56,268 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:20:56,320 basehttp "GET /static/css/main/news.css HTTP/1.1" 200 3270
+INFO 2025-12-04 00:20:56,331 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:20:56,340 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:20:57,042 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:21:28,698 basehttp "GET /faq/ HTTP/1.1" 200 18849
+INFO 2025-12-04 00:21:32,193 basehttp "GET /reviews/ HTTP/1.1" 200 6605
+INFO 2025-12-04 00:22:41,501 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:22:42,912 basehttp "GET /reviews/ HTTP/1.1" 200 6605
+INFO 2025-12-04 00:22:43,418 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:22:43,420 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:22:43,483 basehttp "GET /static/css/reviews/review_list.css HTTP/1.1" 200 2666
+INFO 2025-12-04 00:22:43,536 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:22:43,558 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:22:43,580 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:22:43,587 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:22:43,617 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:23:13,067 basehttp "GET /user/profile/ HTTP/1.1" 200 9010
+INFO 2025-12-04 00:23:18,328 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-12-04 00:23:18,342 basehttp "GET / HTTP/1.1" 200 11750
+INFO 2025-12-04 00:23:18,374 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-12-04 00:23:18,391 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0
+INFO 2025-12-04 00:23:21,611 basehttp "GET /user/login/ HTTP/1.1" 200 6044
+INFO 2025-12-04 00:23:25,249 basehttp "POST /user/login/ HTTP/1.1" 302 0
+INFO 2025-12-04 00:23:25,268 basehttp "GET /user/profile/ HTTP/1.1" 200 12655
+INFO 2025-12-04 00:26:14,276 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:26:17,304 basehttp "GET /user/profile/ HTTP/1.1" 200 12624
+INFO 2025-12-04 00:26:17,878 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:26:17,883 basehttp "GET /static/js/custom_inputs.js HTTP/1.1" 200 4576
+INFO 2025-12-04 00:26:17,885 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:26:17,888 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:26:17,893 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:26:17,896 basehttp "GET /static/icons/trash3-fill.svg HTTP/1.1" 200 578
+INFO 2025-12-04 00:26:17,899 basehttp "GET /static/images/baseavatar.jpg HTTP/1.1" 200 13823
+INFO 2025-12-04 00:26:17,930 basehttp "GET /static/css/users/profile.css HTTP/1.1" 200 4846
+INFO 2025-12-04 00:26:17,975 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:26:17,984 basehttp "GET /static/css/carts/included_cart.css HTTP/1.1" 200 2283
+INFO 2025-12-04 00:26:17,990 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:26:18,022 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:27:00,234 basehttp "GET /user/users-cart/ HTTP/1.1" 200 7433
+INFO 2025-12-04 00:27:00,269 basehttp "GET /static/css/carts/included_cart.css HTTP/1.1" 304 0
+INFO 2025-12-04 00:27:00,271 basehttp "GET /static/css/users/users_cart.css HTTP/1.1" 200 419
+INFO 2025-12-04 00:28:25,166 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:28:25,744 basehttp "GET /user/users-cart/ HTTP/1.1" 200 7433
+INFO 2025-12-04 00:28:26,157 basehttp "GET /static/css/carts/included_cart.css HTTP/1.1" 200 2419
+INFO 2025-12-04 00:28:26,160 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:28:26,163 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:28:26,166 basehttp "GET /static/icons/trash3-fill.svg HTTP/1.1" 200 578
+INFO 2025-12-04 00:28:26,195 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:28:26,201 basehttp "GET /static/css/users/users_cart.css HTTP/1.1" 200 419
+INFO 2025-12-04 00:28:26,225 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:28:26,419 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:28:26,435 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:28:26,474 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:28:29,210 basehttp "GET /user/users-cart/ HTTP/1.1" 200 7433
+INFO 2025-12-04 00:28:29,241 basehttp "GET /static/css/carts/included_cart.css HTTP/1.1" 200 2419
+INFO 2025-12-04 00:28:29,243 basehttp "GET /static/css/users/users_cart.css HTTP/1.1" 200 419
+INFO 2025-12-04 00:28:29,243 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:28:29,244 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:28:29,245 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:28:29,245 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:28:29,247 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:28:29,247 basehttp "GET /static/icons/trash3-fill.svg HTTP/1.1" 200 578
+INFO 2025-12-04 00:28:29,250 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:28:29,284 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:28:32,966 basehttp "GET /user/profile/ HTTP/1.1" 200 12624
+INFO 2025-12-04 00:28:32,993 basehttp "GET /static/css/users/profile.css HTTP/1.1" 304 0
+INFO 2025-12-04 00:28:32,996 basehttp "GET /static/css/carts/included_cart.css HTTP/1.1" 304 0
+INFO 2025-12-04 00:28:36,466 basehttp "GET /user/users-cart/ HTTP/1.1" 200 7433
+INFO 2025-12-04 00:28:36,493 basehttp "GET /static/css/carts/included_cart.css HTTP/1.1" 304 0
+INFO 2025-12-04 00:30:21,540 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:30:22,149 basehttp "GET /user/users-cart/ HTTP/1.1" 200 7433
+INFO 2025-12-04 00:30:22,632 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:30:22,637 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:30:22,640 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:30:22,643 basehttp "GET /static/icons/trash3-fill.svg HTTP/1.1" 200 578
+INFO 2025-12-04 00:30:22,674 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:30:22,685 basehttp "GET /static/css/carts/included_cart.css HTTP/1.1" 200 2419
+INFO 2025-12-04 00:30:22,699 basehttp "GET /static/css/users/users_cart.css HTTP/1.1" 200 688
+INFO 2025-12-04 00:30:22,732 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:30:22,826 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:30:22,857 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:30:27,675 basehttp "GET /user/logout/ HTTP/1.1" 302 0
+INFO 2025-12-04 00:30:27,694 basehttp "GET / HTTP/1.1" 200 11750
+INFO 2025-12-04 00:30:27,723 basehttp "GET /static/css/main/index.css HTTP/1.1" 304 0
+INFO 2025-12-04 00:30:28,615 basehttp "GET /user/login/ HTTP/1.1" 200 6044
+INFO 2025-12-04 00:31:17,759 basehttp "GET /user/registration/ HTTP/1.1" 200 9186
+INFO 2025-12-04 00:31:47,357 autoreload Watching for file changes with StatReloader
+INFO 2025-12-04 00:31:55,726 basehttp "GET /user/login/ HTTP/1.1" 200 6044
+INFO 2025-12-04 00:31:56,306 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:31:56,308 basehttp "GET /static/js/script.js HTTP/1.1" 200 4461
+INFO 2025-12-04 00:31:56,332 basehttp "GET /static/css/users/login.css HTTP/1.1" 200 3261
+INFO 2025-12-04 00:31:56,374 basehttp "GET /static/css/notifications.css HTTP/1.1" 200 772
+INFO 2025-12-04 00:31:56,390 basehttp "GET /static/js/jquery/jquery-3.7.1.min.js HTTP/1.1" 200 87535
+INFO 2025-12-04 00:31:56,394 basehttp "GET /static/css/base.css HTTP/1.1" 200 6879
+INFO 2025-12-04 00:31:56,404 basehttp "GET /static/js/theme.js HTTP/1.1" 200 715
+INFO 2025-12-04 00:31:56,443 basehttp "GET /static/icons/animal.ico HTTP/1.1" 200 34453
+INFO 2025-12-04 00:32:01,643 basehttp "GET / HTTP/1.1" 200 11718
+INFO 2025-12-04 00:32:01,688 basehttp "GET /static/js/slider.js HTTP/1.1" 304 0

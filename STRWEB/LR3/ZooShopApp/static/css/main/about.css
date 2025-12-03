@@ -150,3 +150,56 @@ audio {
   text-align: center;
   padding: 0 2rem;
 }
+
+.dark-theme .about-section h2,
+.dark-theme .about-section h3 {
+  color: #6fcf97;
+}
+
+.dark-theme .company-logo figcaption {
+  color: #ccc;
+}
+
+.dark-theme .company-video iframe,
+.dark-theme video,
+.dark-theme audio {
+  border: 1px solid #444;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .company-description p {
+  color: #ddd;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.dark-theme .company-history ul {
+  border-left: 3px solid #6fcf97;
+}
+
+.dark-theme .company-history li {
+  color: #ccc;
+}
+
+.dark-theme .company-history li:hover {
+  background-color: #2a2a2a;
+}
+
+.dark-theme .company-requisites pre {
+  background-color: #2a2a2a;
+  color: #eee;
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .certificate-content {
+  color: #eee;
+}
+
+.dark-theme .certificate-title {
+  color: #6fcf97;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.dark-theme .certificate-text {
+  color: #ddd;
+}

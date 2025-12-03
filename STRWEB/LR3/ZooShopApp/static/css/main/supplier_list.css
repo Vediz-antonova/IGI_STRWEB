@@ -1,6 +1,6 @@
 .supplier-wrapper {
   padding: 2rem;
-  background-color: #f8f9fa;
+  background-color: transparent;
 }
 
 .supplier-container {
@@ -97,4 +97,64 @@
   margin-top: 2rem;
   font-size: 1rem;
   font-variant: all-small-caps;
+}
+
+.dark-theme .supplier-container {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .supplier-container h2 {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #6fcf97;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.03em;
+}
+
+.dark-theme .supplier-table caption {
+  color: #6fcf97;
+}
+
+.dark-theme .supplier-table th {
+  background-color: #222;
+  color: #eee;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dark-theme .supplier-table td {
+  color: #8f8c8c;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.dark-theme .supplier-table td:first-child {
+  color: #4da3ff;
+  font-weight: 600;
+}
+
+.dark-theme .supplier-table td:nth-child(2) {
+  color: #6a6a6a;
+  font-family: 'Courier New', monospace;
+}
+
+.dark-theme .supplier-table td:last-child {
+  color: #4f9870;
+  font-style: normal;
+}
+
+.dark-theme .supplier-table td:empty {
+  background-color: #444;
+  color: #999;
+  font-style: italic;
+}
+
+.dark-theme .no-suppliers {
+  color: #ff6b6b;
 }
