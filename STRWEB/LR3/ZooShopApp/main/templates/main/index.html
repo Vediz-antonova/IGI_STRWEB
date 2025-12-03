@@ -78,6 +78,7 @@
           <span id="current-slide">1</span> / {{ slides|length }}
         </div>
 
+        {% if request.user.is_authenticated and request.user.is_employee %}
         <form method="post" action="{% url 'update_slider_config' %}" class="slider-config-form">
           {% csrf_token %}
           <fieldset>
@@ -116,6 +117,7 @@
             <button type="submit">Сохранить</button>
           </fieldset>
         </form>
+        {% endif %}
       </section>
 
       {% if latest_article %}

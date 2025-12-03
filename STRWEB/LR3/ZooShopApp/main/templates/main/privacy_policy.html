@@ -8,61 +8,72 @@
 {% block content %}
 <section class="privacy-wrapper">
   <div class="privacy-container">
-    <h2 class="privacy-title">Политика конфиденциальности</h2>
+    <h2 class="privacy-title">Política de Privacidad</h2>
 
     <p class="intro-text">
-      ZooShop уважает вашу <span class="small-caps">конфиденциальность</span> и стремится обеспечить защиту персональных данных.
+      ZooShop respeta su <span class="small-caps">privacidad</span> y se esfuerza por garantizar la protección de los datos personales.
     </p>
 
     <blockquote class="highlighted-block">
-      Все данные обрабатываются в соответствии с <strong>законодательством Республики Беларусь</strong>.
+      Todos los datos se procesan de acuerdo con la <strong>legislación de la República de Bielorrusia</strong>.
     </blockquote>
 
     <div class="text-sample">
-      <h3 class="section-heading">Обработка данных</h3>
+      <h3 class="section-heading">Procesamiento de Datos</h3>
       <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;Мы собираем только необходимые сведения для выполнения заказов и улучшения сервиса.
-        Пользователь вправе запросить удаление информации в любое время.
+        &nbsp;&nbsp;&nbsp;&nbsp;Recopilamos solo la información necesaria para cumplir con los pedidos y mejorar el servicio.
+        El usuario tiene derecho a solicitar la eliminación de la información en cualquier momento.
       </p>
     </div>
 
     <div class="typography-demo">
       <p class="variant-text">
-        Персональные данные включают: имя, адрес, номер телефона, электронную почту.
+        Los datos personales incluyen: nombre, dirección, número de teléfono, correo electrónico.
       </p>
       <p class="spacing-text">
-        Мы не передаём ваши данные третьим&nbsp;&nbsp;&nbsp;лицам без согласия.
+        No transferimos sus datos a terceros&nbsp;&nbsp;&nbsp;sin consentimiento.
       </p>
     </div>
 
     <section aria-labelledby="poem-title">
-      <h3 id="poem-title">Аналитический стих</h3>
+      <h3 id="poem-title">Poema Analítico</h3>
       <p class="poem-text">
-        Данные — <strong>золото</strong>, что мы храним,<br>
-        В графиках смысл, в отчётах — режим.<br>
-        Категории растут и доходы <wbr>вверх,<br>
-        В цифрах — уверенность, в коде — успех.
+        Los datos son <strong>oro</strong> que guardamos,<br>
+        En gráficos hay sentido, en informes — orden.<br>
+        Las categorías crecen y los ingresos suben,<br>
+        En cifras — confianza, en código — éxito.
       </p>
     </section>
 
-    <blockquote lang="ru" class="quote-block">
+    <blockquote lang="es" class="quote-block">
         <span class="quote-level-1">
-          ZooShop — это <span class="quote-level-2">забота</span> о питомцах.
-        </span>
-    </blockquote>
-
-    <blockquote lang="en" class="quote-block">
-        <span class="quote-level-1">
-          ZooShop is <span class="quote-level-2">care</span> for pets.
+          ZooShop es <span class="quote-level-2">cuidado</span> de las mascotas.
         </span>
     </blockquote>
 
     <article class="styled-article">
-      <p>Конфиденциальность — наш приоритет. Мы не передаём ваши данные третьим лицам без согласия.</p>
+      <p>La privacidad es nuestra prioridad. No transferimos sus datos a terceros sin consentimiento.</p>
     </article>
 
-    <p class="context-text">Все сведения обрабатываются в соответствии с политикой конфиденциальности.</p>
+    <p class="context-text">Toda la información se procesa de acuerdo con la política de privacidad.</p>
 
   </div>
 </section>
+<!-- Кнопка переключения языка -->
+<button id="lang-toggle" class="nav-button">🇷🇺 Русский</button>
+
+<script>
+document.getElementById("lang-toggle").addEventListener("click", function() {
+  const translations = {
+    es: { title: "Política de Privacidad" },
+    ru: { title: "Политика конфиденциальности" }
+  };
+
+  document.querySelector(".privacy-title").textContent = translations.ru.title;
+
+  document.querySelector(".intro-text").innerHTML =
+    'ZooShop уважает вашу <span class="small-caps">конфиденциальность</span> и стремится обеспечить защиту персональных данных.';
+});
+</script>
+
 {% endblock %}

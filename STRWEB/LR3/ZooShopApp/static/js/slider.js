@@ -65,8 +65,11 @@ class ZooSlider {
         });
 
         if (this.stopHover) {
-            this.container.addEventListener('mouseenter', () => this.stopAuto());
-            this.container.addEventListener('mouseleave', () => this.startAuto());
+            const images = this.container.querySelectorAll('.slide');
+            images.forEach(img => {
+                img.addEventListener('mouseenter', () => this.stopAuto());
+                img.addEventListener('mouseleave', () => this.startAuto());
+            });
         }
     }
 

@@ -2,7 +2,7 @@
 {% load goods_tags %}
 
 <!DOCTYPE html>
-<html lang="ru" itemscope itemtype="https://schema.org/WebPage">
+<html lang="es" itemscope itemtype="https://schema.org/WebPage">
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,9 @@
       <div class="nav-container">
         <ul class="nav-bar">
           <li>
-            <a href="{% url 'index' %}" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">Главная</a>
+            <a href="{% url 'index' %}" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+            <img src="{% static 'icons/animal.ico' %}" style="width: 40px; height: auto">
+            </a>
           </li>
           <li>
             <a href="javascript:history.back()">← Назад</a>
@@ -72,9 +74,8 @@
 
         <button id="theme-toggle" class="nav-button" title="Переключить тему">🌙</button>
 
-        <form class="search-form" role="search" action="{% url 'search' %}" method="get">
-          <label for="search-input" class="visually-hidden">Поиск</label>
-          <input id="search-input" type="search" name="q" placeholder="Поиск..." aria-label="Поиск">
+        <form class="search-form" action="{% url 'search' %}" method="get">
+          <input id="search-input" type="search" name="q" placeholder="Поиск...">
           <button type="submit">Найти</button>
         </form>
       </div>
@@ -128,5 +129,28 @@
   <script src="{% static 'js/theme.js' %}"></script>
   <script src="{% static 'js/jquery/jquery-3.7.1.min.js' %}"></script>
   <script src="{% static 'js/script.js' %}"></script>
+
+
+<script>
+// Проверяем параметр q
+const url = new URL(window.location.href);
+const q = url.searchParams.get("q");
+
+if (q && /^[+ ]+$/.test(q)) {
+  url.searchParams.set("q", "");
+
+  window.history.replaceState({}, "", url.toString());
+}
+
+document.getElementById("search-form").addEventListener("submit", function(event) {
+  const input = document.getElementById("search-input").value.trim();
+  if (input === "") {
+    event.preventDefault();
+    alert("Введите что-нибудь для поиска!");
+  } else {
+    document.getElementById("search-input").value = input; // убираем лишние пробелы
+  }
+});
+</script>
 </body>
 </html>
