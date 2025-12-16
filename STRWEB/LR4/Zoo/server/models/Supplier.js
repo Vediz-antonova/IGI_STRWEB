@@ -52,6 +52,10 @@ const supplierSchema = new mongoose.Schema({
         max: 5,
         default: 0
     },
+    productsCount: {
+        type: Number,
+        default: 0
+    },
     isActive: {
         type: Boolean,
         default: true

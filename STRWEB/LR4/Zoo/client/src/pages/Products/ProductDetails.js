@@ -9,7 +9,6 @@ function ProductDetails() {
 
     useEffect(() => {
         const url = `http://localhost:5000/api/products/${id}`;
-        console.log('📡 Запрос на продукт:', url);
 
         fetch(url)
             .then(res => res.json())

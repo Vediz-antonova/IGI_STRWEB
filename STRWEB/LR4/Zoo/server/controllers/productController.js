@@ -101,6 +101,8 @@ const createProduct = async (req, res) => {
         const product = new Product({ ...req.body, createdBy: req.user.id });
         await product.save();
 
+        await Supplier.findByIdAndUpdate(product.supplierId, { $inc: { productsCount: -1 } });
+
         const userTimezone = req.user.timezone;
         const formattedProduct = {
             ...product.toObject(),

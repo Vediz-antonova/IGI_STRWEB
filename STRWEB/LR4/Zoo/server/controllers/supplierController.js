@@ -11,7 +11,7 @@ const getAllSuppliers = async (req, res) => {
     try {
         const {
             page = 1,
-            limit = 10,
+            limit = 5,
             city,
             minRating,
             search,
@@ -44,6 +44,7 @@ const getAllSuppliers = async (req, res) => {
         const userTimezone = req.user?.timezone || 'UTC';
         const formattedSuppliers = suppliers.map(supplier => ({
             ...supplier.toObject(),
+            productsCount: supplier.productsCount,
             createdAtLocal: formatDateWithTimezone(supplier.createdAt, userTimezone),
             updatedAtLocal: formatDateWithTimezone(supplier.updatedAt, userTimezone),
             createdAtUTC: supplier.createdAt.toISOString(),
@@ -72,6 +73,7 @@ const getSupplierById = async (req, res) => {
         const userTimezone = req.user?.timezone || 'UTC';
         const formattedSupplier = {
             ...supplier.toObject(),
+            productsCount: supplier.productsCount,
             createdAtLocal: formatDateWithTimezone(supplier.createdAt, userTimezone),
             updatedAtLocal: formatDateWithTimezone(supplier.updatedAt, userTimezone),
             createdAtUTC: supplier.createdAt.toISOString(),

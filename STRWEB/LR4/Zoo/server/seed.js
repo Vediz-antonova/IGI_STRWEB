@@ -41,7 +41,7 @@ const seedDatabase = async () => {
 
         const suppliers = await Supplier.create([
             {
-                name: 'ЗооМаркет Бел',
+                name: 'ЗооМаркет',
                 address: {
                     street: 'ул. Якуба Коласа, 25',
                     city: 'Минск',
@@ -50,10 +50,11 @@ const seedDatabase = async () => {
                 },
                 phone: '+375 (17) 123-45-67',
                 email: 'info@zoomarket.by',
+                productsCount: 15,
                 rating: 4.7
             },
             {
-                name: 'PetHouse Беларусь',
+                name: 'PetHouse',
                 address: {
                     street: 'пр. Независимости, 58',
                     city: 'Минск',
@@ -62,10 +63,11 @@ const seedDatabase = async () => {
                 },
                 phone: '+375 (29) 987-65-43',
                 email: 'sales@pethouse.by',
+                productsCount: 75,
                 rating: 4.5
             },
             {
-                name: 'АкваМир Гомель',
+                name: 'АкваМир',
                 address: {
                     street: 'ул. Советская, 12',
                     city: 'Гомель',
@@ -74,10 +76,11 @@ const seedDatabase = async () => {
                 },
                 phone: '+375 (25) 555-44-33',
                 email: 'gomel@aquamir.by',
+                productsCount: 36,
                 rating: 4.3
             },
             {
-                name: 'ЗооЛюкс Витебск',
+                name: 'ЗооЛюкс',
                 address: {
                     street: 'ул. Ленина, 34',
                     city: 'Витебск',
@@ -86,10 +89,11 @@ const seedDatabase = async () => {
                 },
                 phone: '+375 (33) 111-22-33',
                 email: 'vitebsk@zoolux.by',
+                productsCount: 48,
                 rating: 4.2
             },
             {
-                name: 'PetCare Брест',
+                name: 'PetCare',
                 address: {
                     street: 'ул. Московская, 65',
                     city: 'Брест',
@@ -98,6 +102,7 @@ const seedDatabase = async () => {
                 },
                 phone: '+375 (44) 444-55-66',
                 email: 'brest@petcare.by',
+                productsCount: 22,
                 rating: 4.8
             },
             {
@@ -110,10 +115,11 @@ const seedDatabase = async () => {
                 },
                 phone: '+375 (29) 777-88-99',
                 email: 'mogilev@belzoosnab.by',
+                productsCount: 50,
                 rating: 4.1
             },
             {
-                name: 'ЗооТовары Гродно',
+                name: 'ЗооТовары',
                 address: {
                     street: 'ул. Ожешко, 22',
                     city: 'Гродно',
@@ -122,6 +128,7 @@ const seedDatabase = async () => {
                 },
                 phone: '+375 (17) 333-44-55',
                 email: 'grodno@zootovary.by',
+                productsCount: 62,
                 rating: 4.4
             }
         ]);
@@ -137,7 +144,7 @@ const seedDatabase = async () => {
                 unit: 'кг',
                 stockQuantity: 150,
                 minStockLevel: 20,
-                imageUrl: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=300&h=300&fit=crop'
+                imageUrl: 'https://avatars.mds.yandex.net/i?id=7d2b39bb6d3d4698c39dbdc6057b9bef_l-3850454-images-thumbs&n=13'
             },
             {
                 name: 'Ошейник для собак',
@@ -149,7 +156,7 @@ const seedDatabase = async () => {
                 unit: 'шт',
                 stockQuantity: 75,
                 minStockLevel: 15,
-                imageUrl: 'https://images.unsplash.com/photo-1554456854-55a089fd4cb2?w=300&h=300&fit=crop'
+                imageUrl: 'https://ir.ozone.ru/s3/multimedia-x/6273183153.jpg'
             },
             {
                 name: 'Игрушка для кошек "Мячик"',
@@ -161,7 +168,7 @@ const seedDatabase = async () => {
                 unit: 'шт',
                 stockQuantity: 200,
                 minStockLevel: 30,
-                imageUrl: 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=300&h=300&fit=crop'
+                imageUrl: 'https://avatars.mds.yandex.net/get-mpic/1925870/2a000001920b395e5ffd93ab71fd7c3d6887/orig'
             },
             {
                 name: 'Аквариум 50 литров',
@@ -173,7 +180,7 @@ const seedDatabase = async () => {
                 unit: 'шт',
                 stockQuantity: 12,
                 minStockLevel: 3,
-                imageUrl: 'https://images.unsplash.com/photo-1562790351-d273a961e0e9?w=300&h=300&fit=crop'
+                imageUrl: 'https://avatars.mds.yandex.net/get-mpic/4334326/img_id7503054822459220711.jpeg/orig'
             },
             {
                 name: 'Корм для собак "Pedigree"',
@@ -185,7 +192,7 @@ const seedDatabase = async () => {
                 unit: 'кг',
                 stockQuantity: 180,
                 minStockLevel: 25,
-                imageUrl: 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=300&h=300&fit=crop'
+                imageUrl: 'https://avatars.mds.yandex.net/get-mpic/3922047/img_id9009923990064385366.jpeg/orig'
             },
             {
                 name: 'Клетка для птиц',
@@ -197,7 +204,7 @@ const seedDatabase = async () => {
                 unit: 'шт',
                 stockQuantity: 8,
                 minStockLevel: 2,
-                imageUrl: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=300&h=300&fit=crop'
+                imageUrl: 'https://main-cdn.sbermegamarket.ru/big1/hlr-system/155/550/201/698/927/100074667393b0.png'
             },
             {
                 name: 'Ветеринарный шампунь для животных',
@@ -209,7 +216,7 @@ const seedDatabase = async () => {
                 unit: 'л',
                 stockQuantity: 45,
                 minStockLevel: 10,
-                imageUrl: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=300&fit=crop'
+                imageUrl: 'https://avatars.mds.yandex.net/get-mpic/12022975/2a0000019012568b697bda83698b8fcbee71/orig'
             },
             {
                 name: 'Переноска для кошек',
@@ -221,7 +228,7 @@ const seedDatabase = async () => {
                 unit: 'шт',
                 stockQuantity: 20,
                 minStockLevel: 5,
-                imageUrl: 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=300&h=300&fit=crop'
+                imageUrl: 'https://avatars.mds.yandex.net/get-mpic/12579532/2a0000018d5714e868228db3fc3743212b8b/orig'
             },
             {
                 name: 'Корм для рыбок "Tetra"',
@@ -233,7 +240,7 @@ const seedDatabase = async () => {
                 unit: 'г',
                 stockQuantity: 120,
                 minStockLevel: 20,
-                imageUrl: 'https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=300&h=300&fit=crop'
+                imageUrl: 'https://avatars.mds.yandex.net/i?id=5361b0d7ff266688367717897fde662c_l-4613464-images-thumbs&n=13'
             },
             {
                 name: 'Домик для грызунов',
@@ -245,7 +252,7 @@ const seedDatabase = async () => {
                 unit: 'шт',
                 stockQuantity: 35,
                 minStockLevel: 8,
-                imageUrl: 'https://images.unsplash.com/photo-1558369982-f076d9872225?w=300&h=300&fit=crop'
+                imageUrl: 'https://avatars.mds.yandex.net/get-mpic/11450294/2a0000018b4cb6d58cf638b015bec38d8c62/orig'
             },
             {
                 name: 'Поводок для собак',
@@ -257,7 +264,7 @@ const seedDatabase = async () => {
                 unit: 'шт',
                 stockQuantity: 60,
                 minStockLevel: 12,
-                imageUrl: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=300&h=300&fit=crop'
+                imageUrl: 'https://avatars.mds.yandex.net/get-mpic/15249557/2a000001967d477ea0d3bc04d60333751de6/orig'
             },
             {
                 name: 'Когтеточка для кошек',
@@ -269,7 +276,7 @@ const seedDatabase = async () => {
                 unit: 'шт',
                 stockQuantity: 90,
                 minStockLevel: 15,
-                imageUrl: 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=300&h=300&fit=crop'
+                imageUrl: 'https://avatars.mds.yandex.net/get-mpic/16505546/2a0000019741bb98a7a19deadfe93c6faffa/orig'
             },
             {
                 name: 'Миска для животных керамическая',
@@ -281,7 +288,7 @@ const seedDatabase = async () => {
                 unit: 'шт',
                 stockQuantity: 150,
                 minStockLevel: 25,
-                imageUrl: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&h=300&fit=crop'
+                imageUrl: 'https://main-cdn.sbermegamarket.ru/big1/hlr-system/-49/834/140/151/620/16/100051626811b0.jpg'
             },
             {
                 name: 'Наполнитель для кошачьего туалета',
@@ -293,7 +300,7 @@ const seedDatabase = async () => {
                 unit: 'л',
                 stockQuantity: 80,
                 minStockLevel: 15,
-                imageUrl: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=300&h=300&fit=crop'
+                imageUrl: 'https://avatars.mds.yandex.net/get-mpic/3707358/2a000001905bbc1f2c52628e5c7e0deba73b/orig'
             },
             {
                 name: 'Игрушка для собак "Кость"',
@@ -305,7 +312,7 @@ const seedDatabase = async () => {
                 unit: 'шт',
                 stockQuantity: 110,
                 minStockLevel: 20,
-                imageUrl: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=300&h=300&fit=crop'
+                imageUrl: 'https://cdn1.ozone.ru/s3/multimedia-k/6190581428.jpg'
             }
         ]);
 
