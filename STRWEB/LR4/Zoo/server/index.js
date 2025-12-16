@@ -22,9 +22,9 @@ app.use((req, res, next) => {
 });
 
 mongoose.connect(process.env.MONGODB_URI)
-    .then(() => console.log('✅ MongoDB connected'))
+    .then(() => console.log('MongoDB connected'))
     .catch(err => {
-        console.error('❌ MongoDB connection error:', err.message);
+        console.error('MongoDB connection error:', err.message);
         process.exit(1);
     });
 
@@ -75,14 +75,7 @@ app.use((req, res) => {
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-    console.log(`📊 MongoDB Admin: http://localhost:8081`);
-    console.log(`🔗 API Documentation: http://localhost:${PORT}/api`);
-    console.log(`\n📝 Доступные эндпоинты:`);
-    console.log(`   POST /api/auth/register - Регистрация`);
-    console.log(`   POST /api/auth/login - Вход`);
-    console.log(`   GET  /api/products - Все продукты`);
-    console.log(`   GET  /api/suppliers - Все поставщики`);
-    console.log(`   GET  /api/purchases - Все закупки (требует auth)`);
-    console.log(`   GET  /api/price-changes - Все изменения цен`);
+    console.log(`Server running on port ${PORT}`);
+    console.log(`MongoDB Admin: http://localhost:8081`);
+    console.log(`API Documentation: http://localhost:${PORT}/api`);
 });

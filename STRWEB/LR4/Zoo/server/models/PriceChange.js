@@ -39,6 +39,9 @@ const priceChangeSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    notificationDate: {
+        type: Date
+    },
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

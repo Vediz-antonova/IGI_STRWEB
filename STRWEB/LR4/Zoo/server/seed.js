@@ -17,7 +17,7 @@ const seedDatabase = async () => {
             socketTimeoutMS: 45000,
         });
 
-        console.log('✅ Connected to MongoDB successfully');
+        console.log('Connected to MongoDB successfully');
 
         console.log('Clearing existing data...');
         await User.deleteMany({});
@@ -26,7 +26,7 @@ const seedDatabase = async () => {
         await Purchase.deleteMany({});
         await PriceChange.deleteMany({});
 
-        console.log('✅ Cleared all collections');
+        console.log('Cleared all collections');
 
         const userData = {
             username: 'admin',
@@ -38,7 +38,6 @@ const seedDatabase = async () => {
 
         const user = new User(userData);
         await user.save();
-        console.log('✅ Test user created:', user.username);
 
         const suppliers = await Supplier.create([
             {
@@ -126,8 +125,6 @@ const seedDatabase = async () => {
                 rating: 4.4
             }
         ]);
-
-        console.log(`✅ Created ${suppliers.length} suppliers`);
 
         const products = await Product.create([
             {
@@ -312,8 +309,6 @@ const seedDatabase = async () => {
             }
         ]);
 
-        console.log(`✅ Created ${products.length} products`);
-
         const purchases = [];
         const purchaseCount = 25;
 
@@ -341,7 +336,6 @@ const seedDatabase = async () => {
         }
 
         const createdPurchases = await Purchase.create(purchases);
-        console.log(`✅ Created ${createdPurchases.length} purchases`);
 
         const priceChanges = [];
 
@@ -379,28 +373,14 @@ const seedDatabase = async () => {
         }
 
         const createdPriceChanges = await PriceChange.create(priceChanges);
-        console.log(`✅ Created ${createdPriceChanges.length} price changes`);
 
-        console.log('\n=== 📊 Database Summary ===');
-        console.log(`👤 Users: 1 (admin:admin123)`);
-        console.log(`🏢 Suppliers: ${suppliers.length} (белорусские компании)`);
-        console.log(`📦 Products: ${products.length}`);
-        console.log(`🛒 Purchases: ${createdPurchases.length}`);
-        console.log(`💰 Price Changes: ${createdPriceChanges.length}`);
-        console.log('============================\n');
-
-        console.log('🎉 Database seeded successfully!');
-        console.log('\n🔑 Test credentials:');
-        console.log('Username: admin');
-        console.log('Email: admin@zoo.by');
-        console.log('Password: admin123');
-        console.log('Timezone: Europe/Minsk');
-        console.log('\n🚀 Start the server: npm run dev');
-        console.log('🌐 API will be available at: http://localhost:5000');
+        console.log('Database seeded successfully!');
+        console.log('Start the server: npm run dev');
+        console.log('API will be available at: http://localhost:5000');
 
         process.exit(0);
     } catch (error) {
-        console.error('❌ Error seeding database:');
+        console.error('Error seeding database:');
         console.error('Error name:', error.name);
         console.error('Error message:', error.message);
 

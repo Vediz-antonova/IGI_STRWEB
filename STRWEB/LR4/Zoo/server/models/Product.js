@@ -71,6 +71,10 @@ const productSchema = new mongoose.Schema({
     toObject: { virtuals: true }
 });
 
+productSchema.virtual('isLowStock').get(function() {
+    return this.stockQuantity < this.minStockLevel;
+});
+
 productSchema.index({ name: 'text', description: 'text', sku: 'text' });
 productSchema.index({ category: 1 });
 productSchema.index({ animalType: 1 });

@@ -43,6 +43,7 @@ const supplierSchema = new mongoose.Schema({
         type: String,
         trim: true,
         lowercase: true,
+        unique: true,
         match: [/^\S+@\S+\.\S+$/, 'Пожалуйста, введите корректный email']
     },
     rating: {
@@ -71,6 +72,10 @@ const supplierSchema = new mongoose.Schema({
 
 supplierSchema.virtual('fullAddress').get(function() {
     return `${this.address.street}, ${this.address.city}, ${this.address.country}`;
+});
+
+supplierSchema.virtual('ratingStars').get(function() {
+    return '★'.repeat(Math.round(this.rating)) + '☆'.repeat(5 - Math.round(this.rating));
 });
 
 module.exports = mongoose.model('Supplier', supplierSchema);
