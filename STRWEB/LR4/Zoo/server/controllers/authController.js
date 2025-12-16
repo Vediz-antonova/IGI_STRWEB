@@ -3,18 +3,21 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const { getCurrentTimezone } = require('../utils/timezone');
 
+const sendResponse = (res, success, message, data = null, status = 200) => {
+    res.status(status).json({ success, message, data });
+};
+
 const register = async (req, res) => {
     try {
         const { username, email, password, timezone } = req.body;
 
-        const existingUser = await User.findOne({
-            $or: [{ email }, { username }]
-        });
+        if (!username || !email || !password) {
+            return sendResponse(res, false, 'Все поля обязательны', null, 400);
+        }
 
+        const existingUser = await User.findOne({ $or: [{ email }, { username }] });
         if (existingUser) {
-            return res.status(400).json({
-                error: 'Пользователь с таким email или именем уже существует'
-            });
+            return sendResponse(res, false, 'Пользователь с таким email или именем уже существует', null, 400);
         }
 
         const user = new User({
@@ -26,14 +29,9 @@ const register = async (req, res) => {
 
         await user.save();
 
-        const token = user.generateAuthToken ? user.generateAuthToken() : jwt.sign(
-            { id: user._id, role: user.role },
-            process.env.JWT_SECRET,
-            { expiresIn: '7d' }
-        );
+        const token = user.generateAuthToken();
 
-        res.status(201).json({
-            message: 'Пользователь успешно зарегистрирован',
+        sendResponse(res, true, 'Пользователь успешно зарегистрирован', {
             user: {
                 id: user._id,
                 username: user.username,
@@ -42,9 +40,9 @@ const register = async (req, res) => {
                 timezone: user.timezone
             },
             token
-        });
+        }, 201);
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
@@ -52,55 +50,59 @@ const login = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        const user = await User.findOne({ email }).select('+password');
+        if (!email || !password) {
+            return sendResponse(res, false, 'Email и пароль обязательны', null, 400);
+        }
 
+        const user = await User.findOne({ email }).select('+password');
         if (!user) {
-            return res.status(401).json({ error: 'Неверный email или пароль' });
+            return sendResponse(res, false, 'Неверный email или пароль', null, 401);
         }
 
         const isPasswordValid = await bcrypt.compare(password, user.password);
-
         if (!isPasswordValid) {
-            return res.status(401).json({ error: 'Неверный email или пароль' });
+            return sendResponse(res, false, 'Неверный email или пароль', null, 401);
         }
 
-        const token = user.generateAuthToken ? user.generateAuthToken() : jwt.sign(
-            { id: user._id, role: user.role },
-            process.env.JWT_SECRET,
-            { expiresIn: '7d' }
-        );
+        user.lastLogin = new Date();
+        await user.save();
 
-        res.json({
-            message: 'Вход выполнен успешно',
-            user: {
-                id: user._id,
-                username: user.username,
-                email: user.email,
-                role: user.role,
-                timezone: user.timezone
-            },
-            token
-        });
-    } catch (error) {
-        res.status(400).json({ error: error.message });
-    }
-};
+        const token = user.generateAuthToken();
 
-const getProfile = async (req, res) => {
-    try {
-        const user = await User.findById(req.user.id);
-        res.json({
+        sendResponse(res, true, 'Вход выполнен успешно', {
             user: {
                 id: user._id,
                 username: user.username,
                 email: user.email,
                 role: user.role,
                 timezone: user.timezone,
-                createdAt: user.createdAt
-            }
+                lastLogin: user.lastLogin
+            },
+            token
         });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
+    }
+};
+
+const getProfile = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id);
+        if (!user) {
+            return sendResponse(res, false, 'Пользователь не найден', null, 404);
+        }
+
+        sendResponse(res, true, 'Профиль получен успешно', {
+            id: user._id,
+            username: user.username,
+            email: user.email,
+            role: user.role,
+            timezone: user.timezone,
+            createdAt: user.createdAt,
+            lastLogin: user.lastLogin
+        });
+    } catch (error) {
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 

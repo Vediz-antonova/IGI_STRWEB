@@ -1,6 +1,10 @@
 const Product = require('../models/Product');
 const { formatDateWithTimezone } = require('../utils/timezone');
 
+const sendResponse = (res, success, message, data = null, status = 200) => {
+    res.status(status).json({ success, message, data });
+};
+
 const getAllProducts = async (req, res) => {
     try {
         const {
@@ -17,28 +21,15 @@ const getAllProducts = async (req, res) => {
         } = req.query;
 
         const filter = {};
-
-        if (category) {
-            filter.category = category;
-        }
-
-        if (animalType) {
-            filter.animalType = animalType;
-        }
-
-        if (search) {
-            filter.$text = { $search: search };
-        }
-
+        if (category) filter.category = category;
+        if (animalType) filter.animalType = animalType;
+        if (search) filter.$text = { $search: search };
         if (minPrice || maxPrice) {
             filter.currentPrice = {};
             if (minPrice) filter.currentPrice.$gte = parseFloat(minPrice);
             if (maxPrice) filter.currentPrice.$lte = parseFloat(maxPrice);
         }
-
-        if (inStock !== undefined) {
-            filter.inStock = inStock === 'true';
-        }
+        if (inStock !== undefined) filter.inStock = inStock === 'true';
 
         const sort = {};
         sort[sortBy] = sortOrder === 'asc' ? 1 : -1;
@@ -46,10 +37,7 @@ const getAllProducts = async (req, res) => {
         const skip = (parseInt(page) - 1) * parseInt(limit);
 
         const [products, total] = await Promise.all([
-            Product.find(filter)
-                .sort(sort)
-                .skip(skip)
-                .limit(parseInt(limit)),
+            Product.find(filter).sort(sort).skip(skip).limit(parseInt(limit)),
             Product.countDocuments(filter)
         ]);
 
@@ -62,7 +50,7 @@ const getAllProducts = async (req, res) => {
             updatedAtUTC: product.updatedAt.toISOString()
         }));
 
-        res.json({
+        sendResponse(res, true, 'Список продуктов получен', {
             products: formattedProducts,
             pagination: {
                 page: parseInt(page),
@@ -72,17 +60,14 @@ const getAllProducts = async (req, res) => {
             }
         });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const getProductById = async (req, res) => {
     try {
         const product = await Product.findById(req.params.id);
-
-        if (!product) {
-            return res.status(404).json({ error: 'Продукт не найден' });
-        }
+        if (!product) return sendResponse(res, false, 'Продукт не найден', null, 404);
 
         const userTimezone = req.user?.timezone || 'UTC';
         const formattedProduct = {
@@ -93,20 +78,23 @@ const getProductById = async (req, res) => {
             updatedAtUTC: product.updatedAt.toISOString()
         };
 
-        res.json({ product: formattedProduct });
+        sendResponse(res, true, 'Продукт найден', { product: formattedProduct });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const createProduct = async (req, res) => {
     try {
-        const productData = {
-            ...req.body,
-            createdBy: req.user.id
-        };
+        const { name, sku, category, animalType, currentPrice } = req.body;
+        if (!name || !sku || !category || !animalType || !currentPrice) {
+            return sendResponse(res, false, 'Обязательные поля: name, sku, category, animalType, currentPrice', null, 400);
+        }
 
-        const product = new Product(productData);
+        const existing = await Product.findOne({ sku });
+        if (existing) return sendResponse(res, false, 'Продукт с таким SKU уже существует', null, 400);
+
+        const product = new Product({ ...req.body, createdBy: req.user.id });
         await product.save();
 
         const userTimezone = req.user.timezone;
@@ -118,32 +106,24 @@ const createProduct = async (req, res) => {
             updatedAtUTC: product.updatedAt.toISOString()
         };
 
-        res.status(201).json({
-            message: 'Продукт успешно создан',
-            product: formattedProduct
-        });
+        sendResponse(res, true, 'Продукт успешно создан', { product: formattedProduct }, 201);
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const updateProduct = async (req, res) => {
     try {
-        const updates = Object.keys(req.body);
         const allowedUpdates = ['name', 'description', 'currentPrice', 'stockQuantity', 'category', 'animalType', 'imageUrl', 'minStockLevel', 'inStock'];
+        const updates = Object.keys(req.body);
         const isValidOperation = updates.every(update => allowedUpdates.includes(update));
-
-        if (!isValidOperation) {
-            return res.status(400).json({ error: 'Недопустимые поля для обновления' });
-        }
+        if (!isValidOperation) return sendResponse(res, false, 'Недопустимые поля для обновления', null, 400);
 
         const product = await Product.findById(req.params.id);
-
-        if (!product) {
-            return res.status(404).json({ error: 'Продукт не найден' });
-        }
+        if (!product) return sendResponse(res, false, 'Продукт не найден', null, 404);
 
         updates.forEach(update => product[update] = req.body[update]);
+        product.updatedAt = Date.now();
         await product.save();
 
         const userTimezone = req.user.timezone;
@@ -155,45 +135,38 @@ const updateProduct = async (req, res) => {
             updatedAtUTC: product.updatedAt.toISOString()
         };
 
-        res.json({
-            message: 'Продукт успешно обновлен',
-            product: formattedProduct
-        });
+        sendResponse(res, true, 'Продукт успешно обновлен', { product: formattedProduct });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const deleteProduct = async (req, res) => {
     try {
-        const product = await Product.findByIdAndDelete(req.params.id);
+        const product = await Product.findById(req.params.id);
+        if (!product) return sendResponse(res, false, 'Продукт не найден', null, 404);
 
-        if (!product) {
-            return res.status(404).json({ error: 'Продукт не найден' });
-        }
+        await product.deleteOne();
 
-        res.json({ message: 'Продукт успешно удален' });
+        sendResponse(res, true, 'Продукт успешно удален');
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const searchProducts = async (req, res) => {
     try {
         const { query } = req.query;
-
-        if (!query || query.trim() === '') {
-            return res.json({ products: [] });
-        }
+        if (!query || query.trim() === '') return sendResponse(res, true, 'Поиск пустой', { products: [] });
 
         const products = await Product.find(
             { $text: { $search: query } },
             { score: { $meta: 'textScore' } }
         ).sort({ score: { $meta: 'textScore' } });
 
-        res.json({ products });
+        sendResponse(res, true, 'Результаты поиска', { products });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
@@ -210,26 +183,24 @@ const getProductStats = async (req, res) => {
                     maxPrice: { $max: '$currentPrice' }
                 }
             },
-            {
-                $sort: { count: -1 }
-            }
+            { $sort: { count: -1 } }
         ]);
 
         const totalProducts = await Product.countDocuments();
         const lowStockProducts = await Product.countDocuments({
-            stockQuantity: { $lt: 10 }
+            $expr: { $lt: ['$stockQuantity', '$minStockLevel'] }
         });
 
-        res.json({
+        sendResponse(res, true, 'Статистика по продуктам', {
             stats,
             summary: {
                 totalProducts,
                 lowStockProducts,
-                lowStockPercentage: (lowStockProducts / totalProducts * 100).toFixed(2)
+                lowStockPercentage: totalProducts > 0 ? (lowStockProducts / totalProducts * 100).toFixed(2) : 0
             }
         });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 

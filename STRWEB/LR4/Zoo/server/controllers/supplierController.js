@@ -1,6 +1,11 @@
 const Supplier = require('../models/Supplier');
 const Purchase = require('../models/Purchase');
+const mongoose = require('mongoose');
 const { formatDateWithTimezone } = require('../utils/timezone');
+
+const sendResponse = (res, success, message, data = null, status = 200) => {
+    res.status(status).json({ success, message, data });
+};
 
 const getAllSuppliers = async (req, res) => {
     try {
@@ -16,15 +21,8 @@ const getAllSuppliers = async (req, res) => {
         } = req.query;
 
         const filter = {};
-
-        if (city) {
-            filter['address.city'] = city;
-        }
-
-        if (minRating) {
-            filter.rating = { $gte: parseFloat(minRating) };
-        }
-
+        if (city) filter['address.city'] = city;
+        if (minRating) filter.rating = { $gte: parseFloat(minRating) };
         if (search) {
             filter.$or = [
                 { name: { $regex: search, $options: 'i' } },
@@ -32,21 +30,14 @@ const getAllSuppliers = async (req, res) => {
                 { 'address.city': { $regex: search, $options: 'i' } }
             ];
         }
-
-        if (activeOnly === 'true') {
-            filter.isActive = true;
-        }
+        if (activeOnly === 'true') filter.isActive = true;
 
         const sort = {};
         sort[sortBy] = sortOrder === 'asc' ? 1 : -1;
-
         const skip = (parseInt(page) - 1) * parseInt(limit);
 
         const [suppliers, total] = await Promise.all([
-            Supplier.find(filter)
-                .sort(sort)
-                .skip(skip)
-                .limit(parseInt(limit)),
+            Supplier.find(filter).sort(sort).skip(skip).limit(parseInt(limit)),
             Supplier.countDocuments(filter)
         ]);
 
@@ -59,7 +50,7 @@ const getAllSuppliers = async (req, res) => {
             updatedAtUTC: supplier.updatedAt.toISOString()
         }));
 
-        res.json({
+        sendResponse(res, true, 'Список поставщиков получен', {
             suppliers: formattedSuppliers,
             pagination: {
                 page: parseInt(page),
@@ -69,17 +60,14 @@ const getAllSuppliers = async (req, res) => {
             }
         });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const getSupplierById = async (req, res) => {
     try {
         const supplier = await Supplier.findById(req.params.id);
-
-        if (!supplier) {
-            return res.status(404).json({ error: 'Поставщик не найден' });
-        }
+        if (!supplier) return sendResponse(res, false, 'Поставщик не найден', null, 404);
 
         const userTimezone = req.user?.timezone || 'UTC';
         const formattedSupplier = {
@@ -90,20 +78,23 @@ const getSupplierById = async (req, res) => {
             updatedAtUTC: supplier.updatedAt.toISOString()
         };
 
-        res.json({ supplier: formattedSupplier });
+        sendResponse(res, true, 'Поставщик найден', { supplier: formattedSupplier });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const createSupplier = async (req, res) => {
     try {
-        const supplierData = {
-            ...req.body,
-            createdBy: req.user.id
-        };
+        const { name, address, phone, email } = req.body;
+        if (!name || !address || !phone || !email) {
+            return sendResponse(res, false, 'Обязательные поля: name, address, phone, email', null, 400);
+        }
 
-        const supplier = new Supplier(supplierData);
+        const existing = await Supplier.findOne({ email });
+        if (existing) return sendResponse(res, false, 'Поставщик с таким email уже существует', null, 400);
+
+        const supplier = new Supplier({ ...req.body, createdBy: req.user.id });
         await supplier.save();
 
         const userTimezone = req.user.timezone;
@@ -115,30 +106,21 @@ const createSupplier = async (req, res) => {
             updatedAtUTC: supplier.updatedAt.toISOString()
         };
 
-        res.status(201).json({
-            message: 'Поставщик успешно создан',
-            supplier: formattedSupplier
-        });
+        sendResponse(res, true, 'Поставщик успешно создан', { supplier: formattedSupplier }, 201);
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const updateSupplier = async (req, res) => {
     try {
-        const updates = Object.keys(req.body);
         const allowedUpdates = ['name', 'address', 'phone', 'email', 'rating', 'isActive'];
+        const updates = Object.keys(req.body);
         const isValidOperation = updates.every(update => allowedUpdates.includes(update));
-
-        if (!isValidOperation) {
-            return res.status(400).json({ error: 'Недопустимые поля для обновления' });
-        }
+        if (!isValidOperation) return sendResponse(res, false, 'Недопустимые поля для обновления', null, 400);
 
         const supplier = await Supplier.findById(req.params.id);
-
-        if (!supplier) {
-            return res.status(404).json({ error: 'Поставщик не найден' });
-        }
+        if (!supplier) return sendResponse(res, false, 'Поставщик не найден', null, 404);
 
         updates.forEach(update => supplier[update] = req.body[update]);
         await supplier.save();
@@ -152,48 +134,40 @@ const updateSupplier = async (req, res) => {
             updatedAtUTC: supplier.updatedAt.toISOString()
         };
 
-        res.json({
-            message: 'Поставщик успешно обновлен',
-            supplier: formattedSupplier
-        });
+        sendResponse(res, true, 'Поставщик успешно обновлен', { supplier: formattedSupplier });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const deleteSupplier = async (req, res) => {
     try {
         const supplier = await Supplier.findById(req.params.id);
-
-        if (!supplier) {
-            return res.status(404).json({ error: 'Поставщик не найден' });
-        }
+        if (!supplier) return sendResponse(res, false, 'Поставщик не найден', null, 404);
 
         const purchasesCount = await Purchase.countDocuments({ supplier: supplier._id });
-
         if (purchasesCount > 0) {
             supplier.isActive = false;
             await supplier.save();
-
-            return res.json({
-                message: 'Поставщик деактивирован (есть связанные закупки)',
-                supplier
-            });
+            return sendResponse(res, true, 'Поставщик деактивирован (есть связанные закупки)', { supplier });
         }
 
         await supplier.deleteOne();
-        res.json({ message: 'Поставщик успешно удален' });
+        sendResponse(res, true, 'Поставщик успешно удален');
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const getSupplierStats = async (req, res) => {
     try {
         const supplierId = req.params.id;
+        if (!mongoose.Types.ObjectId.isValid(supplierId)) {
+            return sendResponse(res, false, 'Некорректный ID поставщика', null, 400);
+        }
 
         const stats = await Purchase.aggregate([
-            { $match: { supplier: require('mongoose').Types.ObjectId.createFromHexString(supplierId) } },
+            { $match: { supplier: new mongoose.Types.ObjectId(supplierId) } },
             {
                 $group: {
                     _id: '$supplier',
@@ -209,8 +183,8 @@ const getSupplierStats = async (req, res) => {
         const supplier = await Supplier.findById(supplierId);
         const activeProducts = await Purchase.distinct('product', { supplier: supplierId });
 
-        res.json({
-            supplier: supplier,
+        sendResponse(res, true, 'Статистика по поставщику получена', {
+            supplier,
             stats: stats[0] || {},
             metrics: {
                 activeProductsCount: activeProducts.length,
@@ -218,7 +192,7 @@ const getSupplierStats = async (req, res) => {
             }
         });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
@@ -228,16 +202,12 @@ const getSupplierPurchases = async (req, res) => {
         const supplierId = req.params.id;
 
         const filter = { supplier: supplierId };
-
         if (startDate || endDate) {
             filter.purchaseDate = {};
             if (startDate) filter.purchaseDate.$gte = new Date(startDate);
             if (endDate) filter.purchaseDate.$lte = new Date(endDate);
         }
-
-        if (status) {
-            filter.status = status;
-        }
+        if (status) filter.status = status;
 
         const skip = (parseInt(page) - 1) * parseInt(limit);
 
@@ -250,7 +220,7 @@ const getSupplierPurchases = async (req, res) => {
             Purchase.countDocuments(filter)
         ]);
 
-        res.json({
+        sendResponse(res, true, 'Закупки поставщика получены', {
             purchases,
             pagination: {
                 page: parseInt(page),
@@ -260,7 +230,7 @@ const getSupplierPurchases = async (req, res) => {
             }
         });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
@@ -273,9 +243,9 @@ const getSuppliersByCity = async (req, res) => {
             isActive: true
         }).sort({ rating: -1 });
 
-        res.json({ suppliers });
+        sendResponse(res, true, 'Поставщики по городу получены', { suppliers });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 

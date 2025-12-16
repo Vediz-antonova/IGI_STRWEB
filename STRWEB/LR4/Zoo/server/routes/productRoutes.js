@@ -15,7 +15,7 @@ router.get('/', getAllProducts);
 router.get('/search', searchProducts);
 router.get('/:id', getProductById);
 
-router.get('/stats/stats', auth, getProductStats);
+router.get('/stats', auth, getProductStats);
 
 router.post('/', auth, isAdmin, createProduct);
 router.put('/:id', auth, isAdmin, updateProduct);

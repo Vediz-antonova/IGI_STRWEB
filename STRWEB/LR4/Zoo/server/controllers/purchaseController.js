@@ -3,6 +3,10 @@ const Product = require('../models/Product');
 const Supplier = require('../models/Supplier');
 const { formatDateWithTimezone } = require('../utils/timezone');
 
+const sendResponse = (res, success, message, data = null, status = 200) => {
+    res.status(status).json({ success, message, data });
+};
+
 const getAllPurchases = async (req, res) => {
     try {
         const {
@@ -14,41 +18,21 @@ const getAllPurchases = async (req, res) => {
             endDate,
             status,
             sortBy = 'purchaseDate',
-            sortOrder = 'desc',
-            minAmount,
-            maxAmount
+            sortOrder = 'desc'
         } = req.query;
 
         const filter = {};
-
-        if (supplierId) {
-            filter.supplier = supplierId;
-        }
-
-        if (productId) {
-            filter.product = productId;
-        }
-
+        if (supplierId) filter.supplier = supplierId;
+        if (productId) filter.product = productId;
+        if (status) filter.status = status;
         if (startDate || endDate) {
             filter.purchaseDate = {};
             if (startDate) filter.purchaseDate.$gte = new Date(startDate);
             if (endDate) filter.purchaseDate.$lte = new Date(endDate);
         }
 
-        if (status) {
-            filter.status = status;
-        }
-
-        if (minAmount || maxAmount) {
-            const amountFilter = await Purchase.aggregate([
-                { $addFields: { totalAmount: { $multiply: ['$quantity', '$purchasePrice'] } } },
-                { $match: {} }
-            ]);
-        }
-
         const sort = {};
         sort[sortBy] = sortOrder === 'asc' ? 1 : -1;
-
         const skip = (parseInt(page) - 1) * parseInt(limit);
 
         const [purchases, total] = await Promise.all([
@@ -70,34 +54,21 @@ const getAllPurchases = async (req, res) => {
             purchaseDateUTC: purchase.purchaseDate.toISOString(),
             deliveryDateUTC: purchase.deliveryDate ? purchase.deliveryDate.toISOString() : null,
             createdAtLocal: formatDateWithTimezone(purchase.createdAt, userTimezone),
-            updatedAtLocal: formatDateWithTimezone(purchase.updatedAt, userTimezone)
+            updatedAtLocal: formatDateWithTimezone(purchase.updatedAt, userTimezone),
+            totalCost: purchase.quantity * purchase.purchasePrice
         }));
 
-        const stats = await Purchase.aggregate([
-            { $match: filter },
-            {
-                $group: {
-                    _id: null,
-                    totalPurchases: { $sum: 1 },
-                    totalQuantity: { $sum: '$quantity' },
-                    totalCost: { $sum: { $multiply: ['$quantity', '$purchasePrice'] } },
-                    avgUnitPrice: { $avg: '$purchasePrice' }
-                }
-            }
-        ]);
-
-        res.json({
+        sendResponse(res, true, 'Список закупок получен', {
             purchases: formattedPurchases,
             pagination: {
                 page: parseInt(page),
                 limit: parseInt(limit),
                 total,
                 pages: Math.ceil(total / parseInt(limit))
-            },
-            stats: stats[0] || {}
+            }
         });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
@@ -108,9 +79,7 @@ const getPurchaseById = async (req, res) => {
             .populate('supplier', 'name address phone email')
             .populate('createdBy', 'username email');
 
-        if (!purchase) {
-            return res.status(404).json({ error: 'Закупка не найдена' });
-        }
+        if (!purchase) return sendResponse(res, false, 'Закупка не найдена', null, 404);
 
         const userTimezone = req.user?.timezone || 'UTC';
         const formattedPurchase = {
@@ -118,45 +87,36 @@ const getPurchaseById = async (req, res) => {
             purchaseDateLocal: formatDateWithTimezone(purchase.purchaseDate, userTimezone),
             deliveryDateLocal: purchase.deliveryDate ? formatDateWithTimezone(purchase.deliveryDate, userTimezone) : null,
             purchaseDateUTC: purchase.purchaseDate.toISOString(),
-            deliveryDateUTC: purchase.deliveryDate ? purchase.deliveryDate.toISOString() : null,
-            createdAtLocal: formatDateWithTimezone(purchase.createdAt, userTimezone),
-            updatedAtLocal: formatDateWithTimezone(purchase.updatedAt, userTimezone)
+            deliveryDateUTC: purchase.deliveryDate ? purchase.deliveryDate.toISOString() : null
         };
 
-        res.json({ purchase: formattedPurchase });
+        sendResponse(res, true, 'Закупка найдена', { purchase: formattedPurchase });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const createPurchase = async (req, res) => {
     try {
         const { product: productId, supplier: supplierId, quantity, purchasePrice } = req.body;
+        if (!productId || !supplierId || !quantity || !purchasePrice) {
+            return sendResponse(res, false, 'Обязательные поля: product, supplier, quantity, purchasePrice', null, 400);
+        }
 
         const [product, supplier] = await Promise.all([
             Product.findById(productId),
             Supplier.findById(supplierId)
         ]);
 
-        if (!product) {
-            return res.status(404).json({ error: 'Продукт не найден' });
-        }
+        if (!product) return sendResponse(res, false, 'Продукт не найден', null, 404);
+        if (!supplier) return sendResponse(res, false, 'Поставщик не найден', null, 404);
+        if (!supplier.isActive) return sendResponse(res, false, 'Поставщик неактивен', null, 400);
 
-        if (!supplier) {
-            return res.status(404).json({ error: 'Поставщик не найден' });
-        }
-
-        if (!supplier.isActive) {
-            return res.status(400).json({ error: 'Поставщик неактивен' });
-        }
-
-        const purchaseData = {
+        const purchase = new Purchase({
             ...req.body,
             createdBy: req.user.id,
             status: req.body.status || 'ordered'
-        };
-
-        const purchase = new Purchase(purchaseData);
+        });
         await purchase.save();
 
         if (purchase.status === 'delivered') {
@@ -166,95 +126,54 @@ const createPurchase = async (req, res) => {
 
         await purchase.populate('product supplier createdBy');
 
-        const userTimezone = req.user.timezone;
-        const formattedPurchase = {
-            ...purchase.toObject(),
-            purchaseDateLocal: formatDateWithTimezone(purchase.purchaseDate, userTimezone),
-            deliveryDateLocal: purchase.deliveryDate ? formatDateWithTimezone(purchase.deliveryDate, userTimezone) : null,
-            purchaseDateUTC: purchase.purchaseDate.toISOString(),
-            deliveryDateUTC: purchase.deliveryDate ? purchase.deliveryDate.toISOString() : null
-        };
-
-        res.status(201).json({
-            message: 'Закупка успешно создана',
-            purchase: formattedPurchase
-        });
+        sendResponse(res, true, 'Закупка успешно создана', { purchase }, 201);
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const updatePurchase = async (req, res) => {
     try {
-        const updates = Object.keys(req.body);
         const allowedUpdates = ['quantity', 'purchasePrice', 'purchaseDate', 'deliveryDate', 'status', 'invoiceNumber', 'notes'];
+        const updates = Object.keys(req.body);
         const isValidOperation = updates.every(update => allowedUpdates.includes(update));
+        if (!isValidOperation) return sendResponse(res, false, 'Недопустимые поля для обновления', null, 400);
 
-        if (!isValidOperation) {
-            return res.status(400).json({ error: 'Недопустимые поля для обновления' });
-        }
-
-        const purchase = await Purchase.findById(req.params.id)
-            .populate('product');
-
-        if (!purchase) {
-            return res.status(404).json({ error: 'Закупка не найдена' });
-        }
+        const purchase = await Purchase.findById(req.params.id).populate('product');
+        if (!purchase) return sendResponse(res, false, 'Закупка не найдена', null, 404);
 
         const oldStatus = purchase.status;
         const oldQuantity = purchase.quantity;
-        const product = purchase.product;
 
         updates.forEach(update => purchase[update] = req.body[update]);
         await purchase.save();
 
-        if (product && (oldStatus !== purchase.status || oldQuantity !== purchase.quantity)) {
+        if (purchase.product) {
             let stockAdjustment = 0;
-
             if (oldStatus !== 'delivered' && purchase.status === 'delivered') {
                 stockAdjustment += purchase.quantity;
-            }
-            else if (oldStatus === 'delivered' && purchase.status !== 'delivered') {
+            } else if (oldStatus === 'delivered' && purchase.status !== 'delivered') {
                 stockAdjustment -= oldQuantity;
-            }
-            else if (purchase.status === 'delivered' && oldQuantity !== purchase.quantity) {
+            } else if (purchase.status === 'delivered' && oldQuantity !== purchase.quantity) {
                 stockAdjustment += (purchase.quantity - oldQuantity);
             }
-
             if (stockAdjustment !== 0) {
-                product.stockQuantity += stockAdjustment;
-                await product.save();
+                purchase.product.stockQuantity += stockAdjustment;
+                await purchase.product.save();
             }
         }
 
         await purchase.populate('product supplier createdBy');
-
-        const userTimezone = req.user.timezone;
-        const formattedPurchase = {
-            ...purchase.toObject(),
-            purchaseDateLocal: formatDateWithTimezone(purchase.purchaseDate, userTimezone),
-            deliveryDateLocal: purchase.deliveryDate ? formatDateWithTimezone(purchase.deliveryDate, userTimezone) : null,
-            purchaseDateUTC: purchase.purchaseDate.toISOString(),
-            deliveryDateUTC: purchase.deliveryDate ? purchase.deliveryDate.toISOString() : null
-        };
-
-        res.json({
-            message: 'Закупка успешно обновлена',
-            purchase: formattedPurchase
-        });
+        sendResponse(res, true, 'Закупка успешно обновлена', { purchase });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const deletePurchase = async (req, res) => {
     try {
-        const purchase = await Purchase.findById(req.params.id)
-            .populate('product');
-
-        if (!purchase) {
-            return res.status(404).json({ error: 'Закупка не найдена' });
-        }
+        const purchase = await Purchase.findById(req.params.id).populate('product');
+        if (!purchase) return sendResponse(res, false, 'Закупка не найдена', null, 404);
 
         if (purchase.status === 'delivered' && purchase.product) {
             purchase.product.stockQuantity -= purchase.quantity;
@@ -262,9 +181,9 @@ const deletePurchase = async (req, res) => {
         }
 
         await purchase.deleteOne();
-        res.json({ message: 'Закупка успешно удалена' });
+        sendResponse(res, true, 'Закупка успешно удалена');
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
@@ -272,17 +191,10 @@ const updatePurchaseStatus = async (req, res) => {
     try {
         const { status } = req.body;
         const allowedStatuses = ['ordered', 'pending', 'delivered', 'cancelled'];
+        if (!allowedStatuses.includes(status)) return sendResponse(res, false, 'Недопустимый статус', null, 400);
 
-        if (!allowedStatuses.includes(status)) {
-            return res.status(400).json({ error: 'Недопустимый статус' });
-        }
-
-        const purchase = await Purchase.findById(req.params.id)
-            .populate('product');
-
-        if (!purchase) {
-            return res.status(404).json({ error: 'Закупка не найдена' });
-        }
+        const purchase = await Purchase.findById(req.params.id).populate('product');
+        if (!purchase) return sendResponse(res, false, 'Закупка не найдена', null, 404);
 
         const oldStatus = purchase.status;
         purchase.status = status;
@@ -291,26 +203,21 @@ const updatePurchaseStatus = async (req, res) => {
         if (purchase.product) {
             if (oldStatus !== 'delivered' && status === 'delivered') {
                 purchase.product.stockQuantity += purchase.quantity;
-                await purchase.product.save();
             } else if (oldStatus === 'delivered' && status !== 'delivered') {
                 purchase.product.stockQuantity -= purchase.quantity;
-                await purchase.product.save();
             }
+            await purchase.product.save();
         }
 
-        res.json({
-            message: `Статус закупки обновлен на "${status}"`,
-            purchase
-        });
+        sendResponse(res, true, `Статус закупки обновлен на "${status}"`, { purchase });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const getPurchaseStats = async (req, res) => {
     try {
         const { startDate, endDate, supplierId, productId } = req.query;
-
         const matchFilter = {};
 
         if (startDate || endDate) {
@@ -430,9 +337,12 @@ const getUpcomingDeliveries = async (req, res) => {
             .populate('supplier', 'name phone')
             .sort({ deliveryDate: 1 });
 
-        res.json({ upcomingDeliveries });
+        sendResponse(res, true, 'Ближайшие поставки получены', {
+            upcomingDeliveries,
+            totalUpcoming: upcomingDeliveries.length
+        });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 

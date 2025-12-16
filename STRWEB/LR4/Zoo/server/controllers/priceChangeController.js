@@ -3,6 +3,11 @@ const Product = require('../models/Product');
 const Supplier = require('../models/Supplier');
 const { formatDateWithTimezone } = require('../utils/timezone');
 
+// Универсальный формат ответа
+const sendResponse = (res, success, message, data = null, status = 200) => {
+    res.status(status).json({ success, message, data });
+};
+
 const getAllPriceChanges = async (req, res) => {
     try {
         const {
@@ -18,28 +23,17 @@ const getAllPriceChanges = async (req, res) => {
         } = req.query;
 
         const filter = {};
-
-        if (productId) {
-            filter.product = productId;
-        }
-
-        if (supplierId) {
-            filter.supplier = supplierId;
-        }
-
+        if (productId) filter.product = productId;
+        if (supplierId) filter.supplier = supplierId;
         if (startDate || endDate) {
             filter.changeDate = {};
             if (startDate) filter.changeDate.$gte = new Date(startDate);
             if (endDate) filter.changeDate.$lte = new Date(endDate);
         }
-
-        if (notified !== undefined) {
-            filter.notified = notified === 'true';
-        }
+        if (notified !== undefined) filter.notified = notified === 'true';
 
         const sort = {};
         sort[sortBy] = sortOrder === 'asc' ? 1 : -1;
-
         const skip = (parseInt(page) - 1) * parseInt(limit);
 
         const [priceChanges, total] = await Promise.all([
@@ -64,7 +58,7 @@ const getAllPriceChanges = async (req, res) => {
             percentageChange: ((change.newPrice - change.oldPrice) / change.oldPrice * 100).toFixed(2)
         }));
 
-        res.json({
+        sendResponse(res, true, 'Список изменений цен получен', {
             priceChanges: formattedPriceChanges,
             pagination: {
                 page: parseInt(page),
@@ -74,7 +68,7 @@ const getAllPriceChanges = async (req, res) => {
             }
         });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
@@ -85,9 +79,7 @@ const getPriceChangeById = async (req, res) => {
             .populate('supplier', 'name email phone')
             .populate('createdBy', 'username email');
 
-        if (!priceChange) {
-            return res.status(404).json({ error: 'Изменение цены не найдено' });
-        }
+        if (!priceChange) return sendResponse(res, false, 'Изменение цены не найдено', null, 404);
 
         const userTimezone = req.user?.timezone || 'UTC';
         const formattedPriceChange = {
@@ -101,40 +93,35 @@ const getPriceChangeById = async (req, res) => {
             absoluteChange: (priceChange.newPrice - priceChange.oldPrice).toFixed(2)
         };
 
-        res.json({ priceChange: formattedPriceChange });
+        sendResponse(res, true, 'Изменение цены найдено', { priceChange: formattedPriceChange });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const createPriceChange = async (req, res) => {
     try {
         const { product: productId, supplier: supplierId, newPrice, effectiveDate } = req.body;
+        if (!productId || !supplierId || !newPrice) {
+            return sendResponse(res, false, 'Обязательные поля: product, supplier, newPrice', null, 400);
+        }
 
         const [product, supplier] = await Promise.all([
             Product.findById(productId),
             Supplier.findById(supplierId)
         ]);
 
-        if (!product) {
-            return res.status(404).json({ error: 'Продукт не найден' });
-        }
-
-        if (!supplier) {
-            return res.status(404).json({ error: 'Поставщик не найден' });
-        }
+        if (!product) return sendResponse(res, false, 'Продукт не найден', null, 404);
+        if (!supplier) return sendResponse(res, false, 'Поставщик не найден', null, 404);
 
         const oldPrice = product.currentPrice;
-
-        const priceChangeData = {
+        const priceChange = new PriceChange({
             ...req.body,
             oldPrice,
             createdBy: req.user.id,
             notified: req.body.notified || false,
             effectiveDate: effectiveDate || new Date()
-        };
-
-        const priceChange = new PriceChange(priceChangeData);
+        });
         await priceChange.save();
 
         if (!effectiveDate || new Date(effectiveDate) <= new Date()) {
@@ -144,48 +131,28 @@ const createPriceChange = async (req, res) => {
 
         await priceChange.populate('product supplier createdBy');
 
-        const userTimezone = req.user.timezone;
-        const formattedPriceChange = {
-            ...priceChange.toObject(),
-            changeDateLocal: formatDateWithTimezone(priceChange.changeDate, userTimezone),
-            effectiveDateLocal: formatDateWithTimezone(priceChange.effectiveDate, userTimezone),
-            changeDateUTC: priceChange.changeDate.toISOString(),
-            effectiveDateUTC: priceChange.effectiveDate.toISOString(),
-            percentageChange: ((newPrice - oldPrice) / oldPrice * 100).toFixed(2)
-        };
-
-        res.status(201).json({
-            message: 'Изменение цены успешно создано',
-            priceChange: formattedPriceChange,
+        sendResponse(res, true, 'Изменение цены успешно создано', {
+            priceChange,
             productUpdated: (!effectiveDate || new Date(effectiveDate) <= new Date())
-        });
+        }, 201);
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const updatePriceChange = async (req, res) => {
     try {
-        const updates = Object.keys(req.body);
         const allowedUpdates = ['newPrice', 'changeDate', 'effectiveDate', 'reason', 'notified'];
+        const updates = Object.keys(req.body);
         const isValidOperation = updates.every(update => allowedUpdates.includes(update));
+        if (!isValidOperation) return sendResponse(res, false, 'Недопустимые поля для обновления', null, 400);
 
-        if (!isValidOperation) {
-            return res.status(400).json({ error: 'Недопустимые поля для обновления' });
-        }
-
-        const priceChange = await PriceChange.findById(req.params.id)
-            .populate('product');
-
-        if (!priceChange) {
-            return res.status(404).json({ error: 'Изменение цены не найдено' });
-        }
+        const priceChange = await PriceChange.findById(req.params.id).populate('product');
+        if (!priceChange) return sendResponse(res, false, 'Изменение цены не найдено', null, 404);
 
         const shouldUpdateProductPrice = updates.includes('newPrice') &&
             new Date(priceChange.effectiveDate) <= new Date() &&
             priceChange.product;
-
-        const oldNewPrice = priceChange.newPrice;
 
         updates.forEach(update => priceChange[update] = req.body[update]);
         await priceChange.save();
@@ -196,35 +163,16 @@ const updatePriceChange = async (req, res) => {
         }
 
         await priceChange.populate('product supplier createdBy');
-
-        const userTimezone = req.user.timezone;
-        const formattedPriceChange = {
-            ...priceChange.toObject(),
-            changeDateLocal: formatDateWithTimezone(priceChange.changeDate, userTimezone),
-            effectiveDateLocal: formatDateWithTimezone(priceChange.effectiveDate, userTimezone),
-            changeDateUTC: priceChange.changeDate.toISOString(),
-            effectiveDateUTC: priceChange.effectiveDate.toISOString(),
-            percentageChange: ((priceChange.newPrice - priceChange.oldPrice) / priceChange.oldPrice * 100).toFixed(2),
-            productUpdated: shouldUpdateProductPrice
-        };
-
-        res.json({
-            message: 'Изменение цены успешно обновлено',
-            priceChange: formattedPriceChange
-        });
+        sendResponse(res, true, 'Изменение цены успешно обновлено', { priceChange });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const deletePriceChange = async (req, res) => {
     try {
-        const priceChange = await PriceChange.findById(req.params.id)
-            .populate('product');
-
-        if (!priceChange) {
-            return res.status(404).json({ error: 'Изменение цены не найдено' });
-        }
+        const priceChange = await PriceChange.findById(req.params.id).populate('product');
+        if (!priceChange) return sendResponse(res, false, 'Изменение цены не найдено', null, 404);
 
         if (priceChange.product && new Date(priceChange.effectiveDate) <= new Date()) {
             const previousPriceChange = await PriceChange.findOne({
@@ -232,39 +180,28 @@ const deletePriceChange = async (req, res) => {
                 effectiveDate: { $lt: priceChange.effectiveDate }
             }).sort({ effectiveDate: -1 });
 
-            if (previousPriceChange) {
-                priceChange.product.currentPrice = previousPriceChange.newPrice;
-            } else {
-                priceChange.product.currentPrice = priceChange.oldPrice;
-            }
-
+            priceChange.product.currentPrice = previousPriceChange ? previousPriceChange.newPrice : priceChange.oldPrice;
             await priceChange.product.save();
         }
 
         await priceChange.deleteOne();
-        res.json({ message: 'Изменение цены успешно удалено' });
+        sendResponse(res, true, 'Изменение цены успешно удалено');
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
 const markAsNotified = async (req, res) => {
     try {
         const priceChange = await PriceChange.findById(req.params.id);
-
-        if (!priceChange) {
-            return res.status(404).json({ error: 'Изменение цены не найдено' });
-        }
+        if (!priceChange) return sendResponse(res, false, 'Изменение цены не найдено', null, 404);
 
         priceChange.notified = true;
         await priceChange.save();
 
-        res.json({
-            message: 'Изменение цены отмечено как уведомленное',
-            priceChange
-        });
+        sendResponse(res, true, 'Изменение цены отмечено как уведомленное', { priceChange });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 
@@ -306,10 +243,7 @@ const getProductPriceHistory = async (req, res) => {
         const { supplierId, limit = 20 } = req.query;
 
         const filter = { product: productId };
-
-        if (supplierId) {
-            filter.supplier = supplierId;
-        }
+        if (supplierId) filter.supplier = supplierId;
 
         const priceHistory = await PriceChange.find(filter)
             .populate('supplier', 'name')
@@ -330,17 +264,12 @@ const getProductPriceHistory = async (req, res) => {
 
             priceHistory.forEach(change => {
                 const percentageChange = ((change.newPrice - change.oldPrice) / change.oldPrice * 100);
-
                 if (percentageChange > 0) {
                     increases.push(percentageChange);
-                    if (percentageChange > stats.maxIncrease) {
-                        stats.maxIncrease = percentageChange;
-                    }
+                    if (percentageChange > stats.maxIncrease) stats.maxIncrease = percentageChange;
                 } else if (percentageChange < 0) {
                     decreases.push(percentageChange);
-                    if (percentageChange < stats.maxDecrease) {
-                        stats.maxDecrease = percentageChange;
-                    }
+                    if (percentageChange < stats.maxDecrease) stats.maxDecrease = percentageChange;
                 }
             });
 
@@ -350,11 +279,7 @@ const getProductPriceHistory = async (req, res) => {
                 (decreases.reduce((a, b) => a + b, 0) / decreases.length).toFixed(2) : 0;
         }
 
-        res.json({
-            productId,
-            priceHistory,
-            stats
-        });
+        res.json({ productId, priceHistory, stats });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
@@ -369,11 +294,7 @@ const applyPendingPriceChanges = async (req, res) => {
             notified: false
         }).populate('product');
 
-        const results = {
-            applied: 0,
-            failed: 0,
-            details: []
-        };
+        const results = { applied: 0, failed: 0, details: [] };
 
         for (const change of pendingChanges) {
             try {

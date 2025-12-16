@@ -1,30 +1,33 @@
 const errorHandler = (err, req, res, next) => {
     console.error(err.stack);
 
+    const sendError = (status, error, details = null) => {
+        res.status(status).json({
+            success: false,
+            error,
+            details
+        });
+    };
+
     if (err.name === 'ValidationError') {
         const errors = Object.values(err.errors).map(error => error.message);
-        return res.status(400).json({ error: 'Ошибка валидации', details: errors });
+        return sendError(400, 'Ошибка валидации', errors);
     }
 
     if (err.code === 11000) {
         const field = Object.keys(err.keyPattern)[0];
-        return res.status(400).json({
-            error: 'Дублирование данных',
-            message: `${field} уже существует`
-        });
+        return sendError(400, 'Дублирование данных', `${field} уже существует`);
     }
 
     if (err.name === 'JsonWebTokenError') {
-        return res.status(401).json({ error: 'Неверный токен' });
+        return sendError(401, 'Ошибка авторизации', 'Неверный токен');
     }
 
     if (err.name === 'TokenExpiredError') {
-        return res.status(401).json({ error: 'Токен истек' });
+        return sendError(401, 'Ошибка авторизации', 'Токен истёк');
     }
 
-    res.status(err.status || 500).json({
-        error: err.message || 'Внутренняя ошибка сервера'
-    });
+    sendError(err.status || 500, err.message || 'Внутренняя ошибка сервера');
 };
 
 module.exports = errorHandler;

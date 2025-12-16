@@ -1,4 +1,6 @@
-const formatDateWithTimezone = (date, timezone = 'UTC') => {
+const formatDateWithTimezone = (date, timezone = 'UTC', locale = 'ru-RU') => {
+    if (!date) return null;
+
     const options = {
         timeZone: timezone,
         year: 'numeric',
@@ -10,11 +12,11 @@ const formatDateWithTimezone = (date, timezone = 'UTC') => {
         hour12: false
     };
 
-    return new Intl.DateTimeFormat('ru-RU', options).format(date);
+    return new Intl.DateTimeFormat(locale, options).format(date);
 };
 
 const getCurrentTimezone = () => {
-    return Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
 };
 
 module.exports = { formatDateWithTimezone, getCurrentTimezone };

@@ -4,33 +4,36 @@ const User = require('../models/User');
 const auth = async (req, res, next) => {
     try {
         const token = req.header('Authorization')?.replace('Bearer ', '');
-
         if (!token) {
-            throw new Error();
+            return res.status(401).json({ success: false, message: 'Токен отсутствует' });
         }
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-        const user = await User.findOne({ _id: decoded.id });
+        const user = await User.findById(decoded.id);
 
         if (!user) {
-            throw new Error();
+            return res.status(401).json({ success: false, message: 'Пользователь не найден' });
         }
 
         req.user = user;
         req.token = token;
         next();
     } catch (error) {
-        res.status(401).json({ error: 'Пожалуйста, авторизуйтесь' });
+        if (error.name === 'TokenExpiredError') {
+            return res.status(401).json({ success: false, message: 'Срок действия токена истёк' });
+        }
+        res.status(401).json({ success: false, message: 'Недействительный токен' });
     }
 };
 
-const isAdmin = (req, res, next) => {
-    if (req.user && req.user.role === 'admin') {
+const hasRole = (roles) => (req, res, next) => {
+    if (req.user && roles.includes(req.user.role)) {
         next();
     } else {
-        res.status(403).json({ error: 'Требуются права администратора' });
+        res.status(403).json({ success: false, message: 'Недостаточно прав' });
     }
 };
 
-module.exports = { auth, isAdmin };
+const isAdmin = hasRole(['admin']);
+
+module.exports = { auth, isAdmin, hasRole };
