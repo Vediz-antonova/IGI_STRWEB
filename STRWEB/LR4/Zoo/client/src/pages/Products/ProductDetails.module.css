@@ -1,0 +1,43 @@
+.details {
+    padding: 2rem;
+    min-height: 80vh;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: linear-gradient(135deg, var(--blue-pastel), var(--turquoise-pastel));
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.info h2 {
+    margin-top: 0;
+    color: var(--accent);
+}
+
+.info p {
+    margin: 0.5rem 0;
+    color: #333;
+}

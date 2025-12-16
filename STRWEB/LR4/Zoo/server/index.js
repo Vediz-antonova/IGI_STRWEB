@@ -20,6 +20,12 @@ app.use(helmet());
 app.use(express.json());
 app.use(morgan('dev'));
 
+app.disable('etag');
+app.use((req, res, next) => {
+    res.set('Cache-Control', 'no-store');
+    next();
+});
+
 (async () => {
     try {
         await mongoose.connect(process.env.MONGODB_URI);

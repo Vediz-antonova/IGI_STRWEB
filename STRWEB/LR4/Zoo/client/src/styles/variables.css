@@ -1,0 +1,10 @@
+:root {
+    --blue-pastel: #d0eaff;
+    --green-pastel: #dfffe0;
+    --turquoise-pastel: #d0f7f4;
+    --purple-pastel: #e6d6ff;
+    --accent: #a88bff;
+    --text-dark: #333;
+    --bg-light: #fdfbfb;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e2ca27c5-4787-4421-9d4c-d160d64b23c8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/Footer/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Header/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LR2/ZooShopApp/main/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LR3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../LR3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LR3/ZooShopApp/logs/django.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../LR3/ZooShopApp/logs/django.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LR3/ZooShopApp/static/js/custom_inputs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../LR3/ZooShopApp/static/js/custom_inputs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LR3/ZooShopApp/static/js/faq_scroll_animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../LR3/ZooShopApp/static/js/faq_scroll_animations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LR3/ZooShopApp/static/js/function_plot.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../LR3/ZooShopApp/static/js/function_plot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer/Footer.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/auth/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/auth/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Home/Home.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/common/ErrorMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Products/ProductDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/common/LoadingSpinner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Products/ProductDetails.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Products/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Products/Products.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Navigation.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/priceChanges/PriceChangeCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/priceChanges/PriceChangeForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/products/ProductCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/products/ProductForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/purchases/PurchaseCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/purchases/PurchaseForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/suppliers/SupplierCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/suppliers/SupplierForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/context/AuthContext.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useAuth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/HomePage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/LoginPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/PriceChangesPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/ProductDetailPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/ProductsPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/PurchasesPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/RegisterPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/SuppliersPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/authService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/priceChangeService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/productService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/purchaseService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/supplierService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/variables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/formatters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/validators.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/productController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/WiredTiger.turtle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/WiredTiger.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/_tmp/spilldb/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/_tmp/spilldb/WiredTiger.turtle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/_tmp/spilldb/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/_tmp/spilldb/WiredTiger.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/collection-3f8ef599-e254-47ab-9f43-0a1dbccb4324.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/collection-3f8ef599-e254-47ab-9f43-0a1dbccb4324.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/collection-4a9a0f93-fdc6-4914-93be-15698e9450ec.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/collection-4a9a0f93-fdc6-4914-93be-15698e9450ec.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/diagnostic.data/metrics.2025-12-16T03-32-48Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/diagnostic.data/metrics.2025-12-16T03-32-48Z-00000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/diagnostic.data/metrics.interim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/index-21cba664-f8a3-4820-ab43-25d7ed5dec3b.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/index-21cba664-f8a3-4820-ab43-25d7ed5dec3b.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/index-3fcf2fc0-2439-4bfe-ad56-f4220441a66c.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/index-3fcf2fc0-2439-4bfe-ad56-f4220441a66c.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/index-4bd49982-c228-4b1b-9aa0-d2974f29e8d3.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/index-4bd49982-c228-4b1b-9aa0-d2974f29e8d3.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/journal/WiredTigerLog.0000000001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/sizeStorer.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/components/InventoryManager.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/components/NavBar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/components/PetProductMatcher.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/components/ProductCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/components/SupplierDashboard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/pages/Catalog.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/pages/Dashboard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/pages/ProductView.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/pages/Suppliers.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/config/db.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/controllers/authController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/controllers/productController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/controllers/purchaseController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/controllers/supplierController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/middlewares/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/middlewares/error.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/models/PriceChange.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/models/Product.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/models/Purchase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/models/Supplier.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/models/User.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/mongo-init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/routes/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/routes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/routes/products.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/routes/purchases.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/routes/suppliers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/seed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/src/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/src/routes/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/src/routes/products.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/src/routes/purchases.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/src/routes/suppliers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/src/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/utils/apiResponse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ZooShop/server/utils/validators.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../file.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSX File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="36t35jEmjveNY8212Al0G10t1tJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.localhost:8081.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;STRWEB__main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.seed.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2025.2.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\client\src\pages\Home" />
+      <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\client\src\components\Footer" />
+      <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\client\src\components\Header" />
+      <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\client\src" />
+      <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\server" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.seed">
+    <configuration name="localhost:8081" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8081">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="seed" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="seed" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.seed" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="JavaScript Debug.localhost:8081" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-WS-252.28238.10" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e2ca27c5-4787-4421-9d4c-d160d64b23c8" name="Changes" comment="" />
+      <created>1765811859098</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765811859098</updated>
+      <workItem from="1765811860236" duration="14499000" />
+      <workItem from="1765851529196" duration="6714000" />
+      <workItem from="1765900705064" duration="6928000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

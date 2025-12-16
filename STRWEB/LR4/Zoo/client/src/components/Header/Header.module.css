@@ -1,0 +1,44 @@
+:root {
+    --blue-pastel: #d0eaff;
+    --green-pastel: #dfffe0;
+    --turquoise-pastel: #d0f7f4;
+    --purple-pastel: #e6d6ff;
+    --accent: #a88bff;
+    --text-dark: #333;
+}
+
+.header {
+    background: linear-gradient(90deg, var(--blue-pastel), var(--turquoise-pastel));
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav a:hover {
+    color: var(--accent);
+    transform: scale(1.05);
+}
+
+.nav a:active {
+    color: var(--purple-pastel);
+}

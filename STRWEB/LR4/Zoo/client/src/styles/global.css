@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background: var(--accent);
+    color: white;
+}
+
+button:hover {
+    background-color: var(--purple-pastel);
+    color: var(--text-dark);
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    flex: 1;
+}

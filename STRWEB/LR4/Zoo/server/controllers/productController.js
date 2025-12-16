@@ -9,7 +9,7 @@ const getAllProducts = async (req, res) => {
     try {
         const {
             page = 1,
-            limit = 10,
+            limit = 5,
             category,
             animalType,
             search,
@@ -23,13 +23,17 @@ const getAllProducts = async (req, res) => {
         const filter = {};
         if (category) filter.category = category;
         if (animalType) filter.animalType = animalType;
-        if (search) filter.$text = { $search: search };
+        if (search && search.trim() !== '') {
+            filter.name = { $regex: search, $options: 'i' };
+        }
         if (minPrice || maxPrice) {
             filter.currentPrice = {};
             if (minPrice) filter.currentPrice.$gte = parseFloat(minPrice);
             if (maxPrice) filter.currentPrice.$lte = parseFloat(maxPrice);
         }
-        if (inStock !== undefined) filter.inStock = inStock === 'true';
+        if (inStock && inStock !== '') {
+            filter.inStock = inStock === 'true';
+        }
 
         const sort = {};
         sort[sortBy] = sortOrder === 'asc' ? 1 : -1;

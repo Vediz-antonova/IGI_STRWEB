@@ -1,0 +1,17 @@
+:root {
+    --blue-pastel: #d0eaff;
+    --green-pastel: #dfffe0;
+    --turquoise-pastel: #d0f7f4;
+    --purple-pastel: #e6d6ff;
+    --accent: #a88bff;
+    --text-dark: #333;
+}
+
+.footer {
+    background: linear-gradient(90deg, var(--green-pastel), var(--purple-pastel));
+    padding: 1rem;
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    box-shadow: var(--shadow);
+}
