@@ -1,0 +1,239 @@
+.purchaseHistory {
+    padding: 2rem;
+    min-height: 80vh;
+}
+
+.title {
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.accessDenied {
+    text-align: center;
+    padding: 4rem;
+    background: var(--blue-pastel);
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.statCard {
+    background: linear-gradient(135deg, var(--blue-pastel), var(--turquoise-pastel));
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-5px);
+}
+
+.statCard h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+.statNumber {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent);
+    margin: 0;
+}
+
+.tableContainer {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.purchaseTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.purchaseTable th,
+.purchaseTable td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.purchaseTable th {
+    background: var(--turquoise-pastel);
+    color: var(--text-dark);
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+}
+
+.purchaseTable tr:hover {
+    background: var(--blue-pastel);
+}
+
+.status {
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ordered {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.pending {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.delivered {
+    background: #d4edda;
+    color: #155724;
+}
+
+.cancelled {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.actionBtn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.actionBtn:hover:not(:disabled) {
+    background: var(--purple-pastel);
+    color: var(--text-dark);
+}
+
+.actionBtn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.inventorySection {
+    background: var(--green-pastel);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.inventorySection h3 {
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.inventoryManager {
+    margin-top: 1rem;
+}
+
+.inventoryControls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.inventoryControls button,
+.inventoryControls select {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--accent);
+    background: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.inventoryControls button:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.inventoryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.inventoryCard {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.inventoryCard h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-dark);
+}
+
+.inventoryCard p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.inventoryActions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.inventoryActions button {
+    flex: 1;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: var(--transition);
+}
+
+.inventoryActions button:first-child {
+    background: var(--blue-pastel);
+    color: var(--text-dark);
+}
+
+.inventoryActions button:first-child:hover:not(:disabled) {
+    background: var(--accent);
+    color: white;
+}
+
+.deleteBtn {
+    background: #ff6b6b !important;
+    color: white !important;
+}
+
+.deleteBtn:hover {
+    background: #ff3b3b !important;
+}

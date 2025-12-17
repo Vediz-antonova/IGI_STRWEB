@@ -8,6 +8,13 @@
     margin-bottom: 1rem;
     color: var(--accent);
     text-decoration: none;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+.back:hover {
+    color: var(--purple-pastel);
+    text-decoration: underline;
 }
 
 .card {
@@ -25,6 +32,7 @@
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
+    flex-shrink: 0;
 }
 
 .info {
@@ -35,11 +43,13 @@
 .info h2 {
     margin-top: 0;
     color: var(--accent);
+    font-size: 1.8rem;
 }
 
 .info p {
     margin: 0.5rem 0;
     color: #333;
+    line-height: 1.4;
 }
 
 .loading {
@@ -47,6 +57,13 @@
     font-size: 1.2rem;
     color: var(--accent);
     padding: 2rem;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
 }
 
 .error {
@@ -54,19 +71,69 @@
     font-size: 1.2rem;
     color: red;
     padding: 2rem;
+    background: #ffebee;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.buyBtn, .orderNowBtn, .editBtn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
 }
 
 .buyBtn {
     background: var(--accent);
     color: white;
-    border: none;
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .buyBtn:hover {
     background: var(--purple-pastel);
     color: var(--text-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.orderNowBtn {
+    background: #4caf50;
+    color: white;
+}
+
+.orderNowBtn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.editBtn {
+    background: #2196f3;
+    color: white;
+}
+
+.editBtn:hover {
+    background: #1976d2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.buyBtn:disabled,
+.orderNowBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
 }

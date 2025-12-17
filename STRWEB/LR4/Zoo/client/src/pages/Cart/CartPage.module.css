@@ -1,0 +1,258 @@
+.cartPage {
+    padding: 2rem;
+    min-height: 80vh;
+}
+
+.title {
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.emptyCart {
+    text-align: center;
+    padding: 4rem;
+    background: var(--turquoise-pastel);
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+.emptyCart h2 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.emptyCart button {
+    margin-top: 1rem;
+    background: var(--accent);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.emptyCart button:hover {
+    background: var(--purple-pastel);
+    color: var(--text-dark);
+}
+
+.summary {
+    background: linear-gradient(135deg, var(--blue-pastel), var(--green-pastel));
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.summary p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.orderAllBtn, .clearBtn {
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+.orderAllBtn {
+    background: var(--accent);
+    color: white;
+}
+
+.orderAllBtn:hover:not(:disabled) {
+    background: var(--purple-pastel);
+    color: var(--text-dark);
+}
+
+.orderAllBtn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.clearBtn {
+    background: #ff6b6b;
+    color: white;
+}
+
+.clearBtn:hover {
+    background: #ff3b3b;
+}
+
+.supplierSection {
+    background: var(--blue-pastel);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.supplierSection h3 {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.supplierTotal {
+    font-size: 1.2rem;
+    margin-bottom: 1rem !important;
+    color: var(--accent);
+}
+
+.itemsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cartItem {
+    display: flex;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.cartItem:hover {
+    transform: translateY(-2px);
+}
+
+.itemImage {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.itemInfo {
+    flex: 1;
+}
+
+.itemInfo h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-dark);
+}
+
+.quantityControls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.quantityControls button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--accent);
+    background: white;
+    color: var(--accent);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.quantityControls button:hover:not(:disabled) {
+    background: var(--accent);
+    color: white;
+}
+
+.quantityControls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.quantityControls span {
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+}
+
+.itemTotal {
+    font-weight: bold;
+    color: var(--accent);
+    margin: 0.5rem 0;
+}
+
+.removeBtn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.removeBtn:hover {
+    background: #ff3b3b;
+}
+
+.orderBtn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+.orderBtn:hover:not(:disabled) {
+    background: var(--purple-pastel);
+    color: var(--text-dark);
+}
+
+.orderBtn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.notification {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: bold;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.info {
+    background: var(--blue-pastel);
+    color: var(--text-dark);
+}
+
+.success {
+    background: var(--green-pastel);
+    color: #2e7d32;
+}
+
+.error {
+    background: #ffebee;
+    color: #c62828;
+}

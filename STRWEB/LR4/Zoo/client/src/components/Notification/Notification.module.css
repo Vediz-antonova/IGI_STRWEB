@@ -1,0 +1,118 @@
+.notification {
+    position: relative;
+    min-width: 320px;
+    max-width: 400px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 9999;
+    animation: slideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 10px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%) scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px 20px;
+    gap: 14px;
+}
+
+.icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.message {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #2d3748;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #a0aec0;
+    cursor: pointer;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    margin-top: -2px;
+}
+
+.closeBtn:hover {
+    background: rgba(0, 0, 0, 0.08);
+    color: #4a5568;
+}
+
+.progressBar {
+    height: 4px;
+    background: rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+.progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, currentColor, rgba(255, 255, 255, 0.8));
+    position: relative;
+    transition: width 50ms linear;
+}
+
+.success {
+    border-left: 5px solid #48bb78;
+    background: linear-gradient(135deg, #f0fff4, #ffffff);
+    color: #48bb78;
+}
+
+.error {
+    border-left: 5px solid #f56565;
+    background: linear-gradient(135deg, #fff5f5, #ffffff);
+    color: #f56565;
+}
+
+.warning {
+    border-left: 5px solid #ed8936;
+    background: linear-gradient(135deg, #fffaf0, #ffffff);
+    color: #ed8936;
+}
+
+.info {
+    border-left: 5px solid #4299e1;
+    background: linear-gradient(135deg, #ebf8ff, #ffffff);
+    color: #4299e1;
+}
+
+@media (max-width: 768px) {
+    .notification {
+        min-width: auto;
+        max-width: none;
+        margin: 0 10px 10px 10px;
+    }
+
+    .message {
+        font-size: 0.9rem;
+    }
+}

@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import { AuthContext } from '../../context/AuthContext';
+import { CartContext } from '../../context/CartContext';
 
 function Header() {
     const { user, logout } = useContext(AuthContext);
+    const { totalItems } = useContext(CartContext);
 
     const handleLogout = () => {
         logout();
@@ -16,10 +18,24 @@ function Header() {
             <nav className={styles.nav}>
                 <Link to="/">Главная</Link>
                 <Link to="/products">Товары</Link>
+                <Link to="/product-matcher">Подбор</Link>
+                <Link to="/chat">Чат‑консультант</Link>
                 {user && (
                     <Link to="/suppliers">Поставщики</Link>
                 )}
-                <Link to="/chat">Чат‑консультант</Link>
+
+                {user?.role === 'user' && (
+                    <Link to="/cart" className={styles.cartLink}>
+                        Корзина
+                        {totalItems > 0 && (
+                            <span className={styles.cartBadge}>{totalItems}</span>
+                        )}
+                    </Link>
+                )}
+
+                {user?.role === 'admin' && (
+                    <Link to="/purchases">Заказы</Link>
+                )}
 
                 {user ? (
                     <>

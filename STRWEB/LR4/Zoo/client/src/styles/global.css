@@ -68,3 +68,46 @@ input:focus, select:focus {
     gap: 1rem;
     margin-bottom: 2rem;
 }
+
+.notifications-container {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    pointer-events: none;
+    max-width: calc(100vw - 40px);
+}
+
+.notifications-container > * {
+    pointer-events: auto;
+}
+
+body.confirmation-open {
+    overflow: hidden;
+}
+
+.notification-enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.notification-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.notification-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 300ms, transform 300ms;
+}

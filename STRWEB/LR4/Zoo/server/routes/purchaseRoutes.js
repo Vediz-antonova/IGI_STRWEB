@@ -17,7 +17,7 @@ router.get('/stats', auth, getPurchaseStats);
 router.get('/upcoming', auth, getUpcomingDeliveries);
 router.get('/:id', auth, getPurchaseById);
 
-router.post('/', auth, isAdmin, createPurchase);
+router.post('/', auth, createPurchase);
 router.put('/:id', auth, isAdmin, updatePurchase);
 router.patch('/:id/status', auth, isAdmin, updatePurchaseStatus);
 router.delete('/:id', auth, isAdmin, deletePurchase);

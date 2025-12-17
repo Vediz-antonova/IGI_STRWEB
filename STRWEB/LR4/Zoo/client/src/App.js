@@ -12,6 +12,10 @@ import SupplierForm from './pages/Suppliers/SupplierForm';
 import AuthForm from './pages/Auth/AuthForm';
 import Profile from './pages/Auth/Profile';
 import PetCareChat from './api/PetCareChat';
+import CartPage from './pages/Cart/CartPage';
+import PurchaseHistory from './pages/Purchases/PurchaseHistory';
+import PetProductMatcher from './components/PetProductMatcher/PetProductMatcher';
+import SupplierDashboard from './components/SupplierDashboard/SupplierDashboard';
 
 function App() {
     return (
@@ -31,6 +35,10 @@ function App() {
                 <Route path="/register" element={<AuthForm mode="register" />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/chat" element={<PetCareChat />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/purchases" element={<PurchaseHistory />} />
+                <Route path="/product-matcher" element={<PetProductMatcher />} />
+                <Route path="/supplier-dashboard/:id" element={<SupplierDashboard />} />
             </Routes>
             <Footer />
         </Router>
