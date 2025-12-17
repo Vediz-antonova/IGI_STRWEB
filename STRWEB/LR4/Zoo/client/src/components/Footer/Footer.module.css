@@ -15,3 +15,19 @@
     font-size: 0.9rem;
     box-shadow: var(--shadow);
 }
+
+.footer {
+    background: linear-gradient(90deg, var(--green-pastel), var(--purple-pastel));
+    padding: 1rem;
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    box-shadow: var(--shadow);
+}
+
+.time {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: var(--accent);
+    transition: var(--transition);
+}

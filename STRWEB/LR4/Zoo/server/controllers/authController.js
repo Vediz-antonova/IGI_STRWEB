@@ -1,7 +1,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { getCurrentTimezone } = require('../utils/timezone');
+const { getCurrentTimezone, formatDateWithTimezone } = require('../utils/timezone');
 const { OAuth2Client } = require('google-auth-library');
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
@@ -95,14 +95,21 @@ const getProfile = async (req, res) => {
             return sendResponse(res, false, 'Пользователь не найден', null, 404);
         }
 
+        const nowUTC = formatDateWithTimezone(new Date(), 'UTC');
+        const nowUserTZ = formatDateWithTimezone(new Date(), user.timezone);
+
         sendResponse(res, true, 'Профиль получен успешно', {
             id: user._id,
             username: user.username,
             email: user.email,
             role: user.role,
             timezone: user.timezone,
-            createdAt: user.createdAt,
-            lastLogin: user.lastLogin
+            createdAtUTC: formatDateWithTimezone(user.createdAt, 'UTC'),
+            createdAtUserTZ: formatDateWithTimezone(user.createdAt, user.timezone),
+            lastLoginUTC: formatDateWithTimezone(user.lastLogin, 'UTC'),
+            lastLoginUserTZ: formatDateWithTimezone(user.lastLogin, user.timezone),
+            nowUTC,
+            nowUserTZ
         });
     } catch (error) {
         sendResponse(res, false, error.message, null, 400);

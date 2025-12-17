@@ -14,7 +14,14 @@ function Profile() {
             <p className={styles.field}><strong>Email:</strong> {user.email}</p>
             <p className={styles.field}><strong>Роль:</strong> {user.role}</p>
             <p className={styles.field}><strong>Часовой пояс:</strong> {user.timezone}</p>
-            <p className={styles.field}><strong>Последний вход:</strong> {new Date(user.lastLogin).toLocaleString()}</p>
+            <p className={styles.field}><strong>Текущая дата (UTC):</strong> {user.nowUTC}</p>
+            <p className={styles.field}><strong>Текущая дата ({user.timezone}):</strong> {user.nowUserTZ}</p>
+            <p className={styles.field}>
+                <strong>Создан:</strong> {user.createdAtUserTZ} ({user.createdAtUTC} UTC)
+            </p>
+            <p className={styles.field}>
+                <strong>Последний вход:</strong> {user.lastLoginUserTZ} ({user.lastLoginUTC} UTC)
+            </p>
         </div>
     );
 }
