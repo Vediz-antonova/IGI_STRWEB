@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import styles from './Suppliers.module.css';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { AuthContext } from '../../context/AuthContext';
 
 function Suppliers() {
     const [suppliers, setSuppliers] = useState([]);
@@ -11,16 +12,34 @@ function Suppliers() {
     const [pagination, setPagination] = useState(null);
     const [error, setError] = useState('');
 
+    const { user, token } = useContext(AuthContext);
+
+    const handleDelete = async (id) => {
+        if (!window.confirm('Удалить поставщика?')) return;
+
+        try {
+            const res = await fetch(`http://localhost:5000/api/suppliers/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            const data = await res.json();
+            if (data.success) {
+                setSuppliers(prev => prev.filter(s => s._id !== id));
+            } else {
+                alert(data.message || 'Ошибка удаления');
+            }
+        } catch {
+            alert('Ошибка подключения к серверу');
+        }
+    };
+
     useEffect(() => {
         setLoading(true);
         setError('');
 
-        const query = new URLSearchParams({
-            page,
-            search,
-            city
-        }).toString();
-
+        const query = new URLSearchParams({ page, search, city }).toString();
         const url = `http://localhost:5000/api/suppliers?${query}&_=${Date.now()}`;
 
         fetch(url)
@@ -30,7 +49,7 @@ function Suppliers() {
                 setPagination(data.data?.pagination || null);
                 setLoading(false);
             })
-            .catch(err => {
+            .catch(() => {
                 setError('Ошибка загрузки данных');
                 setLoading(false);
             });
@@ -42,6 +61,14 @@ function Suppliers() {
     return (
         <div className={styles.suppliers}>
             <h2 className={styles.title}>Наши поставщики 🏭</h2>
+
+            {user?.role === 'admin' && (
+                <div className={styles.actions}>
+                    <Link to="/suppliers/create" className={styles.createBtn}>
+                        + Добавить поставщика
+                    </Link>
+                </div>
+            )}
 
             <div className={styles.controls}>
                 <input
@@ -69,9 +96,24 @@ function Suppliers() {
                         <p><strong>Город:</strong> {supplier.address.city}</p>
                         <p><strong>Email:</strong> {supplier.email}</p>
                         <p><strong>Телефон:</strong> {supplier.phone}</p>
+                        <p><strong>Рейтинг:</strong> {supplier.rating}</p>
                         <Link to={`/suppliers/${supplier._id}`}>
                             Подробнее →
                         </Link>
+
+                        {user?.role === 'admin' && (
+                            <div className={styles.cardActions}>
+                                <Link to={`/suppliers/edit/${supplier._id}`} className={styles.editBtn}>
+                                    Редактировать
+                                </Link>
+                                <button
+                                    className={styles.deleteBtn}
+                                    onClick={() => handleDelete(supplier._id)}
+                                >
+                                    Удалить
+                                </button>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
@@ -84,9 +126,7 @@ function Suppliers() {
                     >
                         ◀ Назад
                     </button>
-                    <span>
-            Страница {pagination.page} из {pagination.pages}
-          </span>
+                    <span>Страница {pagination.page} из {pagination.pages}</span>
                     <button
                         disabled={page >= pagination.pages}
                         onClick={() => setPage(prev => prev + 1)}

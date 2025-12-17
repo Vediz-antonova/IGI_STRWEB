@@ -116,15 +116,31 @@ const createSupplier = async (req, res) => {
 
 const updateSupplier = async (req, res) => {
     try {
-        const allowedUpdates = ['name', 'address', 'phone', 'email', 'rating', 'isActive'];
+        const allowedUpdates = [
+            'name',
+            'address',
+            'phone',
+            'email',
+            'rating',
+            'isActive',
+            'productsCount'
+        ];
+
         const updates = Object.keys(req.body);
         const isValidOperation = updates.every(update => allowedUpdates.includes(update));
-        if (!isValidOperation) return sendResponse(res, false, 'Недопустимые поля для обновления', null, 400);
+        if (!isValidOperation) {
+            return sendResponse(res, false, 'Недопустимые поля для обновления', null, 400);
+        }
 
         const supplier = await Supplier.findById(req.params.id);
-        if (!supplier) return sendResponse(res, false, 'Поставщик не найден', null, 404);
+        if (!supplier) {
+            return sendResponse(res, false, 'Поставщик не найден', null, 404);
+        }
 
-        updates.forEach(update => supplier[update] = req.body[update]);
+        updates.forEach(update => {
+            supplier[update] = req.body[update];
+        });
+
         await supplier.save();
 
         const userTimezone = req.user?.timezone || 'UTC';

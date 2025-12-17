@@ -8,6 +8,11 @@
     margin-bottom: 1rem;
     color: var(--accent);
     text-decoration: none;
+    transition: var(--transition);
+}
+
+.back:hover {
+    text-decoration: underline;
 }
 
 .card {
@@ -22,9 +27,80 @@
 .info h2 {
     margin-top: 0;
     color: var(--accent);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
 }
 
 .info p {
     margin: 0.5rem 0;
     color: #333;
+    font-size: 0.95rem;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--accent);
+    padding: 2rem;
+}
+
+.error {
+    text-align: center;
+    font-size: 1.2rem;
+    color: red;
+    padding: 2rem;
+}
+
+.cardActions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.editBtn,
+.deleteBtn {
+    flex: 1;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+}
+
+.editBtn {
+    background: var(--blue-pastel);
+    color: var(--text-dark);
+}
+
+.editBtn:hover {
+    background: var(--green-pastel);
+}
+
+.deleteBtn {
+    background: #ff6b6b;
+    color: white;
+}
+
+.deleteBtn:hover {
+    background: #ff3b3b;
+}
+
+.createBtn {
+    display: inline-block;
+    margin-bottom: 1rem;
+    background: var(--accent);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    transition: var(--transition);
+    text-align: center;
+    font-weight: 500;
+}
+
+.createBtn:hover {
+    background: var(--purple-pastel);
+    color: var(--text-dark);
 }

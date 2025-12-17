@@ -8,6 +8,7 @@ import ProductDetails from './pages/Products/ProductDetails';
 import ProductForm from './pages/Products/ProductForm';
 import Suppliers from './pages/Suppliers/Suppliers';
 import SupplierDetails from './pages/Suppliers/SupplierDetails';
+import SupplierForm from './pages/Suppliers/SupplierForm';
 import AuthForm from './pages/Auth/AuthForm';
 import Profile from './pages/Auth/Profile';
 import PetCareChat from './api/PetCareChat';
@@ -24,6 +25,8 @@ function App() {
                 <Route path="/products/edit/:id" element={<ProductForm />} />
                 <Route path="/suppliers" element={<Suppliers />} />
                 <Route path="/suppliers/:id" element={<SupplierDetails />} />
+                <Route path="/suppliers/create" element={<SupplierForm />} />
+                <Route path="/suppliers/edit/:id" element={<SupplierForm />} />
                 <Route path="/login" element={<AuthForm mode="login" />} />
                 <Route path="/register" element={<AuthForm mode="register" />} />
                 <Route path="/profile" element={<Profile />} />
