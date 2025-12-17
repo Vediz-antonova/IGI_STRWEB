@@ -119,6 +119,7 @@
     "nodejs_package_manager_path": "npm",
     "npm.dev.executor": "Run",
     "npm.seed.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.2.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -183,7 +184,7 @@
       <updated>1765811859098</updated>
       <workItem from="1765811860236" duration="14499000" />
       <workItem from="1765851529196" duration="6714000" />
-      <workItem from="1765900705064" duration="21617000" />
+      <workItem from="1765900705064" duration="25845000" />
     </task>
     <servers />
   </component>

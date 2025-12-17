@@ -13,9 +13,28 @@ function AuthForm({ mode = 'login' }) {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    const validateForm = () => {
+        if (mode === 'register' && username.trim().length < 3) {
+            setError('Имя пользователя должно быть не менее 3 символов');
+            return false;
+        }
+        const emailRegex = /^\S+@\S+\.\S+$/;
+        if (!emailRegex.test(email)) {
+            setError('Введите корректный email');
+            return false;
+        }
+        if (password.length < 6) {
+            setError('Пароль должен быть не менее 6 символов');
+            return false;
+        }
+        return true;
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
+
+        if (!validateForm()) return;
 
         const url =
             mode === 'register'

@@ -27,7 +27,6 @@ router.post('/petcare', async (req, res) => {
             }
         );
 
-        // DeepSeek возвращает в стиле OpenAI
         const reply = response.data?.choices?.[0]?.message?.content || "Нет ответа";
 
         res.json({ success: true, reply, model: "deepseek-ai/DeepSeek-V3.2:novita" });

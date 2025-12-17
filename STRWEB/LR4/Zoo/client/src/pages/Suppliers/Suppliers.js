@@ -9,8 +9,12 @@ function Suppliers() {
     const [city, setCity] = useState('');
     const [page, setPage] = useState(1);
     const [pagination, setPagination] = useState(null);
+    const [error, setError] = useState('');
 
     useEffect(() => {
+        setLoading(true);
+        setError('');
+
         const query = new URLSearchParams({
             page,
             search,
@@ -27,13 +31,13 @@ function Suppliers() {
                 setLoading(false);
             })
             .catch(err => {
+                setError('Ошибка загрузки данных');
                 setLoading(false);
             });
     }, [search, city, page]);
 
-    if (loading) {
-        return <div className={styles.loading}>Загрузка поставщиков...</div>;
-    }
+    if (loading) return <div className={styles.loading}>Загрузка...</div>;
+    if (error) return <div className={styles.error}>{error}</div>;
 
     return (
         <div className={styles.suppliers}>
@@ -65,7 +69,7 @@ function Suppliers() {
                         <p><strong>Город:</strong> {supplier.address.city}</p>
                         <p><strong>Email:</strong> {supplier.email}</p>
                         <p><strong>Телефон:</strong> {supplier.phone}</p>
-                        <Link to={`/suppliers/${supplier._id}`} className={styles.detailsLink}>
+                        <Link to={`/suppliers/${supplier._id}`}>
                             Подробнее →
                         </Link>
                     </div>

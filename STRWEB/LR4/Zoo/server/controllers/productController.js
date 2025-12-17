@@ -101,9 +101,7 @@ const createProduct = async (req, res) => {
         const product = new Product({ ...req.body, createdBy: req.user.id });
         await product.save();
 
-        await Supplier.findByIdAndUpdate(product.supplierId, { $inc: { productsCount: -1 } });
-
-        const userTimezone = req.user.timezone;
+        const userTimezone = req.user?.timezone || 'UTC';
         const formattedProduct = {
             ...product.toObject(),
             createdAtLocal: formatDateWithTimezone(product.createdAt, userTimezone),
@@ -132,7 +130,7 @@ const updateProduct = async (req, res) => {
         product.updatedAt = Date.now();
         await product.save();
 
-        const userTimezone = req.user.timezone;
+        const userTimezone = req.user?.timezone || 'UTC';
         const formattedProduct = {
             ...product.toObject(),
             createdAtLocal: formatDateWithTimezone(product.createdAt, userTimezone),

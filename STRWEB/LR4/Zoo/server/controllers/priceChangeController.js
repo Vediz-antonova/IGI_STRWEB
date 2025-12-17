@@ -3,7 +3,6 @@ const Product = require('../models/Product');
 const Supplier = require('../models/Supplier');
 const { formatDateWithTimezone } = require('../utils/timezone');
 
-// Универсальный формат ответа
 const sendResponse = (res, success, message, data = null, status = 200) => {
     res.status(status).json({ success, message, data });
 };
@@ -227,7 +226,7 @@ const getUpcomingPriceChanges = async (req, res) => {
             return acc;
         }, {});
 
-        res.json({
+        sendResponse(res, true, '', {
             upcomingChanges,
             changesByDate,
             totalUpcoming: upcomingChanges.length
@@ -279,7 +278,7 @@ const getProductPriceHistory = async (req, res) => {
                 (decreases.reduce((a, b) => a + b, 0) / decreases.length).toFixed(2) : 0;
         }
 
-        res.json({ productId, priceHistory, stats });
+        sendResponse(res, true, '', { productId, priceHistory, stats });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
@@ -323,10 +322,7 @@ const applyPendingPriceChanges = async (req, res) => {
             }
         }
 
-        res.json({
-            message: `Применено ${results.applied} изменений цен, не удалось применить ${results.failed}`,
-            results
-        });
+        sendResponse(res, true, 'Применено ${results.applied} изменений цен, не удалось применить ${results.failed}', { results });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }

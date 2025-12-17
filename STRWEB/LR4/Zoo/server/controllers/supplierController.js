@@ -99,7 +99,7 @@ const createSupplier = async (req, res) => {
         const supplier = new Supplier({ ...req.body, createdBy: req.user.id });
         await supplier.save();
 
-        const userTimezone = req.user.timezone;
+        const userTimezone = req.user?.timezone || 'UTC';
         const formattedSupplier = {
             ...supplier.toObject(),
             createdAtLocal: formatDateWithTimezone(supplier.createdAt, userTimezone),
@@ -127,7 +127,7 @@ const updateSupplier = async (req, res) => {
         updates.forEach(update => supplier[update] = req.body[update]);
         await supplier.save();
 
-        const userTimezone = req.user.timezone;
+        const userTimezone = req.user?.timezone || 'UTC';
         const formattedSupplier = {
             ...supplier.toObject(),
             createdAtLocal: formatDateWithTimezone(supplier.createdAt, userTimezone),

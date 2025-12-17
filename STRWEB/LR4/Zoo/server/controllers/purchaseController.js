@@ -313,7 +313,7 @@ const getPurchaseStats = async (req, res) => {
             })
         );
 
-        res.json({
+        sendResponse(res, true, '', {
             monthlyStats,
             supplierStats: populatedSupplierStats,
             productStats: populatedProductStats,
