@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2ca27c5-4787-4421-9d4c-d160d64b23c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/pages/Suppliers/SupplierForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/Suppliers/SupplierForm.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LR2/ZooShopApp/main/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LR3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../LR3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LR3/ZooShopApp/logs/django.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../LR3/ZooShopApp/logs/django.log" afterDir="false" />
@@ -19,6 +17,11 @@
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/1.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/10.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/11.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/11.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/12.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/13.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/13.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/14.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/14.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/15.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/15.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/16.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/16.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/2.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/3.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/4.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/4.pack" afterDir="false" />
@@ -28,30 +31,30 @@
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/9.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/9.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Products/ProductDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Products/ProductDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Products/ProductDetails.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Products/ProductDetails.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Products/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Products/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Products/Products.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Products/Products.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Suppliers/SupplierDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Suppliers/SupplierDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Suppliers/SupplierDetails.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Suppliers/SupplierDetails.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Suppliers/SupplierForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Suppliers/SupplierForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Suppliers/SupplierForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Suppliers/SupplierForm.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Suppliers/Suppliers.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Suppliers/Suppliers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Suppliers/Suppliers.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Suppliers/Suppliers.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/purchaseController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/purchaseController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/supplierController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/supplierController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/Supplier.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/Supplier.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/mongo-data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/mongo-data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/WiredTiger.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mongo-data/_tmp/spilldb/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/_tmp/spilldb/WiredTiger.turtle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mongo-data/_tmp/spilldb/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/_tmp/spilldb/WiredTiger.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/mongo-data/collection-04e09f45-f4e7-4d1e-ac25-26a0fb39f369.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/collection-04e09f45-f4e7-4d1e-ac25-26a0fb39f369.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/mongo-data/collection-2c3225ab-87f3-4baa-a900-87202db4c6d8.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/collection-2c3225ab-87f3-4baa-a900-87202db4c6d8.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/mongo-data/collection-3f8ef599-e254-47ab-9f43-0a1dbccb4324.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/collection-3f8ef599-e254-47ab-9f43-0a1dbccb4324.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mongo-data/collection-4a9a0f93-fdc6-4914-93be-15698e9450ec.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/collection-4a9a0f93-fdc6-4914-93be-15698e9450ec.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mongo-data/collection-e39e0909-cafd-4f0a-88a9-686e1812b7bc.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/collection-e39e0909-cafd-4f0a-88a9-686e1812b7bc.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mongo-data/diagnostic.data/metrics.2025-12-17T10-46-19Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/diagnostic.data/metrics.2025-12-17T10-46-19Z-00000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/diagnostic.data/metrics.2025-12-17T14-07-04Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/diagnostic.data/metrics.2025-12-17T14-07-04Z-00000" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/mongo-data/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/diagnostic.data/metrics.interim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mongo-data/index-051da820-f36d-4164-bb82-6a8201389c85.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/index-051da820-f36d-4164-bb82-6a8201389c85.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/mongo-data/index-21cba664-f8a3-4820-ab43-25d7ed5dec3b.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/index-21cba664-f8a3-4820-ab43-25d7ed5dec3b.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mongo-data/index-3fcf2fc0-2439-4bfe-ad56-f4220441a66c.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/index-3fcf2fc0-2439-4bfe-ad56-f4220441a66c.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mongo-data/index-482c5834-4140-46ce-aa6e-a29a17c81168.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/index-482c5834-4140-46ce-aa6e-a29a17c81168.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/mongo-data/index-4bd49982-c228-4b1b-9aa0-d2974f29e8d3.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/index-4bd49982-c228-4b1b-9aa0-d2974f29e8d3.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mongo-data/index-d30d623a-b8a2-47bf-849b-dfb4685f6001.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/index-d30d623a-b8a2-47bf-849b-dfb4685f6001.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mongo-data/journal/WiredTigerLog.0000000003" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mongo-data/journal/WiredTigerLog.0000000004" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/journal/WiredTigerLog.0000000004" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/mongo-data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/server/mongo-data/sizeStorer.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ZooShop/client/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ZooShop/client/src/App.jsx" beforeDir="false" />
@@ -148,11 +151,11 @@
       <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\client" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\client\src\components\PurchaseCart" />
       <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\client\src\pages\Home" />
       <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\client\src\components\Footer" />
       <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\client\src\components\Header" />
       <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\client\src" />
-      <recent name="C:\Labs\353504_Antonava_01\STRWEB\LR4\Zoo\server" />
     </key>
   </component>
   <component name="RunManager" selected="npm.seed">
@@ -205,7 +208,7 @@
       <workItem from="1765851529196" duration="6714000" />
       <workItem from="1765900705064" duration="26283000" />
       <workItem from="1765968161026" duration="4280000" />
-      <workItem from="1765980266238" duration="1475000" />
+      <workItem from="1765980266238" duration="6730000" />
     </task>
     <servers />
   </component>

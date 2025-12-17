@@ -168,3 +168,19 @@
 .deleteBtn:hover {
     background: #ff3b3b;
 }
+
+.products {
+    margin-top: 1rem;
+}
+
+.products ul {
+    list-style: none;
+    padding: 0;
+}
+
+.products li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.3rem 0;
+}

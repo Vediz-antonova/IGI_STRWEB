@@ -7,7 +7,6 @@ function SupplierForm() {
     const { token, user } = useContext(AuthContext);
     const navigate = useNavigate();
     const { id } = useParams();
-
     const isEdit = Boolean(id);
 
     const [formData, setFormData] = useState({
@@ -16,10 +15,19 @@ function SupplierForm() {
         phone: '',
         address: { country: '', city: '', street: '' },
         rating: 0,
-        productsCount: 0
+        products: []
     });
 
+    const [availableProducts, setAvailableProducts] = useState([]);
     const [error, setError] = useState('');
+
+    useEffect(() => {
+        fetch('http://localhost:5000/api/products')
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) setAvailableProducts(data.data.products);
+            });
+    }, []);
 
     useEffect(() => {
         if (isEdit) {
@@ -47,6 +55,30 @@ function SupplierForm() {
         }
     };
 
+    const handleProductChange = (index, field, value) => {
+        const updated = [...formData.products];
+        updated[index][field] = value;
+
+        if (field === 'product') {
+            const selected = availableProducts.find(p => p._id === value);
+            updated[index].sku = selected?.sku || '';
+        }
+
+        setFormData(prev => ({ ...prev, products: updated }));
+    };
+
+    const addProduct = () => {
+        setFormData(prev => ({
+            ...prev,
+            products: [...prev.products, { product: '', sku: '', price: 0, stockQuantity: 0 }]
+        }));
+    };
+
+    const removeProduct = (index) => {
+        const updated = formData.products.filter((_, i) => i !== index);
+        setFormData(prev => ({ ...prev, products: updated }));
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
@@ -62,7 +94,12 @@ function SupplierForm() {
             phone: formData.phone,
             address: formData.address,
             rating: formData.rating,
-            productsCount: formData.productsCount
+            products: formData.products.map(p => ({
+                product: p.product,
+                sku: p.sku,
+                price: parseFloat(p.price),
+                stockQuantity: parseInt(p.stockQuantity)
+            }))
         };
 
         try {
@@ -99,70 +136,65 @@ function SupplierForm() {
             {error && <p className={styles.error}>{error}</p>}
 
             <form onSubmit={handleSubmit} className={styles.form}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Название компании"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="text"
-                    name="phone"
-                    placeholder="Телефон"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="text"
-                    name="address.country"
-                    placeholder="Страна"
-                    value={formData.address.country}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="text"
-                    name="address.city"
-                    placeholder="Город"
-                    value={formData.address.city}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="text"
-                    name="address.street"
-                    placeholder="Улица"
-                    value={formData.address.street}
-                    onChange={handleChange}
-                />
-                <input
-                    type="number"
-                    name="rating"
-                    placeholder="Рейтинг (0–5)"
-                    value={formData.rating}
-                    onChange={handleChange}
-                    min="0"
-                    max="5"
-                    step="0.1"
-                />
-                <input
-                    type="number"
-                    name="productsCount"
-                    placeholder="Количество на складе"
-                    value={formData.productsCount}
-                    onChange={handleChange}
-                />
+                <input type="text" name="name" placeholder="Название компании"
+                       value={formData.name} onChange={handleChange} required />
+                <input type="email" name="email" placeholder="Email"
+                       value={formData.email} onChange={handleChange} required />
+                <input type="text" name="phone" placeholder="Телефон"
+                       value={formData.phone} onChange={handleChange} required />
+                <input type="text" name="address.country" placeholder="Страна"
+                       value={formData.address.country} onChange={handleChange} required />
+                <input type="text" name="address.city" placeholder="Город"
+                       value={formData.address.city} onChange={handleChange} required />
+                <input type="text" name="address.street" placeholder="Улица"
+                       value={formData.address.street} onChange={handleChange} />
+                <input type="number" name="rating" placeholder="Рейтинг (0–5)"
+                       value={formData.rating} onChange={handleChange}
+                       min="0" max="5" step="0.1" />
+
+                <h3>Товары поставщика</h3>
+                {formData.products.map((prod, index) => (
+                    <div key={index} className={styles.productRow}>
+                        <select
+                            value={prod.product}
+                            onChange={(e) => handleProductChange(index, 'product', e.target.value)}
+                            required
+                        >
+                            <option value="">Выберите товар</option>
+                            {availableProducts.map(p => (
+                                <option key={p._id} value={p._id}>
+                                    {p.name} ({p.sku})
+                                </option>
+                            ))}
+                        </select>
+                        <input
+                            type="text"
+                            placeholder="Артикул"
+                            value={prod.sku}
+                            onChange={(e) => handleProductChange(index, 'sku', e.target.value)}
+                            required
+                        />
+                        <input
+                            type="number"
+                            placeholder="Цена"
+                            value={prod.price}
+                            onChange={(e) => handleProductChange(index, 'price', e.target.value)}
+                            min="0"
+                            step="0.01"
+                            required
+                        />
+                        <input
+                            type="number"
+                            placeholder="Остаток"
+                            value={prod.stockQuantity}
+                            onChange={(e) => handleProductChange(index, 'stockQuantity', e.target.value)}
+                            min="0"
+                            required
+                        />
+                        <button type="button" onClick={() => removeProduct(index)}>Удалить</button>
+                    </div>
+                ))}
+                <button type="button" onClick={addProduct}>+ Добавить товар</button>
 
                 <button type="submit" className={styles.button}>
                     {isEdit ? 'Сохранить изменения' : 'Создать'}

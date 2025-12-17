@@ -50,7 +50,21 @@ function SupplierDetails() {
                     <p><strong>Email:</strong> {supplier.email}</p>
                     <p><strong>Телефон:</strong> {supplier.phone}</p>
                     <p><strong>Рейтинг:</strong> {supplier.rating}</p>
-                    <p><strong>Количество товаров:</strong> {supplier.productsCount}</p>
+
+                    {supplier.products && supplier.products.length > 0 ? (
+                        <div className={styles.products}>
+                            <h4>Товары поставщика:</h4>
+                            <ul>
+                                {supplier.products.map(prod => (
+                                    <li key={prod._id}>
+                                        {prod.sku} — {prod.price} ₽ (остаток: {prod.stockQuantity})
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ) : (
+                        <p>У поставщика пока нет товаров</p>
+                    )}
 
                     <p><strong>Добавлен (UTC):</strong> {formatUTC(supplier.createdAtUTC)}</p>
                     {user && (

@@ -37,14 +37,14 @@ const getAllSuppliers = async (req, res) => {
         const skip = (parseInt(page) - 1) * parseInt(limit);
 
         const [suppliers, total] = await Promise.all([
-            Supplier.find(filter).sort(sort).skip(skip).limit(parseInt(limit)),
+            Supplier.find(filter).populate('products.product').sort(sort).skip(skip).limit(parseInt(limit)),
             Supplier.countDocuments(filter)
         ]);
 
         const userTimezone = req.user?.timezone || 'UTC';
         const formattedSuppliers = suppliers.map(supplier => ({
             ...supplier.toObject(),
-            productsCount: supplier.productsCount,
+            productsCount: supplier.products.length,
             createdAtLocal: formatDateWithTimezone(supplier.createdAt, userTimezone),
             updatedAtLocal: formatDateWithTimezone(supplier.updatedAt, userTimezone),
             createdAtUTC: supplier.createdAt.toISOString(),
@@ -67,13 +67,13 @@ const getAllSuppliers = async (req, res) => {
 
 const getSupplierById = async (req, res) => {
     try {
-        const supplier = await Supplier.findById(req.params.id);
+        const supplier = await Supplier.findById(req.params.id).populate('products.product');
         if (!supplier) return sendResponse(res, false, 'Поставщик не найден', null, 404);
 
         const userTimezone = req.user?.timezone || 'UTC';
         const formattedSupplier = {
             ...supplier.toObject(),
-            productsCount: supplier.productsCount,
+            productsCount: supplier.products.length,
             createdAtLocal: formatDateWithTimezone(supplier.createdAt, userTimezone),
             updatedAtLocal: formatDateWithTimezone(supplier.updatedAt, userTimezone),
             createdAtUTC: supplier.createdAt.toISOString(),
@@ -102,6 +102,7 @@ const createSupplier = async (req, res) => {
         const userTimezone = req.user?.timezone || 'UTC';
         const formattedSupplier = {
             ...supplier.toObject(),
+            productsCount: supplier.products.length,
             createdAtLocal: formatDateWithTimezone(supplier.createdAt, userTimezone),
             updatedAtLocal: formatDateWithTimezone(supplier.updatedAt, userTimezone),
             createdAtUTC: supplier.createdAt.toISOString(),
@@ -123,7 +124,7 @@ const updateSupplier = async (req, res) => {
             'email',
             'rating',
             'isActive',
-            'productsCount'
+            'products'
         ];
 
         const updates = Object.keys(req.body);
@@ -146,6 +147,7 @@ const updateSupplier = async (req, res) => {
         const userTimezone = req.user?.timezone || 'UTC';
         const formattedSupplier = {
             ...supplier.toObject(),
+            productsCount: supplier.products.length,
             createdAtLocal: formatDateWithTimezone(supplier.createdAt, userTimezone),
             updatedAtLocal: formatDateWithTimezone(supplier.updatedAt, userTimezone),
             createdAtUTC: supplier.createdAt.toISOString(),
@@ -177,6 +179,21 @@ const deleteSupplier = async (req, res) => {
     }
 };
 
+const getSuppliersByCity = async (req, res) => {
+    try {
+        const { city } = req.params;
+
+        const suppliers = await Supplier.find({
+            'address.city': { $regex: city, $options: 'i' },
+            isActive: true
+        }).populate('products.product').sort({ rating: -1 });
+
+        sendResponse(res, true, 'Поставщики по городу получены', { suppliers });
+    } catch (error) {
+        sendResponse(res, false, error.message, null, 400);
+    }
+};
+
 const getSupplierStats = async (req, res) => {
     try {
         const supplierId = req.params.id;
@@ -198,7 +215,7 @@ const getSupplierStats = async (req, res) => {
             }
         ]);
 
-        const supplier = await Supplier.findById(supplierId);
+        const supplier = await Supplier.findById(supplierId).populate('products.product');
         const activeProducts = await Purchase.distinct('product', { supplier: supplierId });
 
         sendResponse(res, true, 'Статистика по поставщику получена', {
@@ -247,21 +264,6 @@ const getSupplierPurchases = async (req, res) => {
                 pages: Math.ceil(total / parseInt(limit))
             }
         });
-    } catch (error) {
-        sendResponse(res, false, error.message, null, 400);
-    }
-};
-
-const getSuppliersByCity = async (req, res) => {
-    try {
-        const { city } = req.params;
-
-        const suppliers = await Supplier.find({
-            'address.city': { $regex: city, $options: 'i' },
-            isActive: true
-        }).sort({ rating: -1 });
-
-        sendResponse(res, true, 'Поставщики по городу получены', { suppliers });
     } catch (error) {
         sendResponse(res, false, error.message, null, 400);
     }

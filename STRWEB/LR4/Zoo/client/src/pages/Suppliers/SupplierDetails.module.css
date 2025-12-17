@@ -104,3 +104,19 @@
     background: var(--purple-pastel);
     color: var(--text-dark);
 }
+
+.products {
+    margin-top: 1rem;
+}
+
+.products ul {
+    list-style: none;
+    padding: 0;
+}
+
+.products li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.3rem 0;
+}

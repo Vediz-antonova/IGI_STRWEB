@@ -148,6 +148,14 @@ function Products() {
                                 </button>
                             </div>
                         )}
+
+                        {user?.role === 'user' && (
+                            <button
+                                className={styles.buyBtn}
+                            >
+                                Купить
+                            </button>
+                        )}
                     </div>
                 ))}
             </div>

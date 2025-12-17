@@ -52,10 +52,14 @@ const supplierSchema = new mongoose.Schema({
         max: 5,
         default: 0
     },
-    productsCount: {
-        type: Number,
-        default: 0
-    },
+    products: [
+        {
+            product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
+            sku: { type: String, required: true },
+            stockQuantity: { type: Number, default: 0 },
+            price: { type: Number, required: true }
+        }
+    ],
     isActive: {
         type: Boolean,
         default: true

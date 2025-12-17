@@ -11,7 +11,7 @@ const getAllPurchases = async (req, res) => {
     try {
         const {
             page = 1,
-            limit = 10,
+            limit = 5,
             supplierId,
             productId,
             startDate,
@@ -112,20 +112,30 @@ const createPurchase = async (req, res) => {
         if (!supplier) return sendResponse(res, false, 'Поставщик не найден', null, 404);
         if (!supplier.isActive) return sendResponse(res, false, 'Поставщик неактивен', null, 400);
 
+        const supplierProduct = supplier.products.find(p => p.product.toString() === productId);
+        if (!supplierProduct) {
+            return sendResponse(res, false, 'У поставщика нет такого товара', null, 400);
+        }
+        if (quantity > supplierProduct.stockQuantity) {
+            return sendResponse(res, false, 'Недостаточно товара на складе поставщика', null, 400);
+        }
+
         const purchase = new Purchase({
-            ...req.body,
+            product: productId,
+            supplier: supplierId,
+            quantity,
+            purchasePrice,
             createdBy: req.user.id,
             status: req.body.status || 'ordered'
         });
         await purchase.save();
 
         if (purchase.status === 'delivered') {
-            product.stockQuantity += purchase.quantity;
-            await product.save();
+            supplierProduct.stockQuantity -= quantity;
+            await supplier.save();
         }
 
         await purchase.populate('product supplier createdBy');
-
         sendResponse(res, true, 'Закупка успешно создана', { purchase }, 201);
     } catch (error) {
         sendResponse(res, false, error.message, null, 400);
@@ -139,8 +149,11 @@ const updatePurchase = async (req, res) => {
         const isValidOperation = updates.every(update => allowedUpdates.includes(update));
         if (!isValidOperation) return sendResponse(res, false, 'Недопустимые поля для обновления', null, 400);
 
-        const purchase = await Purchase.findById(req.params.id).populate('product');
+        const purchase = await Purchase.findById(req.params.id).populate('product supplier');
         if (!purchase) return sendResponse(res, false, 'Закупка не найдена', null, 404);
+
+        const supplierProduct = purchase.supplier.products.find(p => p.product.toString() === purchase.product._id.toString());
+        if (!supplierProduct) return sendResponse(res, false, 'У поставщика нет такого товара', null, 400);
 
         const oldStatus = purchase.status;
         const oldQuantity = purchase.quantity;
@@ -148,19 +161,21 @@ const updatePurchase = async (req, res) => {
         updates.forEach(update => purchase[update] = req.body[update]);
         await purchase.save();
 
-        if (purchase.product) {
-            let stockAdjustment = 0;
-            if (oldStatus !== 'delivered' && purchase.status === 'delivered') {
-                stockAdjustment += purchase.quantity;
-            } else if (oldStatus === 'delivered' && purchase.status !== 'delivered') {
-                stockAdjustment -= oldQuantity;
-            } else if (purchase.status === 'delivered' && oldQuantity !== purchase.quantity) {
-                stockAdjustment += (purchase.quantity - oldQuantity);
+        let stockAdjustment = 0;
+        if (oldStatus !== 'delivered' && purchase.status === 'delivered') {
+            stockAdjustment -= purchase.quantity;
+        } else if (oldStatus === 'delivered' && purchase.status !== 'delivered') {
+            stockAdjustment += oldQuantity;
+        } else if (purchase.status === 'delivered' && oldQuantity !== purchase.quantity) {
+            stockAdjustment -= (purchase.quantity - oldQuantity);
+        }
+
+        if (stockAdjustment !== 0) {
+            if (supplierProduct.stockQuantity + stockAdjustment < 0) {
+                return sendResponse(res, false, 'Недостаточно товара на складе поставщика', null, 400);
             }
-            if (stockAdjustment !== 0) {
-                purchase.product.stockQuantity += stockAdjustment;
-                await purchase.product.save();
-            }
+            supplierProduct.stockQuantity += stockAdjustment;
+            await purchase.supplier.save();
         }
 
         await purchase.populate('product supplier createdBy');
@@ -172,12 +187,14 @@ const updatePurchase = async (req, res) => {
 
 const deletePurchase = async (req, res) => {
     try {
-        const purchase = await Purchase.findById(req.params.id).populate('product');
+        const purchase = await Purchase.findById(req.params.id).populate('product supplier');
         if (!purchase) return sendResponse(res, false, 'Закупка не найдена', null, 404);
 
-        if (purchase.status === 'delivered' && purchase.product) {
-            purchase.product.stockQuantity -= purchase.quantity;
-            await purchase.product.save();
+        const supplierProduct = purchase.supplier.products.find(p => p.product.toString() === purchase.product._id.toString());
+
+        if (purchase.status === 'delivered' && supplierProduct) {
+            supplierProduct.stockQuantity += purchase.quantity; // возвращаем остаток
+            await purchase.supplier.save();
         }
 
         await purchase.deleteOne();
@@ -193,21 +210,22 @@ const updatePurchaseStatus = async (req, res) => {
         const allowedStatuses = ['ordered', 'pending', 'delivered', 'cancelled'];
         if (!allowedStatuses.includes(status)) return sendResponse(res, false, 'Недопустимый статус', null, 400);
 
-        const purchase = await Purchase.findById(req.params.id).populate('product');
+        const purchase = await Purchase.findById(req.params.id).populate('product supplier');
         if (!purchase) return sendResponse(res, false, 'Закупка не найдена', null, 404);
+
+        const supplierProduct = purchase.supplier.products.find(p => p.product.toString() === purchase.product._id.toString());
+        if (!supplierProduct) return sendResponse(res, false, 'У поставщика нет такого товара', null, 400);
 
         const oldStatus = purchase.status;
         purchase.status = status;
         await purchase.save();
 
-        if (purchase.product) {
-            if (oldStatus !== 'delivered' && status === 'delivered') {
-                purchase.product.stockQuantity += purchase.quantity;
-            } else if (oldStatus === 'delivered' && status !== 'delivered') {
-                purchase.product.stockQuantity -= purchase.quantity;
-            }
-            await purchase.product.save();
+        if (oldStatus !== 'delivered' && status === 'delivered') {
+            supplierProduct.stockQuantity -= purchase.quantity;
+        } else if (oldStatus === 'delivered' && status !== 'delivered') {
+            supplierProduct.stockQuantity += purchase.quantity;
         }
+        await purchase.supplier.save();
 
         sendResponse(res, true, `Статус закупки обновлен на "${status}"`, { purchase });
     } catch (error) {
@@ -292,35 +310,14 @@ const getPurchaseStats = async (req, res) => {
             }
         ]);
 
-        const populatedSupplierStats = await Promise.all(
-            supplierStats.map(async stat => {
-                const supplier = await Supplier.findById(stat._id);
-                return {
-                    ...stat,
-                    supplierName: supplier ? supplier.name : 'Неизвестный поставщик'
-                };
-            })
-        );
-
-        const populatedProductStats = await Promise.all(
-            productStats.map(async stat => {
-                const product = await Product.findById(stat._id);
-                return {
-                    ...stat,
-                    productName: product ? product.name : 'Неизвестный продукт',
-                    sku: product ? product.sku : 'N/A'
-                };
-            })
-        );
-
-        sendResponse(res, true, '', {
+        sendResponse(res, true, 'Статистика закупок получена', {
             monthlyStats,
-            supplierStats: populatedSupplierStats,
-            productStats: populatedProductStats,
+            supplierStats,
+            productStats,
             overallStats: overallStats[0] || {}
         });
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        sendResponse(res, false, error.message, null, 400);
     }
 };
 

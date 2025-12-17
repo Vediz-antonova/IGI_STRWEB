@@ -101,6 +101,19 @@ function Suppliers() {
                             Подробнее →
                         </Link>
 
+                        {supplier.products && supplier.products.length > 0 && (
+                            <div className={styles.products}>
+                                <h4>Товары:</h4>
+                                <ul>
+                                    {supplier.products.map(prod => (
+                                        <li key={prod._id}>
+                                            {prod.sku} — {prod.price} ₽ (остаток: {prod.stockQuantity})
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
                         {user?.role === 'admin' && (
                             <div className={styles.cardActions}>
                                 <Link to={`/suppliers/edit/${supplier._id}`} className={styles.editBtn}>
