@@ -1,15 +1,25 @@
 .container {
     max-width: 600px;
     margin: 2rem auto;
+    background: var(--turquoise-pastel);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
 }
 
 .title {
     margin-bottom: 1rem;
     text-align: center;
+    color: var(--accent);
 }
 
 .field {
     margin-bottom: 0.5rem;
+    transition: var(--transition);
+}
+
+.field:hover {
+    transform: translateX(5px);
 }
 
 .field strong {

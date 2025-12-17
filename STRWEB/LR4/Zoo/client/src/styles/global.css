@@ -8,11 +8,16 @@ body {
 a {
     text-decoration: none;
     color: var(--text-dark);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent);
 }
 
 button {
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 6px;
@@ -20,7 +25,8 @@ button {
     color: white;
 }
 
-button:hover {
+button:hover,
+button:focus {
     background-color: var(--purple-pastel);
     color: var(--text-dark);
 }

@@ -6,6 +6,10 @@ import { AuthContext } from '../../context/AuthContext';
 function Header() {
     const { user, logout } = useContext(AuthContext);
 
+    const handleLogout = () => {
+        logout();
+    };
+
     return (
         <header className={styles.header}>
             <div className={styles.logo}>Zoo Shop</div>
@@ -16,16 +20,10 @@ function Header() {
 
                 {user ? (
                     <>
-                        <Link to="/profile" className={styles.profileLink}>
+                        <Link to="/profile">
                             Привет, {user.username}
                         </Link>
-                        <Link
-                            to="#"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                logout();
-                            }}
-                        >
+                        <Link to="/" onClick={handleLogout}>
                             Выйти
                         </Link>
                     </>
