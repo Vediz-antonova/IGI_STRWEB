@@ -2,6 +2,9 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const { getCurrentTimezone } = require('../utils/timezone');
+const { OAuth2Client } = require('google-auth-library');
+
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const sendResponse = (res, success, message, data = null, status = 200) => {
     res.status(status).json({ success, message, data });
@@ -106,4 +109,49 @@ const getProfile = async (req, res) => {
     }
 };
 
-module.exports = { register, login, getProfile };
+const googleLogin = async (req, res) => {
+    try {
+        const { token } = req.body;
+
+        const ticket = await client.verifyIdToken({
+            idToken: token,
+            audience: process.env.GOOGLE_CLIENT_ID
+        });
+
+        const payload = ticket.getPayload();
+        const { email, name } = payload;
+
+        let user = await User.findOne({ email });
+        if (!user) {
+            user = new User({
+                username: name,
+                email,
+                password: 'google-oauth',
+                role: 'user',
+                timezone: getCurrentTimezone()
+            });
+            await user.save();
+        }
+
+        user.lastLogin = new Date();
+        await user.save();
+
+        const jwtToken = user.generateAuthToken();
+
+        sendResponse(res, true, 'Вход через Google выполнен успешно', {
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                role: user.role,
+                timezone: user.timezone,
+                lastLogin: user.lastLogin
+            },
+            token: jwtToken
+        });
+    } catch (error) {
+        sendResponse(res, false, error.message, null, 400);
+    }
+};
+
+module.exports = { register, login, getProfile, googleLogin };

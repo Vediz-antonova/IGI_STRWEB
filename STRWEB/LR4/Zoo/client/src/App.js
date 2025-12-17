@@ -7,6 +7,8 @@ import Products from './pages/Products/Products';
 import ProductDetails from './pages/Products/ProductDetails';
 import Suppliers from './pages/Suppliers/Suppliers';
 import SupplierDetails from './pages/Suppliers/SupplierDetails';
+import AuthForm from './pages/Auth/AuthForm';
+import Profile from './pages/Auth/Profile';
 
 function App() {
     return (
@@ -18,6 +20,9 @@ function App() {
                 <Route path="/products/:id" element={<ProductDetails />} />
                 <Route path="/suppliers" element={<Suppliers />} />
                 <Route path="/suppliers/:id" element={<SupplierDetails />} />
+                <Route path="/login" element={<AuthForm mode="login" />} />
+                <Route path="/register" element={<AuthForm mode="register" />} />
+                <Route path="/profile" element={<Profile />} />
             </Routes>
             <Footer />
         </Router>
