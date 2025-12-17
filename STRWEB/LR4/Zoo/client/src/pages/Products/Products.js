@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import styles from './Products.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 function Products() {
+    const { user, token } = useContext(AuthContext);
+    const navigate = useNavigate();
+
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
@@ -29,19 +33,30 @@ function Products() {
         const url = `http://localhost:5000/api/products?${query}&_=${Date.now()}`;
 
         fetch(url)
-            .then(res => {
-                return res.json();
-            })
+            .then(res => res.json())
             .then(data => {
                 const productsArray = data.data?.products || [];
                 setProducts(productsArray);
                 setPagination(data.data?.pagination || null);
                 setLoading(false);
             })
-            .catch(err => {
+            .catch(() => {
                 setLoading(false);
             });
     }, [page, sortBy, sortOrder, search, minPrice, maxPrice, inStock]);
+
+    const handleDelete = async (id) => {
+        if (!token) return;
+        try {
+            await fetch(`http://localhost:5000/api/products/${id}`, {
+                method: 'DELETE',
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            setProducts(products.filter(p => p._id !== id));
+        } catch (err) {
+            console.error('Ошибка удаления товара', err);
+        }
+    };
 
     if (loading) {
         return <div className={styles.loading}>Загрузка товаров...</div>;
@@ -87,6 +102,14 @@ function Products() {
                 </select>
             </div>
 
+            {user?.role === 'admin' && (
+                <div className={styles.adminControls}>
+                    <button onClick={() => navigate('/products/create')}>
+                        + Добавить товар
+                    </button>
+                </div>
+            )}
+
             <div className={styles.grid}>
                 {products.map(product => (
                     <div key={product._id} className={styles.card}>
@@ -97,6 +120,17 @@ function Products() {
                         <Link to={`/products/${product._id}`} className={styles.detailsLink}>
                             Подробнее →
                         </Link>
+
+                        {user?.role === 'admin' && (
+                            <div className={styles.actions}>
+                                <button onClick={() => navigate(`/products/edit/${product._id}`)}>
+                                    Редактировать
+                                </button>
+                                <button onClick={() => handleDelete(product._id)}>
+                                    Удалить
+                                </button>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>

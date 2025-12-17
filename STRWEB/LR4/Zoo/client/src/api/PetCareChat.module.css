@@ -1,0 +1,47 @@
+.chatBox {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: var(--turquoise-pastel);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.chatBox h2 {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.chatBox textarea {
+    width: 100%;
+    height: 100px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.chatBox button {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background: var(--purple-pastel);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.chatBox button:hover {
+    background: var(--green-pastel);
+}
+
+.answer {
+    margin-top: 1rem;
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    white-space: pre-wrap;
+}

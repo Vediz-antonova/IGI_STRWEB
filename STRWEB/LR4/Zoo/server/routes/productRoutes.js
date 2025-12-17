@@ -5,17 +5,12 @@ const {
     getProductById,
     createProduct,
     updateProduct,
-    deleteProduct,
-    searchProducts,
-    getProductStats
+    deleteProduct
 } = require('../controllers/productController');
 const { auth, isAdmin } = require('../middleware/auth');
 
 router.get('/', getAllProducts);
-router.get('/search', searchProducts);
 router.get('/:id', getProductById);
-
-router.get('/stats', auth, getProductStats);
 
 router.post('/', auth, isAdmin, createProduct);
 router.put('/:id', auth, isAdmin, updateProduct);

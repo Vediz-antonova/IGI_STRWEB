@@ -17,6 +17,7 @@ function Header() {
                 <Link to="/">Главная</Link>
                 <Link to="/products">Товары</Link>
                 <Link to="/suppliers">Поставщики</Link>
+                <Link to="/chat">Чат‑консультант</Link>
 
                 {user ? (
                     <>
