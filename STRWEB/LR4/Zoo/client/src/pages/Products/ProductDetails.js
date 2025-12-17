@@ -1,11 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import styles from './ProductDetails.module.css';
+import { AuthContext } from '../../context/AuthContext';
+
+const formatUTC = (dateString) => {
+    return new Intl.DateTimeFormat('ru-RU', {
+        timeZone: 'UTC',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    }).format(new Date(dateString));
+};
 
 function ProductDetails() {
-    const { id } = useParams(); // берём id из URL
+    const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
+    const { user } = useContext(AuthContext);
 
     useEffect(() => {
         const url = `http://localhost:5000/api/products/${id}`;
@@ -16,7 +31,7 @@ function ProductDetails() {
                 setProduct(data.data?.product || null);
                 setLoading(false);
             })
-            .catch(err => {
+            .catch(() => {
                 setLoading(false);
             });
     }, [id]);
@@ -45,8 +60,15 @@ function ProductDetails() {
                     <p><strong>Остаток:</strong> {product.stockQuantity} шт.</p>
                     <p><strong>Минимальный уровень склада:</strong> {product.minStockLevel}</p>
                     <p><strong>В наличии:</strong> {product.inStock ? 'Да' : 'Нет'}</p>
-                    <p><strong>Добавлен:</strong> {product.createdAtLocal}</p>
-                    <p><strong>Обновлен:</strong> {product.updatedAtLocal}</p>
+
+                    <p><strong>Добавлен (UTC):</strong> {formatUTC(product.createdAtUTC)}</p>
+                    {user && (
+                        <p><strong>Добавлен ({user.timezone}):</strong> {product.createdAtLocal}</p>
+                    )}
+                    <p><strong>Обновлен (UTC):</strong> {formatUTC(product.updatedAtUTC)}</p>
+                    {user && (
+                        <p><strong>Обновлен ({user.timezone}):</strong> {product.updatedAtLocal}</p>
+                    )}
                 </div>
             </div>
         </div>

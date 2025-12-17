@@ -120,3 +120,45 @@
     text-align: center;
     margin: 1rem 0;
 }
+
+.createBtn {
+    display: inline-block;
+    margin-bottom: 1rem;
+    background: var(--accent);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+.createBtn:hover {
+    background: var(--purple-pastel);
+    color: var(--text-dark);
+}
+
+.cardActions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.editBtn, .deleteBtn {
+    flex: 1;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.editBtn {
+    background: var(--blue-pastel);
+    border: none;
+}
+.editBtn:hover {
+    background: var(--green-pastel);
+}
+.deleteBtn {
+    background: #ff6b6b;
+    border: none;
+    color: white;
+}
+.deleteBtn:hover {
+    background: #ff3b3b;
+}

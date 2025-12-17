@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './Products.module.css';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -15,6 +16,30 @@ function Products() {
     const [maxPrice, setMaxPrice] = useState('');
     const [inStock, setInStock] = useState('');
     const [error, setError] = useState('');
+
+    const { user } = useContext(AuthContext);
+    const { token } = useContext(AuthContext);
+
+    const handleDelete = async (id) => {
+        if (!window.confirm('Удалить продукт?')) return;
+
+        try {
+            const res = await fetch(`http://localhost:5000/api/products/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            const data = await res.json();
+            if (data.success) {
+                setProducts(prev => prev.filter(p => p._id !== id));
+            } else {
+                alert(data.message || 'Ошибка удаления');
+            }
+        } catch {
+            alert('Ошибка подключения к серверу');
+        }
+    };
 
     useEffect(() => {
         setLoading(true);
@@ -54,6 +79,14 @@ function Products() {
     return (
         <div className={styles.products}>
             <h2 className={styles.title}>Каталог товаров 🐾</h2>
+
+            {user?.role === 'admin' && (
+                <div className={styles.actions}>
+                    <Link to="/products/create" className={styles.createBtn}>
+                        + Добавить продукт
+                    </Link>
+                </div>
+            )}
 
             <div className={styles.controls}>
                 <input
@@ -101,6 +134,20 @@ function Products() {
                         <Link to={`/products/${product._id}`}>
                             Подробнее →
                         </Link>
+
+                        {user?.role === 'admin' && (
+                            <div className={styles.cardActions}>
+                                <Link to={`/products/edit/${product._id}`} className={styles.editBtn}>
+                                    Редактировать
+                                </Link>
+                                <button
+                                    className={styles.deleteBtn}
+                                    onClick={() => handleDelete(product._id)}
+                                >
+                                    Удалить
+                                </button>
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>

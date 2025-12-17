@@ -41,3 +41,17 @@
     margin: 0.5rem 0;
     color: #333;
 }
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--accent);
+    padding: 2rem;
+}
+
+.error {
+    text-align: center;
+    font-size: 1.2rem;
+    color: red;
+    padding: 2rem;
+}
