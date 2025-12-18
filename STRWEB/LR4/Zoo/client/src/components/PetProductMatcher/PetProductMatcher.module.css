@@ -1,16 +1,16 @@
 .matcher {
-    background: linear-gradient(135deg, var(--blue-pastel), var(--turquoise-pastel));
+    background: linear-gradient(135deg, var(--green-pastel), var(--turquoise-pastel));
     padding: 2rem;
-    border-radius: 16px;
+    border-radius: 12px;
     margin: 2rem auto;
     max-width: 1200px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
 }
 
 .matcher h2 {
     text-align: center;
     color: var(--accent);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-size: 1.8rem;
 }
 
@@ -19,28 +19,22 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .filterSection {
-    background: var(--green-pastel);
+    background: white;
     padding: 1.2rem;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.filterSection:hover {
-    transform: translateY(-2px);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .filterSection h3 {
     margin-top: 0;
-    margin-bottom: 1rem;
-    color: var(--accent);
+    color: var(--text-dark);
     font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--blue-pastel);
 }
 
 .filterGroup {
@@ -50,108 +44,41 @@
 .filterGroup label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.filterGroup select,
+.filterGroup input[type="text"] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    background: white;
     color: var(--text-dark);
     font-size: 0.9rem;
 }
 
-.filterGroup select {
-    width: 100%;
-    padding: 0.6rem;
-    border-radius: 8px;
-    border: 2px solid #ddd;
-    background: white;
-    font-size: 0.9rem;
-    transition: border-color 0.3s ease;
-}
-
-.filterGroup select:focus {
-    border-color: var(--accent);
+.filterGroup select:focus,
+.filterGroup input[type="text"]:focus {
     outline: none;
-}
-
-.tooltip {
-    display: inline-block;
-    margin-left: 5px;
-    cursor: help;
-    color: var(--accent);
-    font-size: 0.8rem;
-    position: relative;
-}
-
-.tooltip:hover::after {
-    content: attr(title);
-    position: absolute;
-    background: var(--text-dark);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    z-index: 1000;
-    margin-top: 5px;
-    max-width: 200px;
-    white-space: normal;
-}
-
-.budgetSlider {
-    width: 100%;
-    height: 6px;
-    border-radius: 3px;
-    background: linear-gradient(90deg, var(--accent), #4caf50);
-    outline: none;
-    margin: 0.5rem 0;
-    -webkit-appearance: none;
-}
-
-.budgetSlider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--accent);
-    cursor: pointer;
-    border: 3px solid white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.budgetSlider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--accent);
-    cursor: pointer;
-    border: 3px solid white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.budgetRange {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: #666;
-    margin-top: 0.3rem;
+    border-color: var(--purple-pastel);
+    box-shadow: 0 0 0 2px rgba(168, 139, 255, 0.2);
 }
 
 .checkboxGroup {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.5rem;
 }
 
 .checkboxLabel {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--text-dark);
+    font-weight: normal;
     cursor: pointer;
-    padding: 0.3rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.checkboxLabel:hover {
-    background-color: rgba(168, 139, 255, 0.1);
+    font-size: 0.9rem;
 }
 
 .checkboxLabel input[type="checkbox"] {
@@ -159,6 +86,31 @@
     height: 18px;
     cursor: pointer;
     accent-color: var(--accent);
+}
+
+.budgetSlider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--blue-pastel);
+    outline: none;
+    margin: 0.5rem 0;
+}
+
+.budgetSlider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+.budgetRange {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #666;
 }
 
 .actionButtons {
@@ -170,45 +122,34 @@
 }
 
 .matchButton,
-.resetButton,
 .recommendButton,
 .profileButton,
 .orderButton,
+.resetButton,
 .compareButton {
     padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 6px;
     border: none;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: bold;
     transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
 
 .matchButton {
-    background: linear-gradient(135deg, var(--accent), #8b7db8);
+    background: var(--accent);
     color: white;
 }
 
 .matchButton:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: var(--purple-pastel);
+    color: var(--text-dark);
+    transform: scale(1.05);
 }
 
 .matchButton:disabled {
-    opacity: 0.6;
+    background: #ccc;
     cursor: not-allowed;
-    transform: none;
-}
-
-.resetButton {
-    background: var(--blue-pastel);
-    color: var(--text-dark);
-}
-
-.resetButton:hover {
-    background: var(--turquoise-pastel);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .recommendButton {
@@ -218,8 +159,7 @@
 
 .recommendButton:hover {
     background: #ff9a3c;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
 }
 
 .profileButton {
@@ -229,40 +169,52 @@
 
 .profileButton:hover {
     background: #5a79bc;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
 }
 
 .orderButton {
-    background: #9c27b0;
+    background: #4caf50;
     color: white;
 }
 
 .orderButton:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.resetButton {
+    background: var(--blue-pastel);
+    color: var(--text-dark);
+}
+
+.resetButton:hover {
+    background: var(--turquoise-pastel);
+    transform: scale(1.05);
+}
+
+.compareButton {
+    background: #9c27b0;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+}
+
+.compareButton:hover {
     background: #7b1fa2;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .loading {
     text-align: center;
-    padding: 3rem;
+    padding: 2rem;
     font-size: 1.2rem;
     color: var(--accent);
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% { opacity: 0.6; }
-    50% { opacity: 1; }
-    100% { opacity: 0.6; }
 }
 
 .resultsSection {
     background: white;
     padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .resultsHeader {
@@ -280,49 +232,45 @@
 }
 
 .selectedCount {
-    color: var(--accent);
     font-size: 0.9rem;
+    color: #666;
     margin-left: 0.5rem;
 }
 
-.compareButton {
-    background: #4caf50;
-    color: white;
-}
-
-.compareButton:hover {
-    background: #45a049;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.noResults {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
 }
 
 .productsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.2rem;
     margin-bottom: 2rem;
 }
 
 .productCard {
-    background: linear-gradient(135deg, var(--blue-pastel), white);
-    border: 2px solid transparent;
-    border-radius: 12px;
+    background: var(--blue-pastel);
     padding: 1rem;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    border: 2px solid transparent;
 }
 
 .productCard:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-color: var(--accent);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .productCard.selected {
     border-color: var(--accent);
-    background: linear-gradient(135deg, rgba(168, 139, 255, 0.1), white);
+    background: rgba(168, 139, 255, 0.1);
+}
+
+.productCard.subscribed {
+    border-color: #4caf50;
 }
 
 .cardHeader {
@@ -333,173 +281,175 @@
 }
 
 .selectCheckbox {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     cursor: pointer;
     accent-color: var(--accent);
 }
 
 .productCategory {
-    background: var(--accent);
-    color: white;
-    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    background: var(--turquoise-pastel);
+    color: var(--text-dark);
+    padding: 0.2rem 0.5rem;
     border-radius: 12px;
+    font-weight: 500;
+}
+
+.subscriptionBadge {
     font-size: 0.7rem;
+    background: #4caf50;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
     font-weight: bold;
 }
 
 .productImage {
     width: 100%;
-    height: 180px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 6px;
     margin-bottom: 0.8rem;
-    transition: transform 0.3s ease;
-}
-
-.productCard:hover .productImage {
-    transform: scale(1.02);
-}
-
-.productInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
 }
 
 .productInfo h4 {
-    margin: 0;
+    margin: 0 0 0.5rem 0;
     color: var(--text-dark);
     font-size: 1rem;
     line-height: 1.3;
 }
 
 .productDescription {
-    color: #666;
     font-size: 0.85rem;
+    color: #666;
+    margin: 0 0 0.8rem 0;
     line-height: 1.4;
-    margin: 0;
-    height: 2.8em;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .productMeta {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
     align-items: center;
-    margin-top: 0.5rem;
 }
 
 .productPrice {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: var(--accent);
 }
 
 .inStock {
     color: #4caf50;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.85rem;
 }
 
 .outOfStock {
     color: #f44336;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.85rem;
 }
 
 .productActions {
     display: flex;
+    flex-direction: column;
     gap: 0.5rem;
-    margin-top: 0.8rem;
+}
+
+.cartButton,
+.subscribeBtn,
+.unsubscribeBtn,
+.inventoryBtn {
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
 .cartButton {
-    flex: 1;
-    padding: 0.5rem 0.8rem;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 600;
     background: var(--accent);
     color: white;
-    transition: all 0.3s ease;
 }
 
 .cartButton:hover:not(:disabled) {
     background: var(--purple-pastel);
     color: var(--text-dark);
-    transform: scale(1.05);
 }
 
 .cartButton:disabled {
-    opacity: 0.5;
+    background: #ccc;
     cursor: not-allowed;
 }
 
-.noResults {
-    text-align: center;
-    padding: 3rem;
-    background: var(--blue-pastel);
-    border-radius: 12px;
-}
-
-.noResults p {
-    margin: 0.5rem 0;
-    font-size: 1.1rem;
+.subscribeBtn {
+    background: var(--green-pastel);
     color: var(--text-dark);
 }
 
-.comparisonTable {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: var(--green-pastel);
-    border-radius: 12px;
-    animation: fadeIn 0.5s ease;
+.subscribeBtn:hover {
+    background: #4caf50;
+    color: white;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.unsubscribeBtn {
+    background: #ff9800;
+    color: white;
+}
+
+.unsubscribeBtn:hover {
+    background: #f57c00;
+}
+
+.inventoryBtn {
+    background: var(--purple-pastel);
+    color: var(--text-dark);
+}
+
+.inventoryBtn:hover {
+    background: #9c27b0;
+    color: white;
+}
+
+.comparisonTable {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    border: 1px solid #e0e0e0;
 }
 
 .comparisonTable h4 {
     margin-top: 0;
-    color: var(--accent);
+    color: var(--text-dark);
     margin-bottom: 1rem;
 }
 
 .comparisonTable table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .comparisonTable th,
 .comparisonTable td {
-    padding: 1rem;
+    padding: 0.8rem;
     text-align: left;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .comparisonTable th {
-    background: var(--accent);
-    color: white;
+    background: var(--blue-pastel);
+    color: var(--text-dark);
     font-weight: 600;
 }
 
 .comparisonTable tr:hover {
-    background: rgba(168, 139, 255, 0.05);
-}
-
-.comparisonTable td:first-child {
-    font-weight: 600;
-    color: var(--text-dark);
+    background: #f5f5f5;
 }
 
 @media (max-width: 768px) {
@@ -515,28 +465,28 @@
         flex-direction: column;
     }
 
-    .actionButtons button {
+    .matchButton,
+    .recommendButton,
+    .profileButton,
+    .orderButton,
+    .resetButton {
         width: 100%;
+    }
+
+    .resultsHeader {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .productsGrid {
         grid-template-columns: 1fr;
     }
 
-    .resultsHeader {
-        flex-direction: column;
-        align-items: stretch;
+    .comparisonTable {
+        overflow-x: auto;
     }
 
-    .compareButton {
-        width: 100%;
-    }
-
-    .tooltip:hover::after {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-        max-width: none;
+    .comparisonTable table {
+        min-width: 600px;
     }
 }

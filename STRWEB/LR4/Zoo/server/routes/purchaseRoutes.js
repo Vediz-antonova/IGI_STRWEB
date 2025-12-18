@@ -8,7 +8,8 @@ const {
     deletePurchase,
     updatePurchaseStatus,
     getPurchaseStats,
-    getUpcomingDeliveries
+    getUpcomingDeliveries,
+    createBulkPurchases
 } = require('../controllers/purchaseController');
 const { auth, isAdmin } = require('../middleware/auth');
 
@@ -18,6 +19,7 @@ router.get('/upcoming', auth, getUpcomingDeliveries);
 router.get('/:id', auth, getPurchaseById);
 
 router.post('/', auth, createPurchase);
+router.post('/bulk', auth, createBulkPurchases);
 router.put('/:id', auth, isAdmin, updatePurchase);
 router.patch('/:id/status', auth, isAdmin, updatePurchaseStatus);
 router.delete('/:id', auth, isAdmin, deletePurchase);

@@ -53,105 +53,7 @@ function PetProductMatcher() {
     const [isMatching, setIsMatching] = useState(false);
     const [showResults, setShowResults] = useState(false);
     const [showComparison, setShowComparison] = useState(false);
-
-    const performMatching = useCallback(() => {
-        setIsMatching(true);
-
-        new Promise((resolve) => {
-            setTimeout(() => {
-                resolve('Начало подбора...');
-            }, 500);
-        })
-            .then((message) => {
-                console.log(message);
-                return new Promise((resolve) => {
-                    setTimeout(() => {
-                        let filtered = [...products];
-
-                        filtered = filtered.filter(product =>
-                            product.animalType.includes(filterState.petType) ||
-                            product.animalType.includes('Все')
-                        );
-
-                        if (filterState.petAge === 'baby') {
-                            filtered = filtered.filter(p =>
-                                p.category === 'Корма' ||
-                                p.category === 'Игрушки' ||
-                                p.category === 'Гигиена' ||
-                                p.category === 'Здоровье'
-                            );
-                        } else if (filterState.petAge === 'senior') {
-                            filtered = filtered.filter(p =>
-                                p.category === 'Корма' ||
-                                p.category === 'Здоровье' ||
-                                p.category === 'Аксессуары'
-                            );
-                        }
-
-                        if (filterState.petSize === 'small') {
-                            filtered = filtered.filter(p =>
-                                !p.name.toLowerCase().includes('крупн') &&
-                                !p.description?.toLowerCase().includes('крупн')
-                            );
-                        } else if (filterState.petSize === 'large') {
-                            filtered = filtered.filter(p =>
-                                !p.name.toLowerCase().includes('мелк') &&
-                                !p.description?.toLowerCase().includes('мелк')
-                            );
-                        }
-
-                        if (filterState.specialNeeds.includes('allergy')) {
-                            filtered = filtered.filter(p =>
-                                !p.name.toLowerCase().includes('аллерг') &&
-                                !p.description?.toLowerCase().includes('аллерг')
-                            );
-                        }
-
-                        if (filterState.specialNeeds.includes('diet')) {
-                            filtered = filtered.filter(p =>
-                                p.category === 'Корма' || p.category === 'Здоровье'
-                            );
-                        }
-
-                        if (filterState.specialNeeds.includes('active')) {
-                            filtered = filtered.filter(p =>
-                                p.category === 'Игрушки' || p.category === 'Аксессуары'
-                            );
-                        }
-
-                        filtered = filtered.filter(p => p.currentPrice <= filterState.budget);
-
-                        if (filterState.productType !== 'all') {
-                            filtered = filtered.filter(p => p.category === filterState.productType);
-                        }
-
-                        filtered.sort((a, b) => {
-                            if (a.inStock !== b.inStock) return b.inStock - a.inStock;
-                            return a.currentPrice - b.currentPrice;
-                        });
-
-                        resolve(filtered);
-                    }, 1000);
-                });
-            })
-            .then((filtered) => {
-                setMatchedProducts(filtered);
-                setIsMatching(false);
-                setShowResults(true);
-                showInfo(`Найдено ${filtered.length} товаров для вашего питомца`);
-
-                return new Promise((resolve) => {
-                    setTimeout(() => {
-                        resolve('Подбор завершен');
-                    }, 3000);
-                });
-            })
-            .catch((error) => {
-                console.error('Ошибка при подборе:', error);
-                setIsMatching(false);
-                showError('Ошибка при подборе товаров');
-            });
-    }, [products, filterState, showInfo, showError]);
+    const [subscriptions, setSubscriptions] = useState({});
 
     useEffect(() => {
         const savedProfile = localStorage.getItem('petProfile');
@@ -167,13 +69,107 @@ function PetProductMatcher() {
                 console.error('Ошибка загрузки профиля:', error);
             }
         }
+
+        const savedSubscriptions = {};
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key.startsWith('subscription_')) {
+                savedSubscriptions[key.replace('subscription_', '')] = true;
+            }
+        }
+        setSubscriptions(savedSubscriptions);
     }, [showInfo]);
 
     useEffect(() => {
         if (products.length > 0) {
             performMatching();
         }
-    }, [products, performMatching]);
+    }, [products]);
+
+    const performMatching = useCallback(() => {
+        setIsMatching(true);
+
+        new Promise((resolve) => {
+            setTimeout(() => {
+                let filtered = [...products];
+
+                filtered = filtered.filter(product =>
+                    product.animalType.includes(filterState.petType) ||
+                    product.animalType.includes('Все')
+                );
+
+                if (filterState.petAge === 'baby') {
+                    filtered = filtered.filter(p =>
+                        p.category === 'Корма' ||
+                        p.category === 'Игрушки' ||
+                        p.category === 'Гигиена' ||
+                        p.category === 'Здоровье'
+                    );
+                } else if (filterState.petAge === 'senior') {
+                    filtered = filtered.filter(p =>
+                        p.category === 'Корма' ||
+                        p.category === 'Здоровье' ||
+                        p.category === 'Аксессуары'
+                    );
+                }
+
+                if (filterState.petSize === 'small') {
+                    filtered = filtered.filter(p =>
+                        !p.name.toLowerCase().includes('крупн') &&
+                        !p.description?.toLowerCase().includes('крупн')
+                    );
+                } else if (filterState.petSize === 'large') {
+                    filtered = filtered.filter(p =>
+                        !p.name.toLowerCase().includes('мелк') &&
+                        !p.description?.toLowerCase().includes('мелк')
+                    );
+                }
+
+                if (filterState.specialNeeds.includes('allergy')) {
+                    filtered = filtered.filter(p =>
+                        !p.name.toLowerCase().includes('аллерг') &&
+                        !p.description?.toLowerCase().includes('аллерг')
+                    );
+                }
+
+                if (filterState.specialNeeds.includes('diet')) {
+                    filtered = filtered.filter(p =>
+                        p.category === 'Корма' || p.category === 'Здоровье'
+                    );
+                }
+
+                if (filterState.specialNeeds.includes('active')) {
+                    filtered = filtered.filter(p =>
+                        p.category === 'Игрушки' || p.category === 'Аксессуары'
+                    );
+                }
+
+                filtered = filtered.filter(p => p.currentPrice <= filterState.budget);
+
+                if (filterState.productType !== 'all') {
+                    filtered = filtered.filter(p => p.category === filterState.productType);
+                }
+
+                filtered.sort((a, b) => {
+                    if (a.inStock !== b.inStock) return b.inStock - a.inStock;
+                    return a.currentPrice - b.currentPrice;
+                });
+
+                resolve(filtered);
+            }, 1000);
+        })
+            .then((filtered) => {
+                setMatchedProducts(filtered);
+                setIsMatching(false);
+                setShowResults(true);
+                showInfo(`Найдено ${filtered.length} товаров для вашего питомца`);
+            })
+            .catch((error) => {
+                console.error('Ошибка при подборе:', error);
+                setIsMatching(false);
+                showError('Ошибка при подборе товаров');
+            });
+    }, [products, filterState, showInfo, showError]);
 
     const onProductMatch = () => {
         if (!user) {
@@ -191,12 +187,20 @@ function PetProductMatcher() {
 
         const xhr = new XMLHttpRequest();
         const orderData = {
-            products: selectedProducts,
+            items: selectedProducts.map(productId => {
+                const product = getProductById(productId);
+                return {
+                    productId,
+                    supplierId: 'supplier-id-placeholder',
+                    quantity: 1,
+                    price: product?.currentPrice || 0
+                };
+            }),
             petProfile: filterState,
             timestamp: new Date().toISOString()
         };
 
-        xhr.open('POST', 'http://localhost:5000/api/purchases/large-order', true);
+        xhr.open('POST', 'http://localhost:5000/api/purchases/bulk', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('Authorization', `Bearer ${localStorage.getItem('token')}`);
 
@@ -252,6 +256,72 @@ function PetProductMatcher() {
         }
     };
 
+    const onSubscription = (productId) => {
+        if (!user) {
+            showError('Для подписки необходимо войти в систему');
+            return;
+        }
+
+        const product = getProductById(productId);
+        if (!product) {
+            showError('Товар не найден');
+            return;
+        }
+
+        const subscriptionKey = `subscription_${product._id}`;
+        const isSubscribed = subscriptions[product._id];
+
+        if (isSubscribed) {
+            localStorage.removeItem(subscriptionKey);
+            setSubscriptions(prev => {
+                const newSubs = { ...prev };
+                delete newSubs[product._id];
+                return newSubs;
+            });
+            showSuccess(`Подписка на "${product.name}" отменена`);
+        } else {
+            new Promise((resolve) => {
+                showInfo('Проверяем наличие товара...');
+                resolve(product);
+            })
+                .then((product) => {
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            if (!product.inStock) {
+                                throw new Error('Товар отсутствует в наличии');
+                            }
+                            resolve(product);
+                        }, 1000);
+                    });
+                })
+                .then((product) => {
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            showInfo('Рассчитываем доставку...');
+                            resolve(product);
+                        }, 1500);
+                    });
+                })
+                .then((product) => {
+                    localStorage.setItem(subscriptionKey, JSON.stringify({
+                        productId: product._id,
+                        productName: product.name,
+                        subscribedAt: new Date().toISOString(),
+                        notifyOnRestock: true,
+                        notifyOnPriceChange: true
+                    }));
+                    setSubscriptions(prev => ({
+                        ...prev,
+                        [product._id]: true
+                    }));
+                    showSuccess(`Вы подписались на уведомления о товаре "${product.name}"`);
+                })
+                .catch((error) => {
+                    showError(error.message);
+                });
+        }
+    };
+
     const onAddToCart = (product) => {
         if (!user) {
             showError('Для добавления в корзину необходимо войти в систему');
@@ -260,6 +330,17 @@ function PetProductMatcher() {
 
         addToCart(product, 'supplier-id-placeholder', 'Основной поставщик', 1);
         showSuccess(`Товар "${product.name}" добавлен в корзину`);
+    };
+
+    const onInventoryUpdate = (productId, newQuantity) => {
+        const product = getProductById(productId);
+        if (!product) return;
+
+        showInfo(`Обновляем инвентарь для "${product.name}"...`);
+
+        setTimeout(() => {
+            showSuccess(`Инвентарь обновлен: ${newQuantity} шт.`);
+        }, 1500);
     };
 
     const onSelectProduct = (productId) => {
@@ -335,8 +416,6 @@ function PetProductMatcher() {
                     <div className={styles.filterGroup}>
                         <label>
                             Тип питомца:
-                            <span className={styles.tooltip} title="Выберите вид вашего питомца">
-                            </span>
                         </label>
                         <select value={filterState.petType} onChange={handlePetTypeChange}>
                             <option value="Собака">Собака</option>
@@ -351,8 +430,6 @@ function PetProductMatcher() {
                     <div className={styles.filterGroup}>
                         <label>
                             Возраст:
-                            <span className={styles.tooltip} title="Возрастная категория питомца">
-                            </span>
                         </label>
                         <select value={filterState.petAge} onChange={handlePetAgeChange}>
                             <option value="baby">Молодой (до 3 лет)</option>
@@ -364,8 +441,6 @@ function PetProductMatcher() {
                     <div className={styles.filterGroup}>
                         <label>
                             Размер:
-                            <span className={styles.tooltip} title="Размер и вес питомца">
-                            </span>
                         </label>
                         <select value={filterState.petSize} onChange={handlePetSizeChange}>
                             <option value="small">Маленький (до 5 кг)</option>
@@ -414,8 +489,6 @@ function PetProductMatcher() {
                     <div className={styles.filterGroup}>
                         <label>
                             Бюджет: до {filterState.budget.toFixed(2)} BYN
-                            <span className={styles.tooltip} title="Установите максимальную цену для подбора товаров">
-                            </span>
                         </label>
                         <input
                             type="range"
@@ -435,8 +508,6 @@ function PetProductMatcher() {
                     <div className={styles.filterGroup}>
                         <label>
                             Тип товара:
-                            <span className={styles.tooltip} title="Категория товаров для подбора">
-                            </span>
                         </label>
                         <select value={filterState.productType} onChange={handleProductTypeChange}>
                             <option value="all">Все товары</option>
@@ -509,7 +580,7 @@ function PetProductMatcher() {
                                 {matchedProducts.slice(0, 12).map(product => (
                                     <div
                                         key={product._id}
-                                        className={`${styles.productCard} ${selectedProducts.includes(product._id) ? styles.selected : ''}`}
+                                        className={`${styles.productCard} ${selectedProducts.includes(product._id) ? styles.selected : ''} ${subscriptions[product._id] ? styles.subscribed : ''}`}
                                         onClick={() => onSelectProduct(product._id)}
                                     >
                                         <div className={styles.cardHeader}>
@@ -520,6 +591,11 @@ function PetProductMatcher() {
                                                 className={styles.selectCheckbox}
                                             />
                                             <span className={styles.productCategory}>{product.category}</span>
+                                            {subscriptions[product._id] && (
+                                                <span className={styles.subscriptionBadge}>
+                                                    Подписка
+                                                </span>
+                                            )}
                                         </div>
 
                                         <img
@@ -553,6 +629,24 @@ function PetProductMatcher() {
                                                     disabled={!product.inStock}
                                                 >
                                                     В корзину
+                                                </button>
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        onSubscription(product._id);
+                                                    }}
+                                                    className={subscriptions[product._id] ? styles.unsubscribeBtn : styles.subscribeBtn}
+                                                >
+                                                    {subscriptions[product._id] ? 'Отписаться' : 'Подписаться'}
+                                                </button>
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        onInventoryUpdate(product._id, product.stockQuantity + 10);
+                                                    }}
+                                                    className={styles.inventoryBtn}
+                                                >
+                                                    Обновить инвентарь
                                                 </button>
                                             </div>
                                         </div>

@@ -112,11 +112,11 @@ const createPurchase = async (req, res) => {
         if (!supplier) return sendResponse(res, false, 'Поставщик не найден', null, 404);
         if (!supplier.isActive) return sendResponse(res, false, 'Поставщик неактивен', null, 400);
 
-        const supplierProduct = supplier.products.find(p => p.product.toString() === productId);
-        if (!supplierProduct) {
+        const supplierProductItem = supplier.products.find(p => p.product.toString() === productId);
+        if (!supplierProductItem) {
             return sendResponse(res, false, 'У поставщика нет такого товара', null, 400);
         }
-        if (quantity > supplierProduct.stockQuantity) {
+        if (quantity > supplierProductItem.stockQuantity) {
             return sendResponse(res, false, 'Недостаточно товара на складе поставщика', null, 400);
         }
 
@@ -130,9 +130,12 @@ const createPurchase = async (req, res) => {
         });
         await purchase.save();
 
+        supplierProductItem.stockQuantity -= quantity;
+        await supplier.save();
+
         if (purchase.status === 'delivered') {
-            supplierProduct.stockQuantity -= quantity;
-            await supplier.save();
+            product.stockQuantity = (product.stockQuantity || 0) + quantity;
+            await product.save();
         }
 
         await purchase.populate('product supplier createdBy');
@@ -343,6 +346,87 @@ const getUpcomingDeliveries = async (req, res) => {
     }
 };
 
+const createBulkPurchases = async (req, res) => {
+    try {
+        const { items } = req.body;
+
+        if (!Array.isArray(items) || items.length === 0) {
+            return sendResponse(res, false, 'Нет товаров для заказа', null, 400);
+        }
+
+        const results = [];
+        const errors = [];
+
+        for (const item of items) {
+            try {
+                const [product, supplier] = await Promise.all([
+                    Product.findById(item.productId),
+                    Supplier.findById(item.supplierId)
+                ]);
+
+                if (!product) {
+                    errors.push({ productId: item.productId, error: 'Товар не найден' });
+                    continue;
+                }
+
+                if (!supplier) {
+                    errors.push({ productId: item.productId, error: 'Поставщик не найден' });
+                    continue;
+                }
+
+                const supplierProduct = supplier.products.find(p =>
+                    p.product.toString() === item.productId
+                );
+
+                if (!supplierProduct) {
+                    errors.push({ productId: item.productId, error: 'У поставщика нет этого товара' });
+                    continue;
+                }
+
+                if (supplierProduct.stockQuantity < item.quantity) {
+                    errors.push({
+                        productId: item.productId,
+                        error: `Недостаточно товара (остаток: ${supplierProduct.stockQuantity})`
+                    });
+                    continue;
+                }
+
+                const purchase = new Purchase({
+                    product: item.productId,
+                    supplier: item.supplierId,
+                    quantity: item.quantity,
+                    purchasePrice: item.price || product.currentPrice,
+                    status: 'ordered',
+                    createdBy: req.user.id
+                });
+
+                await purchase.save();
+
+                supplierProduct.stockQuantity -= item.quantity;
+                await supplier.save();
+
+                results.push({
+                    productId: item.productId,
+                    purchaseId: purchase._id,
+                    status: 'created'
+                });
+
+            } catch (error) {
+                errors.push({ productId: item.productId, error: error.message });
+            }
+        }
+
+        sendResponse(res, true, 'Массовый заказ обработан', {
+            created: results.length,
+            failed: errors.length,
+            results,
+            errors: errors.length > 0 ? errors : undefined
+        });
+    } catch (error) {
+        sendResponse(res, false, error.message, null, 400);
+    }
+};
+
 module.exports = {
     getAllPurchases,
     getPurchaseById,
@@ -351,5 +435,6 @@ module.exports = {
     deletePurchase,
     updatePurchaseStatus,
     getPurchaseStats,
-    getUpcomingDeliveries
+    getUpcomingDeliveries,
+    createBulkPurchases
 };

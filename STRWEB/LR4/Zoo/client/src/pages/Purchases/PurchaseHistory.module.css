@@ -19,6 +19,15 @@
     margin: 2rem auto;
 }
 
+.accessDenied h2 {
+    color: #f56565;
+    margin-bottom: 1rem;
+}
+
+.accessDenied p {
+    color: var(--text-dark);
+}
+
 .loading {
     text-align: center;
     padding: 2rem;
@@ -38,51 +47,55 @@
     padding: 1.5rem;
     border-radius: 12px;
     text-align: center;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
 
 .statCard:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .statCard h3 {
     margin: 0 0 0.5rem 0;
     color: var(--text-dark);
     font-size: 1rem;
+    font-weight: 600;
 }
 
 .statNumber {
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--accent);
     margin: 0;
+    line-height: 1;
 }
 
 .tableContainer {
     overflow-x: auto;
     background: white;
     border-radius: 12px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     margin-bottom: 2rem;
 }
 
 .purchaseTable {
     width: 100%;
     border-collapse: collapse;
+    min-width: 800px;
 }
 
 .purchaseTable th,
 .purchaseTable td {
     padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .purchaseTable th {
     background: var(--turquoise-pastel);
     color: var(--text-dark);
-    font-weight: bold;
+    font-weight: 600;
     position: sticky;
     top: 0;
 }
@@ -92,11 +105,12 @@
 }
 
 .status {
-    padding: 0.3rem 0.6rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
+    font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
+    display: inline-block;
 }
 
 .ordered {
@@ -123,21 +137,24 @@
     background: var(--accent);
     color: white;
     border: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
     cursor: pointer;
-    transition: var(--transition);
-    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
 }
 
 .actionBtn:hover:not(:disabled) {
     background: var(--purple-pastel);
     color: var(--text-dark);
+    transform: translateY(-2px);
 }
 
 .actionBtn:disabled {
     background: #ccc;
     cursor: not-allowed;
+    transform: none;
 }
 
 .inventorySection {
@@ -151,89 +168,366 @@
     text-align: center;
     color: var(--accent);
     margin-bottom: 1rem;
+    font-size: 1.3rem;
 }
 
 .inventoryManager {
-    margin-top: 1rem;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.inventoryControls {
+.controls {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.searchBox {
     margin-bottom: 1rem;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--blue-pastel);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(168, 139, 255, 0.2);
+}
+
+.filterControls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.sortBtn {
+    padding: 0.6rem 1rem;
+    background: var(--blue-pastel);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.sortBtn:hover {
+    background: var(--turquoise-pastel);
+}
+
+.sortBtn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.statusFilter {
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--blue-pastel);
+    border-radius: 8px;
+    background: white;
+    color: var(--text-dark);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.statusFilter:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.checkboxLabel input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.bulkActions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--green-pastel);
+    border-radius: 8px;
+    margin-top: 1rem;
     flex-wrap: wrap;
 }
 
-.inventoryControls button,
-.inventoryControls select {
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    border: 1px solid var(--accent);
-    background: white;
-    cursor: pointer;
-    transition: var(--transition);
+.bulkActions span {
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
-.inventoryControls button:hover {
+.bulkActions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.bulkActions button:first-of-type {
     background: var(--accent);
     color: white;
 }
 
-.inventoryGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-.inventoryCard {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.inventoryCard h4 {
-    margin: 0 0 0.5rem 0;
+.bulkActions button:first-of-type:hover {
+    background: var(--purple-pastel);
     color: var(--text-dark);
 }
 
-.inventoryCard p {
-    margin: 0.3rem 0;
-    font-size: 0.9rem;
-    color: #555;
+.bulkActions button:nth-of-type(2) {
+    background: #ff6b6b;
+    color: white;
 }
 
-.inventoryActions {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
+.bulkActions button:nth-of-type(2):hover {
+    background: #ff3b3b;
 }
 
-.inventoryActions button {
-    flex: 1;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: var(--transition);
-}
-
-.inventoryActions button:first-child {
+.bulkActions button:last-of-type {
     background: var(--blue-pastel);
     color: var(--text-dark);
 }
 
-.inventoryActions button:first-child:hover:not(:disabled) {
+.bulkActions button:last-of-type:hover {
+    background: var(--turquoise-pastel);
+}
+
+.inventoryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.inventoryCard {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.inventoryCard:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.inventoryCard.selected {
+    border-color: var(--accent);
+    background: rgba(168, 139, 255, 0.05);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.selectCheckbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.cardContent h4 {
+    margin: 0 0 0.8rem 0;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.supplier {
+    margin: 0 0 1rem 0;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.supplier strong {
+    color: var(--accent);
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.detail span:first-child {
+    font-size: 0.8rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+.quantity, .price, .total {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.price {
+    color: var(--accent);
+}
+
+.total {
+    color: #2d3748;
+    font-size: 1.1rem;
+}
+
+.notes {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: var(--blue-pastel);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.notes strong {
+    color: var(--text-dark);
+}
+
+.cardActions {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.deliverBtn, .trackBtn, .deleteBtn {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 100px;
+}
+
+.deliverBtn {
     background: var(--accent);
     color: white;
 }
 
+.deliverBtn:hover:not(:disabled) {
+    background: var(--purple-pastel);
+    color: var(--text-dark);
+}
+
+.deliverBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.trackBtn {
+    background: var(--blue-pastel);
+    color: var(--text-dark);
+}
+
+.trackBtn:hover {
+    background: var(--turquoise-pastel);
+}
+
 .deleteBtn {
-    background: #ff6b6b !important;
-    color: white !important;
+    background: #ff6b6b;
+    color: white;
 }
 
 .deleteBtn:hover {
-    background: #ff3b3b !important;
+    background: #ff3b3b;
+}
+
+.noResults {
+    text-align: center;
+    padding: 3rem;
+    background: var(--blue-pastel);
+    border-radius: 10px;
+    color: var(--text-dark);
+}
+
+.noResults p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .purchaseHistory {
+        padding: 1rem;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tableContainer {
+        margin: 0 -1rem;
+        border-radius: 0;
+    }
+
+    .inventoryGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .cardActions {
+        flex-direction: column;
+    }
+
+    .deliverBtn, .trackBtn, .deleteBtn {
+        min-width: auto;
+    }
+
+    .filterControls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sortBtn, .statusFilter {
+        width: 100%;
+    }
 }
