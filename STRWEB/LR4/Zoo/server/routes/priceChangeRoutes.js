@@ -9,7 +9,8 @@ const {
     markAsNotified,
     getUpcomingPriceChanges,
     getProductPriceHistory,
-    applyPendingPriceChanges
+    applyPendingPriceChanges,
+    confirmPriceChange
 } = require('../controllers/priceChangeController');
 const { auth, isAdmin } = require('../middleware/auth');
 
@@ -20,6 +21,7 @@ router.get('/:id', getPriceChangeById);
 
 router.patch('/:id/notify', auth, markAsNotified);
 router.post('/apply-pending', auth, isAdmin, applyPendingPriceChanges);
+router.patch('/:id/confirm', auth, isAdmin, confirmPriceChange);
 
 router.post('/', auth, isAdmin, createPriceChange);
 router.put('/:id', auth, isAdmin, updatePriceChange);

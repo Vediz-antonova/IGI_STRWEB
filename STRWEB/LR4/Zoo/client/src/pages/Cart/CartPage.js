@@ -6,27 +6,13 @@ import { useNotifications } from '../../context/NotificationContext';
 import styles from './CartPage.module.css';
 
 function CartPage() {
-    const { cartItems, updateQuantity, removeFromCart, clearCart, totalPrice, totalItems } = useContext(CartContext);
+    const { cartItems, updateQuantity, removeFromCart, clearCart, totalPrice, totalItems, groupedBySupplier, createOrderFromCart } = useContext(CartContext);
     const { user, token } = useContext(AuthContext);
     const { showSuccess, showError, showInfo } = useNotifications();
     const navigate = useNavigate();
 
     const [isProcessing, setIsProcessing] = useState(false);
-
-    const groupedBySupplier = cartItems.reduce((groups, item) => {
-        const key = item.supplierId;
-        if (!groups[key]) {
-            groups[key] = {
-                supplierId: item.supplierId,
-                supplierName: item.supplierName,
-                items: [],
-                total: 0
-            };
-        }
-        groups[key].items.push(item);
-        groups[key].total += item.price * item.quantity;
-        return groups;
-    }, {});
+    const [processingSupplier, setProcessingSupplier] = useState(null);
 
     const handlePlaceOrder = async (supplierId) => {
         if (!user) {
@@ -35,122 +21,73 @@ function CartPage() {
             return;
         }
 
+        if (!token) {
+            showError('Ошибка авторизации. Пожалуйста, войдите снова.');
+            return;
+        }
+
         setIsProcessing(true);
-        showInfo('Проверяем наличие товаров...');
+        setProcessingSupplier(supplierId);
+        showInfo('Создаем заказ...');
 
         try {
-            const supplierItems = cartItems.filter(item => item.supplierId === supplierId);
+            const result = await createOrderFromCart(supplierId, cartItems, token, user);
 
-            for (const item of supplierItems) {
-                const response = await fetch(`http://localhost:5000/api/suppliers/${item.supplierId}`);
-                const data = await response.json();
-
-                if (data.success) {
-                    const supplierProduct = data.data.supplier.products?.find(
-                        p => p.product?._id === item.productId
-                    );
-
-                    if (!supplierProduct || supplierProduct.stockQuantity < item.quantity) {
-                        throw new Error(`Товар "${item.name}" недоступен в нужном количестве`);
-                    }
-                }
-            }
-
-            const orderItems = supplierItems.map(item => ({
-                productId: item.productId,
-                supplierId: item.supplierId,
-                quantity: item.quantity,
-                price: item.price
-            }));
-
-            const response = await fetch('http://localhost:5000/api/purchases/bulk', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify({ items: orderItems })
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                supplierItems.forEach(item =>
-                    removeFromCart(item.productId, item.supplierId)
-                );
-
-                showSuccess(`Заказ успешно создан! Обработано ${data.data.created} позиций`);
-
-                if (data.data.errors && data.data.errors.length > 0) {
-                    data.data.errors.forEach(error => {
-                        showError(`${error.productId}: ${error.error}`);
-                    });
-                }
+            if (result.success) {
+                showSuccess(`Заказ успешно создан! Номер заказа: ${result.order.orderNumber}`);
             } else {
-                showError(data.message || 'Ошибка при создании заказа');
+                showError(result.message || 'Ошибка при создании заказа');
             }
-
         } catch (error) {
-            showError(error.message);
+            showError('Ошибка при обработке заказа');
+            console.error('Order creation error:', error);
         } finally {
             setIsProcessing(false);
+            setProcessingSupplier(null);
         }
     };
 
-    const handlePlaceAllOrders = () => {
-        const suppliers = Object.keys(groupedBySupplier);
+    const handlePlaceAllOrders = async () => {
+        if (!user) {
+            showError('Для оформления заказа необходимо войти в систему');
+            navigate('/login');
+            return;
+        }
+
+        if (!token) {
+            showError('Ошибка авторизации. Пожалуйста, войдите снова.');
+            return;
+        }
 
         setIsProcessing(true);
-        showInfo(`Начинаем обработку заказов у ${suppliers.length} поставщиков...`);
+        showInfo(`Создаем заказы у ${Object.keys(groupedBySupplier).length} поставщиков...`);
 
-        const xhr = new XMLHttpRequest();
-        const formData = new FormData();
-        formData.append('data', JSON.stringify({
-            items: cartItems.map(item => ({
-                productId: item.productId,
-                supplierId: item.supplierId,
-                quantity: item.quantity,
-                price: item.price
-            }))
-        }));
+        const results = [];
+        const suppliers = Object.keys(groupedBySupplier);
 
-        xhr.upload.addEventListener('progress', (event) => {
-            if (event.lengthComputable) {
-                const percent = Math.round((event.loaded / event.total) * 100);
-                showInfo(`Отправка данных: ${percent}%`);
+        for (const supplierId of suppliers) {
+            showInfo(`Обрабатываем поставщика: ${groupedBySupplier[supplierId].supplierName}`);
+
+            try {
+                const result = await createOrderFromCart(supplierId, cartItems, token, user);
+                results.push({ supplierId, success: result.success, order: result.order });
+            } catch (error) {
+                results.push({ supplierId, success: false, error: error.message });
             }
-        });
+        }
 
-        xhr.open('POST', 'http://localhost:5000/api/purchases/bulk');
-        xhr.setRequestHeader('Authorization', `Bearer ${token}`);
+        const successfulOrders = results.filter(r => r.success);
+        const failedOrders = results.filter(r => !r.success);
 
-        xhr.onload = () => {
-            if (xhr.status === 200) {
-                const data = JSON.parse(xhr.responseText);
-                if (data.success) {
-                    clearCart();
-                    showSuccess(`Все заказы успешно созданы! Обработано: ${data.data.created}`);
+        if (successfulOrders.length > 0) {
+            showSuccess(`Успешно создано ${successfulOrders.length} заказов`);
+        }
 
-                    if (data.data.errors && data.data.errors.length > 0) {
-                        data.data.errors.forEach(error => {
-                            showError(`Ошибка: ${error.error}`);
-                        });
-                    }
-                } else {
-                    showError(data.message);
-                }
-            } else {
-                showError('Ошибка сервера');
-            }
-            setIsProcessing(false);
-        };
+        if (failedOrders.length > 0) {
+            showError(`Не удалось создать ${failedOrders.length} заказов`);
+        }
 
-        xhr.onerror = () => {
-            showError('Ошибка сети');
-            setIsProcessing(false);
-        };
-
-        xhr.send(formData);
+        setIsProcessing(false);
     };
 
     if (cartItems.length === 0) {
@@ -197,6 +134,7 @@ function CartPage() {
                     <button
                         onClick={clearCart}
                         className={styles.clearBtn}
+                        disabled={isProcessing}
                     >
                         Очистить корзину
                     </button>
@@ -238,7 +176,7 @@ function CartPage() {
                                                 item.supplierId,
                                                 item.quantity - 1
                                             )}
-                                            disabled={item.quantity <= 1}
+                                            disabled={item.quantity <= 1 || isProcessing}
                                         >
                                             −
                                         </button>
@@ -249,6 +187,7 @@ function CartPage() {
                                                 item.supplierId,
                                                 item.quantity + 1
                                             )}
+                                            disabled={isProcessing}
                                         >
                                             +
                                         </button>
@@ -261,6 +200,7 @@ function CartPage() {
                                     <button
                                         onClick={() => removeFromCart(item.productId, item.supplierId)}
                                         className={styles.removeBtn}
+                                        disabled={isProcessing}
                                     >
                                         Удалить
                                     </button>
@@ -272,10 +212,10 @@ function CartPage() {
                     <div className={styles.supplierActions}>
                         <button
                             onClick={() => handlePlaceOrder(supplierId)}
-                            disabled={isProcessing || !user}
+                            disabled={isProcessing || !user || processingSupplier === supplierId}
                             className={styles.orderBtn}
                         >
-                            {isProcessing ? 'Обработка...' : `Заказать у ${group.supplierName}`}
+                            {processingSupplier === supplierId ? 'Обработка...' : `Заказать у ${group.supplierName}`}
                         </button>
 
                         <button
@@ -283,6 +223,7 @@ function CartPage() {
                                 navigate(`/supplier-dashboard/${supplierId}`);
                             }}
                             className={styles.dashboardBtn}
+                            disabled={isProcessing}
                         >
                             Дашборд поставщика
                         </button>

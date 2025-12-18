@@ -6,6 +6,31 @@ const Product = require('./models/Product');
 const Supplier = require('./models/Supplier');
 const Purchase = require('./models/Purchase');
 const PriceChange = require('./models/PriceChange');
+const Order = require('./models/Order');
+
+const generateUniqueOrderNumber = async () => {
+    const today = new Date();
+    const year = today.getFullYear();
+
+    const lastOrder = await Order.findOne({
+        orderNumber: new RegExp(`^ORD-${year}-`)
+    }).sort({ createdAt: -1 });
+
+    let nextNumber = 1;
+    if (lastOrder && lastOrder.orderNumber) {
+        const match = lastOrder.orderNumber.match(/ORD-\d+-(\d+)/);
+        if (match) {
+            nextNumber = parseInt(match[1]) + 1;
+        }
+    }
+
+    return `ORD-${year}-${String(nextNumber).padStart(6, '0')}`;
+};
+
+const generateSeedOrderNumber = (index) => {
+    const year = new Date().getFullYear();
+    return `ORD-${year}-${String(index + 1).padStart(6, '0')}`;
+};
 
 const seedDatabase = async () => {
     try {
@@ -20,11 +45,12 @@ const seedDatabase = async () => {
         console.log('Успешное подключение к MongoDB');
 
         console.log('Очистка существующих данных...');
-        await User.deleteMany({});
-        await Product.deleteMany({});
-        await Supplier.deleteMany({});
         await Purchase.deleteMany({});
         await PriceChange.deleteMany({});
+        await Order.deleteMany({});
+        await Supplier.deleteMany({});
+        await Product.deleteMany({});
+        await User.deleteMany({});
 
         console.log('Все коллекции очищены');
 
@@ -580,46 +606,113 @@ const seedDatabase = async () => {
 
         console.log(`Создано ${suppliers.length} поставщиков`);
 
-        const purchaseStatuses = ['ordered', 'delivered', 'pending', 'cancelled'];
+        const orders = [];
         const purchases = [];
 
-        for (let i = 0; i < 20; i++) {
-            const product = products[Math.floor(Math.random() * products.length)];
+        for (let i = 0; i < 15; i++) {
             const supplier = suppliers[Math.floor(Math.random() * suppliers.length)];
             const user = users[Math.floor(Math.random() * users.length)];
 
-            const purchaseDate = new Date();
-            purchaseDate.setDate(purchaseDate.getDate() - Math.floor(Math.random() * 90));
+            const orderDate = new Date();
+            orderDate.setDate(orderDate.getDate() - Math.floor(Math.random() * 90));
 
-            const deliveryDate = new Date(purchaseDate);
-            deliveryDate.setDate(deliveryDate.getDate() + Math.floor(Math.random() * 14) + 2);
+            const statuses = ['created', 'confirmed', 'processing', 'shipped', 'delivered', 'cancelled'];
+            const status = statuses[Math.floor(Math.random() * statuses.length)];
 
-            const supplierProduct = supplier.products.find(p => p.product.toString() === product._id.toString());
-            const purchasePrice = supplierProduct ? supplierProduct.price * (0.9 + Math.random() * 0.2) : product.currentPrice * 0.8;
+            const orderNumber = generateSeedOrderNumber(i);
 
-            const quantity = Math.floor(Math.random() * 50) + 10;
-            const status = purchaseStatuses[Math.floor(Math.random() * purchaseStatuses.length)];
-
-            purchases.push({
-                product: product._id,
+            const order = new Order({
+                orderNumber: orderNumber,
                 supplier: supplier._id,
-                quantity: quantity,
-                purchasePrice: parseFloat(purchasePrice.toFixed(2)),
-                purchaseDate: purchaseDate,
-                deliveryDate: status === 'delivered' ? deliveryDate : null,
+                totalQuantity: 1,
+                totalCost: 0,
                 status: status,
-                invoiceNumber: `INV-${20240000 + i}-${Math.random().toString(36).substr(2, 4).toUpperCase()}`,
-                notes: `Закупка ${product.name} у ${supplier.name}`,
-                createdBy: user._id
+                deliveryAddress: {
+                    street: supplier.address.street,
+                    city: supplier.address.city,
+                    country: supplier.address.country,
+                    postalCode: supplier.address.postalCode
+                },
+                estimatedDeliveryDate: new Date(orderDate.getTime() + 7 * 24 * 60 * 60 * 1000),
+                notes: `Заказ у поставщика ${supplier.name}`,
+                createdBy: user._id,
+                createdAt: orderDate
             });
+
+            await order.save();
+            orders.push(order);
+
+            let orderTotalQuantity = 0;
+            let orderTotalCost = 0;
+            const orderPurchases = [];
+
+            const numPurchases = Math.floor(Math.random() * 3) + 1;
+            for (let j = 0; j < numPurchases; j++) {
+                const availableProducts = supplier.products.filter(p => p.stockQuantity > 10);
+
+                if (availableProducts.length > 0) {
+                    const supplierProduct = availableProducts[Math.floor(Math.random() * availableProducts.length)];
+                    const product = products.find(p => p._id.toString() === supplierProduct.product.toString());
+
+                    if (product) {
+                        const quantity = Math.floor(Math.random() * 15) + 5;
+                        const purchasePrice = supplierProduct.price * (0.9 + Math.random() * 0.2);
+
+                        const purchase = new Purchase({
+                            order: order._id,
+                            product: product._id,
+                            supplier: supplier._id,
+                            quantity: quantity,
+                            purchasePrice: parseFloat(purchasePrice.toFixed(2)),
+                            purchaseDate: orderDate,
+                            status: status === 'delivered' ? 'delivered' : 'ordered',
+                            deliveryDate: status === 'delivered' ? new Date(orderDate.getTime() + 5 * 24 * 60 * 60 * 1000) : null,
+                            invoiceNumber: `INV-${orderDate.getFullYear()}${String(i + 1).padStart(3, '0')}-${String(j + 1).padStart(2, '0')}`,
+                            notes: `Закупка ${product.name} для заказа ${orderNumber}`,
+                            createdBy: user._id,
+                            createdAt: orderDate
+                        });
+
+                        await purchase.save();
+                        orderPurchases.push(purchase._id);
+                        purchases.push(purchase);
+
+                        orderTotalQuantity += quantity;
+                        orderTotalCost += quantity * purchasePrice;
+
+                        const supplierProductIndex = supplier.products.findIndex(p =>
+                            p.product.toString() === product._id.toString()
+                        );
+                        if (supplierProductIndex !== -1) {
+                            supplier.products[supplierProductIndex].stockQuantity -= quantity;
+                        }
+
+                        if (status === 'delivered') {
+                            product.stockQuantity += quantity;
+                            await product.save();
+                        }
+                    }
+                }
+            }
+
+            order.purchases = orderPurchases;
+            order.totalQuantity = orderTotalQuantity;
+            order.totalCost = parseFloat(orderTotalCost.toFixed(2));
+
+            if (status === 'delivered') {
+                order.deliveryDate = new Date(orderDate.getTime() + 5 * 24 * 60 * 60 * 1000);
+            }
+
+            await order.save();
+            await supplier.save();
         }
 
-        const createdPurchases = await Purchase.create(purchases);
-        console.log(`Создано ${createdPurchases.length} закупок`);
+        console.log(`Создано ${orders.length} заказов`);
+        console.log(`Создано ${purchases.length} закупок`);
 
         const priceChanges = [];
 
-        for (let i = 0; i < 25; i++) {
+        for (let i = 0; i < 15; i++) {
             const product = products[Math.floor(Math.random() * products.length)];
             const supplier = suppliers[Math.floor(Math.random() * suppliers.length)];
             const user = users[Math.floor(Math.random() * users.length)];
@@ -636,22 +729,8 @@ const seedDatabase = async () => {
             const oldPrice = product.currentPrice * (0.7 + Math.random() * 0.4);
             const newPrice = product.currentPrice * (0.9 + Math.random() * 0.3);
 
-            const reasons = [
-                'Изменение курса валют',
-                'Изменение цены поставщиком',
-                'Сезонное изменение спроса',
-                'Изменение транспортных расходов',
-                'Акция поставщика',
-                'Изменение таможенных пошлин',
-                'Изменение себестоимости производства',
-                'Инфляционные процессы',
-                'Конкурентное ценообразование',
-                'Оптовая скидка'
-            ];
-
             const requiresConfirmation = Math.abs((newPrice - oldPrice) / oldPrice * 100) > 30;
             const applied = effectiveDate <= new Date() && !requiresConfirmation;
-            const appliedDate = applied ? new Date(effectiveDate) : null;
 
             priceChanges.push({
                 product: product._id,
@@ -661,13 +740,11 @@ const seedDatabase = async () => {
                 changeDate: changeDate,
                 notificationDate: notificationDate,
                 effectiveDate: effectiveDate,
-                reason: reasons[Math.floor(Math.random() * reasons.length)],
+                reason: 'Изменение цены поставщиком',
                 notified: Math.random() > 0.3,
                 applied: applied,
-                appliedDate: appliedDate,
+                appliedDate: applied ? new Date(effectiveDate) : null,
                 requiresConfirmation: requiresConfirmation,
-                confirmedBy: requiresConfirmation && applied ? users[0]._id : null,
-                confirmationDate: requiresConfirmation && applied ? new Date(effectiveDate) : null,
                 createdBy: user._id
             });
         }
@@ -696,12 +773,11 @@ const seedDatabase = async () => {
         console.error('Сообщение ошибки:', error.message);
         console.error('Стек ошибки:', error.stack);
 
-        if (error.code) {
-            console.error('Код ошибки:', error.code);
-        }
-
-        if (error.reason) {
-            console.error('Причина ошибки:', error.reason);
+        if (error.errors) {
+            console.error('Детали ошибок:');
+            Object.keys(error.errors).forEach(key => {
+                console.error(`  ${key}:`, error.errors[key].message);
+            });
         }
 
         process.exit(1);

@@ -315,3 +315,15 @@
     margin: 2rem auto;
     max-width: 500px;
 }
+
+.supplierCount {
+    margin: 0.3rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.supplierPriceRange {
+    color: var(--accent);
+    font-weight: bold;
+    margin-left: 0.3rem;
+}

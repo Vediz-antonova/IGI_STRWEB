@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const purchaseSchema = new mongoose.Schema({
+    order: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Order',
+        required: true
+    },
     product: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Product',
@@ -65,6 +70,7 @@ purchaseSchema.virtual('totalCost').get(function() {
     return this.quantity * this.purchasePrice;
 });
 
+purchaseSchema.index({ order: 1 });
 purchaseSchema.index({ purchaseDate: -1 });
 purchaseSchema.index({ product: 1, purchaseDate: -1 });
 purchaseSchema.index({ supplier: 1, purchaseDate: -1 });

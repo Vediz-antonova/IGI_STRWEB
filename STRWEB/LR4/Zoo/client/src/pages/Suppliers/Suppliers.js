@@ -127,6 +127,14 @@ function Suppliers() {
                                 </button>
                             </div>
                         )}
+                        <div className={styles.actions}>
+                            <Link
+                                to={`/supplier-dashboard/${supplier._id}`}
+                                className={styles.dashboardBtn}
+                            >
+                                Дашборд
+                            </Link>
+                        </div>
                     </div>
                 ))}
             </div>

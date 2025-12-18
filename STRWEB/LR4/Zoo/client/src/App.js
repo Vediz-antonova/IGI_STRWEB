@@ -13,7 +13,8 @@ import AuthForm from './pages/Auth/AuthForm';
 import Profile from './pages/Auth/Profile';
 import PetCareChat from './api/PetCareChat';
 import CartPage from './pages/Cart/CartPage';
-import PurchaseHistory from './pages/Purchases/PurchaseHistory';
+import OrderManager from './pages/OrderManager/OrderManager';
+import PriceChanges from './pages/PriceChanges/PriceChanges';
 import PetProductMatcher from './components/PetProductMatcher/PetProductMatcher';
 import SupplierDashboard from './components/SupplierDashboard/SupplierDashboard';
 
@@ -36,7 +37,9 @@ function App() {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/chat" element={<PetCareChat />} />
                 <Route path="/cart" element={<CartPage />} />
-                <Route path="/purchases" element={<PurchaseHistory />} />
+                <Route path="/orders" element={<OrderManager />} />
+                <Route path="/inventory" element={<OrderManager />} />
+                <Route path="/price-changes" element={<PriceChanges />} />
                 <Route path="/product-matcher" element={<PetProductMatcher />} />
                 <Route path="/supplier-dashboard/:id" element={<SupplierDashboard />} />
             </Routes>

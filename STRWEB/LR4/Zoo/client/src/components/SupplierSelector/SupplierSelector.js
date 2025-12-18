@@ -12,27 +12,28 @@ function SupplierSelector({
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (!product || !suppliers.length) {
+        if (!product || suppliers.length === 0) {
             setLoading(false);
             return;
         }
 
-        const productSuppliers = suppliers.filter(supplier =>
-            supplier.products?.some(p => p.product?._id === product._id)
-        );
+        const formattedSuppliers = suppliers.map(supplier => ({
+            id: supplier.id || supplier._id,
+            name: supplier.name,
+            city: supplier.address?.city || 'Не указан',
+            rating: supplier.rating || 0,
+            price: supplier.price || product.currentPrice,
+            stockQuantity: supplier.stockQuantity || 0,
+            deliveryTime: '1-3 дня',
+            isAvailable: (supplier.stockQuantity || 0) > 0,
+            phone: supplier.phone || '',
+            email: supplier.email || ''
+        }));
 
-        const formattedSuppliers = productSuppliers.map(supplier => {
-            const supplierProduct = supplier.products.find(p => p.product?._id === product._id);
-            return {
-                id: supplier._id,
-                name: supplier.name,
-                city: supplier.address?.city || 'Не указан',
-                rating: supplier.rating || 0,
-                price: supplierProduct?.price || product.currentPrice,
-                stockQuantity: supplierProduct?.stockQuantity || 0,
-                deliveryTime: '1-3 дня',
-                isAvailable: (supplierProduct?.stockQuantity || 0) > 0
-            };
+        console.log('Отформатированные поставщики для выбора:', {
+            product: product.name,
+            suppliersCount: formattedSuppliers.length,
+            suppliers: formattedSuppliers.map(s => ({ id: s.id, name: s.name, price: s.price }))
         });
 
         setAvailableSuppliers(formattedSuppliers);
@@ -80,7 +81,8 @@ function SupplierSelector({
             <div className={styles.modal}>
                 <div className={styles.header}>
                     <h3>Выберите поставщика</h3>
-                    <p>Товар: <strong>{product.name}</strong></p>
+                    <p>Товар: <strong>{product.name}</strong> ({product.sku})</p>
+                    <p>Всего доступно поставщиков: <strong>{availableSuppliers.length}</strong></p>
                 </div>
 
                 <div className={styles.suppliersList}>
@@ -106,7 +108,7 @@ function SupplierSelector({
                                     </div>
                                     <div className={styles.detail}>
                                         <span className={styles.label}>Цена:</span>
-                                        <span className={styles.price}>{supplier.price} ₽</span>
+                                        <span className={styles.price}>{supplier.price} BYN</span>
                                     </div>
                                     <div className={styles.detail}>
                                         <span className={styles.label}>Наличие:</span>
@@ -140,7 +142,9 @@ function SupplierSelector({
                     {selectedSupplier && (
                         <div className={styles.summary}>
                             <h4>Вы выбрали:</h4>
-                            <p><strong>{selectedSupplier.name}</strong> — {selectedSupplier.price} ₽</p>
+                            <p><strong>{selectedSupplier.name}</strong></p>
+                            <p>Цена: <strong>{selectedSupplier.price} BYN</strong></p>
+                            <p>Наличие: {selectedSupplier.stockQuantity} шт.</p>
                             <p>Доставка: {selectedSupplier.deliveryTime}</p>
                         </div>
                     )}

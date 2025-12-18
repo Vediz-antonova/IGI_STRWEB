@@ -11,7 +11,7 @@ function Products() {
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
     const [pagination, setPagination] = useState(null);
-    const [suppliers, setSuppliers] = useState([]);
+    const [suppliersMap, setSuppliersMap] = useState({});
 
     const [sortBy, setSortBy] = useState('createdAt');
     const [sortOrder, setSortOrder] = useState('desc');
@@ -30,53 +30,140 @@ function Products() {
     const [selectedProduct, setSelectedProduct] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/suppliers')
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    setSuppliers(data.data.suppliers || []);
+        const loadSuppliers = async () => {
+            try {
+                let allSuppliers = [];
+                let currentPage = 1;
+                let hasMore = true;
+
+                while (hasMore) {
+                    const res = await fetch(`http://localhost:5000/api/suppliers?page=${currentPage}&limit=50`);
+                    const data = await res.json();
+
+                    if (data.success && data.data?.suppliers) {
+                        allSuppliers = [...allSuppliers, ...data.data.suppliers];
+                        hasMore = currentPage < (data.data.pagination?.pages || 1);
+                        currentPage++;
+                    } else {
+                        hasMore = false;
+                    }
                 }
-            });
-    }, []);
 
+                console.log('Всего поставщиков загружено:', allSuppliers.length);
+
+                const map = {};
+                allSuppliers.forEach(supplier => {
+                    if (supplier.products && Array.isArray(supplier.products)) {
+                        supplier.products.forEach(prod => {
+                            let productId;
+                            let productSku;
+                            let productPrice;
+                            let productStock;
+
+                            if (prod.product && prod.product._id) {
+                                productId = prod.product._id;
+                            }
+                            else if (typeof prod.product === 'string') {
+                                productId = prod.product;
+                            }
+
+                            productSku = prod.sku || '';
+                            productPrice = prod.price || 0;
+                            productStock = prod.stockQuantity || 0;
+
+                            if (productId) {
+                                if (!map[productId]) {
+                                    map[productId] = [];
+                                }
+
+                                map[productId].push({
+                                    id: supplier._id,
+                                    name: supplier.name,
+                                    address: supplier.address,
+                                    phone: supplier.phone,
+                                    email: supplier.email,
+                                    rating: supplier.rating || 0,
+                                    price: productPrice,
+                                    stockQuantity: productStock,
+                                    sku: productSku,
+                                    deliveryTime: '1-3 дня',
+                                    isAvailable: productStock > 0
+                                });
+                            }
+                        });
+                    }
+                });
+
+                console.log('Карта поставщиков создана:', Object.keys(map).length, 'товаров с поставщиками');
+                setSuppliersMap(map);
+            } catch (error) {
+                console.error('Error loading suppliers:', error);
+                showError('Ошибка загрузки поставщиков');
+            }
+        };
+
+        loadSuppliers();
+    }, [showError]);
+
+    // Загрузка продуктов
     useEffect(() => {
-        setLoading(true);
+        const loadProducts = async () => {
+            setLoading(true);
 
-        const query = new URLSearchParams({
-            page,
-            sortBy,
-            sortOrder,
-            search,
-            minPrice,
-            maxPrice,
-            inStock,
-            ...(category && { category }),
-            ...(animalType && { animalType })
-        }).toString();
+            const query = new URLSearchParams({
+                page,
+                sortBy,
+                sortOrder,
+                search,
+                minPrice,
+                maxPrice,
+                inStock,
+                ...(category && { category }),
+                ...(animalType && { animalType })
+            }).toString();
 
-        const url = `http://localhost:5000/api/products?${query}&_=${Date.now()}`;
+            const url = `http://localhost:5000/api/products?${query}&_=${Date.now()}`;
 
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+
                 if (data.success) {
-                    setProducts(data.data?.products || []);
+                    const productsData = data.data?.products || [];
+                    setProducts(productsData);
                     setPagination(data.data?.pagination || null);
+
+                    productsData.forEach(product => {
+                        const suppliers = suppliersMap[product._id] || [];
+                        console.log(`Товар ${product.name} (${product._id}):`, {
+                            productId: product._id,
+                            suppliersCount: suppliers.length,
+                            suppliers: suppliers.map(s => ({ id: s.id, name: s.name }))
+                        });
+                    });
                 } else {
                     showError(data.message || 'Ошибка загрузки данных');
                 }
-                setLoading(false);
-            })
-            .catch(err => {
+            } catch (err) {
+                console.error('Ошибка загрузки продуктов:', err);
                 showError('Ошибка подключения к серверу');
+            } finally {
                 setLoading(false);
-            });
-    }, [page, sortBy, sortOrder, search, minPrice, maxPrice, inStock, category, animalType, showError]);
+            }
+        };
+
+        loadProducts();
+    }, [page, sortBy, sortOrder, search, minPrice, maxPrice, inStock, category, animalType, showError, suppliersMap]);
 
     const handleAddToCart = (product) => {
-        const availableSuppliers = suppliers.filter(s =>
-            s.products?.some(p => p.product?._id === product._id)
-        );
+        const availableSuppliers = suppliersMap[product._id] || [];
+
+        console.log('Добавление в корзину:', {
+            product: product.name,
+            productId: product._id,
+            availableSuppliers: availableSuppliers.length,
+            suppliers: availableSuppliers.map(s => s.name)
+        });
 
         if (availableSuppliers.length === 0) {
             showWarning('Товар временно недоступен у поставщиков');
@@ -85,7 +172,7 @@ function Products() {
 
         if (availableSuppliers.length === 1) {
             const supplier = availableSuppliers[0];
-            addToCart(product, supplier._id, supplier.name, 1);
+            addToCart(product, supplier.id, supplier.name, 1);
             showSuccess(`Товар "${product.name}" добавлен в корзину от ${supplier.name}!`);
         } else {
             setSelectedProduct(product);
@@ -109,7 +196,10 @@ function Products() {
     };
 
     const handleDelete = async (id) => {
-        if (!window.confirm('Удалить продукт?')) return;
+        const shouldDelete = window.confirm ?
+            window.confirm('Удалить продукт?') : true;
+
+        if (!shouldDelete) return;
 
         try {
             const res = await fetch(`http://localhost:5000/api/products/${id}`, {
@@ -153,9 +243,6 @@ function Products() {
                 <div className={styles.adminActions}>
                     <Link to="/products/create" className={styles.createBtn}>
                         + Добавить продукт
-                    </Link>
-                    <Link to="/purchases" className={styles.purchasesBtn}>
-                        История заказов
                     </Link>
                 </div>
             )}
@@ -244,55 +331,69 @@ function Products() {
             )}
 
             <div className={styles.grid}>
-                {products.map(product => (
-                    <div key={product._id} className={styles.card}>
-                        <img src={product.imageUrl} alt={product.name} className={styles.image} />
-                        <h3>{product.name}</h3>
-                        <p className={styles.sku}><strong>Артикул:</strong> {product.sku}</p>
-                        <p><strong>Цена:</strong> {product.currentPrice} BYN / {product.unit}</p>
-                        <p className={product.stockQuantity < product.minStockLevel ? styles.lowStock : styles.stock}>
-                            <strong>Остаток:</strong> {product.stockQuantity} шт.
-                        </p>
+                {products.map(product => {
+                    const productSuppliers = suppliersMap[product._id] || [];
+                    return (
+                        <div key={product._id} className={styles.card}>
+                            <img src={product.imageUrl} alt={product.name} className={styles.image} />
+                            <h3>{product.name}</h3>
+                            <p className={styles.sku}><strong>Артикул:</strong> {product.sku}</p>
+                            <p><strong>Цена:</strong> {product.currentPrice} BYN / {product.unit}</p>
+                            <p className={product.stockQuantity < product.minStockLevel ? styles.lowStock : styles.stock}>
+                                <strong>Остаток:</strong> {product.stockQuantity} шт.
+                            </p>
 
-                        <div className={styles.actions}>
-                            <Link to={`/products/${product._id}`} className={styles.detailsBtn}>
-                                Подробнее →
-                            </Link>
+                            <p className={styles.supplierCount}>
+                                <strong>Поставщиков:</strong> {productSuppliers.length}
+                                {productSuppliers.length > 0 && (
+                                    <span className={styles.supplierPriceRange}>
+                                        (от {Math.min(...productSuppliers.map(s => s.price || product.currentPrice))} BYN)
+                                    </span>
+                                )}
+                            </p>
 
-                            {user?.role === 'user' && (
-                                <button
-                                    className={styles.buyBtn}
-                                    onClick={() => handleAddToCart(product)}
-                                >
-                                    В корзину
-                                </button>
+                            <div className={styles.actions}>
+                                <Link to={`/products/${product._id}`} className={styles.detailsBtn}>
+                                    Подробнее →
+                                </Link>
+
+                                {user?.role === 'user' && (
+                                    <button
+                                        className={styles.buyBtn}
+                                        onClick={() => handleAddToCart(product)}
+                                        disabled={productSuppliers.length === 0}
+                                    >
+                                        {productSuppliers.length === 0 ? 'Нет поставщиков' : 'В корзину'}
+                                    </button>
+                                )}
+                            </div>
+
+                            {user?.role === 'admin' && (
+                                <div className={styles.adminActions}>
+                                    <Link to={`/products/edit/${product._id}`} className={styles.editBtn}>
+                                        Редактировать
+                                    </Link>
+                                    <button
+                                        className={styles.deleteBtn}
+                                        onClick={() => handleDelete(product._id)}
+                                    >
+                                        Удалить
+                                    </button>
+                                </div>
                             )}
                         </div>
-
-                        {user?.role === 'admin' && (
-                            <div className={styles.adminActions}>
-                                <Link to={`/products/edit/${product._id}`} className={styles.editBtn}>
-                                    Редактировать
-                                </Link>
-                                <button
-                                    className={styles.deleteBtn}
-                                    onClick={() => handleDelete(product._id)}
-                                >
-                                    Удалить
-                                </button>
-                            </div>
-                        )}
-                    </div>
-                ))}
-                {showSupplierSelector && selectedProduct && (
-                    <SupplierSelector
-                        product={selectedProduct}
-                        suppliers={suppliers}
-                        onSelect={handleSupplierSelect}
-                        onCancel={handleSupplierCancel}
-                    />
-                )}
+                    );
+                })}
             </div>
+
+            {showSupplierSelector && selectedProduct && (
+                <SupplierSelector
+                    product={selectedProduct}
+                    suppliers={suppliersMap[selectedProduct._id] || []}
+                    onSelect={handleSupplierSelect}
+                    onCancel={handleSupplierCancel}
+                />
+            )}
 
             {products.length === 0 && !loading && (
                 <div className={styles.noResults}>

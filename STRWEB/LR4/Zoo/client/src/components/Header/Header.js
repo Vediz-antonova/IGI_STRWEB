@@ -34,7 +34,10 @@ function Header() {
                 )}
 
                 {user?.role === 'admin' && (
-                    <Link to="/purchases">Заказы</Link>
+                    <>
+                        <Link to="/orders">Заказы</Link>
+                        <Link to="/price-changes">Изменения цен</Link>
+                    </>
                 )}
 
                 {user ? (

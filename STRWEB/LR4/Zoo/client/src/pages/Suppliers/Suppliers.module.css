@@ -184,3 +184,22 @@
     align-items: center;
     margin: 0.3rem 0;
 }
+
+.dashboardBtn {
+    background: var(--turquoise-pastel);
+    color: var(--text-dark);
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.8rem;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.dashboardBtn:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}

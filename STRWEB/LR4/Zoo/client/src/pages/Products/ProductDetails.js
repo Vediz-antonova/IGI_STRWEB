@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import styles from './ProductDetails.module.css';
 import { AuthContext } from '../../context/AuthContext';
 import { CartContext } from '../../context/CartContext';
@@ -21,10 +21,11 @@ const formatUTC = (dateString) => {
 
 function ProductDetails() {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [suppliers, setSuppliers] = useState([]);
-    const { user } = useContext(AuthContext);
+    const [suppliersMap, setSuppliersMap] = useState({});
+    const { user, token } = useContext(AuthContext);
     const { addToCart } = useContext(CartContext);
     const { showSuccess, showError, showWarning, showInfo } = useNotifications();
 
@@ -33,49 +34,157 @@ function ProductDetails() {
     const [actionType, setActionType] = useState('');
 
     useEffect(() => {
-        const url = `http://localhost:5000/api/products/${id}`;
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                setProduct(data.data?.product || null);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-                showError('Ошибка загрузки продукта');
-            });
+        const loadSuppliers = async () => {
+            try {
+                let allSuppliers = [];
+                let currentPage = 1;
+                let hasMore = true;
 
-        fetch('http://localhost:5000/api/suppliers')
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    setSuppliers(data.data.suppliers || []);
+                while (hasMore) {
+                    const res = await fetch(`http://localhost:5000/api/suppliers?page=${currentPage}&limit=50`);
+                    const data = await res.json();
+
+                    if (data.success && data.data?.suppliers) {
+                        allSuppliers = [...allSuppliers, ...data.data.suppliers];
+                        hasMore = currentPage < (data.data.pagination?.pages || 1);
+                        currentPage++;
+                    } else {
+                        hasMore = false;
+                    }
                 }
-            })
-            .catch(() => {
-                showWarning('Не удалось загрузить поставщиков');
-            });
-    }, [id, showError, showWarning]);
+
+                console.log('ProductDetails: Всего поставщиков загружено:', allSuppliers.length);
+
+                const map = {};
+                allSuppliers.forEach(supplier => {
+                    if (supplier.products && Array.isArray(supplier.products)) {
+                        supplier.products.forEach(prod => {
+                            let productId;
+
+                            if (prod.product && prod.product._id) {
+                                productId = prod.product._id;
+                            } else if (typeof prod.product === 'string') {
+                                productId = prod.product;
+                            }
+
+                            if (productId) {
+                                if (!map[productId]) {
+                                    map[productId] = [];
+                                }
+
+                                map[productId].push({
+                                    id: supplier._id,
+                                    name: supplier.name,
+                                    address: supplier.address,
+                                    phone: supplier.phone,
+                                    email: supplier.email,
+                                    rating: supplier.rating || 0,
+                                    price: prod.price || 0,
+                                    stockQuantity: prod.stockQuantity || 0,
+                                    sku: prod.sku || '',
+                                    deliveryTime: '1-3 дня',
+                                    isAvailable: (prod.stockQuantity || 0) > 0
+                                });
+                            }
+                        });
+                    }
+                });
+
+                console.log('ProductDetails: Карта поставщиков создана:', Object.keys(map).length, 'товаров с поставщиками');
+                setSuppliersMap(map);
+            } catch (error) {
+                console.error('ProductDetails: Error loading suppliers:', error);
+                showError('Ошибка загрузки поставщиков');
+            }
+        };
+
+        loadSuppliers();
+    }, [showError]);
+
+    useEffect(() => {
+        const loadProduct = async () => {
+            try {
+                setLoading(true);
+                const url = `http://localhost:5000/api/products/${id}`;
+                const res = await fetch(url);
+                const data = await res.json();
+
+                if (data.success) {
+                    const productData = data.data?.product;
+                    setProduct(productData);
+
+                    if (productData) {
+                        const suppliers = suppliersMap[productData._id] || [];
+                        console.log(`ProductDetails: Товар ${productData.name}:`, {
+                            suppliersCount: suppliers.length,
+                            suppliers: suppliers.map(s => ({ id: s.id, name: s.name, price: s.price }))
+                        });
+                    }
+                } else {
+                    showError(data.message || 'Ошибка загрузки продукта');
+                }
+            } catch (error) {
+                console.error('ProductDetails: Error loading product:', error);
+                showError('Ошибка подключения к серверу');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        loadProduct();
+    }, [id, showError, suppliersMap]);
 
     const handleAddToCart = () => {
         if (!product) return;
 
-        setSelectedProduct(product);
-        setActionType('addToCart');
-        setShowSupplierSelector(true);
+        const availableSuppliers = suppliersMap[product._id] || [];
+
+        console.log('ProductDetails: Добавление в корзину:', {
+            product: product.name,
+            productId: product._id,
+            availableSuppliers: availableSuppliers.length,
+            suppliers: availableSuppliers.map(s => s.name)
+        });
+
+        if (availableSuppliers.length === 0) {
+            showWarning('Товар временно недоступен у поставщиков');
+            return;
+        }
+
+        if (availableSuppliers.length === 1) {
+            const supplier = availableSuppliers[0];
+            addToCart(product, supplier.id, supplier.name, 1);
+            showSuccess(`Товар "${product.name}" добавлен в корзину от ${supplier.name}!`);
+        } else {
+            setSelectedProduct(product);
+            setActionType('addToCart');
+            setShowSupplierSelector(true);
+        }
     };
 
     const handleBuyNow = () => {
         if (!user) {
             showError('Для заказа необходимо войти в систему');
+            navigate('/login');
             return;
         }
 
         if (!product) return;
 
-        setSelectedProduct(product);
-        setActionType('buyNow');
-        setShowSupplierSelector(true);
+        const availableSuppliers = suppliersMap[product._id] || [];
+
+        if (availableSuppliers.length === 0) {
+            showWarning('Товар временно недоступен у поставщиков');
+            return;
+        }
+
+        if (availableSuppliers.length === 1) {
+            createOrder(product, availableSuppliers[0]);
+        } else {
+            setSelectedProduct(product);
+            setActionType('buyNow');
+            setShowSupplierSelector(true);
+        }
     };
 
     const handleSupplierSelect = (supplier) => {
@@ -94,50 +203,28 @@ function ProductDetails() {
         try {
             showInfo('Проверяем наличие товара...');
 
-            const supplierResponse = await fetch(`http://localhost:5000/api/suppliers/${supplier.id}`);
-            const supplierData = await supplierResponse.json();
-
-            if (!supplierData.success || !supplierData.data?.supplier) {
-                showError('Не удалось получить информацию о поставщике');
-                resetSupplierSelector();
-                return;
-            }
-
-            const supplierDetails = supplierData.data.supplier;
-            const supplierProduct = supplierDetails.products?.find(
-                p => p.product?._id === product._id
-            );
-
-            if (!supplierProduct) {
-                showError('Товар не найден у выбранного поставщика');
-                resetSupplierSelector();
-                return;
-            }
-
-            if (supplierProduct.stockQuantity < 1) {
-                showError('Товара нет в наличии у выбранного поставщика');
-                resetSupplierSelector();
-                return;
-            }
-
-            const purchaseData = {
-                product: product._id,
+            const orderData = {
                 supplier: supplier.id,
-                quantity: 1,
-                purchasePrice: product.currentPrice,
-                status: 'ordered',
-                deliveryDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString() // +7 дней
+                purchases: [{
+                    productId: product._id,
+                    quantity: 1,
+                    price: supplier.price || product.currentPrice
+                }],
+                deliveryAddress: {
+                    street: "Основной склад",
+                    city: "Минск",
+                    country: "Беларусь"
+                },
+                notes: `Прямой заказ товара ${product.name}`
             };
 
-            const token = localStorage.getItem('token');
-
-            const response = await fetch('http://localhost:5000/api/purchases', {
+            const response = await fetch('http://localhost:5000/api/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify(purchaseData)
+                body: JSON.stringify(orderData)
             });
 
             const data = await response.json();
@@ -145,6 +232,7 @@ function ProductDetails() {
             if (data.success) {
                 showSuccess('Заказ успешно создан! Ожидайте доставки.');
                 resetSupplierSelector();
+                navigate('/orders');
             } else {
                 showError(data.message || 'Ошибка при создании заказа');
                 resetSupplierSelector();
@@ -174,6 +262,11 @@ function ProductDetails() {
         return <div className={styles.error}>Продукт не найден</div>;
     }
 
+    const availableSuppliers = suppliersMap[product._id] || [];
+    const minSupplierPrice = availableSuppliers.length > 0 ?
+        Math.min(...availableSuppliers.map(s => s.price || product.currentPrice)) :
+        product.currentPrice;
+
     return (
         <div className={styles.details}>
             <Link to="/products" className={styles.back}>← Назад к каталогу</Link>
@@ -186,10 +279,15 @@ function ProductDetails() {
                     <p><strong>Категория:</strong> {product.category}</p>
                     <p><strong>Для животных:</strong> {product.animalType?.join(', ')}</p>
                     <p><strong>Описание:</strong> {product.description}</p>
-                    <p><strong>Цена:</strong> {product.currentPrice} ₽ / {product.unit}</p>
+                    <p><strong>Наша цена:</strong> {product.currentPrice} BYN / {product.unit}</p>
                     <p><strong>Остаток:</strong> {product.stockQuantity} шт.</p>
                     <p><strong>Минимальный уровень склада:</strong> {product.minStockLevel}</p>
                     <p><strong>В наличии:</strong> {product.inStock ? 'Да' : 'Нет'}</p>
+
+                    <p><strong>Поставщиков:</strong> {availableSuppliers.length}</p>
+                    {availableSuppliers.length > 0 && (
+                        <p><strong>Лучшая цена поставщика:</strong> от {minSupplierPrice} BYN</p>
+                    )}
 
                     <p><strong>Добавлен (UTC):</strong> {formatUTC(product.createdAtUTC)}</p>
                     {user && (
@@ -206,14 +304,16 @@ function ProductDetails() {
                                 <button
                                     className={styles.buyBtn}
                                     onClick={handleAddToCart}
-                                    disabled={!product.inStock}
+                                    disabled={!product.inStock || availableSuppliers.length === 0}
+                                    title={availableSuppliers.length === 0 ? 'Нет доступных поставщиков' : 'Добавить в корзину'}
                                 >
-                                    В корзину
+                                    {availableSuppliers.length === 0 ? 'Нет поставщиков' : 'В корзину'}
                                 </button>
                                 <button
                                     className={styles.orderNowBtn}
                                     onClick={handleBuyNow}
-                                    disabled={!product.inStock}
+                                    disabled={!product.inStock || availableSuppliers.length === 0}
+                                    title={availableSuppliers.length === 0 ? 'Нет доступных поставщиков' : 'Заказать сейчас'}
                                 >
                                     Заказать сейчас
                                 </button>
@@ -234,7 +334,7 @@ function ProductDetails() {
                 {showSupplierSelector && selectedProduct && (
                     <SupplierSelector
                         product={selectedProduct}
-                        suppliers={suppliers}
+                        suppliers={suppliersMap[selectedProduct._id] || []}
                         onSelect={handleSupplierSelect}
                         onCancel={handleSupplierCancel}
                     />

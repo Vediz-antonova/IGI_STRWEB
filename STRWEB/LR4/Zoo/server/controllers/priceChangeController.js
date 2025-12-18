@@ -11,7 +11,7 @@ const getAllPriceChanges = async (req, res) => {
     try {
         const {
             page = 1,
-            limit = 10,
+            limit = 100,
             productId,
             supplierId,
             startDate,
@@ -341,10 +341,10 @@ const markAsNotified = async (req, res) => {
 const getUpcomingPriceChanges = async (req, res) => {
     try {
         const today = new Date();
-        const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+        const nextMonth = new Date(today.getFullYear(), today.getMonth() + 3, today.getDate()); // Увеличиваем до 3 месяцев
 
         const upcomingChanges = await PriceChange.find({
-            effectiveDate: { $gt: today, $lte: nextMonth },
+            effectiveDate: { $gt: today },
             applied: false
         })
             .populate('product', 'name sku currentPrice')
@@ -370,7 +370,7 @@ const getUpcomingPriceChanges = async (req, res) => {
         sendResponse(res, true, 'Предстоящие изменения цен', {
             upcomingChanges: formattedChanges,
             total: formattedChanges.length,
-            period: 'Следующий месяц'
+            period: 'Следующие 3 месяца'
         });
     } catch (error) {
         sendResponse(res, false, error.message, null, 400);
@@ -380,12 +380,11 @@ const getUpcomingPriceChanges = async (req, res) => {
 const getProductPriceHistory = async (req, res) => {
     try {
         const productId = req.params.productId;
-        const { supplierId, limit = 20 } = req.query;
+        const { limit = 50 } = req.query;
 
-        const filter = { product: productId, applied: true };
-        if (supplierId) filter.supplier = supplierId;
-
-        const priceHistory = await PriceChange.find(filter)
+        const priceHistory = await PriceChange.find({
+            product: productId
+        })
             .populate('supplier', 'name')
             .populate('createdBy', 'username')
             .sort({ effectiveDate: -1 })
@@ -401,43 +400,16 @@ const getProductPriceHistory = async (req, res) => {
                 notificationDateLocal: formatDateWithTimezone(change.notificationDate, userTimezone),
                 appliedDateLocal: change.appliedDate ? formatDateWithTimezone(change.appliedDate, userTimezone) : null,
                 percentageChange,
-                changeType: change.newPrice > change.oldPrice ? 'increase' : 'decrease'
+                changeType: change.newPrice > change.oldPrice ? 'increase' : 'decrease',
+                status: change.applied ? 'applied' :
+                    change.effectiveDate <= new Date() ? 'pending' :
+                        change.requiresConfirmation ? 'needs_confirmation' : 'scheduled'
             };
         });
 
-        const stats = {
-            totalChanges: priceHistory.length,
-            avgIncrease: 0,
-            avgDecrease: 0,
-            maxIncrease: 0,
-            maxDecrease: 0
-        };
-
-        if (priceHistory.length > 0) {
-            const increases = [];
-            const decreases = [];
-
-            priceHistory.forEach(change => {
-                const percentageChange = ((change.newPrice - change.oldPrice) / change.oldPrice * 100);
-                if (percentageChange > 0) {
-                    increases.push(percentageChange);
-                    if (percentageChange > stats.maxIncrease) stats.maxIncrease = percentageChange;
-                } else if (percentageChange < 0) {
-                    decreases.push(percentageChange);
-                    if (percentageChange < stats.maxDecrease) stats.maxDecrease = percentageChange;
-                }
-            });
-
-            stats.avgIncrease = increases.length > 0 ?
-                (increases.reduce((a, b) => a + b, 0) / increases.length).toFixed(2) : 0;
-            stats.avgDecrease = decreases.length > 0 ?
-                (decreases.reduce((a, b) => a + b, 0) / decreases.length).toFixed(2) : 0;
-        }
-
         sendResponse(res, true, 'История цен товара', {
             productId,
-            priceHistory: formattedHistory,
-            stats
+            priceHistory: formattedHistory
         });
     } catch (error) {
         sendResponse(res, false, error.message, null, 400);
