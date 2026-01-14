@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/main/news.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="news-wrapper">
+  <div class="news-container">
+    <h2>Новости</h2>
+
+    <a href="#footer" class="scroll-down-button" aria-label="Перейти к подвалу">⬇️ Вниз</a>
+
+    <div class="row">
+      {% for news in news_list %}
+          <article class="news-item">
+          <h3 class="news-title">{{ news.title }}</h3>
+
+          {% if news.image_url %}
+            <figure>
+              <img src="{{ news.image_url }}" alt="{{ news.title }}" class="news-image">
+              <figcaption>Иллюстрация к статье</figcaption>
+            </figure>
+          {% endif %}
+
+          <p class="news-summary">{{ news.summary|truncatechars:120 }}...</p>
+
+          <details class="news-details">
+            <summary class="read-more-summary">Читать далее</summary>
+            <p class="news-full">{{ news.summary }}</p>
+          </details>
+        </article>
+
+      {% empty %}
+        <div class="col-12">
+          <div class="alert alert-info">Новостей пока нет</div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <h3 class="cat-facts-title">Интересные факты о котах</h3>
+    <ul class="cat-facts-list">
+      {% for fact in cat_facts %}
+        <li>{{ fact }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-center">
+          <small>© 2025 ZooShop. Все права защищены</small>
+          <br>
+          <small>Текущая дата: {% now "d/m/Y" %}</small>
+        </div>
+        <aside class="footer-calendar">
+          {{ month_calendar|safe }}
+        </aside>
+      </div>
+    </footer>
+{% endblock footer %}

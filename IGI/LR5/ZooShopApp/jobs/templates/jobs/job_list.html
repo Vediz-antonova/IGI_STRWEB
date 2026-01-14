@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/jobs/job_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="job-list-wrapper">
+  <div class="job-list-container">
+    <h2>Вакансии</h2>
+
+    {% for job in jobs %}
+      <article class="job-item">
+        <h3 class="job-title">{{ job.title }}</h3>
+        <p class="job-description">{{ job.description }}</p>
+        <p><strong>Зарплата:</strong> {{ job.salary|default:"Не указано" }} BYN</p>
+        <p><strong>Локация:</strong> {{ job.location|default:"Любое место" }}</p>
+        <p class="job-date">Опубликовано: {{ job.posted_at|date:"d/m/Y H:i" }}</p>
+      </article>
+      <hr>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,101 @@
+.user-list-wrapper {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.user-list-wrapper h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #343a40;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.user-table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: bold;
+  padding: 0.5rem;
+  color: #212529;
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+}
+
+.user-table td {
+  color: #212529;
+}
+
+.user-table td[headers="th-email"] {
+  background-color: #f1f3f5;
+}
+
+.no-users {
+  text-align: center;
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #198754;
+  font-style: italic;
+  color: #495057;
+}
+
+cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+dfn,
+abbr {
+  border-bottom: 1px dotted #6c757d;
+  cursor: help;
+}
+
+time {
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+.scroll-down {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: #0d6efd;
+}
+
+.scroll-down:hover {
+  text-decoration: underline;
+}
+
+pre {
+  background-color: #e9ecef;
+  padding: 1rem;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  font-family: monospace;
+  margin-top: 1rem;
+}

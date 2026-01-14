@@ -1,0 +1,20 @@
+------ Text Analysis Results ------
+Total number of sentences: 8
+Declarative (ending with '.'): 4
+Interrogative (ending with '?'): 2
+Exclamatory (ending with '!'): 2
+Average sentence length (word characters only): 55.38
+Average word length: 5.40
+Number of smileys: 3
+Uppercase English letters: H, A, W, I, T, A, B, C, X, Y, Z, M, N, D
+Text after replacing pattern a+b{2,}c+ with 'qqq':
+Hello, this is a sample text for testing regex patterns. 
+Are you ready to see the analysis results? 
+Wow! Incredible performance in text analysis! 
+This text includes many aspects: uppercase letters like ABCXYZ, valid smileys such as :---((( and ;-[[[, and also some invalid ones like :-- and ;[). 
+Moreover, observe the sequence qqq that should be replaced with qqq. 
+Notice, unbelievably, and extraordinarily, longwords like супердлинноеслово and необыкновенное which ends with е. 
+Do you think these sentences provide enough examples, or should we add more?
+Number of words with maximum length: 1
+Words followed by a comma or period: Hello, patterns, ABCXYZ, Moreover, qqq, Notice, unbelievably, extraordinarily, е, examples
+Longest word ending with 'е': необыкновенное

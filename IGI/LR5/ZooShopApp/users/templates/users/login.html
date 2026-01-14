@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/users/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="login-wrapper">
+  <div class="login-card">
+    <h2>Авторизация</h2>
+
+    <form action="{% url 'login' %}" method="post" class="login-form">
+      {% csrf_token %}
+      {% if request.GET.next %}
+        <input type="hidden" name="next" value="{{ request.GET.next }}">
+      {% endif %}
+
+      {% for item in form %}
+        <div class="form-group">
+          <label for="{{ item.id_for_label }}">{{ item.label }}</label>
+          {{ item }}
+        </div>
+      {% endfor %}
+
+      <button type="submit">Войти</button>
+    </form>
+
+    <div class="login-links">
+      <a href="#">Забыли пароль?</a>
+      <span>|</span>
+      <a href="{% url 'registration' %}">Создать аккаунт</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% load carts_tags %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/users/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+{% user_carts request as carts %}
+<section class="profile-page">
+  <div class="profile-layout">
+      <div class="profile-section">
+      <h2>Профиль пользователя</h2>
+      <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data" class="profile-form">
+        {% csrf_token %}
+        <div class="profile-grid">
+          <div class="profile-avatar">
+            {% if user.image %}
+              <img src="{{ user.image.url }}" alt="Аватар пользователя">
+            {% else %}
+              <img src="{% static 'images/baseavatar.jpg' %}" alt="Аватар пользователя">
+            {% endif %}
+            <label class="upload-label">
+              Загрузить новое фото
+              <input type="file" name="image" accept="image/*">
+            </label>
+          </div>
+
+          <div class="profile-fields">
+            {% for item in form %}
+              {% if item.name != "password" and item.name != "image" %}
+                <div class="form-group">
+                  <label for="{{ item.id_for_label }}">{{ item.label }}</label>
+                  {{ item }}
+                  {% if item.errors %}
+                    <p class="form-error">{{ item.errors }}</p>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+            <button type="submit">Сохранить</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    {% if request.user.is_authenticated and not request.user.is_employee %}
+    <div class="cart-section">
+      <h2>Корзина</h2>
+      <div id="cart-items-container">
+        {% include "carts/includes/included_cart.html" %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="review-button">
+    <a href="{% url 'add_review' %}">Оставить отзыв</a>
+  </div>
+
+  {% if request.user.is_authenticated and not request.user.is_employee %}
+  <div class="orders-section">
+    <h2>Мои заказы</h2>
+    <div class="accordion">
+      {% for order in orders %}
+      <details {% if order == orders.0 %}open{% endif %}>
+        <summary>
+          Заказ №{{ order.id }} — {{ order.created_timestamp }} | Статус: <strong>{{ order.status }}</strong>
+        </summary>
+        <div class="accordion-body">
+          <table class="orders-table">
+            <thead>
+              <tr>
+                <th>Товар</th>
+                <th>Количество</th>
+                <th>Цена</th>
+                <th>Общая стоимость</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in order.orderitem_set.all %}
+              <tr>
+                <td><a href="{% url 'product' item.product.slug %}">{{ item.product.name }}</a></td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.products_price }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

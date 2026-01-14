@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% load goods_tags %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/goods/catalog.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+{% endblock %}
+
+{% block modal_cart %}
+  {% if request.user.is_authenticated and not request.user.is_employee %}
+    {% include "includes/cart_button.html" %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+<section class="catalog-wrapper">
+  <details class="filter-dropdown">
+    <summary>Фильтры</summary>
+    <form action="{% if request.GET.q %}{% url 'search' %}{% else %}{% url 'catalog' slug_url %}{% endif %}" method="get">
+      <fieldset>
+        <legend>Сортировать:</legend>
+        <label><input type="radio" name="order_by" value="default"
+          {% if not request.GET.order_by or request.GET.order_by == 'default' %}checked{% endif %}> По умолчанию</label>
+        <label><input type="radio" name="order_by" value="default_price"
+          {% if request.GET.order_by == 'default_price' %}checked{% endif %}> От дешевых к дорогим</label>
+        <label><input type="radio" name="order_by" value="-default_price"
+          {% if request.GET.order_by == '-default_price' %}checked{% endif %}> От дорогих к дешевым</label>
+      </fieldset>
+      <button type="submit">Применить</button>
+    </form>
+  </details>
+
+  {% if request.user.is_authenticated and request.user.is_employee %}
+    <div class="add-product-button">
+      <a href="{% url 'add_product' %}">+ Добавить товар</a>
+    </div>
+  {% endif %}
+
+  <div class="product-grid">
+    {% for good in products %}
+      <article class="product-card">
+        <div class="product-image">
+          {% if good.image %}
+            <img src="{{ good.image.url }}" alt="{{ good.name }}">
+          {% else %}
+            <img src="{% static 'images/Not found image.png' %}" alt="Нет изображения">
+          {% endif %}
+        </div>
+        <div class="product-info">
+          <a href="{% url 'product' good.slug %}" class="product-name">{{ good.name }}</a>
+          <p class="product-description">{{ good.description }}</p>
+          <p class="product-article">Артикул: {{ good.article }}</p>
+          <p class="product-quantity">Количество: {{ good.quantity }}</p>
+          <div class="product-actions">
+            {% if good.quantity <= 0 %}
+              <p class="out-of-stock">Нет поставок</p>
+            {% else %}
+              <p class="product-price">{{ good.default_price }} BYN</p>
+            {% endif %}
+
+            {% if request.user.is_authenticated and request.user.is_employee %}
+              <form method="POST" action="{% url 'delete_product' good.id %}">
+                {% csrf_token %}
+                <button type="submit" class="delete-button">Удалить</button>
+              </form>
+            {% elif request.user.is_authenticated and not request.user.is_employee and not good.quantity <= 0 %}
+              <a href="{% url 'cart_add' %}" class="add-to-cart" data-product-id="{{ good.id }}">
+                {% csrf_token %}
+                <img src="{% static 'icons/cart-plus.svg' %}" alt="Добавить в корзину" width="32" height="32">
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  {% if products.has_other_pages %}
+    <nav class="pagination-nav">
+      <ul class="pagination-list">
+        <li class="{% if not products.has_previous %}disabled{% endif %}">
+          <a href="{% if products.has_previous %}?{% change_params page=products.previous_page_number %}{% else %}#{% endif %}">← Назад</a>
+        </li>
+        {% for page in products.paginator.page_range %}
+          <li class="{% if products.number == page %}active{% endif %}">
+            <a href="?{% change_params page=page %}">{{ page }}</a>
+          </li>
+        {% endfor %}
+        <li class="{% if not products.has_next %}disabled{% endif %}">
+          <a href="{% if products.has_next %}?{% change_params page=products.next_page_number %}{% else %}#{% endif %}">Вперёд →</a>
+        </li>
+      </ul>
+    </nav>
+  {% endif %}
+</section>
+{% endblock %}
+
+{% block footer %}
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-center">
+        <small>© 2025 ZooShop. Все права защищены</small><br>
+        <small>Текущая дата: {% now "d/m/Y" %}</small>
+      </div>
+    </div>
+  </footer>
+{% endblock %}

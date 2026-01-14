@@ -1,0 +1,54 @@
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/carts/included_cart.css' %}">
+{% endblock %}
+
+<section class="cart-items-list">
+  {% for cart in carts %}
+    <article class="cart-item">
+      <header class="cart-item-header">
+        <h4 class="item-name">{{ cart.product.name }}</h4>
+      </header>
+
+      <div class="cart-item-body">
+        <div class="item-controls">
+          <button type="button" class="decrement"
+                  data-cart-id="{{ cart.id }}"
+                  data-cart-change-url="{% url 'cart_change' %}">
+            {% csrf_token %}−
+          </button>
+
+          <input type="text" class="number" value="{{ cart.quantity }}" readonly>
+
+          <button type="button" class="increment"
+                  data-cart-id="{{ cart.id }}"
+                  data-cart-change-url="{% url 'cart_change' %}">
+            {% csrf_token %}+
+          </button>
+        </div>
+
+        <div class="item-price">
+          <span>x {{ cart.product.default_price }} =</span>
+          <strong>{{ cart.products_price }} BYN</strong>
+        </div>
+
+        <div class="item-remove">
+          <a href="{% url 'cart_remove' %}" class="remove-from-cart" data-cart-id="{{ cart.id }}">
+            {% csrf_token %}
+            <img src="{% static 'icons/trash3-fill.svg' %}" alt="Удалить" width="16" height="16">
+          </a>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</section>
+
+<section class="cart-summary">
+  <p>Итого: <strong>{{ carts.total_quantity }}</strong> товар(а)</p>
+  <h3><strong>{{ carts.total_price }} BYN</strong></h3>
+</section>
+
+{% if carts and not order %}
+  <a class="checkout-button" href="{% url 'create_order' %}">Оформить заказ</a>
+{% endif %}

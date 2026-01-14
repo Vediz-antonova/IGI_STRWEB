@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/main/faq.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="faq-wrapper" role="main" itemscope itemtype="https://schema.org/FAQPage">
+  <header>
+    <h1 itemprop="name">Словарь терминов и понятий ZooShop</h1>
+    <p><abbr title="Frequently Asked Questions">FAQ</abbr> — ответы на часто задаваемые вопросы, связанные с работой магазина, доставкой, питомцами и товарами.</p>
+  </header>
+
+  <section class="faq-list">
+    {% for faq in faqs %}
+    <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" id="faq-{{ faq.id }}">
+      <header class="faq-header">
+        <h2 class="faq-question" itemprop="name">{{ faq.question }}</h2>
+      </header>
+
+      <details class="faq-details">
+        <summary class="faq-toggle">Показать ответ</summary>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p class="faq-answer" itemprop="text">{{ faq.answer }}</p>
+        </div>
+      </details>
+
+      <footer>
+        <p><small>Обновлено: <time datetime="{{ faq.updated_at|date:'Y-m-d H:i' }}">{{ faq.updated_at|date:"d/m/Y H:i" }}</time></small></p>
+      </footer>
+    </article>
+    {% endfor %}
+  </section>
+</main>
+{% endblock %}
